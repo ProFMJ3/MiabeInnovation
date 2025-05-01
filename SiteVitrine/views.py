@@ -4,4 +4,4 @@ from django.shortcuts import render, redirect
 
 def home(request):
 
-    pass
+    return render(request, 'index.html')
