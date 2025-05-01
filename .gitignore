@@ -1,4 +1,11 @@
-venv/
-.env
-.idea/
+# Django
+*.pyc
+__pycache__/
+db.sqlite3
+.idea
 
+# Environnement virtuel
+venv/
+
+# Variables d'environnement
+.env
