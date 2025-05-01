@@ -71,8 +71,18 @@ DATABASES = {
         'PASSWORD': config('DB_PASSWORD'),
         'HOST': config('DB_HOST'),
         'PORT': config('DB_PORT'),
+    },
+
+    'secondary': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': config('SECONDARY_DB_NAME'),
+        'USER': config('SECONDARY_DB_USER'),
+        'PASSWORD': config('SECONDARY_DB_PASSWORD'),
+        'HOST': config('SECONDARY_DB_HOST'),
+        'PORT': config('SECONDARY_DB_PORT'),
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
