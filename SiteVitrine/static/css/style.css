@@ -9435,6 +9435,16 @@ button.bg-dark:focus {
   text-align: center !important;
 }
 
+.team-text:hover{
+  background-color: #D85814 !important;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+.mb-0:hover{
+  color: #FFFFFF;
+}
+
 @media (min-width: 576px) {
   .text-sm-left {
     text-align: left !important;
@@ -9942,18 +9952,18 @@ h6,
   align-items: center;
   justify-content: center;
   color: #FFFFFF;
-  background: #2878EB;
+  background: #202548;
   font-size: 22px;
   transition: .5s;
 }
 
 .testimonial-carousel .owl-nav .owl-prev,
 .testimonial-carousel .owl-nav .owl-next:hover {
-  background: #F14D5D;
+  background: #D85814;
 }
 
 .testimonial-carousel .owl-nav .owl-prev:hover {
-  background: #2878EB;
+  background: #202548;
 }
 
 
@@ -10053,4 +10063,16 @@ h6,
 
 .btn-icon{
   background-color: #D85814 !important;
+}
+
+.service-title{
+  color: #D85814 !important;
+}
+
+.temoignage-title{
+  color: #D85814 !important;
+}
+
+.temoignage-cote{
+  color: #202548 !important;
 }

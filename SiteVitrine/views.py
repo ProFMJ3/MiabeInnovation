@@ -31,3 +31,24 @@ def devenirPartenaire(request):
 
 def faqs(request):
     return render(request, 'pages/faqs.html')
+
+
+# SERVICES VIEWS
+
+def devApplication(request):
+    return render(request, 'pages/devApplication.html')
+
+def webDesignMultimedia(request):
+    return render(request, 'pages/webDesignMultimedia.html')
+
+def communityManagement(request):
+    return render(request, 'pages/communityManagement.html')
+
+def maintenance(request):
+    return render(request, 'pages/maintenance.html')
+
+def automatisationIa(request):
+    return render(request, 'pages/automatisationIa.html')
+
+def automatisationTache(request):
+    return render(request, 'pages/automatisationTache.html')
