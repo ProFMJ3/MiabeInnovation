@@ -52,7 +52,19 @@
                         <a href="{% url 'equipe' %}" class="dropdown-item">Equipe</a>
                     </div>
                 </div>
-                <a href="{% url 'services' %}" class="nav-item nav-link">Services</a>
+                
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
+                    <div class="dropdown-menu m-0">
+                        <a href="{% url 'devApplication' %}" class="dropdown-item">Developpment d'applications</a>
+                        <a href="{% url 'communityManagement' %}" class="dropdown-item">Community management</a>
+                        <a href="{% url 'webDesignMultimedia' %}" class="dropdown-item">Web design & Multimédia</a>
+                        <a href="{% url 'maintenance' %}" class="dropdown-item">Maintenance & installation des logiciels </a>
+                        <a href="{% url 'automatisationIa' %}" class="dropdown-item">Automatisation des systèmes avec IA </a>
+                        <a href="{% url 'automatisationTache' %}" class="dropdown-item">Automatisation des tâches </a>
+                    </div>
+                </div>
+
                 <a href="{% url 'temoignages' %}" class="nav-item nav-link">Témoignages</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Contact</a>
