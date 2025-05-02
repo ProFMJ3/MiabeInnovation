@@ -6424,7 +6424,7 @@ button.bg-light:focus {
 }
 
 .bg-dark {
-  background-color: #120F2D !important;
+  background-color: #202548 !important;
 }
 
 a.bg-dark:hover, a.bg-dark:focus,
@@ -9458,8 +9458,8 @@ button.bg-dark:focus {
 }
 
 @media (min-width: 768px) {
-  .text-md-left {
-    text-align: left !important;
+  .text-md-center {
+    text-align: center !important;
   }
   .text-md-right {
     text-align: right !important;
@@ -9534,7 +9534,7 @@ button.bg-dark:focus {
 }
 
 .text-primary {
-  color: #2878EB !important;
+  color: #D85814 !important;
 }
 
 a.text-primary:hover, a.text-primary:focus {
@@ -9542,7 +9542,7 @@ a.text-primary:hover, a.text-primary:focus {
 }
 
 .text-secondary {
-  color: #F14D5D !important;
+  color: #D85814 !important;
 }
 
 a.text-secondary:hover, a.text-secondary:focus {

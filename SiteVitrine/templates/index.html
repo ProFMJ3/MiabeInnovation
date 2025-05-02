@@ -15,7 +15,7 @@
         <h1 class="text-white display-3 mb-5">Votre vision, notre mission digitale</h1>
         <h1 class="text-white mt-4 mb-4">Transformez votre entreprise avec des solutions technologiques sur-mesure</h1>
         <div class="mx-auto mb-5" style="width: 20%; max-width: 600px;">
-            <a href="" class="btn text-light header-button d-none d-lg-block" style="border-radius: 25px ;">Nos offres</a>
+            <a href="#services" class="btn text-light header-button d-none d-lg-block" style="border-radius: 25px ;">Nos offres</a>
         </div>
     </div>
 </div>
@@ -39,9 +39,9 @@
                 <p>MiabeInnovation est votre centre de solutions et innovations technologiques. Nous concevons et déployons des services digitaux adaptés à vos besoins, en combinant expertise, créativité et performance. Notre mission est de vous accompagner dans votre transformation numérique, en automatisant vos tâches, en développant des systèmes embarqués et en créant des outils sur mesure pour améliorer votre quotidien et celui de vos clients.
                 </p>
                 <div class="row pt-3 mx-0">
-                    <a href="" class="btn text-light about-button d-none d-lg-block mx-4 px-4" style="border-radius: 25px ;">En savoir plus</a>
+                    <a href="{% url 'qui_sommes_nous' %}" class="btn text-light about-button d-none d-lg-block mx-4 px-4" style="border-radius: 25px ;">En savoir plus</a>
                     
-                    <a href="" class="btn text-light about-button d-none d-lg-block mx-4 px-4" style="border-radius: 25px ;">Nous contacter</a>
+                    <a href="{% url 'entree_contact' %}" class="btn text-light about-button d-none d-lg-block mx-4 px-4" style="border-radius: 25px ;">Nous contacter</a>
                 </div>
             </div>
         </div>
@@ -118,7 +118,7 @@
         <div class="col-lg-6">
             <div class="section-title text-center position-relative mb-4">
                 <h6 class="d-inline-block position-relative service-title text-secondary text-uppercase pb-2">Nos Services</h6>
-                <h1 class="display-4">Services en vedette</h1>
+                <h1 class="display-4" id ="services">Services en vedette</h1>
             </div>
         </div>
     </div>
@@ -198,7 +198,7 @@
                     <div class="form-row">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <select class="custom-select bg-light border-0 px-3" style="height: 60px;" disabled>
+                                <select class="custom-select bg-light border-0 px-3" style="height: 60px;">
                                     <option selected>Sélectionner un service</option>
                                     <option value="1">Developpment d'applications</option>
                                     <option value="2">Community management</option>
@@ -434,8 +434,8 @@
                             <i class="fa fa-2x fa-map-marker-alt text-white"></i>
                         </div>
                         <div class="mt-n1">
-                            <h4>Our Location</h4>
-                            <p class="m-0">123 Street, New York, USA</p>
+                            <h4>Notre Adresse</h4>
+                            <p class="m-0"> Lomé, TOGO</p>
                         </div>
                     </div>
                     <div class="d-flex align-items-center mb-5">
@@ -443,8 +443,8 @@
                             <i class="fa fa-2x fa-phone-alt text-white"></i>
                         </div>
                         <div class="mt-n1">
-                            <h4>Call Us</h4>
-                            <p class="m-0">+012 345 6789</p>
+                            <h4>Nous Contacter</h4>
+                            <p class="m-0">+228 93473496/ +228 99682745</p>
                         </div>
                     </div>
                     <div class="d-flex align-items-center">
@@ -452,35 +452,35 @@
                             <i class="fa fa-2x fa-envelope text-white"></i>
                         </div>
                         <div class="mt-n1">
-                            <h4>Email Us</h4>
-                            <p class="m-0">info@example.com</p>
+                            <h4>Joignez-nous</h4>
+                            <p class="m-0">info@miabeinnovation.com</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-7">
                 <div class="section-title position-relative mb-4">
-                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Need Help?</h6>
-                    <h1 class="display-4">Send Us A Message</h1>
+                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">VOUS AVEZ UN PROJET EN TÊTE ?</h6>
+                    <h1 class="display-4">Envoyez nous un message</h1>
                 </div>
                 <div class="contact-form">
                     <form>
                         <div class="row">
                             <div class="col-6 form-group">
-                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your Name" required="required">
+                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Votre Nom" required="required">
                             </div>
                             <div class="col-6 form-group">
-                                <input type="email" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your Email" required="required">
+                                <input type="email" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Votre Mail" required="required">
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Subject" required="required">
+                            <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Objet" required="required">
                         </div>
                         <div class="form-group">
                             <textarea class="form-control border-top-0 border-right-0 border-left-0 p-0" rows="5" placeholder="Message" required="required"></textarea>
                         </div>
                         <div>
-                            <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
+                            <button class="btn btn-primary py-3 px-5" type="submit">Soumettre</button>
                         </div>
                     </form>
                 </div>
