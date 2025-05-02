@@ -1,10 +1,10 @@
 {% load static %}
    <!-- Topbar Start -->
-   <div class="container-fluid bg-dark">
+   <div class="container-fluid bg-dark topbar-sticky">
     <div class="row py-2 px-lg-5">
         <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
             <div class="d-inline-flex align-items-center text-white">
-                <small><i class="fa fa-phone-alt mr-2"></i>++228 93473496/ +228 99682745</small>
+                <small><i class="fa fa-phone-alt mr-2"></i>+228 93473496/ +228 99682745</small>
                 <small class="px-3">|</small>
                 <small><i class="fa fa-envelope mr-2"></i>info@miabeinnovation.com</small>
             </div>
@@ -38,7 +38,7 @@
 
 
 <!-- Navbar Start -->
-<div class="container-fluid p-0">
+<div class="container-fluid p-0 navbar-sticky">
     <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
         <a href="{% url 'accueil' %}" class="navbar-brand ml-lg-3">
             <img src="{% static 'img/logo.png' %}" class="img-fluid" style="width: 150px;" alt="logo de MiabeInnovation">
@@ -63,7 +63,7 @@
                         <a href="{% url 'devApplication' %}" class="dropdown-item">Developpement d'Applications</a>
                         <a href="{% url 'communityManagement' %}" class="dropdown-item">Community Management</a>
                         <a href="{% url 'webDesignMultimedia' %}" class="dropdown-item">Web Design & Multimédia</a>
-                        <a href="{% url 'maintenance' %}" class="dropdown-item">Maintenances & Installations Logicielles </a>
+                        <a href="{% url 'maintenance' %}" class="dropdown-item">Maintenance & Installation logicielle </a>
                         <a href="{% url 'automatisationIa' %}" class="dropdown-item">Automatisation des Systèmes avec IA </a>
                         <a href="{% url 'automatisationTache' %}" class="dropdown-item">Automatisation des Tâches </a>
                     </div>

@@ -39,9 +39,13 @@
                 <p>MiabeInnovation est votre centre de solutions et innovations technologiques. Nous concevons et déployons des services digitaux adaptés à vos besoins, en combinant expertise, créativité et performance. Notre mission est de vous accompagner dans votre transformation numérique, en automatisant vos tâches, en développant des systèmes embarqués et en créant des outils sur mesure pour améliorer votre quotidien et celui de vos clients.
                 </p>
                 <div class="row pt-3 mx-0">
-                    <a href="{% url 'qui_sommes_nous' %}" class="btn text-light about-button d-none d-lg-block mx-4 px-4" style="border-radius: 25px ;">En savoir plus</a>
+                    <a href="{% url 'qui_sommes_nous' %}" class="btn text-light about-button d-none d-lg-block mx-4 px-4" style="border-radius: 25px;">
+                        En savoir plus <i class="fas fa-arrow-right"></i>
+                    </a>
                     
-                    <a href="{% url 'entree_contact' %}" class="btn text-light about-button d-none d-lg-block mx-4 px-4" style="border-radius: 25px ;">Nous contacter</a>
+                    <a href="{% url 'entree_contact' %}" class="btn text-light about-button d-none d-lg-block mx-4 px-4" style="border-radius: 25px;">
+                        Nous contacter <i class="fas fa-phone"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -118,7 +122,9 @@
         <div class="col-lg-6">
             <div class="section-title text-center position-relative mb-4">
                 <h6 class="d-inline-block position-relative service-title text-secondary text-uppercase pb-2">Nos Services</h6>
+
                 <h1 class="display-4" id ="services">Services en vedette</h1>
+
             </div>
         </div>
     </div>
@@ -126,7 +132,7 @@
         <div class="courses-item position-relative">
             <img class="img-fluid" src="{%  static 'img/dev-apps.webp' %}" alt="">
             <div class="courses-text">
-                <h4 class="text-center text-white px-3">Développement d'Applications</h4>
+                <h4 class="text-center text-white px-3">Développement d'applications</h4>
                 <div class="w-100 bg-white text-center p-4" >
                     <a class="btn btn-primary" href="{% url 'devApplication' %}">Détails</a>
                 </div>
