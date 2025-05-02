@@ -3,9 +3,31 @@ from django.shortcuts import render, redirect
 # Create your views here.
 
 def home(request):
-<<<<<<< HEAD
-=======
- 
->>>>>>> 8b5e379db7545269d2eac9e513a326f7c69cdc3f
     return render(request, 'index.html')
 
+def quiSommesNous(request):
+    return render(request, 'pages/quiSommesNous.html')
+
+
+def equipe(request):
+    return render(request, 'pages/equipe.html')
+
+
+def services(request):
+    return render(request, 'pages/services.html')
+
+
+def temoignages(request):
+    return render(request, 'pages/temoignages.html')
+
+
+def entreeContact(request):
+    return render(request, 'pages/entreeContact.html')
+
+
+def devenirPartenaire(request):
+    return render(request, 'pages/devenirPartenaire.html')
+
+
+def faqs(request):
+    return render(request, 'pages/faqs.html')
