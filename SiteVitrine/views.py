@@ -12,6 +12,9 @@ def quiSommesNous(request):
 def equipe(request):
     return render(request, 'pages/equipe.html')
 
+def blog (request):
+    return render(request, 'pages/blog.html')
+
 
 def services(request):
     return render(request, 'pages/services.html')
