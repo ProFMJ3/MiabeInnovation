@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect
 # Create your views here.
 
 def home(request):
-    return render(request, 'index.html')
+    return render(request, 'index.html', {'active_page': 'accueil'})
 
 def quiSommesNous(request):
     return render(request, 'pages/quiSommesNous.html')
@@ -18,19 +18,19 @@ def services(request):
 
 
 def temoignages(request):
-    return render(request, 'pages/temoignages.html')
+    return render(request, 'pages/temoignages.html', {'active_page': 'temoignages'})
 
 
 def entreeContact(request):
-    return render(request, 'pages/entreeContact.html')
+    return render(request, 'pages/entreeContact.html', {'active_page': 'entreeContact'})
 
 
 def devenirPartenaire(request):
-    return render(request, 'pages/devenirPartenaire.html')
+    return render(request, 'pages/devenirPartenaire.html', {'active_page': 'devenirPartenaire'})	
 
 
 def faqs(request):
-    return render(request, 'pages/faqs.html')
+    return render(request, 'pages/faqs.html', {'active_page': 'faqs'})
 
 
 # SERVICES VIEWS

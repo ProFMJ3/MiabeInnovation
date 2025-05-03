@@ -1,133 +1,412 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block body %}
+<!-- Hero Section - Background Only -->
+<div class="mi-hero-bg" style="background: url('{% static 'img/bureau.jpg' %}') no-repeat center center; background-size: cover; height: 60vh;">
+</div>
 
-
-    
-
-
-    
-
-    <!-- Full Screen Search Start -->
-    <div class="modal fade" id="searchModal" tabindex="-1">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
-                <div class="modal-header border-0">
-                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body d-flex align-items-center justify-content-center">
-                    <div class="input-group" style="max-width: 600px;">
-                        <input type="text" class="form-control bg-transparent border-primary p-3" placeholder="Type search keyword">
-                        <button class="btn btn-primary px-4"><i class="bi bi-search"></i></button>
+<!-- Content Section -->
+<div class="mi-contact-container" style="margin-top: -150px;">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Contact Form -->
+            <div class="col-lg-7">
+                <div class="mi-form-card animate__animated animate__fadeInUp">
+                    <div class="mi-form-header">
+                        <h2 class="mi-form-title text-white"><i class="fas fa-paper-plane me-2"></i>Envoyez-nous un message</h2>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Full Screen Search End -->
-
-
-    <!-- Contact Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-                <h5 class="fw-bold text-primary text-uppercase">Contact Us</h5>
-                <h1 class="mb-0">If You Have Any Query, Feel Free To Contact Us</h1>
-            </div>
-            <div class="row g-5 mb-5">
-                <div class="col-lg-4">
-                    <div class="d-flex align-items-center wow fadeIn" data-wow-delay="0.1s">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
-                            <i class="fa fa-phone-alt text-white"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="mb-2">Call to ask any question</h5>
-                            <h4 class="text-primary mb-0">+012 345 6789</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="d-flex align-items-center wow fadeIn" data-wow-delay="0.4s">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
-                            <i class="fa fa-envelope-open text-white"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="mb-2">Email to get free quote</h5>
-                            <h4 class="text-primary mb-0">info@example.com</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="d-flex align-items-center wow fadeIn" data-wow-delay="0.8s">
-                        <div class="bg-primary d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
-                            <i class="fa fa-map-marker-alt text-white"></i>
-                        </div>
-                        <div class="ps-4">
-                            <h5 class="mb-2">Visit our office</h5>
-                            <h4 class="text-primary mb-0">123 Street, NY, USA</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
-                    <form>
+                    <form method="post" class="mi-contact-form">
+                        {% csrf_token %}
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Your Name" style="height: 55px;">
+                                <div class="mi-input-group">
+                                    <input type="text" id="nom" name="nom" class="mi-form-input" required>
+                                    <label for="nom" class="mi-input-label">Nom</label>
+                                    <div class="mi-input-bar"></div>
+                                </div>
                             </div>
                             <div class="col-md-6">
-                                <input type="email" class="form-control border-0 bg-light px-4" placeholder="Your Email" style="height: 55px;">
+                                <div class="mi-input-group">
+                                    <input type="text" id="prenom" name="prenom" class="mi-form-input" required>
+                                    <label for="prenom" class="mi-input-label">Prénom</label>
+                                    <div class="mi-input-bar"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mi-input-group">
+                                    <input type="email" id="email" name="email" class="mi-form-input" required>
+                                    <label for="email" class="mi-input-label">Email</label>
+                                    <div class="mi-input-bar"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mi-input-group">
+                                    <input type="tel" id="telephone" name="telephone" class="mi-form-input">
+                                    <label for="telephone" class="mi-input-label">Téléphone</label>
+                                    <div class="mi-input-bar"></div>
+                                </div>
                             </div>
                             <div class="col-12">
-                                <input type="text" class="form-control border-0 bg-light px-4" placeholder="Subject" style="height: 55px;">
+                                <div class="mi-input-group">
+                                    <select id="sujet" name="sujet" class="mi-form-select" required>
+                                        <option value="" selected disabled hidden></option>
+                                        <option value="support">Support technique</option>
+                                        <option value="devis">Demande de devis</option>
+                                        <option value="partenariat">Partenariat</option>
+                                        <option value="autre">Autre demande</option>
+                                    </select>
+                                    <label for="sujet" class="mi-select-label">Sujet</label>
+                                    <div class="mi-select-arrow"></div>
+                                </div>
                             </div>
                             <div class="col-12">
-                                <textarea class="form-control border-0 bg-light px-4 py-3" rows="4" placeholder="Message"></textarea>
+                                <div class="mi-input-group">
+                                    <textarea id="message" name="message" class="mi-form-textarea" required></textarea>
+                                    <label for="message" class="mi-textarea-label">Message</label>
+                                </div>
                             </div>
                             <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                <button type="submit" class="mi-submit-btn">
+                                    <span>Envoyer</span>
+                                    <i class="fas fa-paper-plane ms-2"></i>
+                                </button>
                             </div>
                         </div>
                     </form>
                 </div>
-                <div class="col-lg-6 wow slideInUp" data-wow-delay="0.6s">
-                    <iframe class="position-relative rounded w-100 h-100"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3001156.4288297426!2d-78.01371936852176!3d42.72876761954724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4ccc4bf0f123a5a9%3A0xddcfc6c1de189567!2sNew%20York%2C%20USA!5e0!3m2!1sen!2sbd!4v1603794290143!5m2!1sen!2sbd"
-                        frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
-                        tabindex="0"></iframe>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-lg-5">
+                <div class="mi-info-card animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="mi-info-header">
+                        <h2 class="mi-info-title text-white"><i class="fas fa-info-circle me-2"></i>Nos coordonnées</h2>
+                    </div>
+                    <div class="mi-info-content">
+                        <div class="mi-contact-item">
+                            <div class="mi-contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="mi-contact-category">Adresse</h3>
+                                <p class="mi-contact-detail">123 Avenue des Technologies<br>Lomé, Togo</p>
+                            </div>
+                        </div>
+                        <div class="mi-contact-item">
+                            <div class="mi-contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="mi-contact-category">Email</h3>
+                                <p class="mi-contact-detail">
+                                    <a href="mailto:info@miabeinnovation.com?subject=Demande%20de%20renseignements&body=Bonjour%2C%0A%0AJe%20souhaite%20en%20savoir%20plus%20sur%20vos%20services.%20Merci%20de%20me%20recontacter.%0A%0ACordialement%2C" class="mi-email-link">
+                                        info@miabeinnovation.com
+                                    </a>
+                                </p>
+                                
+                                <small>Envoyez-nous un email pour toute
+                                    demande générale, y compris les
+                                    opportunites de marketing et de
+                                    partenariat.</small>
+                            </div>
+                        </div>
+                        <div class="mi-contact-item">
+                            <div class="mi-contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h3 class="mi-contact-category">Téléphone</h3>
+                                <p class="mi-contact-detail">(+228) 93 47 34 96 / 99 68 27 45</p>
+                                <small>24/7 Appelez-nous pour parler à un
+                                    membre de notre equipe. Nous sommes
+                                    toujours ravis de vous aider.
+                                    
+                                    (+228) 93 47 34 96 / 99 68 27 45</small>
+                            </div>
+                        </div>
+                        <div class="mi-contact-item">
+                            <div class="mi-contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h3 class="mi-contact-category">Horaires</h3>
+                                <p class="mi-contact-detail">24 H / 7j/7</p>
+                            </div>
+                        </div>
+                        <div class="mi-social-links">
+                            <a href="#" class="mi-social-link"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="mi-social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="mi-social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="mi-social-link"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Contact End -->
+</div>
 
+<style>
+    /* Variables */
+    :root {
+        --mi-blue-night: #202548;
+        --mi-orange: #D85814;
+        --mi-white: #ffffff;
+        --mi-light-bg: rgba(255, 255, 255, 0.9);
+    }
 
-    <!-- Vendor Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5 mb-5">
-            <div class="bg-white">
-                <div class="owl-carousel vendor-carousel">
-                    <img src="img/vendor-1.jpg" alt="">
-                    <img src="img/vendor-2.jpg" alt="">
-                    <img src="img/vendor-3.jpg" alt="">
-                    <img src="img/vendor-4.jpg" alt="">
-                    <img src="img/vendor-5.jpg" alt="">
-                    <img src="img/vendor-6.jpg" alt="">
-                    <img src="img/vendor-7.jpg" alt="">
-                    <img src="img/vendor-8.jpg" alt="">
-                    <img src="img/vendor-9.jpg" alt="">
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Vendor End -->
-    
+    /* Background Hero */
+    .mi-hero-bg {
+        position: relative;
+        z-index: 1;
+    }
 
-    
+    /* Contact Container */
+    .mi-contact-container {
+        position: relative;
+        z-index: 2;
+    }
 
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+    /* Cards */
+    .mi-form-card, .mi-info-card {
+        background: var(--mi-light-bg);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
 
+    .mi-form-card:hover, .mi-info-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
 
-    {% endblock %}
+    /* Headers */
+    .mi-form-header, .mi-info-header {
+        background: var(--mi-blue-night);
+        padding: 25px;
+        text-align: center;
+    }
+
+    .mi-form-title, .mi-info-title {
+        font-weight: 600;
+        margin: 0;
+        font-size: 1.5rem;
+    }
+
+    /* Form Elements */
+    .mi-contact-form {
+        padding: 30px;
+    }
+
+    .mi-input-group {
+        position: relative;
+        margin-bottom: 25px;
+    }
+
+    .mi-form-input, .mi-form-select, .mi-form-textarea {
+        width: 100%;
+        padding: 15px 0 5px 0;
+        border: none;
+        border-bottom: 2px solid #ddd;
+        background: transparent;
+        font-size: 16px;
+        transition: all 0.3s ease;
+    }
+
+    .mi-form-textarea {
+        min-height: 100px;
+        resize: none;
+    }
+
+    .mi-input-label, .mi-select-label, .mi-textarea-label {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        color: #777;
+        font-size: 16px;
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+
+    .mi-form-input:focus, .mi-form-select:focus, .mi-form-textarea:focus {
+        outline: none;
+        border-color: var(--mi-orange);
+    }
+
+    .mi-form-input:focus + label,
+    .mi-form-input:valid + label,
+    .mi-form-select:focus + label,
+    .mi-form-select:valid + label,
+    .mi-form-textarea:focus + label,
+    .mi-form-textarea:valid + label {
+        top: -5px;
+        font-size: 12px;
+        color: var(--mi-orange);
+    }
+
+    .mi-input-bar {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--mi-orange);
+        transition: width 0.3s ease;
+    }
+
+    .mi-form-input:focus ~ .mi-input-bar,
+    .mi-form-select:focus ~ .mi-input-bar {
+        width: 100%;
+    }
+
+    /* Select Dropdown */
+    .mi-form-select {
+        appearance: none;
+        cursor: pointer;
+    }
+
+    .mi-select-arrow {
+        position: absolute;
+        right: 0;
+        bottom: 10px;
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid #777;
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+
+    .mi-form-select:focus ~ .mi-select-arrow {
+        border-top-color: var(--mi-orange);
+    }
+
+    /* Hover effect for dropdown options */
+    .mi-form-select option:hover {
+        background-color: var(--mi-orange) !important;
+        color: white !important;
+    }
+
+    /* Submit Button */
+    .mi-submit-btn {
+        background: var(--mi-blue-night);
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.4s ease;
+        width: 100%;
+    }
+
+    .mi-submit-btn:hover {
+        background: var(--mi-orange);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(216, 88, 20, 0.3);
+    }
+
+    /* Contact Info */
+    .mi-info-content {
+        padding: 30px;
+    }
+
+    .mi-contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 25px;
+        transition: all 0.3s ease;
+    }
+
+    .mi-contact-item:hover {
+        transform: translateX(5px);
+    }
+
+    .mi-contact-icon {
+        background: var(--mi-blue-night);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+    }
+
+    .mi-contact-item:hover .mi-contact-icon {
+        background: var(--mi-orange);
+        transform: rotate(15deg);
+    }
+
+    .mi-contact-category {
+        color: var(--mi-blue-night);
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+
+    .mi-contact-detail {
+        color: #555;
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    /* Social Links */
+    .mi-social-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .mi-social-link {
+        color: var(--mi-blue-night);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        transition: all 0.3s ease;
+        border: 1px solid var(--mi-blue-night);
+    }
+
+    .mi-social-link:hover {
+        background: var(--mi-blue-night);
+        color: white;
+        transform: translateY(-5px);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+        .mi-hero-bg {
+            height: 40vh;
+        }
+        .mi-contact-container {
+            margin-top: -100px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .mi-hero-bg {
+            height: 30vh;
+        }
+    }
+</style>
+
+<!-- Add these in your base template or head section -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+
+{% endblock %}
