@@ -1,0 +1,1002 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body%}
+<!-- Hero Section with Particle Animation -->
+<div class="mi-partner-hero">
+    <canvas id="mi-particle-canvas"></canvas>
+    <div class="mi-hero-content">
+        <h1 class="mi-hero-title animate__animated animate__fadeInDown">Devenir Partenaire</h1>
+        <p class="mi-hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">Rejoignez notre écosystème d'innovation et propulsez votre business</p>
+        <div class="mi-scroll-hint animate__animated animate__bounce animate__infinite animate__slow">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+</div>
+
+<!-- Partnership Benefits -->
+<section class="mi-benefits-section">
+    <div class="container">
+        <div class="mi-section-header">
+            <h2>Pourquoi devenir partenaire ?</h2>
+            <p>Découvrez les avantages exclusifs de notre programme de partenariat</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="mi-benefit-card">
+                    <div class="mi-benefit-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Croissance Mutuelle</h3>
+                    <p>Accès à notre réseau de clients et opportunités de co-développement</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mi-benefit-card">
+                    <div class="mi-benefit-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Avantages Exclusifs</h3>
+                    <p>Tarifs préférentiels, formations gratuites et support prioritaire</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mi-benefit-card">
+                    <div class="mi-benefit-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Visibilité Accrue</h3>
+                    <p>Mise en avant sur nos plateformes et événements</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Existing Partners Gallery -->
+<section class="mi-partners-gallery">
+    <div class="container">
+        <div class="mi-section-header">
+            <h2>Ils nous font déjà confiance</h2>
+            <p>Rejoignez notre réseau de partenaires prestigieux</p>
+        </div>
+
+        <div class="mi-partners-slider">
+            <div class="mi-partner-logo">
+                <img src="{% static 'img/partners/partner1.png' %}" alt="Logo Partenaire 1">
+            </div>
+            <div class="mi-partner-logo">
+                <img src="{% static 'img/partners/partner2.png' %}" alt="Logo Partenaire 2">
+            </div>
+            <div class="mi-partner-logo">
+                <img src="{% static 'img/partners/partner3.png' %}" alt="Logo Partenaire 3">
+            </div>
+            <div class="mi-partner-logo">
+                <img src="{% static 'img/partners/partner4.png' %}" alt="Logo Partenaire 4">
+            </div>
+            <div class="mi-partner-logo">
+                <img src="{% static 'img/partners/partner5.png' %}" alt="Logo Partenaire 5">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Partnership Form Section -->
+<section class="mi-partner-form-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="mi-form-intro">
+                    <h2>Formulaire de Partenariat</h2>
+                    <p>Remplissez ce formulaire pour initier notre collaboration. Notre équipe vous contactera sous 24h.</p>
+                    
+                    <div class="mi-process-steps">
+                        <div class="mi-process-step">
+                            <div class="mi-step-number">1</div>
+                            <div class="mi-step-content">
+                                <h4>Évaluation</h4>
+                                <p>Analyse de compatibilité avec nos valeurs</p>
+                            </div>
+                        </div>
+                        <div class="mi-process-step">
+                            <div class="mi-step-number">2</div>
+                            <div class="mi-step-content">
+                                <h4>Entretien</h4>
+                                <p>Échange avec notre équipe partenariats</p>
+                            </div>
+                        </div>
+                        <div class="mi-process-step">
+                            <div class="mi-step-number">3</div>
+                            <div class="mi-step-content">
+                                <h4>Signature</h4>
+                                <p>Mise en place du partenariat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="mi-partner-form-container">
+                    <form class="mi-partner-form">
+                        <div class="mi-form-group">
+                            <input type="text" id="company-name" required>
+                            <label for="company-name">Nom de l'entreprise</label>
+                            <div class="mi-input-underline"></div>
+                        </div>
+                        
+                        <div class="mi-form-group">
+                            <input type="text" id="contact-person" required>
+                            <label for="contact-person">Personne de contact</label>
+                            <div class="mi-input-underline"></div>
+                        </div>
+                        
+                        <div class="mi-form-group">
+                            <input type="email" id="company-email" required>
+                            <label for="company-email">Email professionnel</label>
+                            <div class="mi-input-underline"></div>
+                        </div>
+                        
+                        <div class="mi-form-group">
+                            <input type="tel" id="company-phone">
+                            <label for="company-phone">Téléphone</label>
+                            <div class="mi-input-underline"></div>
+                        </div>
+                        
+                        <div class="mi-form-group">
+                            <select id="partnership-type" required>
+                                <option value="" disabled selected></option>
+                                <option value="technology">Partenaire Technologique</option>
+                                <option value="reseller">Partenaire Revendeur</option>
+                                <option value="strategic">Partenaire Stratégique</option>
+                                <option value="other">Autre</option>
+                            </select>
+                            <label for="partnership-type">Type de partenariat</label>
+                            <div class="mi-select-arrow"></div>
+                        </div>
+                        
+                        <div class="mi-form-group">
+                            <textarea id="collaboration-ideas" rows="4" required></textarea>
+                            <label for="collaboration-ideas">Idées de collaboration</label>
+                        </div>
+                        
+                        <button type="submit" class="mi-submit-btn">
+                            <span>Envoyer la demande</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials from Partners -->
+<section class="mi-partner-testimonials">
+    <div class="container">
+        <div class="mi-section-header">
+            <h2>Témoignages de nos partenaires</h2>
+            <p>Découvrez ce que disent nos partenaires actuels</p>
+        </div>
+        
+        <div class="mi-testimonial-slider">
+            <div class="mi-testimonial-card">
+                <div class="mi-testimonial-content">
+                    <div class="mi-quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p>"Notre partenariat avec Miabe Innovation a transformé notre approche technologique et boosté nos revenus de 40% en 6 mois."</p>
+                </div>
+                <div class="mi-testimonial-author">
+                    <img src="{% static 'img/testimonials/partner1.jpg' %}" alt="Photo partenaire">
+                    <div>
+                        <h4>Jean Koffi</h4>
+                        <p>CEO, TechSolutions Togo</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mi-testimonial-card">
+                <div class="mi-testimonial-content">
+                    <div class="mi-quote-icon">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p>"L'accompagnement et l'expertise de Miabe ont été déterminants dans le succès de notre projet d'automatisation."</p>
+                </div>
+                <div class="mi-testimonial-author">
+                    <img src="{% static 'img/testimonials/partner2.jpg' %}" alt="Photo partenaire">
+                    <div>
+                        <h4>Amina Diallo</h4>
+                        <p>Directrice Marketing, AfriMarket</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Partnership Levels -->
+<section class="mi-partner-levels">
+    <div class="container">
+        <div class="mi-section-header">
+            <h2>Nos Niveaux de Partenariat</h2>
+            <p>Choisissez la formule qui correspond à vos ambitions</p>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="mi-level-card">
+                    <div class="mi-level-header">
+                        <h3>Silver</h3>
+                        <div class="mi-level-price">Gratuit</div>
+                    </div>
+                    <ul class="mi-level-features">
+                        <li><i class="fas fa-check"></i> Listing sur notre site</li>
+                        <li><i class="fas fa-check"></i> Newsletter mensuelle</li>
+                        <li><i class="fas fa-check"></i> Accès aux webinars</li>
+                        <li class="na"><i class="fas fa-times"></i> Support dédié</li>
+                    </ul>
+                    <button class="mi-level-btn">Démarrez</button>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="mi-level-card featured">
+                    <div class="mi-level-badge">Populaire</div>
+                    <div class="mi-level-header">
+                        <h3>Gold</h3>
+                        <div class="mi-level-price">Sur devis</div>
+                    </div>
+                    <ul class="mi-level-features">
+                        <li><i class="fas fa-check"></i> Tous les avantages Silver</li>
+                        <li><i class="fas fa-check"></i> Support prioritaire</li>
+                        <li><i class="fas fa-check"></i> Formation annuelle</li>
+                        <li><i class="fas fa-check"></i> Co-marketing</li>
+                    </ul>
+                    <button class="mi-level-btn">Devenir Gold</button>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="mi-level-card">
+                    <div class="mi-level-header">
+                        <h3>Platinum</h3>
+                        <div class="mi-level-price">Sur devis</div>
+                    </div>
+                    <ul class="mi-level-features">
+                        <li><i class="fas fa-check"></i> Tous les avantages Gold</li>
+                        <li><i class="fas fa-check"></i> Accès VIP aux événements</li>
+                        <li><i class="fas fa-check"></i> Développements sur mesure</li>
+                        <li><i class="fas fa-check"></i> Compte manager dédié</li>
+                    </ul>
+                    <button class="mi-level-btn">Contactez-nous</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    :root {
+        --mi-blue-night: #202548;
+        --mi-orange: #D85814;
+        --mi-light: #f8f9fa;
+        --mi-dark: #1a1a1a;
+        --mi-gray: #6c757d;
+    }
+
+    /* Hero Section */
+    .mi-partner-hero {
+        height: 80vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    #mi-particle-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--mi-blue-night);
+    }
+
+    .mi-hero-content {
+        position: relative;
+        z-index: 10;
+        max-width: 800px;
+        padding: 0 20px;
+    }
+
+    .mi-hero-title {
+        font-size: 4.5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    }
+
+    .mi-hero-subtitle {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+    }
+
+    .mi-scroll-hint {
+        font-size: 2.5rem;
+        margin-top: 4rem;
+        animation-duration: 2s;
+    }
+
+    /* Benefits Section */
+    .mi-benefits-section {
+        padding: 100px 0;
+        background: white;
+    }
+
+    .mi-section-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .mi-section-header h2 {
+        color: var(--mi-blue-night);
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .mi-section-header p {
+        color: var(--mi-gray);
+        font-size: 1.2rem;
+    }
+
+    .mi-benefit-card {
+        background: white;
+        border-radius: 15px;
+        padding: 40px 30px;
+        height: 100%;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .mi-benefit-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: var(--mi-orange);
+        transition: all 0.4s ease;
+        z-index: -1;
+    }
+
+    .mi-benefit-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+
+    .mi-benefit-card:hover::before {
+        height: 100%;
+    }
+
+    .mi-benefit-icon {
+        font-size: 2.5rem;
+        color: var(--mi-orange);
+        margin-bottom: 25px;
+        transition: all 0.4s ease;
+    }
+
+    .mi-benefit-card:hover .mi-benefit-icon {
+        color: white;
+        transform: rotate(15deg) scale(1.2);
+    }
+
+    .mi-benefit-card h3 {
+        color: var(--mi-blue-night);
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        transition: all 0.4s ease;
+    }
+
+    .mi-benefit-card p {
+        color: var(--mi-gray);
+        transition: all 0.4s ease;
+    }
+
+    .mi-benefit-card:hover h3,
+    .mi-benefit-card:hover p {
+        color: white;
+    }
+
+    /* Partners Gallery */
+    .mi-partners-gallery {
+        padding: 80px 0;
+        background: var(--mi-light);
+    }
+
+    .mi-partners-slider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .mi-partner-logo {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+    }
+
+    .mi-partner-logo:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .mi-partner-logo img {
+        height: 60px;
+        width: auto;
+        filter: grayscale(100%);
+        opacity: 0.7;
+        transition: all 0.3s ease;
+    }
+
+    .mi-partner-logo:hover img {
+        filter: grayscale(0%);
+        opacity: 1;
+    }
+
+    /* Form Section */
+    .mi-partner-form-section {
+        padding: 100px 0;
+        background: white;
+    }
+
+    .mi-form-intro {
+        padding-right: 40px;
+    }
+
+    .mi-form-intro h2 {
+        color: var(--mi-blue-night);
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+    }
+
+    .mi-form-intro p {
+        color: var(--mi-gray);
+        margin-bottom: 40px;
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+
+    .mi-process-steps {
+        margin-top: 50px;
+    }
+
+    .mi-process-step {
+        display: flex;
+        margin-bottom: 30px;
+        align-items: flex-start;
+    }
+
+    .mi-step-number {
+        background: var(--mi-orange);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+
+    .mi-step-content h4 {
+        color: var(--mi-blue-night);
+        margin-bottom: 5px;
+    }
+
+    .mi-step-content p {
+        color: var(--mi-gray);
+        margin: 0;
+    }
+
+    .mi-partner-form-container {
+        background: white;
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    }
+
+    .mi-partner-form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .mi-form-group {
+        position: relative;
+    }
+
+    .mi-form-group input,
+    .mi-form-group select,
+    .mi-form-group textarea {
+        width: 100%;
+        padding: 15px 0;
+        border: none;
+        border-bottom: 2px solid #eee;
+        font-size: 16px;
+        background: transparent;
+        transition: all 0.3s ease;
+    }
+
+    .mi-form-group textarea {
+        min-height: 100px;
+        resize: vertical;
+    }
+
+    .mi-form-group label {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        color: var(--mi-gray);
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+
+    .mi-form-group input:focus,
+    .mi-form-group select:focus,
+    .mi-form-group textarea:focus {
+        outline: none;
+        border-bottom-color: var(--mi-orange);
+    }
+
+    .mi-form-group input:focus + label,
+    .mi-form-group input:not(:placeholder-shown) + label,
+    .mi-form-group select:focus + label,
+    .mi-form-group select:not([value=""]) + label,
+    .mi-form-group textarea:focus + label,
+    .mi-form-group textarea:not(:placeholder-shown) + label {
+        top: -10px;
+        font-size: 12px;
+        color: var(--mi-orange);
+    }
+
+    .mi-input-underline {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--mi-orange);
+        transition: width 0.3s ease;
+    }
+
+    .mi-form-group input:focus ~ .mi-input-underline {
+        width: 100%;
+    }
+
+    .mi-select-arrow {
+        position: absolute;
+        right: 0;
+        bottom: 15px;
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid var(--mi-gray);
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+
+    .mi-form-group select:focus ~ .mi-select-arrow {
+        border-top-color: var(--mi-orange);
+    }
+
+    .mi-submit-btn {
+        background: var(--mi-blue-night);
+        color: white;
+        border: none;
+        padding: 18px 30px;
+        border-radius: 50px;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition: all 0.4s ease;
+        margin-top: 20px;
+    }
+
+    .mi-submit-btn:hover {
+        background: var(--mi-orange);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(216, 88, 20, 0.3);
+    }
+
+    /* Testimonials */
+    .mi-partner-testimonials {
+        padding: 100px 0;
+        background: var(--mi-light);
+    }
+
+    .mi-testimonial-slider {
+        display: flex;
+        gap: 30px;
+        overflow-x: auto;
+        padding: 20px 0;
+    }
+
+    .mi-testimonial-card {
+        background: white;
+        border-radius: 15px;
+        padding: 40px;
+        min-width: 450px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .mi-testimonial-content {
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+    .mi-quote-icon {
+        color: var(--mi-orange);
+        opacity: 0.2;
+        font-size: 3rem;
+        position: absolute;
+        top: -15px;
+        left: -10px;
+    }
+
+    .mi-testimonial-content p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--mi-dark);
+        font-style: italic;
+        position: relative;
+    }
+
+    .mi-testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .mi-testimonial-author img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .mi-testimonial-author h4 {
+        color: var(--mi-blue-night);
+        margin-bottom: 5px;
+    }
+
+    .mi-testimonial-author p {
+        color: var(--mi-gray);
+        margin: 0;
+        font-size: 0.9rem;
+    }
+
+    /* Partnership Levels */
+    .mi-partner-levels {
+        padding: 100px 0;
+        background: white;
+    }
+
+    .mi-level-card {
+        background: white;
+        border-radius: 15px;
+        padding: 0;
+        height: 100%;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .mi-level-card.featured {
+        transform: scale(1.05);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+
+    .mi-level-badge {
+        position: absolute;
+        top: 20px;
+        right: -30px;
+        background: var(--mi-orange);
+        color: white;
+        padding: 5px 30px;
+        transform: rotate(45deg);
+        font-weight: bold;
+        font-size: 0.8rem;
+    }
+
+    .mi-level-header {
+        padding: 30px;
+        background: var(--mi-blue-night);
+        color: white;
+        text-align: center;
+    }
+
+    .mi-level-header h3 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .mi-level-price {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .mi-level-features {
+        padding: 30px;
+        list-style: none;
+    }
+
+    .mi-level-features li {
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .mi-level-features li i.fa-check {
+        color: var(--mi-orange);
+    }
+
+    .mi-level-features li.na {
+        opacity: 0.5;
+    }
+
+    .mi-level-btn {
+        display: block;
+        width: calc(100% - 60px);
+        margin: 0 30px 30px;
+        padding: 15px;
+        border: 2px solid var(--mi-blue-night);
+        background: white;
+        color: var(--mi-blue-night);
+        border-radius: 50px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .mi-level-card.featured .mi-level-btn {
+        background: var(--mi-orange);
+        color: white;
+        border-color: var(--mi-orange);
+    }
+
+    .mi-level-btn:hover {
+        background: var(--mi-blue-night);
+        color: white;
+    }
+
+    .mi-level-card.featured .mi-level-btn:hover {
+        background: var(--mi-blue-night);
+        border-color: var(--mi-blue-night);
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+        .mi-hero-title {
+            font-size: 3.5rem;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .mi-hero-title {
+            font-size: 3rem;
+        }
+        
+        .mi-form-intro {
+            padding-right: 0;
+            margin-bottom: 50px;
+        }
+        
+        .mi-level-card.featured {
+            transform: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .mi-hero-title {
+            font-size: 2.5rem;
+        }
+        
+        .mi-hero-subtitle {
+            font-size: 1.3rem;
+        }
+        
+        .mi-partners-slider {
+            gap: 20px;
+        }
+        
+        .mi-partner-logo {
+            padding: 15px;
+        }
+        
+        .mi-partner-logo img {
+            height: 40px;
+        }
+        
+        .mi-testimonial-card {
+            min-width: 300px;
+            padding: 30px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .mi-hero-title {
+            font-size: 2.2rem;
+        }
+        
+        .mi-benefit-card {
+            padding: 30px 20px;
+        }
+        
+        .mi-partner-form-container {
+            padding: 30px 20px;
+        }
+    }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Particle Animation
+    const canvas = document.getElementById('mi-particle-canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    let particles = [];
+    const particleCount = window.innerWidth < 768 ? 30 : 80;
+    
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 3 + 1;
+            this.speedX = Math.random() * 1 - 0.5;
+            this.speedY = Math.random() * 1 - 0.5;
+            this.color = `rgba(255,255,255,${Math.random() * 0.5 + 0.1})`;
+        }
+        
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+            
+            if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+        }
+        
+        draw() {
+            ctx.fillStyle = this.color;
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fill();
+        }
+    }
+    
+    function init() {
+        particles = [];
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+    }
+    
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        for (let i = 0; i < particles.length; i++) {
+            particles[i].update();
+            particles[i].draw();
+            
+            for (let j = i; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < 100) {
+                    ctx.strokeStyle = `rgba(255,255,255,${1 - distance/100})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.beginPath();
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.stroke();
+                }
+            }
+        }
+        
+        requestAnimationFrame(animate);
+    }
+    
+    init();
+    animate();
+    
+    window.addEventListener('resize', function() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        init();
+    });
+    
+    // Form Animation
+    const formGroups = document.querySelectorAll('.mi-form-group');
+    formGroups.forEach(group => {
+        const input = group.querySelector('input, select, textarea');
+        
+        if (input.value) {
+            input.nextElementSibling.style.top = '-10px';
+            input.nextElementSibling.style.fontSize = '12px';
+            input.nextElementSibling.style.color = 'var(--mi-orange)';
+        }
+        
+        input.addEventListener('focus', function() {
+            this.nextElementSibling.style.top = '-10px';
+            this.nextElementSibling.style.fontSize = '12px';
+            this.nextElementSibling.style.color = 'var(--mi-orange)';
+            
+            if (this.tagName === 'SELECT' && this.value === '') {
+                this.nextElementSibling.style.color = 'var(--mi-gray)';
+            }
+        });
+        
+        input.addEventListener('blur', function() {
+            if (this.value === '' && this.tagName !== 'SELECT') {
+                this.nextElementSibling.style.top = '15px';
+                this.nextElementSibling.style.fontSize = '16px';
+                this.nextElementSibling.style.color = 'var(--mi-gray)';
+            }
+        });
+    });
+    
+    // Testimonial Slider
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+    const slider = document.querySelector('.mi-testimonial-slider');
+    
+    slider.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+    });
+    
+    slider.addEventListener('mouseleave', () => {
+        isDown = false;
+    });
+    
+    slider.addEventListener('mouseup', () => {
+        isDown = false;
+    });
+    
+    slider.addEventListener('mousemove', (e) => {
+        if(!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - slider.offsetLeft;
+        const walk = (x - startX) * 2;
+        slider.scrollLeft = scrollLeft - walk;
+    });
+});
+</script>
+
+{% endblock %}

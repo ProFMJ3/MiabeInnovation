@@ -1,0 +1,628 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<!-- Hero Section with Animated Background -->
+<div class="mi-faq-hero">
+    <div class="mi-hero-overlay"></div>
+    <div class="mi-hero-content">
+        <h1 class="mi-hero-title animate__animated animate__fadeInDown">FAQ Premium</h1>
+        <p class="mi-hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">Solutions clés en main pour vos besoins numériques</p>
+        <div class="mi-scroll-down animate__animated animate__bounce animate__infinite animate__slow">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+</div>
+
+<!-- Floating Service Tabs -->
+<div class="mi-service-tabs-container">
+    <div class="container">
+        <div class="mi-service-tabs">
+            <div class="mi-service-tab active" data-category="all">Tous</div>
+            <div class="mi-service-tab" data-category="community">Community</div>
+            <div class="mi-service-tab" data-category="design">Design</div>
+            <div class="mi-service-tab" data-category="dev">Développement</div>
+            <div class="mi-service-tab" data-category="maintenance">Maintenance</div>
+            <div class="mi-service-tab" data-category="ia">IA & Automatisation</div>
+        </div>
+    </div>
+</div>
+
+<!-- FAQ Main Content -->
+<section class="mi-faq-main">
+    <div class="container">
+        <div class="row">
+            <!-- FAQ Column -->
+            <div class="col-lg-8">
+                <!-- Search Box -->
+                <div class="mi-search-box animate__animated animate__fadeIn">
+                    <input type="text" placeholder="Rechercher dans les questions...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+
+                <!-- FAQ Accordion -->
+                <div class="mi-accordion">
+                    <!-- Community Management -->
+                    <div class="mi-category-header" data-category="community">
+                        <i class="fas fa-users"></i>
+                        <h2>Community Management</h2>
+                    </div>
+
+                    <div class="mi-accordion-item" data-category="community">
+                        <div class="mi-accordion-header">
+                            <h3>Quels réseaux sociaux gérez-vous ?</h3>
+                            <i class="mi-arrow fas fa-chevron-down"></i>
+                        </div>
+                        <div class="mi-accordion-body">
+                            <p>Nous gérons Facebook, Instagram, Twitter, LinkedIn, TikTok et YouTube. Nous adaptons la stratégie selon votre audience cible.</p>
+                        </div>
+                    </div>
+
+                    <div class="mi-accordion-item" data-category="community">
+                        <div class="mi-accordion-header">
+                            <h3>Qu'est-ce inclus dans l'identité visuelle ?</h3>
+                            <i class="mi-arrow fas fa-chevron-down"></i>
+                        </div>
+                        <div class="mi-accordion-body">
+                            <p>Logo, palette de couleurs, typographie, charte graphique complète et templates pour vos posts réseaux sociaux.</p>
+                        </div>
+                    </div>
+
+                    <!-- Design Graphique -->
+                    <div class="mi-category-header" data-category="design">
+                        <i class="fas fa-paint-brush"></i>
+                        <h2>Design Graphique</h2>
+                    </div>
+
+                    <div class="mi-accordion-item" data-category="design">
+                        <div class="mi-accordion-header">
+                            <h3>Combien de versions de logo proposez-vous ?</h3>
+                            <i class="mi-arrow fas fa-chevron-down"></i>
+                        </div>
+                        <div class="mi-accordion-body">
+                            <p>Nous proposons 3 concepts initiaux, avec 2 révisions illimitées jusqu'à satisfaction totale.</p>
+                        </div>
+                    </div>
+
+                    <!-- Développement -->
+                    <div class="mi-category-header" data-category="dev">
+                        <i class="fas fa-code"></i>
+                        <h2>Développement d'Applications</h2>
+                    </div>
+
+                    <div class="mi-accordion-item" data-category="dev">
+                        <div class="mi-accordion-header">
+                            <h3>Quel est le délai moyen pour un site vitrine ?</h3>
+                            <i class="mi-arrow fas fa-chevron-down"></i>
+                        </div>
+                        <div class="mi-accordion-body">
+                            <p>2-3 semaines pour un site basic, 4-6 semaines pour un site avec fonctionnalités avancées.</p>
+                        </div>
+                    </div>
+
+                    <div class="mi-accordion-item" data-category="dev">
+                        <div class="mi-accordion-header">
+                            <h3>Pouvez-vous développer des applications mobiles hybrides ?</h3>
+                            <i class="mi-arrow fas fa-chevron-down"></i>
+                        </div>
+                        <div class="mi-accordion-body">
+                            <p>Oui, nous utilisons Flutter et React Native pour des applications cross-platform performantes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Maintenance -->
+                    <div class="mi-category-header" data-category="maintenance">
+                        <i class="fas fa-tools"></i>
+                        <h2>Maintenance Logicielle</h2>
+                    </div>
+
+                    <div class="mi-accordion-item" data-category="maintenance">
+                        <div class="mi-accordion-header">
+                            <h3>Offrez-vous un service de maintenance préventive ?</h3>
+                            <i class="mi-arrow fas fa-chevron-down"></i>
+                        </div>
+                        <div class="mi-accordion-body">
+                            <p>Oui, nous proposons des contrats de maintenance avec vérifications mensuelles et mises à jour automatiques.</p>
+                        </div>
+                    </div>
+
+                    <!-- IA & Automatisation -->
+                    <div class="mi-category-header" data-category="ia">
+                        <i class="fas fa-robot"></i>
+                        <h2>IA & Automatisation</h2>
+                    </div>
+
+                    <div class="mi-accordion-item" data-category="ia">
+                        <div class="mi-accordion-header">
+                            <h3>Quels processus pouvez-vous automatiser ?</h3>
+                            <i class="mi-arrow fas fa-chevron-down"></i>
+                        </div>
+                        <div class="mi-accordion-body">
+                            <p>Gestion de données, rapports automatisés, chatbots, tri d'emails, et bien plus selon vos besoins.</p>
+                        </div>
+                    </div>
+
+                    <div class="mi-accordion-item" data-category="ia">
+                        <div class="mi-accordion-header">
+                            <h3>Utilisez-vous l'IA pour le community management ?</h3>
+                            <i class="mi-arrow fas fa-chevron-down"></i>
+                        </div>
+                        <div class="mi-accordion-body">
+                            <p>Oui, pour l'analyse de sentiment, suggestions de contenu et optimisation des heures de publication.</p>
+                        </div>
+                    </div>
+
+                    <!-- Stages -->
+                    <div class="mi-category-header">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h2>Programmes de Stages</h2>
+                    </div>
+
+                    <div class="mi-accordion-item">
+                        <div class="mi-accordion-header">
+                            <h3>Quelles sont les conditions pour postuler à un stage ?</h3>
+                            <i class="mi-arrow fas fa-chevron-down"></i>
+                        </div>
+                        <div class="mi-accordion-body">
+                            <p>Être étudiant en informatique, design ou marketing digital. Les stages durent 3 à 6 mois avec possibilité d'embauche.</p>
+                        </div>
+                    </div>
+
+                    <div class="mi-accordion-item">
+                        <div class="mi-accordion-header">
+                            <h3>Proposez-vous des stages rémunérés ?</h3>
+                            <i class="mi-arrow fas fa-chevron-down"></i>
+                        </div>
+                        <div class="mi-accordion-body">
+                            <p>Oui, tous nos stages de plus de 2 mois sont rémunérés selon le niveau d'études et compétences.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="mi-faq-sidebar">
+                    <div class="mi-service-card">
+                        <div class="mi-service-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3>Nos Services Phares</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Création d'identité visuelle</li>
+                            <li><i class="fas fa-check"></i> Sites web sur mesure</li>
+                            <li><i class="fas fa-check"></i> Solutions IA intégrées</li>
+                            <li><i class="fas fa-check"></i> Maintenance proactive</li>
+                            <li><i class="fas fa-check"></i> Automatisation avancée</li>
+                        </ul>
+                    </div>
+
+                    <div class="mi-contact-promo">
+                        <h3>Besoin d'aide personnalisée ?</h3>
+                        <p>Notre équipe est disponible 7j/7 pour répondre à vos questions urgentes.</p>
+                        <a href="mailto:info@miabeinnovation.com" class="mi-contact-btn">
+                            <i class="fas fa-envelope"></i> Contact Immédiat
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    :root {
+        --mi-blue-night: #202548;
+        --mi-orange: #D85814;
+        --mi-light: #f8f9fa;
+        --mi-dark: #1a1a1a;
+    }
+
+    /* Hero Section */
+    .mi-faq-hero {
+        height: 70vh;
+        background: url('{% static "img/faqbg.jpg" %}') no-repeat center center;
+        background-size: cover;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .mi-hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(32, 37, 72, 0.9) 0%, rgba(216, 88, 20, 0.7) 100%);
+    }
+
+    .mi-hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        padding: 0 20px;
+    }
+
+    .mi-hero-title {
+        font-size: 4rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    }
+
+    .mi-hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+    }
+
+    .mi-scroll-down {
+        font-size: 2rem;
+        margin-top: 3rem;
+        animation-duration: 2s;
+    }
+
+    /* Service Tabs */
+    .mi-service-tabs-container {
+        background: white;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        position: relative;
+        z-index: 10;
+        margin-top: -50px;
+    }
+
+    .mi-service-tabs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 20px 0;
+    }
+
+    .mi-service-tab {
+        padding: 12px 25px;
+        border-radius: 50px;
+        background: var(--mi-light);
+        color: var(--mi-blue-night);
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+    }
+
+    .mi-service-tab:hover, .mi-service-tab.active {
+        background: var(--mi-orange);
+        color: white;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(216, 88, 20, 0.3);
+    }
+
+    /* Search Box */
+    .mi-search-box {
+        margin-bottom: 40px;
+        position: relative;
+    }
+
+    .mi-search-box input {
+        width: 100%;
+        padding: 15px 25px;
+        border-radius: 50px;
+        border: 2px solid var(--mi-blue-night);
+        font-size: 1rem;
+        transition: all 0.3s;
+    }
+
+    .mi-search-box input:focus {
+        outline: none;
+        border-color: var(--mi-orange);
+        box-shadow: 0 0 0 3px rgba(216, 88, 20, 0.2);
+    }
+
+    .mi-search-box button {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        background: var(--mi-orange);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .mi-search-box button:hover {
+        background: var(--mi-blue-night);
+        transform: rotate(15deg);
+    }
+
+    /* Accordion */
+    .mi-category-header {
+        display: flex;
+        align-items: center;
+        margin: 50px 0 20px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid var(--mi-orange);
+    }
+
+    .mi-category-header i {
+        font-size: 1.5rem;
+        color: var(--mi-orange);
+        margin-right: 15px;
+    }
+
+    .mi-category-header h2 {
+        color: var(--mi-blue-night);
+        font-weight: 700;
+        margin: 0;
+    }
+
+    .mi-accordion-item {
+        margin-bottom: 15px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+        transition: all 0.3s;
+    }
+
+    .mi-accordion-item:hover {
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .mi-accordion-header {
+        background: white;
+        padding: 20px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        transition: all 0.3s;
+    }
+
+    .mi-accordion-header h3 {
+        margin: 0;
+        font-size: 1.1rem;
+        color: var(--mi-blue-night);
+        font-weight: 600;
+        transition: all 0.3s;
+    }
+
+    .mi-accordion-header:hover {
+        background: var(--mi-light);
+    }
+
+    .mi-accordion-header:hover h3 {
+        color: var(--mi-orange);
+    }
+
+    .mi-arrow {
+        transition: transform 0.3s ease;
+    }
+
+    .mi-accordion-item.active .mi-arrow {
+        transform: rotate(180deg);
+        color: var(--mi-orange);
+    }
+
+    .mi-accordion-body {
+        background: var(--mi-light);
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+
+    .mi-accordion-item.active .mi-accordion-body {
+        padding: 20px 25px;
+        max-height: 500px;
+    }
+
+    .mi-accordion-body p {
+        margin: 0;
+        color: var(--mi-dark);
+        line-height: 1.6;
+    }
+
+    /* Sidebar */
+    .mi-faq-sidebar {
+        position: sticky;
+        top: 20px;
+    }
+
+    .mi-service-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        transition: all 0.3s;
+    }
+
+    .mi-service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .mi-service-icon {
+        width: 60px;
+        height: 60px;
+        background: var(--mi-orange);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .mi-service-card h3 {
+        color: var(--mi-blue-night);
+        margin-bottom: 20px;
+    }
+
+    .mi-service-card ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .mi-service-card li {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    .mi-service-card li i {
+        color: var(--mi-orange);
+        margin-right: 10px;
+    }
+
+    .mi-contact-promo {
+        background: var(--mi-blue-night);
+        color: white;
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .mi-contact-promo h3 {
+        margin-top: 0;
+    }
+
+    .mi-contact-btn {
+        display: inline-block;
+        background: var(--mi-orange);
+        color: white;
+        padding: 12px 25px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-top: 15px;
+        transition: all 0.3s;
+    }
+
+    .mi-contact-btn:hover {
+        background: white;
+        color: var(--mi-orange);
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(255,255,255,0.2);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+        .mi-hero-title {
+            font-size: 3rem;
+        }
+        
+        .mi-service-tabs {
+            justify-content: flex-start;
+            overflow-x: auto;
+            padding-bottom: 10px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .mi-hero-title {
+            font-size: 2.5rem;
+        }
+        
+        .mi-hero-subtitle {
+            font-size: 1.2rem;
+        }
+        
+        .mi-service-tab {
+            padding: 8px 15px;
+            font-size: 0.9rem;
+        }
+    }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Accordion functionality
+    const accordionItems = document.querySelectorAll('.mi-accordion-item');
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.mi-accordion-header');
+        header.addEventListener('click', () => {
+            item.classList.toggle('active');
+        });
+    });
+
+    // Filter by service category
+    const serviceTabs = document.querySelectorAll('.mi-service-tab');
+    serviceTabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const category = this.dataset.category;
+            
+            // Update active tab
+            serviceTabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Filter questions
+            if (category === 'all') {
+                document.querySelectorAll('.mi-accordion-item, .mi-category-header').forEach(el => {
+                    el.style.display = 'block';
+                });
+            } else {
+                document.querySelectorAll('.mi-accordion-item, .mi-category-header').forEach(el => {
+                    el.style.display = 'none';
+                });
+                
+                // Show category headers
+                document.querySelectorAll(`.mi-category-header[data-category="${category}"]`).forEach(el => {
+                    el.style.display = 'flex';
+                });
+                
+                // Show items for this category
+                document.querySelectorAll(`.mi-accordion-item[data-category="${category}"]`).forEach(el => {
+                    el.style.display = 'block';
+                });
+            }
+        });
+    });
+
+    // Search functionality
+    const searchInput = document.querySelector('.mi-search-box input');
+    searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        
+        document.querySelectorAll('.mi-accordion-item').forEach(item => {
+            const question = item.querySelector('h3').textContent.toLowerCase();
+            const answer = item.querySelector('p').textContent.toLowerCase();
+            
+            if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                item.style.display = 'block';
+                if (searchTerm) {
+                    item.querySelector('h3').innerHTML = item.querySelector('h3').textContent.replace(
+                        new RegExp(searchTerm, 'gi'),
+                        match => `<span class="highlight">${match}</span>`
+                    );
+                }
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+
+    // Animation on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate__fadeInUp');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.mi-accordion-item, .mi-category-header').forEach(el => {
+        observer.observe(el);
+    });
+});
+</script>
+
+{% endblock %}

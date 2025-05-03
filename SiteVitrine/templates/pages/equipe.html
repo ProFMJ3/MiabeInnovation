@@ -1,0 +1,885 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<!-- Hero Section with Animated Gradient -->
+<div class="mi-team-hero">
+    <div class="mi-hero-content">
+        <h1 class="mi-hero-title animate__animated animate__fadeInDown">Notre Équipe Exceptionnelle</h1>
+        <p class="mi-hero-subtitle animate__animated animate__fadeInUp animate__delay-1s">Découvrez les talents qui font de Miabe Innovation un leader technologique</p>
+        <div class="mi-scroll-hint animate__animated animate__bounce animate__infinite animate__slow">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </div>
+    <div class="mi-hero-gradient"></div>
+</div>
+
+<!-- Team Introduction -->
+<section class="mi-team-intro">
+    <div class="container">
+        <div class="mi-section-header">
+            <h2>Rencontrez notre Dream Team</h2>
+            <p>Une équipe pluridisciplinaire alliant expertise technique et vision stratégique</p>
+        </div>
+        <div class="mi-team-stats">
+            <div class="mi-stat-card">
+                <div class="mi-stat-number" data-count="50">0</div>
+                <div class="mi-stat-label">Experts</div>
+            </div>
+            <div class="mi-stat-card">
+                <div class="mi-stat-number" data-count="12">0</div>
+                <div class="mi-stat-label">Départements</div>
+            </div>
+            <div class="mi-stat-card">
+                <div class="mi-stat-number" data-count="85">0</div>
+                <div class="mi-stat-label">Projets réalisés</div>
+            </div>
+            <div class="mi-stat-card">
+                <div class="mi-stat-number" data-count="100">0</div>
+                <div class="mi-stat-label">% Engagement</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Leadership Team -->
+<section class="mi-leadership-team">
+    <div class="container">
+        <div class="mi-section-header">
+            <h2>Direction Générale</h2>
+            <p>Notre comité exécutif guide la vision stratégique de l'entreprise</p>
+        </div>
+        
+        <div class="mi-leaders-carousel">
+            <!-- Leader 1 -->
+            <div class="mi-leader-card">
+                <div class="mi-leader-image">
+                    <img src="{% static 'img/team/ceo.jpg' %}" alt="Directeur Général">
+                    <div class="mi-leader-overlay">
+                        <div class="mi-social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mi-leader-info">
+                    <h3>Kodjo Mensah</h3>
+                    <p>Directeur Général</p>
+                    <div class="mi-leader-bio">
+                        <p>20+ ans d'expérience dans l'innovation technologique et la gestion d'entreprise.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Leader 2 -->
+            <div class="mi-leader-card">
+                <div class="mi-leader-image">
+                    <img src="{% static 'img/team/cfo.jpg' %}" alt="Directeur Financier">
+                    <div class="mi-leader-overlay">
+                        <div class="mi-social-links">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mi-leader-info">
+                    <h3>Amina Diop</h3>
+                    <p>Directrice Financière</p>
+                    <div class="mi-leader-bio">
+                        <p>Spécialiste en stratégie financière et levée de fonds pour startups technologiques.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Leader 3 -->
+            <div class="mi-leader-card">
+                <div class="mi-leader-image">
+                    <img src="{% static 'img/team/cto.jpg' %}" alt="Directeur Technologique">
+                    <div class="mi-leader-overlay">
+                        <div class="mi-social-links">
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mi-leader-info">
+                    <h3>Yaw Adjeman</h3>
+                    <p>Directeur Technologique</p>
+                    <div class="mi-leader-bio">
+                        <p>Expert en architecture logicielle et intelligence artificielle avec 15 ans d'expérience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Departments Showcase -->
+<section class="mi-departments">
+    <div class="container">
+        <div class="mi-section-header">
+            <h2>Nos Départements</h2>
+            <p>Découvrez l'expertise diversifiée de nos équipes</p>
+        </div>
+        
+        <div class="mi-departments-tabs">
+            <div class="mi-tab-header">
+                <div class="mi-tab active" data-tab="tech">Technologie</div>
+                <div class="mi-tab" data-tab="design">Design</div>
+                <div class="mi-tab" data-tab="marketing">Marketing</div>
+                <div class="mi-tab" data-tab="operations">Opérations</div>
+            </div>
+            
+            <div class="mi-tab-content active" data-tab="tech">
+                <div class="mi-dept-team">
+                    <!-- Team Member 1 -->
+                    <div class="mi-team-member">
+                        <div class="mi-member-image">
+                            <img src="{% static 'img/team/dev1.jpg' %}" alt="Développeur Senior">
+                            <div class="mi-member-overlay">
+                                <h4>Spécialité : IA & Machine Learning</h4>
+                                <div class="mi-social-links">
+                                    <a href="#"><i class="fab fa-github"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mi-member-info">
+                            <h3>Komlan Agbenyo</h3>
+                            <p>Lead Developer</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Team Member 2 -->
+                    <div class="mi-team-member">
+                        <div class="mi-member-image">
+                            <img src="{% static 'img/team/dev2.jpg' %}" alt="Développeur Mobile">
+                            <div class="mi-member-overlay">
+                                <h4>Spécialité : Applications Mobile</h4>
+                                <div class="mi-social-links">
+                                    <a href="#"><i class="fab fa-github"></i></a>
+                                    <a href="#"><i class="fab fa-stack-overflow"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mi-member-info">
+                            <h3>Afia Mireku</h3>
+                            <p>Mobile Engineer</p>
+                        </div>
+                    </div>
+                    
+                    <!-- More team members... -->
+                </div>
+                
+                <div class="mi-dept-achievements">
+                    <h3>Réalisations Clés</h3>
+                    <ul>
+                        <li>Développement de 15+ applications IA</li>
+                        <li>Optimisation des performances de 300%</li>
+                        <li>Système de recommandation primé</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Other department tabs content... -->
+        </div>
+    </div>
+</section>
+
+<!-- Team Culture -->
+<section class="mi-team-culture">
+    <div class="container">
+        <div class="mi-section-header">
+            <h2>Notre Culture d'Équipe</h2>
+            <p>Ce qui nous rend unique et performants</p>
+        </div>
+        
+        <div class="mi-culture-carousel">
+            <!-- Culture Item 1 -->
+            <div class="mi-culture-card">
+                <div class="mi-culture-icon">
+                    <i class="fas fa-lightbulb"></i>
+                </div>
+                <h3>Innovation Continue</h3>
+                <p>Nous consacrons 20% de notre temps à l'exploration de nouvelles technologies.</p>
+            </div>
+            
+            <!-- Culture Item 2 -->
+            <div class="mi-culture-card">
+                <div class="mi-culture-icon">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <h3>Collaboration Transversale</h3>
+                <p>Nos équipes travaillent en synergie pour des solutions pluridisciplinaires.</p>
+            </div>
+            
+            <!-- Culture Item 3 -->
+            <div class="mi-culture-card">
+                <div class="mi-culture-icon">
+                    <i class="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Formation Continue</h3>
+                <p>Chaque membre bénéficie de 10 jours de formation par an.</p>
+            </div>
+            
+            <!-- Culture Item 4 -->
+            <div class="mi-culture-card">
+                <div class="mi-culture-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Bien-être au Travail</h3>
+                <p>Environnement de travail flexible et programmes de wellness.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Join Team CTA -->
+<section class="mi-join-team">
+    <div class="container">
+        <div class="mi-join-content">
+            <h2>Vous souhaitez rejoindre notre équipe ?</h2>
+            <p>Nous recrutons les talents les plus brillants pour façonner l'avenir technologique</p>
+            <a href="#" class="mi-join-btn">
+                Voir nos offres <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    :root {
+        --mi-blue-night: #202548;
+        --mi-orange: #D85814;
+        --mi-light: #f8f9fa;
+        --mi-dark: #1a1a1a;
+        --mi-gray: #6c757d;
+    }
+
+    /* Hero Section */
+    .mi-team-hero {
+        height: 80vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        overflow: hidden;
+        background: linear-gradient(135deg, var(--mi-blue-night) 0%, var(--mi-orange) 100%);
+    }
+
+    .mi-hero-gradient {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 150px;
+        background: linear-gradient(to top, white, transparent);
+        z-index: 1;
+    }
+
+    .mi-hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        padding: 0 20px;
+    }
+
+    .mi-hero-title {
+        font-size: 4.5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    }
+
+    .mi-hero-subtitle {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+    }
+
+    .mi-scroll-hint {
+        font-size: 2.5rem;
+        margin-top: 4rem;
+        animation-duration: 2s;
+    }
+
+    /* Team Intro */
+    .mi-team-intro {
+        padding: 100px 0;
+        background: white;
+    }
+
+    .mi-section-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .mi-section-header h2 {
+        color: var(--mi-blue-night);
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .mi-section-header p {
+        color: var(--mi-gray);
+        font-size: 1.2rem;
+    }
+
+    .mi-team-stats {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 30px;
+        margin-top: 60px;
+    }
+
+    .mi-stat-card {
+        text-align: center;
+        min-width: 200px;
+    }
+
+    .mi-stat-number {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: var(--mi-orange);
+        margin-bottom: 10px;
+    }
+
+    .mi-stat-label {
+        font-size: 1.1rem;
+        color: var(--mi-blue-night);
+        font-weight: 500;
+    }
+
+    /* Leadership Team */
+    .mi-leadership-team {
+        padding: 100px 0;
+        background: var(--mi-light);
+    }
+
+    .mi-leaders-carousel {
+        display: flex;
+        gap: 30px;
+        overflow-x: auto;
+        padding: 30px 0;
+        scroll-snap-type: x mandatory;
+    }
+
+    .mi-leader-card {
+        min-width: 350px;
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        transition: all 0.4s ease;
+        scroll-snap-align: start;
+    }
+
+    .mi-leader-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+
+    .mi-leader-image {
+        height: 400px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .mi-leader-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.5s ease;
+    }
+
+    .mi-leader-card:hover .mi-leader-image img {
+        transform: scale(1.05);
+    }
+
+    .mi-leader-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 30px;
+        background: linear-gradient(to top, rgba(32, 37, 72, 0.9), transparent);
+        color: white;
+        opacity: 0;
+        transition: all 0.4s ease;
+    }
+
+    .mi-leader-card:hover .mi-leader-overlay {
+        opacity: 1;
+    }
+
+    .mi-social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .mi-social-links a {
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255,255,255,0.2);
+        transition: all 0.3s ease;
+    }
+
+    .mi-social-links a:hover {
+        background: var(--mi-orange);
+        transform: translateY(-3px);
+    }
+
+    .mi-leader-info {
+        padding: 30px;
+    }
+
+    .mi-leader-info h3 {
+        color: var(--mi-blue-night);
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+
+    .mi-leader-info p {
+        color: var(--mi-orange);
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+
+    .mi-leader-bio {
+        color: var(--mi-gray);
+        line-height: 1.6;
+    }
+
+    /* Departments */
+    .mi-departments {
+        padding: 100px 0;
+        background: white;
+    }
+
+    .mi-departments-tabs {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        overflow: hidden;
+    }
+
+    .mi-tab-header {
+        display: flex;
+        background: var(--mi-light);
+        border-bottom: 1px solid #eee;
+    }
+
+    .mi-tab {
+        padding: 20px 30px;
+        cursor: pointer;
+        font-weight: 600;
+        color: var(--mi-gray);
+        position: relative;
+        transition: all 0.3s ease;
+    }
+
+    .mi-tab.active {
+        color: var(--mi-orange);
+        background: white;
+    }
+
+    .mi-tab.active::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: var(--mi-orange);
+    }
+
+    .mi-tab:hover {
+        color: var(--mi-blue-night);
+    }
+
+    .mi-tab-content {
+        display: none;
+        padding: 40px;
+    }
+
+    .mi-tab-content.active {
+        display: block;
+        animation: fadeIn 0.5s ease;
+    }
+
+    .mi-dept-team {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    .mi-team-member {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+    }
+
+    .mi-team-member:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .mi-member-image {
+        height: 300px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .mi-member-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.5s ease;
+    }
+
+    .mi-team-member:hover .mi-member-image img {
+        transform: scale(1.1);
+    }
+
+    .mi-member-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(32, 37, 72, 0.8);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 20px;
+        opacity: 0;
+        transition: all 0.4s ease;
+    }
+
+    .mi-team-member:hover .mi-member-overlay {
+        opacity: 1;
+    }
+
+    .mi-member-overlay h4 {
+        margin-bottom: 15px;
+        font-size: 1rem;
+    }
+
+    .mi-member-info {
+        padding: 20px;
+    }
+
+    .mi-member-info h3 {
+        color: var(--mi-blue-night);
+        margin-bottom: 5px;
+    }
+
+    .mi-member-info p {
+        color: var(--mi-gray);
+        margin: 0;
+    }
+
+    .mi-dept-achievements {
+        background: var(--mi-light);
+        padding: 30px;
+        border-radius: 10px;
+    }
+
+    .mi-dept-achievements h3 {
+        color: var(--mi-blue-night);
+        margin-bottom: 20px;
+    }
+
+    .mi-dept-achievements ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .mi-dept-achievements li {
+        padding: 10px 0;
+        border-bottom: 1px solid #eee;
+        display: flex;
+        align-items: center;
+    }
+
+    .mi-dept-achievements li::before {
+        content: '✓';
+        color: var(--mi-orange);
+        margin-right: 10px;
+        font-weight: bold;
+    }
+
+    /* Team Culture */
+    .mi-team-culture {
+        padding: 100px 0;
+        background: var(--mi-light);
+    }
+
+    .mi-culture-carousel {
+        display: flex;
+        gap: 30px;
+        overflow-x: auto;
+        padding: 30px 0;
+    }
+
+    .mi-culture-card {
+        min-width: 300px;
+        background: white;
+        border-radius: 15px;
+        padding: 40px 30px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+    }
+
+    .mi-culture-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .mi-culture-icon {
+        width: 70px;
+        height: 70px;
+        background: var(--mi-orange);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        margin-bottom: 25px;
+        transition: all 0.3s ease;
+    }
+
+    .mi-culture-card:hover .mi-culture-icon {
+        transform: rotate(15deg) scale(1.1);
+    }
+
+    .mi-culture-card h3 {
+        color: var(--mi-blue-night);
+        margin-bottom: 15px;
+    }
+
+    .mi-culture-card p {
+        color: var(--mi-gray);
+        line-height: 1.6;
+    }
+
+    /* Join Team */
+    .mi-join-team {
+        padding: 100px 0;
+        background: linear-gradient(135deg, var(--mi-blue-night) 0%, var(--mi-orange) 100%);
+        color: white;
+        text-align: center;
+    }
+
+    .mi-join-content {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .mi-join-content h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .mi-join-content p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+    }
+
+    .mi-join-btn {
+        display: inline-block;
+        background: white;
+        color: var(--mi-orange);
+        padding: 15px 40px;
+        border-radius: 50px;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+
+    .mi-join-btn:hover {
+        background: var(--mi-orange);
+        color: white;
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+        .mi-hero-title {
+            font-size: 3.5rem;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .mi-hero-title {
+            font-size: 3rem;
+        }
+        
+        .mi-leader-card {
+            min-width: 300px;
+        }
+        
+        .mi-tab-header {
+            flex-wrap: wrap;
+        }
+        
+        .mi-tab {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .mi-hero-title {
+            font-size: 2.5rem;
+        }
+        
+        .mi-hero-subtitle {
+            font-size: 1.3rem;
+        }
+        
+        .mi-team-stats {
+            gap: 20px;
+        }
+        
+        .mi-stat-card {
+            min-width: 150px;
+        }
+        
+        .mi-stat-number {
+            font-size: 2.5rem;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .mi-hero-title {
+            font-size: 2.2rem;
+        }
+        
+        .mi-leader-card {
+            min-width: 280px;
+        }
+        
+        .mi-tab {
+            font-size: 0.9rem;
+        }
+    }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Animated counter for stats
+    const statNumbers = document.querySelectorAll('.mi-stat-number');
+    
+    statNumbers.forEach(stat => {
+        const target = parseInt(stat.getAttribute('data-count'));
+        const duration = 2000;
+        const step = target / (duration / 16);
+        let current = 0;
+        
+        const updateCount = () => {
+            current += step;
+            if (current < target) {
+                stat.textContent = Math.floor(current);
+                requestAnimationFrame(updateCount);
+            } else {
+                stat.textContent = target;
+            }
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                updateCount();
+                observer.unobserve(stat);
+            }
+        });
+        
+        observer.observe(stat);
+    });
+    
+    // Department tabs functionality
+    const tabs = document.querySelectorAll('.mi-tab');
+    
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function() {
+            const tabId = this.getAttribute('data-tab');
+            
+            // Update active tab
+            tabs.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Show corresponding content
+            document.querySelectorAll('.mi-tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            document.querySelector(`.mi-tab-content[data-tab="${tabId}"]`).classList.add('active');
+        });
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 100,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Team member hover effect enhancement
+    const teamMembers = document.querySelectorAll('.mi-team-member');
+    
+    teamMembers.forEach(member => {
+        member.addEventListener('mousemove', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const angleX = (y - centerY) / 20;
+            const angleY = (centerX - x) / 20;
+            
+            this.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-5px)`;
+        });
+        
+        member.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(-5px)';
+        });
+    });
+});
+</script>
+
+{% endblock %}
