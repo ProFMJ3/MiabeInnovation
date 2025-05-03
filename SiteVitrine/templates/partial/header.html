@@ -4,7 +4,7 @@
     <div class="row py-2 px-lg-5">
         <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
             <div class="d-inline-flex align-items-center text-white">
-                <small><i class="fa fa-phone-alt mr-2"></i>+228 93473496/ +228 99682745</small>
+                <small><i class="fa fa-phone-alt mr-2"></i>(+228) 93473496 / 99682745</small>
                 <small class="px-3">|</small>
                 <small><i class="fa fa-envelope mr-2"></i>info@miabeinnovation.com</small>
             </div>
@@ -48,7 +48,7 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
             <div class="navbar-nav mx-auto py-0">
-                <a href="{% url 'accueil' %}" class="nav-item nav-link active">Accueil</a>
+                <a href="{% url 'accueil' %}" class="nav-item nav-link {% if active_page == 'accueil' %}active{% endif %}">Accueil</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">A propos</a>
                     <div class="dropdown-menu m-0">
@@ -69,8 +69,8 @@
                     </div>
                 </div>
 
-                <a href="{% url 'temoignages' %}" class="nav-item nav-link">Témoignages</a>
-                <div class="nav-item dropdown">
+                <a href="{% url 'temoignages' %}" class="nav-item nav-link {% if active_page == 'temoignages' %}active{% endif %}" >Témoignages</a>
+                <div class="nav-item dropdown {% if active_page in 'entreeContact devenirPartenaire faqs' %}active{% endif %}">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Contact</a>
                     <div class="dropdown-menu m-0">
                         <a href="{% url 'entree_contact' %}" class="dropdown-item">Entrée en contact</a>
