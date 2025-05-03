@@ -1,0 +1,917 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+<div class="about-page">
+    <!-- Hero Section avec animation de particules -->
+    <section class="hero-section particle-bg" style="background: linear-gradient(rgba(32, 37, 72, 0.85), rgba(32, 37, 72, 0.9)), url('https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center; background-size: cover;">
+        <div id="particles-js"></div>
+        <div class="container">
+            <div class="hero-content">
+                <img src="https://cdn-icons-png.flaticon.com/512/3524/3524388.png" alt="Qui sommes-nous?" class="question-mark floating">
+                <h1 class="animate__animated animate__fadeInDown">Qui sommes-nous?</h1>
+                <p class="animate__animated animate__fadeInUp">Des visionnaires du numérique transformant vos défis en solutions technologiques.</p>
+                <a href="#our-story" class="btn-scroll animate__animated animate__fadeInUp animate__delay-1s">
+                    <i class="fas fa-chevron-down"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story - Version améliorée avec timeline -->
+    <section id="our-story" class="our-story">
+        <div class="container">
+            <div class="section-header">
+                <h2>Notre Histoire</h2>
+                <div class="divider"></div>
+                <p>De l'idée à l'innovation, notre parcours en quelques dates clés</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content animate__animated animate__fadeInLeft">
+                        <div class="timeline-date" style="background-color: #D85814;">2020</div>
+                        <h3>Genèse de l'idée</h3>
+                        <p>Rencontre des fondateurs lors d'un hackathon technologique. Premiers prototypes développés.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content animate__animated animate__fadeInRight">
+                        <div class="timeline-date" style="background-color: #202548;">2022</div>
+                        <h3>Création officielle</h3>
+                        <p>Enregistrement de la startup et premiers clients acquis. Développement de solutions pour PME locales.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content animate__animated animate__fadeInLeft">
+                        <div class="timeline-date" style="background-color: #D85814;">2023</div>
+                        <h3>Expansion</h3>
+                        <p>Ouverture de nouveaux bureaux et recrutement d'une équipe multidisciplinaire. Lancement de notre plateforme IA.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content animate__animated animate__fadeInRight">
+                        <div class="timeline-date" style="background-color: #202548;">2024</div>
+                        <h3>Reconnaissance</h3>
+                        <p>Prix de l'innovation technologique. Partenariats stratégiques avec des leaders du secteur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre Philosophie - Nouvelle section ajoutée -->
+    <section class="philosophy-section" style="background-color: #f9f9f9;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Notre Philosophie</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 philosophy-item animate__animated animate__fadeInUp">
+                    <div class="philosophy-card">
+                        <div class="philosophy-icon">
+                            <i class="fas fa-eye" style="color: #D85814;"></i>
+                        </div>
+                        <h3>Vision</h3>
+                        <p>Révolutionner l'interaction entre les entreprises et la technologie grâce à des solutions intuitives et puissantes.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 philosophy-item animate__animated animate__fadeInUp animate__delay-1s">
+                    <div class="philosophy-card">
+                        <div class="philosophy-icon">
+                            <i class="fas fa-bullseye" style="color: #202548;"></i>
+                        </div>
+                        <h3>Mission</h3>
+                        <p>Donner à chaque entreprise, quelle que soit sa taille, les outils technologiques pour exceller dans son domaine.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 philosophy-item animate__animated animate__fadeInUp animate__delay-2s">
+                    <div class="philosophy-card">
+                        <div class="philosophy-icon">
+                            <i class="fas fa-heart" style="color: #D85814;"></i>
+                        </div>
+                        <h3>Valeurs</h3>
+                        <p>Innovation, Intégrité, Collaboration et Excellence - les piliers de toutes nos actions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nos Services - Version améliorée avec onglets -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nos Services</h2>
+                <div class="divider"></div>
+                <p>Des solutions complètes pour votre transformation numérique</p>
+            </div>
+            
+            <div class="services-tabs">
+                <ul class="nav nav-tabs" id="servicesTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="web-tab" data-bs-toggle="tab" data-bs-target="#web" type="button" role="tab">
+                            <i class="fas fa-globe"></i> Web
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="design-tab" data-bs-toggle="tab" data-bs-target="#design" type="button" role="tab">
+                            <i class="fas fa-paint-brush"></i> Design
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="dev-tab" data-bs-toggle="tab" data-bs-target="#dev" type="button" role="tab">
+                            <i class="fas fa-code"></i> Développement
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="ia-tab" data-bs-toggle="tab" data-bs-target="#ia" type="button" role="tab">
+                            <i class="fas fa-robot"></i> IA
+                        </button>
+                    </li>
+                </ul>
+                
+                <div class="tab-content" id="servicesTabContent">
+                    <!-- Onglet Web -->
+                    <div class="tab-pane fade show active" id="web" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="service-detail">
+                                    <h3><i class="fas fa-users" style="color: #D85814;"></i> Community Management</h3>
+                                    <ul>
+                                        <li>Création de sites vitrine modernes et performants</li>
+                                        <li>Gestion complète des réseaux sociaux</li>
+                                        <li>Stratégie de contenu digitale</li>
+                                        <li>Analyse et reporting des performances</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Community Management" class="img-fluid rounded">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Onglet Design -->
+                    <div class="tab-pane fade" id="design" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Design Graphique" class="img-fluid rounded">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="service-detail">
+                                    <h3><i class="fas fa-paint-brush" style="color: #202548;"></i> Design Graphique</h3>
+                                    <ul>
+                                        <li>Création d'identités visuelles uniques</li>
+                                        <li>Conception de logos, flyers, cartes de visite</li>
+                                        <li>Matériel publicitaire print et digital</li>
+                                        <li>Charte graphique complète</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Onglet Développement -->
+                    <div class="tab-pane fade" id="dev" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="service-detail">
+                                    <h3><i class="fas fa-laptop-code" style="color: #D85814;"></i> Développement Logiciel</h3>
+                                    <ul>
+                                        <li>Applications web sur mesure</li>
+                                        <li>Solutions mobiles iOS et Android</li>
+                                        <li>Logiciels desktop performants</li>
+                                        <li>Maintenance et évolution</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Développement Logiciel" class="img-fluid rounded">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Onglet IA -->
+                    <div class="tab-pane fade" id="ia" role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <img src="https://images.unsplash.com/photo-1677442135136-760c813a743c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Solutions IA" class="img-fluid rounded">
+                            </div>
+                            <div class="col-md-6">
+                                <div class="service-detail">
+                                    <h3><i class="fas fa-brain" style="color: #202548;"></i> Solutions Intelligentes</h3>
+                                    <ul>
+                                        <li>Automatisation des processus métiers</li>
+                                        <li>Chatbots et assistants virtuels</li>
+                                        <li>Analyse prédictive et data science</li>
+                                        <li>Intégration d'IA dans les applications</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nos Réalisations - Section ajoutée -->
+    <section class="achievements-section" style="background: linear-gradient(rgba(32, 37, 72, 0.9), rgba(32, 37, 72, 0.9)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center; background-size: cover; color: white;">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nos Réalisations</h2>
+                <div class="divider"></div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-3 col-6 achievement-item">
+                    <div class="achievement-box animate__animated animate__fadeInUp">
+                        <div class="achievement-value" data-count="150">0</div>
+                        <div class="achievement-label">Projets réalisés</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-6 achievement-item">
+                    <div class="achievement-box animate__animated animate__fadeInUp animate__delay-1s">
+                        <div class="achievement-value" data-count="98">0</div>
+                        <div class="achievement-label">Clients satisfaits</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-6 achievement-item">
+                    <div class="achievement-box animate__animated animate__fadeInUp animate__delay-2s">
+                        <div class="achievement-value" data-count="15">0</div>
+                        <div class="achievement-label">Pays desservis</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3 col-6 achievement-item">
+                    <div class="achievement-box animate__animated animate__fadeInUp animate__delay-3s">
+                        <div class="achievement-value" data-count="24">0</div>
+                        <div class="achievement-label">Membres d'équipe</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Actualités - Version améliorée -->
+    <section class="news-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nos Actualités</h2>
+                <div class="divider"></div>
+                <p>Restez informés de nos dernières innovations et événements</p>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 news-item">
+                    <div class="news-card animate__animated animate__fadeInUp">
+                        <div class="news-image">
+                            <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Nouvelle Plateforme IA">
+                            <div class="news-date">15 Juin 2023</div>
+                        </div>
+                        <div class="news-content">
+                            <h3>Lancement de notre plateforme IA</h3>
+                            <p>Découvrez notre nouvelle solution d'automatisation intelligente spécialement conçue pour les PME.</p>
+                            <a href="#" class="read-more">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 news-item">
+                    <div class="news-card animate__animated animate__fadeInUp animate__delay-1s">
+                        <div class="news-image">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Partenariat TechInnov">
+                            <div class="news-date">28 Août 2023</div>
+                        </div>
+                        <div class="news-content">
+                            <h3>Partenariat avec TechInnov</h3>
+                            <p>Nous unissons nos forces avec TechInnov pour offrir des solutions encore plus performantes.</p>
+                            <a href="#" class="read-more">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 news-item">
+                    <div class="news-card animate__animated animate__fadeInUp animate__delay-2s">
+                        <div class="news-image">
+                            <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Ateliers de formation">
+                            <div class="news-date">10 Oct 2023</div>
+                        </div>
+                        <div class="news-content">
+                            <h3>Ateliers de formation</h3>
+                            <p>Découvrez notre série d'ateliers gratuits sur la transformation digitale pour entrepreneurs.</p>
+                            <a href="#" class="read-more">Lire l'article <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-primary btn-lg" style="background-color: #D85814; border: none; padding: 12px 30px; font-weight: 600;">Voir toutes les actualités</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" style="background-color: #202548;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2>Prêt à transformer votre entreprise avec nos solutions?</h2>
+                    <p>Contactez-nous dès aujourd'hui pour une consultation gratuite.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="#" class="btn btn-light btn-lg" style="color: #202548; font-weight: 600;">Nous contacter</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+    /* Styles généraux améliorés */
+    .about-page {
+        font-family: 'Poppins', sans-serif;
+        overflow-x: hidden;
+        line-height: 1.6;
+    }
+    
+    .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    
+    .section-header h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #202548;
+        position: relative;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+    
+    .section-header .divider {
+        width: 80px;
+        height: 4px;
+        background-color: #D85814;
+        margin: 0 auto 20px;
+    }
+    
+    .section-header p {
+        font-size: 1.2rem;
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    /* Hero Section améliorée */
+    .hero-section {
+        padding: 180px 0 150px;
+        color: white;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .particle-bg {
+        position: relative;
+    }
+    
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    
+    .hero-content {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .hero-content h1 {
+        font-size: 4rem;
+        font-weight: 800;
+        margin-bottom: 25px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .hero-content p {
+        font-size: 1.5rem;
+        max-width: 700px;
+        margin: 0 auto 40px;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    .question-mark {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 30px;
+        filter: drop-shadow(0 0 15px rgba(216, 88, 20, 0.7));
+    }
+    
+    .floating {
+        animation: float 6s ease-in-out infinite;
+    }
+    
+    .btn-scroll {
+        color: white;
+        font-size: 1.5rem;
+        width: 50px;
+        height: 50px;
+        border: 2px solid white;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        margin-top: 30px;
+    }
+    
+    .btn-scroll:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(5px);
+    }
+    
+    /* Timeline améliorée */
+    .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 0;
+    }
+    
+    .timeline::after {
+        content: '';
+        position: absolute;
+        width: 4px;
+        background-color: #D85814;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -2px;
+        border-radius: 2px;
+    }
+    
+    .timeline-item {
+        padding: 10px 40px;
+        position: relative;
+        width: 50%;
+        box-sizing: border-box;
+    }
+    
+    .timeline-item:nth-child(odd) {
+        left: 0;
+    }
+    
+    .timeline-item:nth-child(even) {
+        left: 50%;
+    }
+    
+    .timeline-content {
+        padding: 30px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        position: relative;
+    }
+    
+    .timeline-date {
+        color: white;
+        padding: 8px 15px;
+        font-weight: 600;
+        border-radius: 20px;
+        position: absolute;
+        top: -15px;
+        width: auto;
+        min-width: 100px;
+        text-align: center;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-date {
+        right: -50px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-date {
+        left: -50px;
+    }
+    
+    .timeline h3 {
+        color: #202548;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .timeline p {
+        color: #666;
+    }
+    
+    /* Philosophie Section */
+    .philosophy-card {
+        background: white;
+        border-radius: 10px;
+        padding: 40px 30px;
+        text-align: center;
+        height: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .philosophy-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .philosophy-icon {
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+    }
+    
+    .philosophy-card h3 {
+        color: #202548;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    /* Services Tabs */
+    .services-tabs {
+        margin-top: 50px;
+    }
+    
+    .nav-tabs {
+        border-bottom: 2px solid #eee;
+        justify-content: center;
+    }
+    
+    .nav-tabs .nav-link {
+        border: none;
+        color: #666;
+        font-weight: 600;
+        padding: 15px 25px;
+        margin: 0 5px;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-tabs .nav-link:hover {
+        color: #202548;
+    }
+    
+    .nav-tabs .nav-link.active {
+        background-color: #202548;
+        color: white;
+    }
+    
+    .service-detail {
+        padding: 30px;
+    }
+    
+    .service-detail h3 {
+        color: #202548;
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .service-detail h3 i {
+        margin-right: 15px;
+        font-size: 1.5rem;
+    }
+    
+    .service-detail ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    
+    .service-detail li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 15px;
+        color: #555;
+    }
+    
+    .service-detail li::before {
+        content: '\f00c';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        color: #D85814;
+    }
+    
+    /* Achievements */
+    .achievement-box {
+        text-align: center;
+        padding: 30px 20px;
+        margin-bottom: 30px;
+    }
+    
+    .achievement-value {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: #D85814;
+        margin-bottom: 10px;
+    }
+    
+    .achievement-label {
+        font-size: 1.2rem;
+        color: white;
+        opacity: 0.9;
+    }
+    
+    /* News améliorée */
+    .news-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+    }
+    
+    .news-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .news-image {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+    }
+    
+    .news-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .news-card:hover .news-image img {
+        transform: scale(1.1);
+    }
+    
+    .news-date {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: #D85814;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+    
+    .news-content {
+        padding: 25px;
+    }
+    
+    .news-content h3 {
+        color: #202548;
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+    
+    .news-content p {
+        color: #666;
+        margin-bottom: 20px;
+    }
+    
+    .read-more {
+        color: #D85814;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        transition: color 0.3s ease;
+    }
+    
+    .read-more i {
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+    }
+    
+    .read-more:hover {
+        color: #202548;
+    }
+    
+    .read-more:hover i {
+        transform: translateX(5px);
+    }
+    
+    /* CTA Section */
+    .cta-section {
+        padding: 80px 0;
+        color: white;
+    }
+    
+    .cta-section h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+    
+    .cta-section p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        margin-bottom: 0;
+    }
+    
+    .btn-light {
+        background-color: white;
+        color: #202548;
+        padding: 12px 30px;
+        font-weight: 600;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-light:hover {
+        background-color: #f8f9fa;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Animations */
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+        .timeline::after {
+            left: 31px;
+        }
+        
+        .timeline-item {
+            width: 100%;
+            padding-left: 70px;
+            padding-right: 25px;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-date,
+        .timeline-item:nth-child(even) .timeline-date {
+            left: 15px;
+            right: auto;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .section-header h2 {
+            font-size: 2rem;
+        }
+        
+        .hero-section {
+            padding: 120px 0 100px;
+        }
+        
+        .question-mark {
+            width: 80px;
+            height: 80px;
+        }
+        
+        .services-tabs .nav-link {
+            padding: 10px 15px;
+            font-size: 0.9rem;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .achievement-item {
+            margin-bottom: 20px;
+        }
+        
+        .achievement-value {
+            font-size: 2.5rem;
+        }
+        
+        .cta-section .row > div {
+            text-align: center !important;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section .btn {
+            width: 100%;
+        }
+    }
+</style>
+
+<!-- Scripts améliorés -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialisation des particules
+        if (document.getElementById('particles-js')) {
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: "#D85814" },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.5, random: true },
+                    size: { value: 3, random: true },
+                    line_linked: { enable: true, distance: 150, color: "#D85814", opacity: 0.4, width: 1 },
+                    move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
+                },
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: { enable: true, mode: "repulse" },
+                        onclick: { enable: true, mode: "push" }
+                    }
+                }
+            });
+        }
+
+        // Animation des chiffres
+        const animateCounters = function() {
+            const counters = document.querySelectorAll('.achievement-value');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if(count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        };
+
+        // Observer pour les animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    
+                    // Animation des éléments
+                    if (element.classList.contains('animate__animated')) {
+                        const animationClass = element.classList[1];
+                        element.classList.add(animationClass);
+                    }
+                    
+                    // Animation des compteurs
+                    if (element.classList.contains('achievement-box')) {
+                        animateCounters();
+                    }
+                    
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        // Observer tous les éléments avec animations
+        document.querySelectorAll('.animate__animated, .achievement-box').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll pour le bouton
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    });
+</script>
+
+    
+
+
+    
+
+
+
+    {% endblock %}
