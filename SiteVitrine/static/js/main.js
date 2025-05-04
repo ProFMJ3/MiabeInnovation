@@ -135,3 +135,13 @@
     
 })(jQuery);
 
+/* MEMBRES DE L'EQUIPE */
+// var cadre = document.getElementById("cadre");
+// var nom = document.getElementById("nom");
+
+// cadre.addEventListener("mouseover",  ()=> {
+//     nom.style.color == "#FFFFFFF";
+
+// })
+
+

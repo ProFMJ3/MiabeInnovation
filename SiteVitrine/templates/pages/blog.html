@@ -1,0 +1,273 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<!-- Hero Section -->
+<div class="mi-blog-hero">
+    <div class="container">
+        <h1 class="mi-hero-title">Notre Blog Technologique</h1>
+        <p class="mi-hero-subtitle">Découvrez nos analyses, tutoriels et actualités IT</p>
+    </div>
+</div>
+
+<!-- Blog Grid -->
+<section class="mi-blog-grid">
+    <div class="container">
+        <div class="row">
+            <!-- Article 1 -->
+            <div class="col-lg-6 mi-article-card" id="article-1">
+                <div class="mi-article-image">
+                    <img src="https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="IA en entreprise" class="img-fluid">
+                    <div class="mi-article-badge">Intelligence Artificielle</div>
+                </div>
+                <div class="mi-article-content">
+                    <div class="mi-article-meta">
+                        <span class="mi-article-date">10 Février 2025</span>
+                        <span class="mi-article-author">Par Jean Koffi</span>
+                    </div>
+                    <h2 class="mi-article-title">L'IA révolutionne la gestion d'entreprise</h2>
+                    <div class="mi-article-excerpt">
+                        <p>L'intelligence artificielle transforme radicalement la façon dont les entreprises opèrent. Voici comment...</p>
+                        
+                        <h3>Les bénéfices concrets</h3>
+                        <p>Les solutions IA permettent aujourd'hui d'automatiser jusqu'à 40% des tâches administratives répétitives. Nos analyses montrent...</p>
+                        
+                        <h3>Cas d'utilisation</h3>
+                        <ul>
+                            <li>Service client automatisé</li>
+                            <li>Analyse prédictive des ventes</li>
+                            <li>Gestion optimisée des stocks</li>
+                        </ul>
+                        
+                        <p>Chez Miabe Innovation, nous avons implémenté ces solutions pour plus de 15 clients avec des résultats impressionnants...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 2 -->
+            <div class="col-lg-6 mi-article-card" id="article-2">
+                <div class="mi-article-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cybersécurité" class="img-fluid">
+                    <div class="mi-article-badge">Sécurité</div>
+                </div>
+                <div class="mi-article-content">
+                    <div class="mi-article-meta">
+                        <span class="mi-article-date">15 Avril 2025</span>
+                        <span class="mi-article-author">Par Amina Diallo</span>
+                    </div>
+                    <h2 class="mi-article-title">Cybersécurité : les bonnes pratiques en 2023</h2>
+                    <div class="mi-article-excerpt">
+                        <p>Avec l'augmentation des cyberattaques, voici les mesures essentielles à mettre en place...</p>
+                        
+                        <h3>Protection des données</h3>
+                        <p>Le chiffrement des données sensibles n'est plus une option mais une nécessité. Nous recommandons...</p>
+                        
+                        <h3>Formation des équipes</h3>
+                        <p>90% des brèches de sécurité proviennent d'erreurs humaines. Notre programme de formation couvre...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 3 -->
+            <div class="col-lg-6 mi-article-card" id="article-3">
+                <div class="mi-article-image">
+                    <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Cloud Computing" class="img-fluid">
+                    <div class="mi-article-badge">Technologie</div>
+                </div>
+                <div class="mi-article-content">
+                    <div class="mi-article-meta">
+                        <span class="mi-article-date">03 Mai 2025</span>
+                        <span class="mi-article-author">Par Yaw Adjeman</span>
+                    </div>
+                    <h2 class="mi-article-title">Migration vers le cloud : notre guide complet</h2>
+                    <div class="mi-article-excerpt">
+                        <p>Passer au cloud peut sembler complexe, mais avec la bonne stratégie, c'est un jeu d'enfant...</p>
+                        
+                        <h3>Étape 1 : Audit</h3>
+                        <p>Évaluez votre infrastructure existante pour déterminer ce qui peut être migré...</p>
+                        
+                        <h3>Étape 2 : Choix du fournisseur</h3>
+                        <p>Comparaison entre AWS, Azure et Google Cloud pour les entreprises africaines...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 4 -->
+            <div class="col-lg-6 mi-article-card" id="article-4">
+                <div class="mi-article-image">
+                    <img src="https://images.unsplash.com/photo-1533750516457-a7f992034fec?q=80&w=1506&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Réseaux sociaux" class="img-fluid">
+                    <div class="mi-article-badge">Marketing</div>
+                </div>
+                <div class="mi-article-content">
+                    <div class="mi-article-meta">
+                        <span class="mi-article-date">25 Janvier 2023</span>
+                        <span class="mi-article-author">Par Komlan Agbenyo</span>
+                    </div>
+                    <h2 class="mi-article-title">Stratégie réseaux sociaux pour startups</h2>
+                    <div class="mi-article-excerpt">
+                        <p>Comment construire une présence efficace sur les réseaux sociaux avec un budget limité...</p>
+                        
+                        <h3>Plateformes prioritaires</h3>
+                        <p>Selon votre secteur, certaines plateformes offrent un meilleur ROI. Notre analyse par secteur...</p>
+                        
+                        <h3>Contenu engageant</h3>
+                        <p>Les types de contenu qui génèrent le plus d'interactions en Afrique de l'Ouest...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Article 5 à 8 (structure similaire) -->
+            <!-- Article 5 -->
+            <div class="col-lg-6 mi-article-card" id="article-5">
+                <!-- Même structure avec contenu différent -->
+            </div>
+
+            <!-- Article 6 -->
+            <div class="col-lg-6 mi-article-card" id="article-6">
+                <!-- Même structure avec contenu différent -->
+            </div>
+
+            <!-- Article 7 -->
+            <div class="col-lg-6 mi-article-card" id="article-7">
+                <!-- Même structure avec contenu différent -->
+            </div>
+
+            <!-- Article 8 -->
+            <div class="col-lg-6 mi-article-card" id="article-8">
+                <!-- Même structure avec contenu différent -->
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Hero Section */
+    .mi-blog-hero {
+        background: linear-gradient(rgba(124, 127, 130, 0.9), rgba(32, 37, 72, 0.9)), url('https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 100px 0;
+        text-align: center;
+    }
+
+    .mi-hero-title {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .mi-hero-subtitle {
+        font-size: 1.5rem;
+        opacity: 0.9;
+    }
+
+    /* Article Cards */
+    .mi-article-card {
+        margin-bottom: 50px;
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+    }
+
+    .mi-article-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .mi-article-image {
+        position: relative;
+        height: 250px;
+        overflow: hidden;
+    }
+
+    .mi-article-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .mi-article-card:hover .mi-article-image img {
+        transform: scale(1.05);
+    }
+
+    .mi-article-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: #D85814;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    .mi-article-content {
+        padding: 30px;
+    }
+
+    .mi-article-meta {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 15px;
+        color: #6c757d;
+        font-size: 0.9rem;
+    }
+
+    .mi-article-title {
+        color: #202548;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+        line-height: 1.3;
+    }
+
+    .mi-article-excerpt {
+        color: #495057;
+        line-height: 1.8;
+    }
+
+    .mi-article-excerpt h3 {
+        color: #202548;
+        margin: 25px 0 15px;
+        font-size: 1.4rem;
+    }
+
+    .mi-article-excerpt ul {
+        padding-left: 20px;
+        margin: 15px 0;
+    }
+
+    .mi-article-excerpt ul li {
+        margin-bottom: 10px;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+        .mi-hero-title {
+            font-size: 2.5rem;
+        }
+        
+        .mi-article-image {
+            height: 200px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .mi-hero-title {
+            font-size: 2rem;
+        }
+        
+        .mi-article-content {
+            padding: 20px;
+        }
+        
+        .mi-article-title {
+            font-size: 1.5rem;
+        }
+    }
+</style>
+{% endblock %}

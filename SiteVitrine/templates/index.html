@@ -2,34 +2,27 @@
 
 {% extends 'base.html' %}
 {% load static %}
-
 {% block body %}
  <!-- Header Start -->
- <div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="margin-bottom: 90px;">
-    <div class="container text-center my-5 py-5">
-        <h1 class="text-white mt-4 mb-4">Learn From Home</h1>
-        <h1 class="text-white display-1 mb-5">Education Courses</h1>
-        <div class="mx-auto mb-5" style="width: 100%; max-width: 600px;">
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <button class="btn btn-outline-light bg-white text-body px-4 dropdown-toggle" type="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">Courses</button>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">Courses 1</a>
-                        <a class="dropdown-item" href="#">Courses 2</a>
-                        <a class="dropdown-item" href="#">Courses 3</a>
-                    </div>
-                </div>
-                <input type="text" class="form-control border-light" style="padding: 30px 25px;" placeholder="Keyword">
-                <div class="input-group-append">
-                    <button class="btn btn-secondary px-4 px-lg-5">Search</button>
-                </div>
-            </div>
+ {% load static %}
+<div class="jumbotron jumbotron-fluid position-relative overlay-bottom video-jumbotron">
+    <!-- Vidéo en background -->
+    <video class="bg-video" autoplay muted loop>
+        <source src="{% static 'video/video2.mp4' %}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Contenu au-dessus de la vidéo -->
+    <div class="container text-center my-5 py-5 content-overlay">
+        <h1 class="text-white display-3 mb-5">Votre vision, notre mission digitale</h1>
+        <h1 class="text-white mt-4 mb-4">Transformez votre entreprise avec des solutions technologiques sur-mesure</h1>
+        <div class="mx-auto mb-5" style="width: 20%; max-width: 600px;">
+            <a href="#services" class="btn text-light header-button d-none d-lg-block" style="border-radius: 25px ;">Nos offres</a>
         </div>
     </div>
 </div>
-<!-- Header End -->
 
+<!-- Header End -->
 
 <!-- About Start -->
 <div class="container-fluid py-5">
@@ -37,40 +30,28 @@
         <div class="row">
             <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 500px;">
                 <div class="position-relative h-100">
+
                     <img class="position-absolute w-100 h-100" src="{% static 'img/about.jpg' %}" style="object-fit: cover;">
+
+                    <img class="position-absolute w-100 h-100" src="{% static 'img/apropos2.png' %}" style="object-fit: cover;">
+
                 </div>
             </div>
             <div class="col-lg-7">
                 <div class="section-title position-relative mb-4">
-                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">About Us</h6>
-                    <h1 class="display-4">First Choice For Online Education Anywhere</h1>
+                    <h6 class="d-inline-block position-relative about-title text-uppercase pb-2">A propos</h6>
+                    <h1 class="display-4">Qu'est-ce que MiabeInnovation ?</h1>
                 </div>
-                <p>Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna</p>
+                <p>MiabeInnovation est votre centre de solutions et innovations technologiques. Nous concevons et déployons des services digitaux adaptés à vos besoins, en combinant expertise, créativité et performance. Notre mission est de vous accompagner dans votre transformation numérique, en automatisant vos tâches, en développant des systèmes embarqués et en créant des outils sur mesure pour améliorer votre quotidien et celui de vos clients.
+                </p>
                 <div class="row pt-3 mx-0">
-                    <div class="col-3 px-0">
-                        <div class="bg-success text-center p-4">
-                            <h1 class="text-white" data-toggle="counter-up">123</h1>
-                            <h6 class="text-uppercase text-white">Available<span class="d-block">Subjects</span></h6>
-                        </div>
-                    </div>
-                    <div class="col-3 px-0">
-                        <div class="bg-primary text-center p-4">
-                            <h1 class="text-white" data-toggle="counter-up">1234</h1>
-                            <h6 class="text-uppercase text-white">Online<span class="d-block">Courses</span></h6>
-                        </div>
-                    </div>
-                    <div class="col-3 px-0">
-                        <div class="bg-secondary text-center p-4">
-                            <h1 class="text-white" data-toggle="counter-up">123</h1>
-                            <h6 class="text-uppercase text-white">Skilled<span class="d-block">Instructors</span></h6>
-                        </div>
-                    </div>
-                    <div class="col-3 px-0">
-                        <div class="bg-warning text-center p-4">
-                            <h1 class="text-white" data-toggle="counter-up">1234</h1>
-                            <h6 class="text-uppercase text-white">Happy<span class="d-block">Students</span></h6>
-                        </div>
-                    </div>
+                    <a href="{% url 'qui_sommes_nous' %}" class="btn text-light about-button d-none d-lg-block mx-4 px-4" style="border-radius: 25px;">
+                        En savoir plus <i class="fas fa-arrow-right"></i>
+                    </a>
+                    
+                    <a href="{% url 'entree_contact' %}" class="btn text-light about-button d-none d-lg-block mx-4 px-4" style="border-radius: 25px;">
+                        Nous contacter <i class="fas fa-phone"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -85,41 +66,58 @@
         <div class="row">
             <div class="col-lg-7 my-5 pt-5 pb-lg-5">
                 <div class="section-title position-relative mb-4">
-                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Why Choose Us?</h6>
-                    <h1 class="display-4">Why You Should Start Learning with Us?</h1>
+                    <h6 class="d-inline-block position-relative nous-choisir-title text-uppercase pb-2">POURQUOI NOUS CHOISIR ?</h6>
+                    <h1 class="display-4">Ce qui nous rend unique</h1>
                 </div>
-                <p class="mb-4 pb-2">Aliquyam accusam clita nonumy ipsum sit sea clita ipsum clita, ipsum dolores amet voluptua duo dolores et sit ipsum rebum, sadipscing et erat eirmod diam kasd labore clita est. Diam sanctus gubergren sit rebum clita amet.</p>
+                <p class="mb-4 pb-2"></p>
                 <div class="d-flex mb-3">
-                    <div class="btn-icon bg-primary mr-4">
-                        <i class="fa fa-2x fa-graduation-cap text-white"></i>
+                    <div class="btn-icon mr-4  display-4">
+                        <i class="fas  fa-phone-alt text-white"></i>
                     </div>
                     <div class="mt-n1">
-                        <h4>Skilled Instructors</h4>
-                        <p>Labore rebum duo est Sit dolore eos sit tempor eos stet, vero vero clita magna kasd no nonumy et eos dolor magna ipsum.</p>
+                        <h4>Disponibilité
+                        </h4>
+                        <p>Notre support répond à vos appels 7j/7 sans interruption.</p>
                     </div>
                 </div>
                 <div class="d-flex mb-3">
-                    <div class="btn-icon bg-secondary mr-4">
-                        <i class="fa fa-2x fa-certificate text-white"></i>
+                    <div class="btn-icon mr-4 display-4">
+                        <i class="fa  fa-sliders-h text-white"></i>
                     </div>
                     <div class="mt-n1">
-                        <h4>International Certificate</h4>
-                        <p>Labore rebum duo est Sit dolore eos sit tempor eos stet, vero vero clita magna kasd no nonumy et eos dolor magna ipsum.</p>
+                        <h4>Flexibilité </h4>
+                        <p>On s’adapte aux exigences et aux demandes de nos clients. Votre satisfaction est notre unique priorité.</p>
                     </div>
                 </div>
                 <div class="d-flex">
-                    <div class="btn-icon bg-warning mr-4">
-                        <i class="fa fa-2x fa-book-reader text-white"></i>
+                    <div class="btn-icon  mr-4 display-4">
+                        <i class="fas fa-compress-arrows-alt text-white"></i>
                     </div>
                     <div class="mt-n1">
-                        <h4>Online Classes</h4>
-                        <p class="m-0">Labore rebum duo est Sit dolore eos sit tempor eos stet, vero vero clita magna kasd no nonumy et eos dolor magna ipsum.</p>
+                        <h4>Solutions adéquates
+                        </h4>
+                        <p class="m-0">Nos solutions sont conçues de façon adaptée à vos soucis informatiques, nous nous efforçons d’être plus pertinent pour atteindre les objectifs de nos clients..</p>
+                    </div>
+                </div>
+
+                <div class="d-flex">
+                    <div class="btn-icon  mr-4 display-4">
+                        <i class="fas  fa-dollar-sign text-white"></i>
+                    </div>
+                    <div class="mt-n1">
+                        <h4>Budget
+                        </h4>
+                        <p class="m-0">Tous les prix sont définis à l’avance sans surprise. Nous assurons un bon rapport qualité/prix.</p>
                     </div>
                 </div>
             </div>
             <div class="col-lg-5" style="min-height: 500px;">
                 <div class="position-relative h-100">
+
                     <img class="position-absolute w-100 h-100" src="{% static 'img/feature.jpg' %}" style="object-fit: cover;">
+
+                    <img class="position-absolute w-100 h-100" src="{% static 'img/nous-choisir1.jpg' %}" style="object-fit: cover;">
+
                 </div>
             </div>
         </div>
@@ -133,99 +131,65 @@
     <div class="row mx-0 justify-content-center pt-5">
         <div class="col-lg-6">
             <div class="section-title text-center position-relative mb-4">
-                <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Our Courses</h6>
-                <h1 class="display-4">Checkout New Releases Of Our Courses</h1>
+                <h6 class="d-inline-block position-relative service-title text-secondary text-uppercase pb-2">Nos Services</h6>
+
+                <h1 class="display-4" id ="services">Services en vedette</h1>
+
             </div>
         </div>
     </div>
     <div class="owl-carousel courses-carousel">
         <div class="courses-item position-relative">
-            <img class="img-fluid" src="img/courses-1.jpg" alt="">
+            <img class="img-fluid" src="{%  static 'img/dev-apps.webp' %}" alt="">
             <div class="courses-text">
-                <h4 class="text-center text-white px-3">Web design & development courses for beginners</h4>
-                <div class="border-top w-100 mt-3">
-                    <div class="d-flex justify-content-between p-4">
-                        <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                        <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 <small>(250)</small></span>
-                    </div>
-                </div>
+                <h4 class="text-center text-white px-3">Développement d'applications</h4>
                 <div class="w-100 bg-white text-center p-4" >
-                    <a class="btn btn-primary" href="detail.html">Course Detail</a>
+                    <a class="btn btn-primary" href="{% url 'devApplication' %}">Détails</a>
                 </div>
             </div>
         </div>
         <div class="courses-item position-relative">
-            <img class="img-fluid" src="img/courses-2.jpg" alt="">
+            <img class="img-fluid" src="{% static 'img/ia-auto.jpg' %}" alt="">
             <div class="courses-text">
-                <h4 class="text-center text-white px-3">Web design & development courses for beginners</h4>
-                <div class="border-top w-100 mt-3">
-                    <div class="d-flex justify-content-between p-4">
-                        <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                        <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 <small>(250)</small></span>
-                    </div>
-                </div>
+                <h4 class="text-center text-white px-3">Automatisation des  Systemes avec IA</h4>
                 <div class="w-100 bg-white text-center p-4" >
-                    <a class="btn btn-primary" href="detail.html">Course Detail</a>
+                    <a class="btn btn-primary" href="{% url 'automatisationIa' %}">Détails</a>
                 </div>
             </div>
         </div>
         <div class="courses-item position-relative">
-            <img class="img-fluid" src="img/courses-3.jpg" alt="">
+            <img class="img-fluid" src="{% static 'img/web-design-multimedia.jpg' %}" alt="">
             <div class="courses-text">
-                <h4 class="text-center text-white px-3">Web design & development courses for beginners</h4>
-                <div class="border-top w-100 mt-3">
-                    <div class="d-flex justify-content-between p-4">
-                        <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                        <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 <small>(250)</small></span>
-                    </div>
-                </div>
+                <h4 class="text-center text-white px-3">Web design & Multimédia</h4>
                 <div class="w-100 bg-white text-center p-4" >
-                    <a class="btn btn-primary" href="detail.html">Course Detail</a>
+                    <a class="btn btn-primary" href="{% url 'webDesignMultimedia' %}">Détails</a>
                 </div>
             </div>
         </div>
         <div class="courses-item position-relative">
-            <img class="img-fluid" src="img/courses-4.jpg" alt="">
+            <img class="img-fluid" src="{% static 'img/community-management.jpg' %}" alt="">
             <div class="courses-text">
-                <h4 class="text-center text-white px-3">Web design & development courses for beginners</h4>
-                <div class="border-top w-100 mt-3">
-                    <div class="d-flex justify-content-between p-4">
-                        <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                        <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 <small>(250)</small></span>
-                    </div>
-                </div>
+                <h4 class="text-center text-white px-3">Community Management</h4>
                 <div class="w-100 bg-white text-center p-4" >
-                    <a class="btn btn-primary" href="detail.html">Course Detail</a>
+                    <a class="btn btn-primary" href="{% url 'communityManagement' %}">Détails</a>
                 </div>
             </div>
         </div>
         <div class="courses-item position-relative">
-            <img class="img-fluid" src="img/courses-5.jpg" alt="">
+            <img class="img-fluid" src="{% static 'img/maintenances.jpg' %}" alt="">
             <div class="courses-text">
-                <h4 class="text-center text-white px-3">Web design & development courses for beginners</h4>
-                <div class="border-top w-100 mt-3">
-                    <div class="d-flex justify-content-between p-4">
-                        <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                        <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 <small>(250)</small></span>
-                    </div>
-                </div>
+                <h4 class="text-center text-white px-3">Maintenance Et installations des logiciels</h4>
                 <div class="w-100 bg-white text-center p-4" >
-                    <a class="btn btn-primary" href="detail.html">Course Detail</a>
+                    <a class="btn btn-primary" href="{% url 'maintenance' %}"> Détails</a>
                 </div>
             </div>
         </div>
         <div class="courses-item position-relative">
-            <img class="img-fluid" src="img/courses-6.jpg" alt="">
+            <img class="img-fluid" src="{% static 'img/taches-auto.jpg' %}" alt="">
             <div class="courses-text">
-                <h4 class="text-center text-white px-3">Web design & development courses for beginners</h4>
-                <div class="border-top w-100 mt-3">
-                    <div class="d-flex justify-content-between p-4">
-                        <span class="text-white"><i class="fa fa-user mr-2"></i>Jhon Doe</span>
-                        <span class="text-white"><i class="fa fa-star mr-2"></i>4.5 <small>(250)</small></span>
-                    </div>
-                </div>
+                <h4 class="text-center text-white px-3">Automatisation des tâches</h4>
                 <div class="w-100 bg-white text-center p-4" >
-                    <a class="btn btn-primary" href="detail.html">Course Detail</a>
+                    <a class="btn btn-primary" href="{% url 'automatisationTache' %}">Détails</a>
                 </div>
             </div>
         </div>
@@ -233,17 +197,17 @@
     <div class="row justify-content-center bg-image mx-0 mb-5">
         <div class="col-lg-6 py-5">
             <div class="bg-white p-5 my-5">
-                <h1 class="text-center mb-4">30% Off For New Students</h1>
+                <h1 class="text-center mb-4">Demander un devis</h1>
                 <form>
                     <div class="form-row">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <input type="text" class="form-control bg-light border-0" placeholder="Your Name" style="padding: 30px 20px;">
+                                <input type="text" class="form-control bg-light border-0" placeholder="Votre nom" style="padding: 30px 20px;">
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <input type="email" class="form-control bg-light border-0" placeholder="Your Email" style="padding: 30px 20px;">
+                                <input type="email" class="form-control bg-light border-0" placeholder="Votre adresse email" style="padding: 30px 20px;">
                             </div>
                         </div>
                     </div>
@@ -251,15 +215,18 @@
                         <div class="col-sm-6">
                             <div class="form-group">
                                 <select class="custom-select bg-light border-0 px-3" style="height: 60px;">
-                                    <option selected>Select A courses</option>
-                                    <option value="1">courses 1</option>
-                                    <option value="2">courses 1</option>
-                                    <option value="3">courses 1</option>
+                                    <option selected>Sélectionner un service</option>
+                                    <option value="1">Developpment d'applications</option>
+                                    <option value="2">Community management</option>
+                                    <option value="3">Web Design & Multimédia</option>
+                                    <option value="3">Maintenance & installation des logiciels</option>
+                                    <option value="3">Automatisation des tâches </option>
+                                    <option value="3">Automatisation des systèmes avec IA</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-sm-6">
-                            <button class="btn btn-primary btn-block" type="submit" style="height: 60px;">Sign Up Now</button>
+                            <button class="btn btn-primary btn-block" type="submit" style="height: 60px;">Envoyer</button>
                         </div>
                     </div>
                 </form>
@@ -269,68 +236,157 @@
 </div>
 <!-- Courses End -->
 
-
 <!-- Team Start -->
-<div class="container-fluid py-5">
-    <div class="container py-5">
-        <div class="section-title text-center position-relative mb-5">
-            <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Instructors</h6>
-            <h1 class="display-4">Meet Our Instructors</h1>
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title bg-white text-center text-primary px-3">Equipe</h6>
+            <h1 class="mb-5">Notre Equipe</h1>
         </div>
-        <div class="owl-carousel team-carousel position-relative" style="padding: 0 30px;">
-            <div class="team-item">
-                <img class="img-fluid w-100" src="img/team-1.jpg" alt="">
-                <div class="bg-light text-center p-4">
-                    <h5 class="mb-3">Instructor Name</h5>
-                    <p class="mb-2">Web Design & Development</p>
-                    <div class="d-flex justify-content-center">
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item bg-light">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="{% static 'img/prince.jpg' %}" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center team-text p-4"  id="cadre">
+                        <h5 class="mb-0" id="nom">Prince Parfait AGLAGO</h5>
+                        <small>Developpeur Full Stack & Mécanicien</small>
                     </div>
                 </div>
             </div>
-            <div class="team-item">
-                <img class="img-fluid w-100" src="img/team-2.jpg" alt="">
-                <div class="bg-light text-center p-4">
-                    <h5 class="mb-3">Instructor Name</h5>
-                    <p class="mb-2">Web Design & Development</p>
-                    <div class="d-flex justify-content-center">
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="team-item bg-light">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="{% static 'img/team-2.jpg' %}" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center team-text p-4" id="cadre">
+                        <h5 class="mb-0" id="nom">Kofi Gédéon Godway HOUNKPATI</h5>
+                        <small>Ingénieur Logiciel</small>
                     </div>
                 </div>
             </div>
-            <div class="team-item">
-                <img class="img-fluid w-100" src="img/team-3.jpg" alt="">
-                <div class="bg-light text-center p-4">
-                    <h5 class="mb-3">Instructor Name</h5>
-                    <p class="mb-2">Web Design & Development</p>
-                    <div class="d-flex justify-content-center">
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="team-item bg-light">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="{% static 'img/jules.jpg' %}" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center team-text p-4" id="cadre">
+                        <h5 class="mb-0" id="nom">Messanh Jules FOLLYKOE</h5>
+                        <small>Ingénieur Logiciel</small>
                     </div>
                 </div>
             </div>
-            <div class="team-item">
-                <img class="img-fluid w-100" src="img/team-4.jpg" alt="">
-                <div class="bg-light text-center p-4">
-                    <h5 class="mb-3">Instructor Name</h5>
-                    <p class="mb-2">Web Design & Development</p>
-                    <div class="d-flex justify-content-center">
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-instagram"></i></a>
-                        <a class="mx-1 p-1" href="#"><i class="fab fa-youtube"></i></a>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="team-item bg-light">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="{% static 'img/team-4.jpg' %}" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center team-text p-4" id="cadre">
+                        <h5 class="mb-0" id="nom">Kokou Shalom GBEKOU</h5>
+                        <small>Dévelloppeur Full Stack</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4 mt-4">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="team-item bg-light">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="{% static 'img/team-3.jpg' %}" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center team-text p-4" id="cadre">
+                        <h5 class="mb-0" id="nom">Benjamin Kany ALLODE</h5>
+                        <small>Developpeur Full Stack & DBA Jr</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="team-item bg-light">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="{% static 'img/cyrille.png' %}" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center team-text p-4" id="cadre">
+                        <h5 class="mb-0" id="nom">Komlan Cyrille ATSOU-AKPOTO</h5>
+                        <small>Web Designer</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="team-item bg-light">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="{% static 'img/team-3.jpg' %}" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center team-text p-4" id="cadre">
+                        <h5 class="mb-0" id="nom">Kossivi Mawuli Josué KOMADAN</h5>
+                        <small>Web Designer</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="team-item bg-light">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="{% static 'img/sandrine.jpg' %}" alt="">
+                    </div>
+                    <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
+                        <div class="bg-light d-flex justify-content-center pt-2 px-1">
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-sm-square btn-primary mx-1" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center team-text p-4" id="cadre">
+                        <h5 class="mb-0" id="nom">Mazama-Esso Sandrine TCHAMIE</h5>
+                        <small>Journaliste</small>
                     </div>
                 </div>
             </div>
@@ -346,32 +402,32 @@
         <div class="row align-items-center">
             <div class="col-lg-5 mb-5 mb-lg-0">
                 <div class="section-title position-relative mb-4">
-                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Testimonial</h6>
-                    <h1 class="display-4">What Say Our Students</h1>
+                    <h6 class="d-inline-block position-relative  temoignage-title text-secondary text-uppercase pb-2">Témoignages</h6>
+                    <h1 class="display-4">Ce que les clients disent de nous</h1>
                 </div>
-                <p class="m-0">Dolor est dolores et nonumy sit labore dolores est sed rebum amet, justo duo ipsum sanctus dolore magna rebum sit et. Diam lorem ea sea at. Nonumy et at at sed justo est nonumy tempor. Vero sea ea eirmod, elitr ea amet diam ipsum at amet. Erat sed stet eos ipsum diam</p>
+                <p class="m-0">Leurs mots valent mille éloges. Découvrez les retours authentiques de ceux qui nous ont fait confiance.
+                    Chaque témoignage raconte une histoire unique - celle d'une collaboration réussie, d'un défi relevé ensemble,
+                    et d'une satisfaction partagée. Ces voix sont notre plus belle récompense.</p>
             </div>
             <div class="col-lg-7">
                 <div class="owl-carousel testimonial-carousel">
                     <div class="bg-white p-5">
-                        <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                        <p>Sed et elitr ipsum labore dolor diam, ipsum duo vero sed sit est est ipsum eos clita est ipsum. Est nonumy tempor at kasd. Sed at dolor duo ut dolor, et justo erat dolor magna sed stet amet elitr duo lorem</p>
+                        <i class="fa fa-3x fa-quote-left  temoignage-cote mb-4"></i>
+                        <p> Collaborer avec MiabeInnovation a été une expérience très positive. Leur dynamisme, leur créativité et leur compréhension de nos besoins marketing ont largement dépassé nos attentes. Leur accompagnement a vraiment apporté une valeur ajoutée à nos projets.</p>
                         <div class="d-flex flex-shrink-0 align-items-center mt-4">
-                            <img class="img-fluid mr-4" src="img/testimonial-2.jpg" alt="">
                             <div>
-                                <h5>Student Name</h5>
-                                <span>Web Design</span>
+                                <h5>Marie</h5>
+                                <span>Responsable marketing</span>
                             </div>
                         </div>
                     </div>
                     <div class="bg-white p-5">
-                        <i class="fa fa-3x fa-quote-left text-primary mb-4"></i>
-                        <p>Sed et elitr ipsum labore dolor diam, ipsum duo vero sed sit est est ipsum eos clita est ipsum. Est nonumy tempor at kasd. Sed at dolor duo ut dolor, et justo erat dolor magna sed stet amet elitr duo lorem</p>
+                        <i class="fa fa-3x fa-quote-left temoignage-cote mb-4"></i>
+                        <p>Travailler avec MiabeInnovation a été une excellente décision pour notre entreprise. Leur expertise technique, leur réactivité et leur créativité ont permis de concrétiser nos projets numériques avec succès. C’est une équipe sérieuse et engagée, que je recommande sans hésitation.</p>
                         <div class="d-flex flex-shrink-0 align-items-center mt-4">
-                            <img class="img-fluid mr-4" src="img/testimonial-1.jpg" alt="">
                             <div>
-                                <h5>Student Name</h5>
-                                <span>Web Design</span>
+                                <h5>Thomas </h5>
+                                <span>Directeur d'Entreprise</span>
                             </div>
                         </div>
                     </div>
@@ -394,8 +450,8 @@
                             <i class="fa fa-2x fa-map-marker-alt text-white"></i>
                         </div>
                         <div class="mt-n1">
-                            <h4>Our Location</h4>
-                            <p class="m-0">123 Street, New York, USA</p>
+                            <h4>Notre Adresse</h4>
+                            <p class="m-0"> Lomé, TOGO</p>
                         </div>
                     </div>
                     <div class="d-flex align-items-center mb-5">
@@ -403,8 +459,8 @@
                             <i class="fa fa-2x fa-phone-alt text-white"></i>
                         </div>
                         <div class="mt-n1">
-                            <h4>Call Us</h4>
-                            <p class="m-0">+012 345 6789</p>
+                            <h4>Nous Contacter</h4>
+                            <p class="m-0">(+228) 93473496 / 99682745</p>
                         </div>
                     </div>
                     <div class="d-flex align-items-center">
@@ -412,35 +468,35 @@
                             <i class="fa fa-2x fa-envelope text-white"></i>
                         </div>
                         <div class="mt-n1">
-                            <h4>Email Us</h4>
-                            <p class="m-0">info@example.com</p>
+                            <h4>Joignez-nous</h4>
+                            <p class="m-0">info@miabeinnovation.com</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-7">
                 <div class="section-title position-relative mb-4">
-                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Need Help?</h6>
-                    <h1 class="display-4">Send Us A Message</h1>
+                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">VOUS AVEZ UN PROJET EN TÊTE ?</h6>
+                    <h1 class="display-4">Envoyez nous un message</h1>
                 </div>
                 <div class="contact-form">
                     <form>
                         <div class="row">
                             <div class="col-6 form-group">
-                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your Name" required="required">
+                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Votre Nom" required="required">
                             </div>
                             <div class="col-6 form-group">
-                                <input type="email" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your Email" required="required">
+                                <input type="email" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Votre Mail" required="required">
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Subject" required="required">
+                            <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Objet" required="required">
                         </div>
                         <div class="form-group">
                             <textarea class="form-control border-top-0 border-right-0 border-left-0 p-0" rows="5" placeholder="Message" required="required"></textarea>
                         </div>
                         <div>
-                            <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
+                            <button class="btn btn-primary py-3 px-5" type="submit">Soumettre</button>
                         </div>
                     </form>
                 </div>
