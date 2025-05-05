@@ -170,10 +170,50 @@
                         </div>
                     </div>
                     
-                    <!-- More team members... -->
+                    <!-- Design... -->
+                <div class="mi-tab-content" data-tab="design">
+                    <div class="mi-dept-team">
+                        <!-- Membre Design 1 -->
+                        <div class="mi-team-member">
+                            <div class="mi-member-image">
+                                <img src="{% static 'img/team/design1.jpg' %}" alt="Designer UI/UX">
+                                 <div class="mi-member-overlay">
+                                    <h4>Spécialité : Expérience Utilisateur</h4>
+                                    <div class="mi-social-links">
+                                        <a href="#"><i class="fab fa-behance"></i></a>
+                                        <a href="#"><i class="fab fa-dribbble"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mi-member-info">
+                                <h3>Sarah Mensah</h3>
+                                <p>UI/UX Designer</p>
+                            </div>
+                        </div>
+                        <!-- Ajoutez d'autres membres -->
+                    </div>
+                    <div class="mi-dept-achievements">
+                        <h3>Réalisations Design</h3>
+                        <ul>
+                            <li>50+ interfaces utilisateur créées</li>
+                            <li>Augmentation de 40% de l'engagement utilisateur</li>
+                            <li>Design system primé</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mi-tab-content" data-tab="marketing">
+                    <!-- Contenu Marketing similaire -->
                 </div>
                 
-                <div class="mi-dept-achievements">
+                <div class="mi-tab-content" data-tab="operations">
+                    <!-- Contenu Opérations similaire -->
+                </div>
+
+            </div>
+
+                
+            <div class="mi-dept-achievements">
                     <h3>Réalisations Clés</h3>
                     <ul>
                         <li>Développement de 15+ applications IA</li>
@@ -792,94 +832,95 @@
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Animated counter for stats
-    const statNumbers = document.querySelectorAll('.mi-stat-number');
-    
-    statNumbers.forEach(stat => {
-        const target = parseInt(stat.getAttribute('data-count'));
-        const duration = 2000;
-        const step = target / (duration / 16);
-        let current = 0;
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Animated counter for stats
+        const statNumbers = document.querySelectorAll('.mi-stat-number');
         
-        const updateCount = () => {
-            current += step;
-            if (current < target) {
-                stat.textContent = Math.floor(current);
-                requestAnimationFrame(updateCount);
-            } else {
-                stat.textContent = target;
-            }
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-                updateCount();
-                observer.unobserve(stat);
-            }
-        });
-        
-        observer.observe(stat);
-    });
-    
-    // Department tabs functionality
-    const tabs = document.querySelectorAll('.mi-tab');
-    
-    tabs.forEach(tab => {
-        tab.addEventListener('click', function() {
-            const tabId = this.getAttribute('data-tab');
+        statNumbers.forEach(stat => {
+            const target = parseInt(stat.getAttribute('data-count'));
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
             
-            // Update active tab
-            tabs.forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
+            const updateCount = () => {
+                current += step;
+                if (current < target) {
+                    stat.textContent = Math.floor(current);
+                    requestAnimationFrame(updateCount);
+                } else {
+                    stat.textContent = target;
+                }
+            };
             
-            // Show corresponding content
-            document.querySelectorAll('.mi-tab-content').forEach(content => {
-                content.classList.remove('active');
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    updateCount();
+                    observer.unobserve(stat);
+                }
             });
-            document.querySelector(`.mi-tab-content[data-tab="${tabId}"]`).classList.add('active');
-        });
-    });
-    
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
             
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 100,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-    
-    // Team member hover effect enhancement
-    const teamMembers = document.querySelectorAll('.mi-team-member');
-    
-    teamMembers.forEach(member => {
-        member.addEventListener('mousemove', function(e) {
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const angleX = (y - centerY) / 20;
-            const angleY = (centerX - x) / 20;
-            
-            this.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-5px)`;
+            observer.observe(stat);
         });
         
-        member.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(-5px)';
+        // Department tabs functionality
+        const tabs = document.querySelectorAll('.mi-tab');
+        
+        tabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const tabId = this.getAttribute('data-tab');
+                
+                // Update active tab
+                tabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Show corresponding content
+                document.querySelectorAll('.mi-tab-content').forEach(content => {
+                    content.classList.remove('active');
+                });
+                document.querySelector(`.mi-tab-content[data-tab="${tabId}"]`).classList.add('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Team member hover effect enhancement
+        const teamMembers = document.querySelectorAll('.mi-team-member');
+        
+        teamMembers.forEach(member => {
+            member.addEventListener('mousemove', function(e) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const angleX = (y - centerY) / 20;
+                const angleY = (centerX - x) / 20;
+                
+                this.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg) translateY(-5px)`;
+            });
+            
+            member.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(-5px)';
+            });
         });
     });
-});
 </script>
 
 {% endblock %}

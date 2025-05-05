@@ -1,13 +1,1131 @@
 {% extends 'base.html' %}
-{% load static %}
+
 {% block body %}
+<div class="testimonials-page wow-version">
+    <!-- Hero Section avec effet Parallax -->
+    <section class="testimonials-hero parallax" data-parallax="scroll" data-image-src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
+        <div class="hero-overlay" style="background: linear-gradient(135deg, rgba(32, 37, 72, 0.9) 0%, rgba(216, 88, 20, 0.7) 100%);">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="wow fadeInDown" data-wow-delay="0.3s">Vos <span class="highlight">satisfaction</span><br>notre fierté</h1>
+                    
+                    <div class="rating-display wow zoomIn" data-wow-delay="0.6s">
+                        <div class="stars-pulse">
+                            <div class="average-rating">4.9</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <p class="rating-count wow fadeIn" data-wow-delay="0.9s">Basé sur <strong>87 témoignages</strong> clients</p>
+                    </div>
+                    
+                    <div class="scroll-hint wow fadeInUp" data-wow-delay="1.2s">
+                        <span>Explorer</span>
+                        <div class="mouse">
+                            <div class="wheel"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Témoignages 3D Carousel -->
+    <section class="testimonials-carousel-section">
+        <div class="container">
+            <div class="section-header wow fadeInUp">
+                <h2>Ils parlent <span class="highlight">de nous</span></h2>
+                <div class="divider"></div>
+                <p>Découvrez ce que nos clients disent de leur expérience</p>
+            </div>
 
+            <div class="testimonials-3d-carousel wow fadeIn" data-wow-delay="0.4s">
+                <!-- Témoignage 1 -->
+                <div class="testimonial-card">
+                    <div class="card-inner">
+                        <div class="client-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Client" class="img-fluid">
+                            <div class="avatar-border"></div>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="client-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"L'équipe a complètement transformé notre présence digitale. Les résultats ont dépassé nos attentes!"</p>
+                            <div class="client-info">
+                                <h4>Marie D.</h4>
+                                <p>Directrice Marketing</p>
+                            </div>
+                        </div>
+                        <div class="project-tag" style="background-color: #D85814;">
+                            <i class="fas fa-paint-brush"></i> Branding
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Témoignage 2 -->
+                <div class="testimonial-card">
+                    <div class="card-inner">
+                        <div class="client-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="img-fluid">
+                            <div class="avatar-border"></div>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="client-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"L'application mobile qu'ils ont développée est tout simplement parfaite. Un travail d'expert!"</p>
+                            <div class="client-info">
+                                <h4>Pierre L.</h4>
+                                <p>CEO Startup</p>
+                            </div>
+                        </div>
+                        <div class="project-tag" style="background-color: #202548;">
+                            <i class="fas fa-mobile-alt"></i> App Mobile
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Témoignage 3 -->
+                <div class="testimonial-card">
+                    <div class="card-inner">
+                        <div class="client-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client" class="img-fluid">
+                            <div class="avatar-border"></div>
+                        </div>
+                        <div class="testimonial-content">
+                            <div class="client-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"L'IA qu'ils ont implémentée a révolutionné notre gestion de stock. Incroyablement efficace!"</p>
+                            <div class="client-info">
+                                <h4>Sophie T.</h4>
+                                <p>Directrice Commerciale</p>
+                            </div>
+                        </div>
+                        <div class="project-tag" style="background-color: #D85814;">
+                            <i class="fas fa-robot"></i> Intelligence Artificielle
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-nav wow fadeIn" data-wow-delay="0.6s">
+                <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="dots"></div>
+                <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Témoignages en Masonry Grid -->
+    <section class="testimonials-masonry">
+        <div class="container">
+            <div class="section-header wow fadeInUp">
+                <h2>Plus de <span class="highlight">retours</span> clients</h2>
+                <div class="divider"></div>
+            </div>
+
+            <div class="masonry-grid">
+                <!-- Item 1 -->
+                <div class="masonry-item wow fadeInUp">
+                    <div class="testimonial-quote">
+                        <div class="quote-mark">“</div>
+                        <p>Le site web qu'ils ont créé a boosté nos ventes de 150% en 3 mois. Une équipe vraiment talentueuse!</p>
+                        <div class="client">
+                            <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Client">
+                            <div>
+                                <h4>Thomas B.</h4>
+                                <p>E-commerce</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="masonry-item wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="testimonial-card">
+                        <div class="client-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p>"Notre application mobile est maintenant dans le top 10 des apps business. Merci pour ce travail exceptionnel!"</p>
+                        <div class="client-info">
+                            <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Client">
+                            <div>
+                                <h4>Emma K.</h4>
+                                <p>Directrice Technologie</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="masonry-item wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="testimonial-video">
+                        <div class="video-thumbnail">
+                            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Témoignage vidéo">
+                            <div class="play-btn"><i class="fas fa-play"></i></div>
+                        </div>
+                        <div class="video-info">
+                            <h4>Témoignage client</h4>
+                            <p>Jean M. - CEO</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="masonry-item wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="testimonial-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">+200%</div>
+                            <div class="stat-label">Augmentation trafic</div>
+                        </div>
+                        <p>"Depuis le nouveau site, notre visibilité a explosé. Le meilleur investissement de l'année!"</p>
+                        <div class="client-signature">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client">
+                            <div>
+                                <h4>Alex R.</h4>
+                                <p>Directeur Marketing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Logo Cloud avec effet Parallax -->
+    <section class="clients-parallax" data-parallax="scroll" data-image-src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80">
+        <div class="parallax-overlay" style="background: rgba(32, 37, 72, 0.85);">
+            <div class="container">
+                <div class="section-header wow fadeInUp">
+                    <h2>Ils nous <span class="highlight">font confiance</span></h2>
+                    <div class="divider"></div>
+                </div>
+
+                <div class="logo-cloud wow fadeIn" data-wow-delay="0.4s">
+                    <div class="logo-item"><img src="https://via.placeholder.com/200x100/202548/FFFFFF?text=TechCorp" alt="Logo"></div>
+                    <div class="logo-item"><img src="https://via.placeholder.com/200x100/D85814/FFFFFF?text=Innovate" alt="Logo"></div>
+                    <div class="logo-item"><img src="https://via.placeholder.com/200x100/FFFFFF/202548?text=Digital+" alt="Logo"></div>
+                    <div class="logo-item"><img src="https://via.placeholder.com/200x100/202548/FFFFFF?text=Solutions" alt="Logo"></div>
+                    <div class="logo-item"><img src="https://via.placeholder.com/200x100/D85814/FFFFFF?text=Future" alt="Logo"></div>
+                    <div class="logo-item"><img src="https://via.placeholder.com/200x100/FFFFFF/202548?text=Vision" alt="Logo"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Immersif -->
+    <section class="testimonial-cta-immersive">
+        <div class="cta-container">
+            <div class="cta-content wow fadeInUp">
+                <h2>Prêt à écrire <span class="highlight">votre</span> succès?</h2>
+                <p>Rejoignez nos clients satisfaits et transformez vos idées en réalité</p>
+                <a href="#" class="cta-btn">
+                    <span>Nous contacter</span>
+                    <div class="btn-hover-effect"></div>
+                </a>
+            </div>
+            
+            <div class="cta-particles" id="cta-particles"></div>
+        </div>
+    </section>
+</div>
+
+<style>
+/* Base Styles */
+.testimonials-page.wow-version {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.highlight {
+    color: #D85814;
+    position: relative;
+    display: inline-block;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background-color: rgba(216, 88, 20, 0.3);
+    z-index: -1;
+    border-radius: 4px;
+}
+
+/* Hero Section */
+.testimonials-hero.parallax {
+    height: 100vh;
+    min-height: 700px;
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero-content h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.rating-display {
+    margin: 40px auto;
+}
+
+.stars-pulse {
+    display: inline-block;
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+.average-rating {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.stars {
+    color: #FFD700;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.rating-count {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-top: 20px;
+}
+
+.scroll-hint {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    text-align: center;
+}
+
+.mouse {
+    width: 30px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 15px;
+    position: relative;
+    margin: 10px auto;
+}
+
+.wheel {
+    width: 6px;
+    height: 10px;
+    background-color: white;
+    border-radius: 3px;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scrollWheel 2s infinite;
+}
+
+/* 3D Carousel */
+.testimonials-carousel-section {
+    padding: 120px 0;
+    background-color: #f9f9f9;
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonials-carousel-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, white, rgba(249, 249, 249, 0));
+    z-index: 2;
+}
+
+.testimonials-3d-carousel {
+    display: flex;
+    justify-content: center;
+    perspective: 1000px;
+    margin: 60px auto;
+    position: relative;
+    height: 500px;
+}
+
+.testimonial-card {
+    width: 350px;
+    position: absolute;
+    transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transform-style: preserve-3d;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.testimonial-card:nth-child(1) {
+    transform: translateX(-80%) scale(0.8);
+    z-index: 1;
+    opacity: 0.7;
+}
+
+.testimonial-card:nth-child(2) {
+    transform: translateX(0) scale(1);
+    z-index: 2;
+    opacity: 1;
+}
+
+.testimonial-card:nth-child(3) {
+    transform: translateX(80%) scale(0.8);
+    z-index: 1;
+    opacity: 0.7;
+}
+
+.card-inner {
+    background: white;
+    padding: 40px 30px;
+    height: 100%;
+    position: relative;
+}
+
+.client-avatar {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 25px;
+    position: relative;
+}
+
+.client-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.avatar-border {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid #D85814;
+    border-radius: 50%;
+    animation: rotateBorder 8s linear infinite;
+}
+
+.testimonial-content {
+    text-align: center;
+}
+
+.client-rating {
+    color: #FFD700;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.testimonial-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+.client-info h4 {
+    font-size: 1.3rem;
+    color: #202548;
+    margin-bottom: 5px;
+}
+
+.client-info p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.project-tag {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+}
+
+.project-tag i {
+    margin-right: 8px;
+}
+
+.carousel-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.prev-btn, .next-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #202548;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: #D85814;
+    transform: scale(1.1);
+}
+
+.dots {
+    display: flex;
+    margin: 0 20px;
+}
+
+.dots span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dots span.active {
+    background-color: #D85814;
+    transform: scale(1.2);
+}
+
+/* Masonry Grid */
+.testimonials-masonry {
+    padding: 120px 0;
+    background-color: white;
+}
+
+.masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 60px;
+}
+
+.masonry-item {
+    break-inside: avoid;
+}
+
+.testimonial-quote {
+    background: linear-gradient(135deg, #202548 0%, #2a315a 100%);
+    padding: 40px;
+    border-radius: 15px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.testimonial-quote::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background-color: rgba(216, 88, 20, 0.1);
+    border-radius: 50%;
+}
+
+.quote-mark {
+    font-size: 6rem;
+    line-height: 1;
+    color: rgba(216, 88, 20, 0.3);
+    margin-bottom: 20px;
+}
+
+.testimonial-quote p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.client {
+    display: flex;
+    align-items: center;
+}
+
+.client img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 2px solid #D85814;
+}
+
+.client h4 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.client p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.testimonial-video {
+    position: relative;
+    border-radius: 15px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.video-thumbnail {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.video-thumbnail:hover img {
+    transform: scale(1.1);
+}
+
+.play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background-color: rgba(216, 88, 20, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.video-thumbnail:hover .play-btn {
+    background-color: #D85814;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.video-info {
+    padding: 20px;
+    background: white;
+}
+
+.video-info h4 {
+    font-size: 1.2rem;
+    color: #202548;
+    margin-bottom: 5px;
+}
+
+.video-info p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.testimonial-stats {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+    height: 100%;
+}
+
+.stat-item {
+    margin-bottom: 20px;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #D85814;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+.testimonial-stats p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #444;
+    margin: 25px 0;
+    font-style: italic;
+}
+
+.client-signature {
+    display: flex;
+    align-items: center;
+}
+
+.client-signature img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 2px solid #202548;
+}
+
+.client-signature h4 {
+    font-size: 1.1rem;
+    color: #202548;
+    margin-bottom: 5px;
+}
+
+.client-signature p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Clients Parallax */
+.clients-parallax.parallax {
+    height: 600px;
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.parallax-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-header h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.section-header .divider {
+    width: 80px;
+    height: 4px;
+    background-color: #D85814;
+    margin: 0 auto 20px;
+}
+
+.section-header p {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.logo-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.logo-item {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.logo-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.logo-item img {
+    max-width: 180px;
+    height: auto;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.logo-item:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+/* CTA Immersif */
+.testimonial-cta-immersive {
+    position: relative;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #202548 0%, #14182b 100%);
+    overflow: hidden;
+}
+
+.cta-container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.cta-content h2 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.cta-content p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px 40px;
+    background-color: #D85814;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.cta-btn span {
+    position: relative;
+    z-index: 2;
+}
+
+.btn-hover-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #D85814, #e67e51, #D85814);
+    background-size: 200% 100%;
+    z-index: 1;
+    transition: all 0.5s ease;
+}
+
+.cta-btn:hover .btn-hover-effect {
+    background-position: 100% 0;
+}
+
+.cta-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes scrollWheel {
+    0% { top: 10px; opacity: 1; }
+    100% { top: 30px; opacity: 0; }
+}
+
+@keyframes rotateBorder {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .testimonials-3d-carousel {
+        height: 450px;
+    }
     
+    .testimonial-card {
+        width: 300px;
+    }
+}
 
-
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 3.5rem;
+    }
     
+    .average-rating {
+        font-size: 4rem;
+    }
+    
+    .testimonials-3d-carousel {
+        height: auto;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        perspective: none;
+    }
+    
+    .testimonial-card {
+        position: static;
+        transform: none !important;
+        opacity: 1 !important;
+        width: 100%;
+        max-width: 500px;
+        margin-bottom: 30px;
+    }
+    
+    .masonry-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
 
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+    
+    .average-rating {
+        font-size: 3.5rem;
+    }
+    
+    .stars {
+        font-size: 1.8rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2.3rem;
+    }
+    
+    .cta-content h2 {
+        font-size: 2.8rem;
+    }
+    
+    .logo-cloud {
+        gap: 20px;
+    }
+    
+    .logo-item {
+        padding: 15px;
+    }
+    
+    .logo-item img {
+        max-width: 120px;
+    }
+}
 
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 2.3rem;
+    }
+    
+    .average-rating {
+        font-size: 3rem;
+    }
+    
+    .testimonial-card {
+        padding: 25px;
+    }
+    
+    .testimonial-quote {
+        padding: 25px;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .cta-content h2 {
+        font-size: 2.2rem;
+    }
+    
+    .cta-content p {
+        font-size: 1.1rem;
+    }
+    
+    .cta-btn {
+        padding: 15px 30px;
+    }
+}
+</style>
 
-    {% endblock %}
+<!-- Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax.js/1.5.0/parallax.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialise Parallax
+    new Parallax(document.querySelector('.testimonials-hero.parallax'));
+    new Parallax(document.querySelector('.clients-parallax.parallax'));
+    
+    // Initialise Wow.js
+    new WOW().init();
+    
+    // Initialise Particles.js for CTA
+    if(document.getElementById('cta-particles')) {
+        particlesJS('cta-particles', {
+            particles: {
+                number: { value: 60, density: { enable: true, value_area: 800 } },
+                color: { value: "#D85814" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5, random: true },
+                size: { value: 4, random: true },
+                line_linked: { enable: true, distance: 150, color: "#D85814", opacity: 0.4, width: 1 },
+                move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
+            },
+            interactivity: {
+                detect_on: "canvas",
+                events: {
+                    onhover: { enable: true, mode: "repulse" },
+                    onclick: { enable: true, mode: "push" }
+                }
+            }
+        });
+    }
+    
+    // 3D Carousel Navigation
+    const carousel = document.querySelector('.testimonials-3d-carousel');
+    const cards = document.querySelectorAll('.testimonial-card');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const dots = document.querySelector('.dots');
+    let currentIndex = 1;
+    
+    // Create dots
+    cards.forEach((_, index) => {
+        const dot = document.createElement('span');
+        dot.addEventListener('click', () => goToSlide(index));
+        dots.appendChild(dot);
+    });
+    
+    // Set first dot as active
+    dots.children[1].classList.add('active');
+    
+    // Navigation functions
+    function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+    }
+    
+    function updateCarousel() {
+        // Update cards position
+        cards.forEach((card, index) => {
+            if(index < currentIndex) {
+                card.style.transform = `translateX(${-80 * (currentIndex - index)}%) scale(${1 - 0.2 * (currentIndex - index)})`;
+                card.style.opacity = 1 - 0.3 * (currentIndex - index);
+                card.style.zIndex = cards.length - (currentIndex - index);
+            } else if(index > currentIndex) {
+                card.style.transform = `translateX(${80 * (index - currentIndex)}%) scale(${1 - 0.2 * (index - currentIndex)})`;
+                card.style.opacity = 1 - 0.3 * (index - currentIndex);
+                card.style.zIndex = cards.length - (index - currentIndex);
+            } else {
+                card.style.transform = 'translateX(0) scale(1
+{% endblock %}
