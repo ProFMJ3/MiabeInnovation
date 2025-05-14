@@ -134,33 +134,23 @@
     .testimonial-card:hover .testimonial-media {
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         transform: scale(1.03);
-        
-
     }
 
-    
-    .testimonial-card:hover{
-        
-        
-        
+    .testimonial-card:hover {
         background-color: #202548;
-
     }
 
-    .testimonial-card:hover .testimonial-text{
-      
-      color: white;
-      font-weight: 100;
-      
-
+    .testimonial-card:hover .testimonial-text {
+        color: white;
+        font-weight: 100;
     }
 
-    .testimonial-card:hover .client-name{
-      color: #d85814;
+    .testimonial-card:hover .client-name {
+        color: #d85814;
     }
 
-    .testimonial-card:hover .client-position{
-      color: white;
+    .testimonial-card:hover .client-position {
+        color: white;
     }
     
     /* Responsive design */
@@ -368,8 +358,6 @@
               background: linear-gradient(to right, #d85841, #202548);
           }
           
-          
-
           .form-title {
               text-align: center;
               margin-bottom: 40px;
@@ -498,6 +486,13 @@
               box-shadow: 0 10px 20px rgba(216, 84, 129, 0.3);
           }
 
+          .form-check-input {
+              margin-right: 10px;
+          }
+          
+          .form-check-label {
+              font-weight: normal;
+          }
           
           /* Responsive */
           @media (max-width: 768px) {
@@ -523,18 +518,27 @@
         </style>
         <section>
 
+
+    <div class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Ce que nos clients disent</h2>
             
+            <!-- [Vos témoignages existants restent inchangés] -->
+            <!-- ... -->
+            
+            <!-- Formulaire mis à jour -->
             <div class="testimonial-form-section">
                 <div class="container">
                     <div class="form-container">
                         <h2 class="form-title">Partagez votre expérience</h2>
                         
-                        <form method="post" enctype="multipart/form-data">
+                        <form method="post" action="{% url 'sauvegardeTemoignage' %}" enctype="multipart/form-data">
                             {% csrf_token %}
                             
+                            <!-- Informations personnelles -->
                             <div class="form-group">
-                                <label for="name" class="form-label">Votre nom complet*</label>
-                                <input type="text" id="name" name="name" class="form-control" required>
+                                <label for="nom_complet" class="form-label">Votre nom complet*</label>
+                                <input type="text" id="nom_complet" name="nom_complet" class="form-control" required>
                             </div>
                             
                             <div class="form-group">
@@ -543,59 +547,88 @@
                             </div>
                             
                             <div class="form-group">
-                                <label for="position" class="form-label">Votre profession/fonction</label>
-                                <input type="text" id="position" name="position" class="form-control">
+                                <label for="profession" class="form-label">Votre profession/fonction</label>
+                                <input type="text" id="profession" name="profession" class="form-control">
                             </div>
                             
+                            <!-- Photo de profil -->
+                            <div class="form-group">
+                                <label class="form-label">Votre photo de profil*</label>
+                                <div class="file-upload">
+                                    <input type="file" id="profile_photo" name="profile_photo" class="file-upload-input" accept="image/*" required>
+                                    <label for="profile_photo" class="file-upload-label">
+                                        <i class="fas fa-cloud-upload-alt"></i> Téléchargez votre photo (format portrait)
+                                    </label>
+                                </div>
+                                <small class="text-muted">Formats acceptés: JPG, PNG (max 4MB)</small>
+                            </div>
+                            
+                            <!-- Note -->
                             <div class="form-group">
                                 <label class="form-label">Votre note*</label>
                                 <div class="rating-input">
-                                    <input type="radio" id="star5" name="rating" value="5" required>
-                                    <label for="star5">★</label>
-                                    <input type="radio" id="star4" name="rating" value="4">
-                                    <label for="star4">★</label>
-                                    <input type="radio" id="star3" name="rating" value="3">
-                                    <label for="star3">★</label>
-                                    <input type="radio" id="star2" name="rating" value="2">
-                                    <label for="star2">★</label>
-                                    <input type="radio" id="star1" name="rating" value="1">
-                                    <label for="star1">★</label>
+                                    {% for i in "54321" %}
+                                    <input type="radio" id="star{{i}}" name="note" value="{{i}}" {% if forloop.first %}required{% endif %}>
+                                    <label for="star{{i}}">★</label>
+                                    {% endfor %}
                                 </div>
                             </div>
                             
+                            <!-- Témoignage -->
                             <div class="form-group">
-                                <label for="testimonial" class="form-label">Votre témoignage*</label>
-                                <textarea id="testimonial" name="testimonial" class="form-control" required></textarea>
+                                <label for="contenu" class="form-label">Votre témoignage*</label>
+                                <textarea id="contenu" name="contenu" class="form-control" required></textarea>
                             </div>
                             
+                            <!-- Média optionnel -->
                             <div class="form-group">
                                 <label class="form-label">Ajouter une photo/vidéo (optionnel)</label>
                                 <div class="file-upload">
-
-                                    <input type="file" id="media" name="media" class="file-upload-input" accept="image/, video/">
-
-
+                                    <input type="file" id="media" name="media" class="file-upload-input" accept="image/*, video/*">
                                     <label for="media" class="file-upload-label">
                                         <i class="fas fa-cloud-upload-alt"></i> Glissez-déposez un fichier ou cliquez pour sélectionner
                                     </label>
                                 </div>
-                                <small class="text-muted">Format acceptés: JPG, PNG, MP4 (max 5MB)</small>
+                                <small class="text-muted">Formats acceptés: JPG, PNG, MP4 (max 5MB)</small>
+                            </div>
+                            
+                            <!-- Consentements -->
+                            <div class="form-group form-check">
+                                <input type="checkbox" 
+                                    id="id_consentement_approbation" 
+                                    name="consentement_approbation"
+                                    class="form-check-input"
+                                    required>
+                                <label for="id_consentement_approbation" class="form-check-label">
+                                    <strong>Je certifie sur l'honneur :</strong>
+                                    <ul>
+                                        <li>Être l'auteur original de ce témoignage</li>
+                                        <li>En approuver le contenu intégral</li>
+                                        <li>Assumer la responsabilité de sa publication</li>
+                                    </ul>
+                                </label>
+                                <small class="form-text text-muted">
+                                    Cette déclaration a valeur juridique (art. 226-13 du Code pénal)
+                                </small>
                             </div>
                             
                             <div class="form-group form-check">
-                                <input type="checkbox" id="consent" name="consent" class="form-check-input" required>
-                                <label for="consent" class="form-check-label">J'autorise la publication de ce témoignage*</label>
+                                {{ form.consentement_publication }}
+                                <label for="{{ form.consentement_publication.id_for_label }}" class="form-check-label">
+                                    J'autorise la publication publique de ce témoignage
+                                </label>
                             </div>
-                            
+    
                             <button type="submit" class="submit-btn">Envoyer votre témoignage</button>
                         </form>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
 
         </section>
-
-
       </div>
     </div>
 </div>

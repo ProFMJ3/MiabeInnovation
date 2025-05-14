@@ -1,5 +1,11 @@
 from django.shortcuts import render, redirect
 
+
+from django.core.files.storage import FileSystemStorage
+from django.utils import timezone
+
+from .models import Temoignage
+
 # Create your views here.
 
 def home(request):
@@ -107,4 +113,37 @@ def automatisationTache(request):
     return render(request, 'pages/automatisationTache.html')
 
 
+ 
+
+
+def sauvegardeTemoignage(request):
+    if request.method == 'POST':
+        nom_complet = request.POST.get('nom_complet')
+        email = request.POST.get('email')
+        profession = request.POST.get('profession')
+        profile_photo = request.FILES.get('profile_photo')
+        note = request.POST.get('note')
+        contenu = request.POST.get('contenu')
+        media = request.FILES.get('media')
+        consentement_publication = request.POST.get('consentement_publication') == 'on'
+        # Créer une instance de Temoignage
+        temoignage = Temoignage(
+            nom_complet=nom_complet,
+            email=email,
+            profession=profession,
+            profile_photo=profile_photo,
+            note=note,
+            contenu=contenu,
+            media=media,
+            consentement_publication=consentement_publication
+        )
+        # Enregistrer le témoignage
+        temoignage.save()
+        # Rediriger vers la page de remerciement ou une autre page
+        return redirect('temoignages')
+    else:
+        # Si la méthode n'est pas POST, afficher le formulaire
+        return render(request, 'pages/temoignages.html')
+    
+        
 
