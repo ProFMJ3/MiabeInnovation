@@ -7,8 +7,16 @@ def home(request):
     return render(request, 'index.html')
 
 
+
+def quiSommesNous(request):
+    return render(request, 'pages/quiSommesNous.html')
+
+
+
+
 def quiSommeNous(request):
     return render(request, 'pages/quiSommeNous.html')
+
 
     return render(request, 'index.html', {'active_page': 'accueil'})
 
@@ -17,14 +25,31 @@ def quiSommesNous(request):
 
 
 
+
 def equipe(request):
     return render(request, 'pages/equipe.html')
 
 
 
+def services(request):
+    return render(request, 'pages/services.html')
+
+def service(request):
+    return render(request, 'pages/service.html')
+
+
 def temoignages(request):
     return render(request, 'pages/temoignages.html')
 
+
+
+
+def entreeContact(request):
+    return render(request, 'pages/entreeContact.html')
+
+
+def devenirPartenaire(request):
+    return render(request, 'pages/devenirPartenaire.html')
 
 def contact(request):
     return render(request, 'pages/contact.html')
@@ -34,8 +59,6 @@ def contact(request):
 
 def faqs(request):
     return render(request, 'pages/faqs.html')
-
-
 
 
 def blog (request):
@@ -62,6 +85,7 @@ def faqs(request):
     return render(request, 'pages/faqs.html', {'active_page': 'faqs'})
 
 
+
 # SERVICES VIEWS
 
 def devApplication(request):
@@ -82,4 +106,5 @@ def automatisationIa(request):
 def automatisationTache(request):
     return render(request, 'pages/automatisationTache.html')
 
- 
+
+
