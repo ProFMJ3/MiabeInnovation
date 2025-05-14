@@ -14,6 +14,13 @@ class Temoignage(models.Model):
     nom_complet = models.CharField(max_length=100, verbose_name="Nom complet")
     email = models.EmailField(verbose_name="Adresse email")
     profession = models.CharField(max_length=100, blank=True, null=True, verbose_name="Profession/Fonction")
+    profile_photo = models.ImageField(
+        upload_to='temoignages/medias/profiles/',
+        blank=True,
+        null=True,
+        verbose_name="Photo Profil",
+        help_text="Formats acceptés: JPG, PNG, MP4 (max 4MB)"
+    )
     
     # Contenu du témoignage
     note = models.PositiveIntegerField(
@@ -61,7 +68,7 @@ class Temoignage(models.Model):
                 name="note_entre_1_et_5"
             )
         ]
-
+    
     # Propriétés utiles
     @property
     def etoiles(self):

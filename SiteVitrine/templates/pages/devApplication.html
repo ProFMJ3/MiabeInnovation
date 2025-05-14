@@ -1,0 +1,1325 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<div class="service-page dev-page">
+    <!-- Hero Section avec effet Parallax 3D -->
+    <section class="service-hero parallax-3d">
+        <div class="hero-bg" style="background: 
+        linear-gradient(135deg, 
+            rgba(216, 88, 20, 0.8) 0%, 
+            rgba(202, 52, 51, 0.7) 30%, 
+            rgba(32, 37, 72, 0.9) 100%),
+        url('https://i.pinimg.com/736x/71/0c/30/710c308569d6fab4983b8a605c6657ef.jpg') no-repeat center center;
+        background-size: cover;
+        background-blend-mode: overlay;">
+            <div class="code-particle" id="code-particle"></div>
+            <div class="floating-apps">
+                <div class="app-icon" style="top: 20%; left: 10%;">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="app-icon" style="top: 30%; right: 15%;">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="app-icon" style="bottom: 25%; left: 20%;">
+                    <i class="fas fa-server"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="wow fadeInDown" style="color: white;">
+                    Développement 
+                    <span class="typed" data-typed='["d&#39;Applications Mobile", "de Solutions Web", "de Logiciels Sur Mesure", "qui Transforment"]'></span>
+                </h1>
+                
+                <p class="wow fadeInUp" data-wow-delay="0.3s">Des solutions technologiques puissantes conçues pour propulser votre business</p>
+                <a href="#contact" class="cta-btn wow fadeInUp" data-wow-delay="0.6s">
+                    <span>Demander un devis</span>
+                    <div class="btn-hover-effect"></div>
+                </a>
+            </div>
+        </div>
+        
+        <div class="scroll-hint wow fadeIn" data-wow-delay="0.9s">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notre Approche - Section Interactive -->
+    <section class="our-approach">
+        <div class="container">
+            <div class="section-header wow fadeInUp">
+                <h2>Notre <span class="highlight">Approche</span> Unique</h2>
+                <div class="divider"></div>
+                <p>Une méthodologie éprouvée pour des résultats exceptionnels</p>
+            </div>
+            
+            <div class="approach-steps">
+                <!-- Étape 1 -->
+                <div class="step wow fadeInLeft">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Discovery Session</h3>
+                        <p>Nous analysons vos besoins en profondeur pour concevoir une solution parfaitement adaptée</p>
+                        <div class="step-tools">
+                            <span class="tool-tag">Interviews</span>
+                            <span class="tool-tag">Analyse marché</span>
+                            <span class="tool-tag">User Stories</span>
+                        </div>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                
+                <!-- Étape 2 -->
+                <div class="step wow fadeInRight" data-wow-delay="0.2s">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Prototypage & Design</h3>
+                        <p>Création de maquettes interactives pour valider l'expérience utilisateur</p>
+                        <div class="step-tools">
+                            <span class="tool-tag">Figma</span>
+                            <span class="tool-tag">Adobe XD</span>
+                            <span class="tool-tag">Prototypage</span>
+                        </div>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-pencil-ruler"></i>
+                    </div>
+                </div>
+                
+                <!-- Étape 3 -->
+                <div class="step wow fadeInLeft" data-wow-delay="0.4s">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Développement Agile</h3>
+                        <p>Implémentation technique avec des sprints courts et des livrables fréquents</p>
+                        <div class="step-tools">
+                            <span class="tool-tag">Scrum</span>
+                            <span class="tool-tag">CI/CD</span>
+                            <span class="tool-tag">Tests unitaires</span>
+                        </div>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
+                
+                <!-- Étape 4 -->
+                <div class="step wow fadeInRight" data-wow-delay="0.6s">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Lancement & Optimisation</h3>
+                        <p>Déploiement et suivi continu pour des performances optimales</p>
+                        <div class="step-tools">
+                            <span class="tool-tag">Analytics</span>
+                            <span class="tool-tag">A/B Testing</span>
+                            <span class="tool-tag">Maintenance</span>
+                        </div>
+                    </div>
+                    <div class="step-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nos Expertises - Section Interactive -->
+    <section class="expertise-section" style="background-color: #f9f9f9;">
+        <div class="container">
+            <div class="section-header wow fadeInUp">
+                <h2>Nos <span class="highlight">Expertises</span> Techniques</h2>
+                <div class="divider"></div>
+                <p>Un éventail complet de compétences pour répondre à tous vos besoins</p>
+            </div>
+            
+            <div class="expertise-tabs">
+                <ul class="nav nav-tabs" id="expertiseTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="mobile-tab" data-bs-toggle="tab" data-bs-target="#mobile" type="button" role="tab">
+                            <i class="fas fa-mobile-alt"></i> Mobile
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="web-tab" data-bs-toggle="tab" data-bs-target="#web" type="button" role="tab">
+                            <i class="fas fa-globe"></i> Web
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="desktop-tab" data-bs-toggle="tab" data-bs-target="#desktop" type="button" role="tab">
+                            <i class="fas fa-desktop"></i> Desktop
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="cloud-tab" data-bs-toggle="tab" data-bs-target="#cloud" type="button" role="tab">
+                            <i class="fas fa-cloud"></i> Cloud
+                        </button>
+                    </li>
+                </ul>
+                
+                <div class="tab-content" id="expertiseTabContent">
+                    <!-- Mobile -->
+                    <div class="tab-pane fade show active" id="mobile" role="tabpanel">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="tech-stack">
+                                    <h3><i class="fas fa-layer-group"></i> Notre Stack Technique</h3>
+                                    <ul class="tech-list">
+                                        <li>
+                                            <div class="tech-icon">
+                                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter">
+                                            </div>
+                                            <div class="tech-info">
+                                                <h4>Flutter</h4>
+                                                <p>Développement cross-platform performant</p>
+                                            </div>
+                                            <div class="tech-progress">
+                                                <div class="progress-bar" style="width: 90%; background-color: #D85814;"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tech-icon">
+                                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" alt="Swift">
+                                            </div>
+                                            <div class="tech-info">
+                                                <h4>Swift</h4>
+                                                <p>Applications iOS natives hautes performances</p>
+                                            </div>
+                                            <div class="tech-progress">
+                                                <div class="progress-bar" style="width: 85%; background-color: #D85814;"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tech-icon">
+                                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg" alt="Kotlin">
+                                            </div>
+                                            <div class="tech-info">
+                                                <h4>Kotlin</h4>
+                                                <p>Développement Android moderne</p>
+                                            </div>
+                                            <div class="tech-progress">
+                                                <div class="progress-bar" style="width: 88%; background-color: #D85814;"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="expertise-details">
+                                    <h3><i class="fas fa-users"></i> Équipe Mobile</h3>
+                                    <p>Nos 5 développeurs mobiles expérimentés vous accompagnent de l'idée au déploiement :</p>
+                                    
+                                    <div class="team-skills">
+                                        <div class="skill-badge">
+                                            <div class="skill-icon">
+                                                <i class="fas fa-mobile"></i>
+                                            </div>
+                                            <span>UI/UX Mobile</span>
+                                        </div>
+                                        <div class="skill-badge">
+                                            <div class="skill-icon">
+                                                <i class="fas fa-bolt"></i>
+                                            </div>
+                                            <span>Performance</span>
+                                        </div>
+                                        <div class="skill-badge">
+                                            <div class="skill-icon">
+                                                <i class="fas fa-lock"></i>
+                                            </div>
+                                            <span>Sécurité</span>
+                                        </div>
+                                        <div class="skill-badge">
+                                            <div class="skill-icon">
+                                                <i class="fas fa-sync-alt"></i>
+                                            </div>
+                                            <span>Intégration continue</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="project-showcase">
+                                        <h4>Projet Récent:</h4>
+                                        <div class="showcase-card">
+                                            <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Projet mobile">
+                                            <div class="showcase-overlay">
+                                                <h5>App de Gestion Financière</h5>
+                                                <p>+200k téléchargements</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Web -->
+                    <div class="tab-pane fade" id="web" role="tabpanel">
+                        <!-- Contenu similaire pour Web -->
+                    </div>
+                    
+                    <!-- Desktop -->
+                    <div class="tab-pane fade" id="desktop" role="tabpanel">
+                        <!-- Contenu similaire pour Desktop -->
+                    </div>
+                    
+                    <!-- Cloud -->
+                    <div class="tab-pane fade" id="cloud" role="tabpanel">
+                        <!-- Contenu similaire pour Cloud -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cas Clients - Section Carousel 3D -->
+    <section class="case-studies">
+        <div class="container">
+            <div class="section-header wow fadeInUp">
+                <h2>Nos <span class="highlight">Réalisations</span></h2>
+                <div class="divider"></div>
+                <p>Des success stories qui parlent d'elles-mêmes</p>
+            </div>
+            
+            <div class="case-carousel">
+                <!-- Cas 1 -->
+                <div class="case-card wow fadeInUp">
+                    <div class="case-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Projet FinTech">
+                        <div class="case-tag" style="background-color: #D85814;">FinTech</div>
+                    </div>
+                    <div class="case-content">
+                        <h3>Application Bancaire Mobile</h3>
+                        <div class="case-stats">
+                            <div class="stat">
+                                <div class="stat-value">+300%</div>
+                                <div class="stat-label">Utilisateurs</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">4.9/5</div>
+                                <div class="stat-label">Note moyenne</div>
+                            </div>
+                        </div>
+                        <p>Une solution bancaire complète avec paiements sécurisés, gestion de portefeuille et analytics.</p>
+                        <a href="#" class="case-link">Voir l'étude de cas <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Cas 2 -->
+                <div class="case-card wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="case-image">
+                        <img src="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Projet Santé">
+                        <div class="case-tag" style="background-color: #202548;">Santé</div>
+                    </div>
+                    <div class="case-content">
+                        <h3>Plateforme de Télémédecine</h3>
+                        <div class="case-stats">
+                            <div class="stat">
+                                <div class="stat-value">50k+</div>
+                                <div class="stat-label">Consultations</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">99.9%</div>
+                                <div class="stat-label">Disponibilité</div>
+                            </div>
+                        </div>
+                        <p>Une solution complète de consultation à distance avec agenda, vidéoconférence et dossier médical.</p>
+                        <a href="#" class="case-link">Voir l'étude de cas <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Cas 3 -->
+                <div class="case-card wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="case-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Projet E-commerce">
+                        <div class="case-tag" style="background-color: #D85814;">E-commerce</div>
+                    </div>
+                    <div class="case-content">
+                        <h3>Marketplace B2B</h3>
+                        <div class="case-stats">
+                            <div class="stat">
+                                <div class="stat-value">+200%</div>
+                                <div class="stat-label">Chiffre d'affaires</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-value">1M+</div>
+                                <div class="stat-label">Produits</div>
+                            </div>
+                        </div>
+                        <p>Une marketplace sur mesure avec gestion de catalogue, paiements multicanaux et logistique intégrée.</p>
+                        <a href="#" class="case-link">Voir l'étude de cas <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="final-cta">
+        <div class="cta-container">
+            <div class="cta-content wow fadeInUp">
+                <h2>Prêt à <span class="highlight">Transformer</span> Vos Idées en Réalité?</h2>
+                <p>Discutons de votre projet et concevons ensemble la solution parfaite</p>
+                <a href="#contact" class="cta-btn">
+                    <span>Démarrer mon projet</span>
+                    <div class="btn-hover-effect"></div>
+                </a>
+            </div>
+            
+            <div class="cta-illustration wow fadeIn" data-wow-delay="0.4s">
+                <img src="https://images.unsplash.com/photo-1579389083078-4e7018379f7e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Développement d'applications">
+            </div>
+        </div>
+    </section>
+</div>
+
+<style>
+    /* Base Styles */
+    .service-page.dev-page {
+        font-family: 'Poppins', sans-serif;
+        overflow-x: hidden;
+    }
+
+    .highlight {
+        color: #D85814;
+        position: relative;
+        display: inline-block;
+    }
+
+    .highlight::after {
+        content: '';
+        position: absolute;
+        bottom: 5px;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background-color: rgba(216, 88, 20, 0.3);
+        z-index: -1;
+        border-radius: 4px;
+    }
+
+    /* Hero Section */
+    .service-hero.parallax-3d {
+        height: 100vh;
+        min-height: 800px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+
+    .hero-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .code-particle {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .floating-apps {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .app-icon {
+        position: absolute;
+        width: 80px;
+        height: 80px;
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(5px);
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        color: white;
+        animation: float 6s ease-in-out infinite;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .app-icon:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .app-icon:nth-child(2) {
+        animation-delay: 2s;
+    }
+
+    .app-icon:nth-child(3) {
+        animation-delay: 4s;
+    }
+
+    .hero-content {
+        text-align: center;
+        color: white;
+        position: relative;
+        z-index: 2;
+        padding: 0 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .hero-content h1 {
+        font-size: 5rem;
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: 30px;
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-content p {
+        font-size: 1.5rem;
+        max-width: 700px;
+        margin: 0 auto 40px;
+        opacity: 0.9;
+    }
+
+    .cta-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 18px 40px;
+        background-color: #D85814;
+        color: white;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 50px;
+        text-decoration: none;
+        position: relative;
+        overflow: hidden;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 1;
+    }
+
+    .cta-btn span {
+        position: relative;
+        z-index: 2;
+    }
+
+    .btn-hover-effect {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, #D85814, #e67e51, #D85814);
+        background-size: 200% 100%;
+        z-index: 1;
+        transition: all 0.5s ease;
+    }
+
+    .cta-btn:hover .btn-hover-effect {
+        background-position: 100% 0;
+    }
+
+    .scroll-hint {
+        position: absolute;
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        color: white;
+        text-align: center;
+    }
+
+    .mouse {
+        width: 30px;
+        height: 50px;
+        border: 2px solid white;
+        border-radius: 15px;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    .wheel {
+        width: 6px;
+        height: 10px;
+        background-color: white;
+        border-radius: 3px;
+        position: absolute;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: scrollWheel 2s infinite;
+    }
+
+    /* Notre Approche */
+    .our-approach {
+        padding: 120px 0;
+        position: relative;
+    }
+
+    .our-approach::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0));
+        z-index: 1;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 80px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .section-header h2 {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .section-header .divider {
+        width: 80px;
+        height: 4px;
+        background-color: #D85814;
+        margin: 0 auto 20px;
+    }
+
+    .section-header p {
+        font-size: 1.2rem;
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    .approach-steps {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    .approach-steps::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 50px;
+        width: 4px;
+        height: 100%;
+        background-color: #f0f0f0;
+        z-index: 1;
+    }
+
+    .step {
+        display: flex;
+        margin-bottom: 50px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .step-number {
+        width: 60px;
+        height: 60px;
+        background-color: #202548;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-right: 30px;
+        flex-shrink: 0;
+    }
+
+    .step-content {
+        flex-grow: 1;
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    }
+
+    .step-content h3 {
+        font-size: 1.5rem;
+        color: #202548;
+        margin-bottom: 15px;
+    }
+
+    .step-content p {
+        color: #666;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    .step-tools {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .tool-tag {
+        background-color: rgba(216, 88, 20, 0.1);
+        color: #D85814;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    .step-icon {
+        width: 60px;
+        height: 60px;
+        background-color: #D85814;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-left: 30px;
+        flex-shrink: 0;
+    }
+
+    /* Expertises */
+    .expertise-section {
+        padding: 120px 0;
+    }
+
+    .expertise-tabs {
+        margin-top: 60px;
+    }
+
+    .nav-tabs {
+        border-bottom: none;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+
+    .nav-tabs .nav-link {
+        border: none;
+        color: #666;
+        font-weight: 600;
+        padding: 15px 30px;
+        margin: 0 10px;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-tabs .nav-link i {
+        margin-right: 10px;
+        font-size: 1.2rem;
+    }
+
+    .nav-tabs .nav-link:hover {
+        color: #202548;
+    }
+
+    .nav-tabs .nav-link.active {
+        background-color: #202548;
+        color: white;
+    }
+
+    .tech-stack {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        height: 100%;
+    }
+
+    .tech-stack h3 {
+        font-size: 1.5rem;
+        color: #202548;
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+    }
+
+    .tech-stack h3 i {
+        margin-right: 15px;
+        color: #D85814;
+    }
+
+    .tech-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .tech-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+    }
+
+    .tech-icon {
+        width: 50px;
+        height: 50px;
+        background-color: white;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .tech-icon img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .tech-info {
+        flex-grow: 1;
+    }
+
+    .tech-info h4 {
+        font-size: 1.1rem;
+        color: #202548;
+        margin-bottom: 5px;
+    }
+
+    .tech-info p {
+        font-size: 0.9rem;
+        color: #666;
+        margin: 0;
+    }
+
+    .tech-progress {
+        width: 100px;
+        height: 6px;
+        background-color: #f0f0f0;
+        border-radius: 3px;
+        overflow: hidden;
+    }
+
+    .progress-bar {
+        height: 100%;
+        border-radius: 3px;
+    }
+
+    .expertise-details {
+        background: white;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        height: 100%;
+    }
+
+    .expertise-details h3 {
+        font-size: 1.5rem;
+        color: #202548;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+    }
+
+    .expertise-details h3 i {
+        margin-right: 15px;
+        color: #D85814;
+    }
+
+    .expertise-details p {
+        color: #666;
+        line-height: 1.8;
+        margin-bottom: 25px;
+    }
+
+    .team-skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .skill-badge {
+        display: flex;
+        align-items: center;
+        background-color: rgba(32, 37, 72, 0.1);
+        padding: 8px 15px;
+        border-radius: 20px;
+    }
+
+    .skill-icon {
+        width: 25px;
+        height: 25px;
+        background-color: #202548;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        margin-right: 10px;
+    }
+
+    .project-showcase h4 {
+        font-size: 1.1rem;
+        color: #202548;
+        margin-bottom: 15px;
+    }
+
+    .showcase-card {
+        position: relative;
+        border-radius: 15px;
+        overflow: hidden;
+        height: 200px;
+    }
+
+    .showcase-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .showcase-card:hover img {
+        transform: scale(1.1);
+    }
+
+    .showcase-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        color: white;
+    }
+
+    .showcase-overlay h5 {
+        font-size: 1.2rem;
+        margin-bottom: 5px;
+    }
+
+    .showcase-overlay p {
+        font-size: 0.9rem;
+        margin: 0;
+        opacity: 0.9;
+    }
+
+    /* Case Studies */
+    .case-studies {
+        padding: 120px 0;
+        background-color: white;
+    }
+
+    .case-carousel {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 60px;
+    }
+
+    .case-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    .case-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .case-image {
+        position: relative;
+        height: 250px;
+        overflow: hidden;
+    }
+
+    .case-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .case-card:hover .case-image img {
+        transform: scale(1.1);
+    }
+    .case-tag {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        color: white;
+        padding: 8px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        z-index: 2;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .case-content {
+        padding: 30px;
+    }
+
+    .case-content h3 {
+        font-size: 1.4rem;
+        color: #202548;
+        margin-bottom: 15px;
+    }
+
+    .case-stats {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+
+    .stat {
+        text-align: center;
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #D85814;
+    }
+
+    .stat-label {
+        font-size: 0.9rem;
+        color: #666;
+    }
+
+    .case-content p {
+        color: #666;
+        line-height: 1.7;
+        margin-bottom: 25px;
+    }
+
+    .case-link {
+        display: inline-flex;
+        align-items: center;
+        color: #D85814;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+
+    .case-link i {
+        margin-left: 8px;
+    }
+
+    .case-link:hover {
+        color: #202548;
+    }
+
+    /* Team Section */
+    .team-section {
+        padding: 120px 0;
+    }
+
+    .team-members {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 60px;
+    }
+
+    .team-member {
+        background: #2B305B;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .team-member:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .member-photo {
+        position: relative;
+        height: 250px;
+        overflow: hidden;
+    }
+
+    .member-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+    }
+
+    .team-member:hover .member-photo img {
+        transform: scale(1.1);
+    }
+
+    .member-social {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+    }
+
+    .team-member:hover .member-social {
+        opacity: 1;
+    }
+
+    .member-social a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 35px;
+        height: 35px;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        color: white;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+    }
+
+    .member-social a:hover {
+        background-color: rgba(216, 88, 20, 0.8);
+    }
+
+    .member-info {
+        padding: 30px;
+    }
+
+    .member-info h3 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+    }
+
+    .member-info p {
+        font-size: 0.9rem;
+        color: #ddd;
+        margin-bottom: 20px;
+    }
+
+    .member-skills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+
+    .member-skills span {
+        background-color: rgba(216, 88, 20, 0.15);
+        color: #D85814;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+    }
+
+    .member-bio {
+        font-size: 0.9rem;
+        color: #ccc;
+        line-height: 1.6;
+    }
+
+    /* Final CTA */
+    .final-cta {
+        padding: 120px 0;
+        background-color: #f9f9f9;
+    }
+
+    .cta-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .cta-content {
+        flex: 1;
+        padding-right: 50px;
+    }
+
+    .cta-content h2 {
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+
+    .cta-content p {
+        font-size: 1.2rem;
+        color: #666;
+        line-height: 1.8;
+        margin-bottom: 30px;
+    }
+
+    .cta-illustration {
+        flex-shrink: 0;
+        width: 40%;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .cta-illustration img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    /* Animations */
+    @keyframes float {
+        0% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-15px);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes scrollWheel {
+        0% {
+            opacity: 0;
+        }
+
+        30% {
+            opacity: 1;
+        }
+
+        60% {
+            opacity: 1;
+        }
+
+        100% {
+            top: 40px;
+            opacity: 0;
+        }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+        .hero-content h1 {
+            font-size: 4rem;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+        }
+
+        .cta-container {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .cta-content {
+            padding-right: 0;
+            margin-bottom: 40px;
+        }
+
+        .cta-illustration {
+            width: 80%;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .hero-content h1 {
+            font-size: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+        }
+
+        .approach-steps::before {
+            left: 25px;
+        }
+
+        .step {
+            flex-direction: column;
+        }
+
+        .step-number {
+            margin-right: 0;
+            margin-bottom: 15px;
+        }
+
+        .step-icon {
+            margin-left: 0;
+            margin-top: 15px;
+        }
+
+        .expertise-tabs .nav-link {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+        }
+
+        .expertise-details h3 {
+            font-size: 1.3rem;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .hero-content h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+        }
+
+        .app-icon {
+            width: 60px;
+            height: 60px;
+            font-size: 2rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+        }
+
+        .cta-content h2 {
+            font-size: 2rem;
+        }
+
+        .cta-illustration {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .app-icon {
+            width: 40px;
+            height: 40px;
+            font-size: 1.5rem;
+        }
+
+        .expertise-tabs .nav-link {
+            margin: 0 5px;
+        }
+
+        .case-carousel {
+            grid-template-columns: 1fr;
+        }
+
+        .team-members {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+{% endblock %}
