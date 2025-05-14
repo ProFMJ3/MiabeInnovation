@@ -22,10 +22,6 @@ def equipe(request):
 
 
 
-def service(request):
-    return render(request, 'pages/service.html')
-
-
 def temoignages(request):
     return render(request, 'pages/temoignages.html')
 
@@ -86,3 +82,4 @@ def automatisationIa(request):
 def automatisationTache(request):
     return render(request, 'pages/automatisationTache.html')
 
+ 

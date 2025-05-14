@@ -1,0 +1,1829 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+<div class="service-page cm-page">
+  <!-- Hero Section Premium -->
+<section class="cm-hero" style="
+background: 
+linear-gradient(135deg, 
+    rgba(32, 37, 72, 0.95) 0%,
+    rgba(202, 52, 51, 0.85) 50%, 
+    rgba(216, 88, 20, 0.9) 100%),
+url('https://i.pinimg.com/736x/45/79/36/457936f2fd33dc98f0afd6cfc798b4a1.jpg') no-repeat center center/cover;
+min-height: 100vh;
+display: flex;
+align-items: center;
+position: relative;
+overflow: hidden;
+isolation: isolate;
+">
+
+<!-- Animated Social Elements -->
+<div class="social-float">
+    <div class="social-icon" style="top: 15%; left: 10%;">
+        <div class="icon-bg" style="background: radial-gradient(circle at center, #405DE6 0%, #5851DB 50%, #833AB4 100%);"></div>
+        <i class="fab fa-instagram"></i>
+        <div class="pulse-effect"></div>
+    </div>
+    <div class="social-icon" style="top: 25%; right: 15%;">
+        <div class="icon-bg" style="background: radial-gradient(circle at center, #1877F2 0%, #0D5EBA 100%);"></div>
+        <i class="fab fa-facebook-f"></i>
+        <div class="pulse-effect"></div>
+    </div>
+    <div class="social-icon" style="bottom: 20%; left: 20%;">
+        <div class="icon-bg" style="background: radial-gradient(circle at center, #0077B5 0%, #004471 100%);"></div>
+        <i class="fab fa-linkedin-in"></i>
+        <div class="pulse-effect"></div>
+    </div>
+    <div class="social-icon" style="bottom: 30%; right: 10%;">
+        <div class="icon-bg" style="background: radial-gradient(circle at center, #000000 0%, #25F4EE 50%, #FE2C55 100%);"></div>
+        <i class="fab fa-tiktok"></i>
+        <div class="pulse-effect"></div>
+    </div>
+</div>
+
+<!-- Floating Stats -->
+<div class="stats-floating">
+    <div class="stat-circle" style="top: 20%; right: 20%;">
+        <div class="stat-value" data-count="250">0</div>
+        <div class="stat-label">Communauté engagée</div>
+        <div class="stat-graph" style="background: conic-gradient(#FFA500 0% 85%, rgba(255,255,255,0.1) 85% 100%);"></div>
+    </div>
+    <div class="stat-circle" style="top: 60%; left: 15%;">
+        <div class="stat-value" data-count="98">0</div>
+        <div class="stat-label">Taux d'engagement</div>
+        <div class="stat-graph" style="background: conic-gradient(#D85814 0% 98%, rgba(255,255,255,0.1) 98% 100%);"></div>
+    </div>
+</div>
+
+<!-- Particle Animation -->
+<div class="particles">
+    <div class="particle" style="top: 15%; left: 5%; animation-delay: 0s;"></div>
+    <div class="particle" style="top: 25%; right: 8%; animation-delay: 1s;"></div>
+    <div class="particle" style="bottom: 15%; left: 10%; animation-delay: 2s;"></div>
+    <div class="particle" style="bottom: 30%; right: 5%; animation-delay: 3s;"></div>
+</div>
+
+<!-- Main Content -->
+<div class="hero-container">
+    <div class="hero-content">
+        <div class="hero-badge wow fadeInDown">
+            <span>Stratégie Social Media</span>
+        </div>
+        
+        <h1 class="wow fadeInDown" data-wow-delay="0.2s">
+            <span class="hero-title">Community</span>
+            <span class="hero-title-accent">Management</span>
+            <span class="typed-text" data-typed='["Stratégique", "Engageant", "Performant", "Sur Mesure"]'></span>
+        </h1>
+        
+        <p class="wow fadeInUp" data-wow-delay="0.4s">
+            Transformez vos réseaux sociaux en <strong>leviers de croissance puissants</strong> et créez une communauté engagée autour de votre marque
+        </p>
+        
+        <div class="hero-cta wow fadeInUp" data-wow-delay="0.6s">
+            <a href="#contact" class="cta-btn-primary">
+                <span>Optimiser mes réseaux</span>
+                <div class="btn-hover-effect"></div>
+            </a>
+            <a href="#methodologie" class="cta-btn-secondary">
+                <span>Notre méthodologie</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Scroll Indicator -->
+<div class="scroll-indicator wow fadeIn" data-wow-delay="0.8s">
+    <div class="mouse">
+        <div class="wheel"></div>
+    </div>
+    <span>Scroll</span>
+</div>
+
+<!-- Animated Wave Bottom -->
+<div class="hero-wave">
+    <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" fill="#FFFFFF"></path>
+        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" fill="#FFFFFF"></path>
+        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" fill="#FFFFFF"></path>
+    </svg>
+</div>
+</section>
+
+<style>
+/* Base Styles */
+.cm-hero {
+    color: white;
+    text-align: center;
+}
+
+/* Social Icons */
+.social-float {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.social-icon {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: white;
+    z-index: 2;
+    animation: floatSocial 6s ease-in-out infinite;
+}
+
+.icon-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+.pulse-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: pulseSocial 3s infinite;
+    z-index: -1;
+}
+
+/* Stats */
+.stats-floating {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.stat-circle {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    animation: floatStat 8s ease-in-out infinite;
+}
+
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-top: 5px;
+    max-width: 100px;
+    line-height: 1.3;
+}
+
+.stat-graph {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* Particles */
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: floatParticle 15s infinite linear;
+}
+
+/* Hero Content */
+.hero-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 3;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(5px);
+    padding: 8px 20px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-title {
+    display: block;
+    font-weight: 600;
+}
+
+.hero-title-accent {
+    display: block;
+    color: #FFA500;
+    font-weight: 700;
+}
+
+.typed-text {
+    display: block;
+    font-size: 2rem;
+    margin-top: 1rem;
+    min-height: 2.5rem;
+}
+
+p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+p strong {
+    color: #FFA500;
+    font-weight: 600;
+}
+
+/* CTA Buttons */
+.hero-cta {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-btn-primary {
+    background: linear-gradient(90deg, #FFA500, #D85814);
+    color: white;
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+    box-shadow: 0 10px 20px rgba(216, 88, 20, 0.3);
+}
+
+.cta-btn-secondary {
+    background: transparent;
+    color: white;
+    padding: 15px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-hover-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+}
+
+.cta-btn-primary:hover .btn-hover-effect,
+.cta-btn-secondary:hover .btn-hover-effect {
+    transform: translateX(0);
+}
+
+.cta-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(216, 88, 20, 0.4);
+}
+
+.cta-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 3;
+}
+
+.mouse {
+    width: 28px;
+    height: 48px;
+    border: 2px solid white;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.wheel {
+    width: 4px;
+    height: 10px;
+    background-color: white;
+    border-radius: 2px;
+    margin-top: 8px;
+    animation: scroll 2s infinite;
+}
+
+.scroll-indicator span {
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+    opacity: 0.8;
+}
+
+/* Wave */
+.hero-wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    z-index: 2;
+}
+
+.hero-wave svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Animations */
+@keyframes floatSocial {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(5deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes pulseSocial {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(1.5); opacity: 0; }
+}
+
+@keyframes floatStat {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+    100% { transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes floatParticle {
+    0% { transform: translateY(0) translateX(0); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100px) translateX(20px); opacity: 0; }
+}
+
+@keyframes scroll {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(10px); opacity: 0; }
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    h1 {
+        font-size: 3.2rem;
+    }
+    
+    .typed-text {
+        font-size: 1.8rem;
+    }
+    
+    p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .typed-text {
+        font-size: 1.5rem;
+    }
+    
+    .stat-circle {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .stat-value {
+        font-size: 1.8rem;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+
+<style>
+    @keyframes scroll {
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(10px); opacity: 0; }
+    }
+    
+    .cta-btn:hover {
+        background-color: #e6740a;
+    }
+    
+    .cta-btn:hover .btn-hover-effect {
+        transform: translateX(0);
+    }
+</style>
+  <!-- Notre Approche - Version Premium -->
+<section class="approach-section cm-approach">
+    <div class="container">
+        <div class="section-header wow fadeInUp">
+            <span class="section-pre-title">Processus clair et transparent</span>
+            <h2>Notre <span class="highlight">Méthodologie</span> en <span class="typed" data-typed='["4 Étapes", "4 Semaines", "4 KPI Clés"]'></span></h2>
+            <div class="divider"></div>
+            <p class="section-description">Un parcours structuré pour transformer votre présence digitale en résultats concrets</p>
+        </div>
+        
+        <div class="approach-timeline">
+            <!-- Étape 1 -->
+            <div class="timeline-step wow fadeInUp">
+                <div class="step-visual">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">
+                        <i class="fas fa-search-chart"></i>
+                        <div class="icon-pulse"></div>
+                    </div>
+                    <div class="step-connector"></div>
+                </div>
+                <div class="step-content">
+                    <h3>Audit & Stratégie</h3>
+                    <p class="step-description">Analyse approfondie de votre présence actuelle et définition d'une roadmap stratégique sur-mesure</p>
+                    <div class="step-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Benchmark concurrentiel</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Analyse SWOT complète</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Définition des KPI</span>
+                        </div>
+                    </div>
+                    <div class="step-duration">
+                        <i class="fas fa-clock"></i>
+                        <span>Semaine 1</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Étape 2 -->
+            <div class="timeline-step wow fadeInUp" data-wow-delay="0.2s">
+                <div class="step-visual">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                        <div class="icon-pulse"></div>
+                    </div>
+                    <div class="step-connector"></div>
+                </div>
+                <div class="step-content">
+                    <h3>Création de Contenu</h3>
+                    <p class="step-description">Développement d'une identité visuelle forte et production de contenus hautement engageants</p>
+                    <div class="step-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Calendrier éditorial</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Storytelling brandé</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Production multimédia</span>
+                        </div>
+                    </div>
+                    <div class="step-duration">
+                        <i class="fas fa-clock"></i>
+                        <span>Semaine 2</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Étape 3 -->
+            <div class="timeline-step wow fadeInUp" data-wow-delay="0.4s">
+                <div class="step-visual">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">
+                        <i class="fas fa-comments"></i>
+                        <div class="icon-pulse"></div>
+                    </div>
+                    <div class="step-connector"></div>
+                </div>
+                <div class="step-content">
+                    <h3>Animation & Engagement</h3>
+                    <p class="step-description">Mise en œuvre et optimisation quotidienne pour maximiser l'engagement et la croissance</p>
+                    <div class="step-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Publication stratégique</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Modération proactive</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Community building</span>
+                        </div>
+                    </div>
+                    <div class="step-duration">
+                        <i class="fas fa-clock"></i>
+                        <span>Semaine 3</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Étape 4 -->
+            <div class="timeline-step wow fadeInUp" data-wow-delay="0.6s">
+                <div class="step-visual">
+                    <div class="step-number">04</div>
+                    <div class="step-icon">
+                        <i class="fas fa-chart-line"></i>
+                        <div class="icon-pulse"></div>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <h3>Analyse & Optimisation</h3>
+                    <p class="step-description">Mesure précise des performances et ajustements pour des résultats exponentiels</p>
+                    <div class="step-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Reporting détaillé</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>A/B testing</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span>Optimisation continue</span>
+                        </div>
+                    </div>
+                    <div class="step-duration">
+                        <i class="fas fa-clock"></i>
+                        <span>Semaine 4</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="approach-cta wow fadeInUp" data-wow-delay="0.8s">
+            <div class="cta-content">
+                <h4>Prêt à transformer votre présence digitale ?</h4>
+                <p>Notre méthodologie éprouvée a déjà boosté plus de <strong>150 marques</strong> vers l'excellence digitale</p>
+            </div>
+            <a href="#contact" class="cta-btn cta-btn-primary">
+                <span>Démarrer mon projet</span>
+                <div class="btn-hover-effect"></div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Section Base */
+    .approach-section {
+        padding: 100px 0;
+        background-color: #FFFFFF;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    /* Header Styles */
+    .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    
+    .section-pre-title {
+        display: block;
+        color: #D85814;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    .section-header h2 {
+        font-size: 2.8rem;
+        color: #202548;
+        margin-bottom: 20px;
+        line-height: 1.3;
+    }
+    
+    .typed {
+        display: inline-block;
+        min-height: 1.5em;
+    }
+    
+    .divider {
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #D85814, #FFA500);
+        margin: 0 auto 25px;
+        border-radius: 2px;
+    }
+    
+    .section-description {
+        color: #6B7280;
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    /* Timeline Styles */
+    .approach-timeline {
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+    .timeline-step {
+        display: flex;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    
+    .step-visual {
+        width: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+    
+    .step-number {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #D85814;
+        margin-bottom: 15px;
+    }
+    
+    .step-icon {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #D85814, #FFA500);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.8rem;
+        box-shadow: 0 10px 30px rgba(216, 88, 20, 0.3);
+        position: relative;
+        z-index: 2;
+    }
+    
+    .icon-pulse {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 50%;
+        animation: pulse 3s infinite;
+        z-index: 1;
+    }
+    
+    .step-connector {
+        height: 100%;
+        width: 3px;
+        background: linear-gradient(to bottom, #D85814, #FFA500);
+        position: absolute;
+        top: 70px;
+        opacity: 0.3;
+    }
+    
+    .step-content {
+        flex: 1;
+        padding: 0 30px 30px 30px;
+        background: #F8FAFF;
+        border-radius: 15px;
+        margin-left: -30px;
+        padding-left: 60px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .timeline-step:hover .step-content {
+        transform: translateX(10px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .step-content h3 {
+        color: #202548;
+        font-size: 1.5rem;
+        margin: 20px 0 15px;
+        position: relative;
+        padding-top: 15px;
+    }
+    
+    .step-content h3::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 40px;
+        height: 3px;
+        background: linear-gradient(90deg, #D85814, #FFA500);
+        border-radius: 3px;
+    }
+    
+    .step-description {
+        color: #6B7280;
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    
+    /* Features Styles */
+    .step-features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .feature-item {
+        display: flex;
+        align-items: center;
+    }
+    
+    .feature-icon {
+        color: #D85814;
+        margin-right: 10px;
+        font-size: 1rem;
+    }
+    
+    .feature-item span {
+        color: #4B5563;
+        font-size: 0.9rem;
+    }
+    
+    /* Duration Styles */
+    .step-duration {
+        display: inline-flex;
+        align-items: center;
+        background: rgba(216, 88, 20, 0.1);
+        padding: 5px 15px;
+        border-radius: 20px;
+        color: #D85814;
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+    
+    .step-duration i {
+        margin-right: 8px;
+        font-size: 0.9rem;
+    }
+    
+    /* CTA Styles */
+    .approach-cta {
+        background: linear-gradient(135deg, #202548, #3A4575);
+        border-radius: 15px;
+        padding: 40px;
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+    }
+    
+    .cta-content h4 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    
+    .cta-content p {
+        opacity: 0.9;
+        font-size: 1rem;
+    }
+    
+    .cta-content strong {
+        font-weight: 700;
+        color: #FFA500;
+    }
+    
+    .cta-btn-primary {
+        background: linear-gradient(90deg, #D85814, #FFA500);
+        color: white;
+        border: none;
+    }
+    
+    /* Animations */
+    @keyframes pulse {
+        0% { transform: scale(1); opacity: 1; }
+        70% { transform: scale(1.3); opacity: 0; }
+        100% { opacity: 0; }
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+        .section-header h2 {
+            font-size: 2.4rem;
+        }
+        
+        .approach-timeline {
+            max-width: 600px;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .approach-section {
+            padding: 70px 0;
+        }
+        
+        .section-header h2 {
+            font-size: 2rem;
+        }
+        
+        .timeline-step {
+            flex-direction: column;
+        }
+        
+        .step-visual {
+            width: 100%;
+            flex-direction: row;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .step-number {
+            margin-bottom: 0;
+            margin-right: 20px;
+        }
+        
+        .step-connector {
+            display: none;
+        }
+        
+        .step-content {
+            margin-left: 0;
+            padding-left: 30px;
+        }
+        
+        .approach-cta {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .cta-content {
+            margin-bottom: 20px;
+        }
+    }
+</style>
+    
+
+    <!-- Nos Expertises CM -->
+  <!-- Section Expertises - Version Premium -->
+<section class="expertise-section cm-expertise">
+    <div class="container">
+        <div class="section-header wow fadeInUp">
+            <span class="section-pre-title">Domaines de spécialisation</span>
+            <h2>Nos <span class="highlight">Expertises</span> en <span class="typed" data-typed='["Community Management", "Stratégie Social Media", "Création de Contenu", "Analyse de Performance"]'></span></h2>
+            <div class="divider"></div>
+            <p class="section-description">Une maîtrise approfondie de chaque plateforme pour des résultats optimisés</p>
+        </div>
+        
+        <div class="expertise-grid">
+            <!-- Expertise 1 - Instagram -->
+            <div class="expertise-card wow fadeInUp">
+                <div class="expertise-header" style="background: linear-gradient(135deg, #405DE6 0%, #5851DB 15%, #833AB4 35%, #C13584 60%, #E1306C 80%, #FD1D1D 100%);">
+                    <div class="platform-icon">
+                        <i class="fab fa-instagram"></i>
+                        <div class="icon-pulse"></div>
+                    </div>
+                    <h3>Instagram</h3>
+                    <span class="platform-subtitle">Optimisation visuelle & engagement</span>
+                </div>
+                <div class="expertise-content">
+                    <div class="expertise-features">
+                        <div class="feature-item">
+                            <i class="fas fa-camera-retro feature-icon"></i>
+                            <div>
+                                <h4>Stratégie visuelle</h4>
+                                <p>Création de contenu adapté à votre audience</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-film feature-icon"></i>
+                            <div>
+                                <h4>Reels/Stories</h4>
+                                <p>Optimisation pour l'engagement maximum</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-chart-line feature-icon"></i>
+                            <div>
+                                <h4>Analyse complète</h4>
+                                <p>Tracking des performances clés</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="expertise-stats">
+                        <div class="stat-card">
+                            <div class="stat-value">+150%</div>
+                            <div class="stat-label">Engagement moyen</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%; background: linear-gradient(90deg, #405DE6, #E1306C);"></div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">1.2M</div>
+                            <div class="stat-label">Portée moyenne</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 72%; background: linear-gradient(90deg, #405DE6, #E1306C);"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="platform-cta">
+                        Voir nos cas Instagram
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Expertise 2 - Facebook -->
+            <div class="expertise-card wow fadeInUp" data-wow-delay="0.2s">
+                <div class="expertise-header" style="background: linear-gradient(135deg, #1877F2 0%, #0D5EBA 100%);">
+                    <div class="platform-icon">
+                        <i class="fab fa-facebook-f"></i>
+                        <div class="icon-pulse"></div>
+                    </div>
+                    <h3>Facebook</h3>
+                    <span class="platform-subtitle">Communauté & publicité ciblée</span>
+                </div>
+                <div class="expertise-content">
+                    <div class="expertise-features">
+                        <div class="feature-item">
+                            <i class="fas fa-users feature-icon"></i>
+                            <div>
+                                <h4>Gestion de communauté</h4>
+                                <p>Animation et modération professionnelle</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-ad feature-icon"></i>
+                            <div>
+                                <h4>Publicité ciblée</h4>
+                                <p>Campagnes ROI-driven</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-viruses feature-icon"></i>
+                            <div>
+                                <h4>Contenu viral</h4>
+                                <p>Stratégies de partage accru</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="expertise-stats">
+                        <div class="stat-card">
+                            <div class="stat-value">x2.5</div>
+                            <div class="stat-label">Portée moyenne</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%; background: linear-gradient(90deg, #1877F2, #0D5EBA);"></div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">-40%</div>
+                            <div class="stat-label">Coût par acquisition</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%; background: linear-gradient(90deg, #1877F2, #0D5EBA);"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="platform-cta">
+                        Voir nos cas Facebook
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Expertise 3 - LinkedIn -->
+            <div class="expertise-card wow fadeInUp" data-wow-delay="0.4s">
+                <div class="expertise-header" style="background: linear-gradient(135deg, #0077B5 0%, #004471 100%);">
+                    <div class="platform-icon">
+                        <i class="fab fa-linkedin-in"></i>
+                        <div class="icon-pulse"></div>
+                    </div>
+                    <h3>LinkedIn</h3>
+                    <span class="platform-subtitle">Branding corporate & lead gen</span>
+                </div>
+                <div class="expertise-content">
+                    <div class="expertise-features">
+                        <div class="feature-item">
+                            <i class="fas fa-briefcase feature-icon"></i>
+                            <div>
+                                <h4>Positionnement B2B</h4>
+                                <p>Stratégie de thought leadership</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-network-wired feature-icon"></i>
+                            <div>
+                                <h4>Réseautage stratégique</h4>
+                                <p>Optimisation des connexions</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-funnel-dollar feature-icon"></i>
+                            <div>
+                                <h4>Génération de leads</h4>
+                                <p>Conversion en opportunités business</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="expertise-stats">
+                        <div class="stat-card">
+                            <div class="stat-value">+300%</div>
+                            <div class="stat-label">Visibilité</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 95%; background: linear-gradient(90deg, #0077B5, #004471);"></div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">x4</div>
+                            <div class="stat-label">Taux de conversion</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%; background: linear-gradient(90deg, #0077B5, #004471);"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#" class="platform-cta">
+                        Voir nos cas LinkedIn
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="expertise-cta wow fadeInUp" data-wow-delay="0.6s">
+            <p>Besoin d'une stratégie multi-plateforme ? <strong>Nous créons des parcours intégrés</strong> pour maximiser votre impact.</p>
+            <a href="#contact" class="cta-btn cta-btn-tertiary">
+                <span>Élaborer notre stratégie</span>
+                <div class="btn-hover-effect"></div>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Section Base */
+    .expertise-section {
+        padding: 100px 0;
+        background-color: #F8FAFF;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    /* Header Styles */
+    .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    
+    .section-pre-title {
+        display: block;
+        color: #D85814;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+    
+    .section-header h2 {
+        font-size: 2.8rem;
+        color: #202548;
+        margin-bottom: 20px;
+        line-height: 1.3;
+    }
+    
+    .typed {
+        display: inline-block;
+        min-height: 1.5em;
+    }
+    
+    .divider {
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #D85814, #FFA500);
+        margin: 0 auto 25px;
+        border-radius: 2px;
+    }
+    
+    .section-description {
+        color: #6B7280;
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    /* Grid Layout */
+    .expertise-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+    
+    /* Card Styles */
+    .expertise-card {
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+        transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                    box-shadow 0.4s ease;
+    }
+    
+    .expertise-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+    }
+    
+    /* Header Card */
+    .expertise-header {
+        padding: 30px;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .expertise-header::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.1);
+    }
+    
+    .platform-icon {
+        width: 70px;
+        height: 70px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        position: relative;
+    }
+    
+    .icon-pulse {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        border-radius: 50%;
+        animation: pulse 3s infinite;
+    }
+    
+    .expertise-header h3 {
+        font-size: 1.8rem;
+        margin-bottom: 5px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .platform-subtitle {
+        font-size: 0.9rem;
+        opacity: 0.9;
+        position: relative;
+        z-index: 1;
+    }
+    
+    /* Content Styles */
+    .expertise-content {
+        padding: 30px;
+    }
+    
+    .expertise-features {
+        margin-bottom: 30px;
+    }
+    
+    .feature-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 20px;
+    }
+    
+    .feature-icon {
+        width: 40px;
+        height: 40px;
+        background: #F3F6FF;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #D85814;
+        font-size: 1rem;
+        margin-right: 15px;
+        flex-shrink: 0;
+    }
+    
+    .feature-item h4 {
+        color: #202548;
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    
+    .feature-item p {
+        color: #6B7280;
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    
+    /* Stats Styles */
+    .expertise-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .stat-card {
+        background: #F8FAFF;
+        border-radius: 10px;
+        padding: 15px;
+        text-align: center;
+    }
+    
+    .stat-value {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #202548;
+        line-height: 1;
+        margin-bottom: 5px;
+    }
+    
+    .stat-label {
+        font-size: 0.75rem;
+        color: #6B7280;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 10px;
+    }
+    
+    .progress-bar {
+        height: 6px;
+        background: #E5E9F5;
+        border-radius: 3px;
+        overflow: hidden;
+    }
+    
+    .progress-fill {
+        height: 100%;
+        border-radius: 3px;
+    }
+    
+    /* CTA Link */
+    .platform-cta {
+        display: inline-flex;
+        align-items: center;
+        color: #202548;
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    
+    .platform-cta:hover {
+        color: #D85814;
+    }
+    
+    .platform-cta i {
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+    }
+    
+    .platform-cta:hover i {
+        transform: translateX(5px);
+    }
+    
+    /* Section CTA */
+    .expertise-cta {
+        text-align: center;
+        background: white;
+        padding: 40px;
+        border-radius: 16px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .expertise-cta p {
+        color: #4B5563;
+        font-size: 1.2rem;
+        margin-bottom: 25px;
+    }
+    
+    .expertise-cta strong {
+        color: #202548;
+        font-weight: 700;
+    }
+    
+    .cta-btn-tertiary {
+        background: linear-gradient(90deg, #202548, #3A4575);
+        color: white;
+        border: none;
+    }
+    
+    /* Animations */
+    @keyframes pulse {
+        0% { transform: scale(1); opacity: 1; }
+        70% { transform: scale(1.3); opacity: 0; }
+        100% { opacity: 0; }
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+        .section-header h2 {
+            font-size: 2.4rem;
+        }
+        
+        .expertise-grid {
+            grid-template-columns: 1fr;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .expertise-section {
+            padding: 70px 0;
+        }
+        
+        .section-header h2 {
+            font-size: 2rem;
+        }
+        
+        .expertise-stats {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+  
+<!-- Section Cas Clients -->
+<section class="case-studies-section">
+    <div class="section-header">
+        <h2>Nos <span class="highlight">Réalisations</span> Concrètes</h2>
+        <p class="section-subtitle">Découvrez comment nous transformons les stratégies sociales en résultats tangibles</p>
+        <div class="divider"></div>
+    </div>
+
+    <div class="case-carousel-container">
+        <div class="case-carousel">
+            <!-- Cas 1 - Mode -->
+            <div class="case-card wow fadeInUp">
+                <div class="case-image-container">
+                    <img src="{% static 'img/cm-case1.jpg' %}" alt="Projet Mode" class="case-image">
+                    <div class="case-tag">Mode & Luxe</div>
+                    <div class="case-overlay">
+                        <div class="overlay-content">
+                            <h3>Stratégie Instagram Complète</h3>
+                            <ul class="case-features">
+                                <li><i class="fas fa-check-circle"></i> Contenu UGC organisé</li>
+                                <li><i class="fas fa-check-circle"></i> Partenariats influenceurs</li>
+                                <li><i class="fas fa-check-circle"></i> Calendrier éditorial</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-content">
+                    <h3>Marque de Prêt-à-Porter</h3>
+                    <div class="case-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">+320%</div>
+                            <div class="stat-label">Engagement</div>
+                            <div class="stat-bar" style="width: 100%; background: linear-gradient(90deg, #D85814, #FFA500);"></div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">25K</div>
+                            <div class="stat-label">Followers gagnés</div>
+                            <div class="stat-bar" style="width: 85%; background: linear-gradient(90deg, #202548, #4A5A9B);"></div>
+                        </div>
+                    </div>
+                    <p class="case-description">Stratégie 360° intégrant création de contenu, community management et collaborations stratégiques.</p>
+                    <a href="#" class="case-link">
+                        Voir l'étude complète
+                        <i class="fas fa-arrow-right link-icon"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cas 2 - Tech -->
+            <div class="case-card wow fadeInUp" data-wow-delay="0.2s">
+                <div class="case-image-container">
+                    <img src="{% static 'img/cm-case2.jpg' %}" alt="Projet Tech" class="case-image">
+                    <div class="case-tag">Technologie B2B</div>
+                    <div class="case-overlay">
+                        <div class="overlay-content">
+                            <h3>Stratégie LinkedIn B2B</h3>
+                            <ul class="case-features">
+                                <li><i class="fas fa-check-circle"></i> Thought leadership</li>
+                                <li><i class="fas fa-check-circle"></i> Génération de leads</li>
+                                <li><i class="fas fa-check-circle"></i> Webinaires intégrés</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-content">
+                    <h3>Startup SaaS B2B</h3>
+                    <div class="case-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">+45%</div>
+                            <div class="stat-label">Leads qualifiés</div>
+                            <div class="stat-bar" style="width: 90%; background: linear-gradient(90deg, #D85814, #FFA500);"></div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">x3</div>
+                            <div class="stat-label">Trafic web</div>
+                            <div class="stat-bar" style="width: 75%; background: linear-gradient(90deg, #202548, #4A5A9B);"></div>
+                        </div>
+                    </div>
+                    <p class="case-description">Approche data-driven combinant contenu technique et automation marketing.</p>
+                    <a href="#" class="case-link">
+                        Voir l'étude complète
+                        <i class="fas fa-arrow-right link-icon"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Cas 3 - Gastronomie -->
+            <div class="case-card wow fadeInUp" data-wow-delay="0.4s">
+                <div class="case-image-container">
+                    <img src="{% static 'img/cm-case3.jpg' %}" alt="Projet Gastronomie" class="case-image">
+                    <div class="case-tag">Restauration Premium</div>
+                    <div class="case-overlay">
+                        <div class="overlay-content">
+                            <h3>Campagne Facebook Intégrée</h3>
+                            <ul class="case-features">
+                                <li><i class="fas fa-check-circle"></i> Vidéos courtes</li>
+                                <li><i class="fas fa-check-circle"></i> Réservations intégrées</li>
+                                <li><i class="fas fa-check-circle"></i> Stories interactives</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-content">
+                    <h3>Restaurant Gastronomique</h3>
+                    <div class="case-stats">
+                        <div class="stat-item">
+                            <div class="stat-value">98%</div>
+                            <div class="stat-label">Taux de réservation</div>
+                            <div class="stat-bar" style="width: 98%; background: linear-gradient(90deg, #D85814, #FFA500);"></div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">+180%</div>
+                            <div class="stat-label">Revenus</div>
+                            <div class="stat-bar" style="width: 95%; background: linear-gradient(90deg, #202548, #4A5A9B);"></div>
+                        </div>
+                    </div>
+                    <p class="case-description">Approche émotionnelle mettant en avant l'expérience client et les produits frais.</p>
+                    <a href="#" class="case-link">
+                        Voir l'étude complète
+                        <i class="fas fa-arrow-right link-icon"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="case-studies-cta">
+        <p>Ces résultats vous intéressent ? <strong>Votre projet pourrait être le prochain cas d'étude.</strong></p>
+        <a href="#contact" class="cta-btn cta-btn-secondary">
+            <span>Discutons de votre stratégie</span>
+            <div class="btn-hover-effect"></div>
+        </a>
+    </div>
+</section>
+
+<style>
+    /* Section Styles */
+    .case-studies-section {
+        padding: 80px 0;
+        background-color: #F9FAFC;
+        position: relative;
+    }
+
+    .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+        font-size: 2.5rem;
+        color: #202548;
+        margin-bottom: 15px;
+    }
+
+    .section-subtitle {
+        color: #6B7280;
+        font-size: 1.1rem;
+        max-width: 700px;
+        margin: 0 auto 25px;
+    }
+
+    .divider {
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(90deg, #D85814, #FFA500);
+        margin: 0 auto;
+        border-radius: 2px;
+    }
+
+    /* Case Card Styles */
+    .case-carousel-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+
+    .case-carousel {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+    }
+
+    .case-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .case-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .case-image-container {
+        position: relative;
+        height: 220px;
+        overflow: hidden;
+    }
+
+    .case-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .case-card:hover .case-image {
+        transform: scale(1.05);
+    }
+
+    .case-tag {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: rgba(32, 37, 72, 0.9);
+        color: white;
+        padding: 6px 15px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        z-index: 2;
+    }
+
+    .case-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(216, 88, 20, 0.9);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        z-index: 1;
+    }
+
+    .case-card:hover .case-overlay {
+        opacity: 1;
+    }
+
+    .overlay-content h3 {
+        color: white;
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+    }
+
+    .case-features {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .case-features li {
+        color: white;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .case-features i {
+        margin-right: 8px;
+        font-size: 1rem;
+    }
+
+    /* Case Content Styles */
+    .case-content {
+        padding: 25px;
+    }
+
+    .case-content h3 {
+        color: #202548;
+        margin-bottom: 15px;
+        font-size: 1.4rem;
+    }
+
+    .case-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .stat-item {
+        background: #F3F4F6;
+        padding: 12px;
+        border-radius: 8px;
+        text-align: center;
+    }
+
+    .stat-value {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #D85814;
+        line-height: 1;
+        margin-bottom: 5px;
+    }
+
+    .stat-label {
+        font-size: 0.8rem;
+        color: #6B7280;
+        margin-bottom: 8px;
+    }
+
+    .stat-bar {
+        height: 4px;
+        border-radius: 2px;
+        margin-top: 8px;
+    }
+
+    .case-description {
+        color: #4B5563;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    .case-link {
+        display: inline-flex;
+        align-items: center;
+        color: #202548;
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .case-link:hover {
+        color: #D85814;
+    }
+
+    .link-icon {
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .case-link:hover .link-icon {
+        transform: translateX(5px);
+    }
+
+    /* CTA Styles */
+    .case-studies-cta {
+        text-align: center;
+        margin-top: 60px;
+    }
+
+    .case-studies-cta p {
+        color: #4B5563;
+        font-size: 1.1rem;
+        margin-bottom: 25px;
+    }
+
+    .case-studies-cta strong {
+        color: #202548;
+    }
+
+    .cta-btn-secondary {
+        background: linear-gradient(90deg, #D85814, #FFA500);
+        color: white;
+        border: none;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .section-header h2 {
+            font-size: 2rem;
+        }
+        
+        .case-carousel {
+            grid-template-columns: 1fr;
+        }
+        
+        .case-stats {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+{% endblock %}
