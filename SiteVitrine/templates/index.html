@@ -2,6 +2,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
+
 {% block body %}
  <!-- Header Start -->
  {% load static %}
@@ -17,7 +18,7 @@
         <h1 class="text-white display-3 mb-5">Votre vision, notre mission digitale</h1>
         <h1 class="text-white mt-4 mb-4">Transformez votre entreprise avec des solutions technologiques sur-mesure</h1>
         <div class="mx-auto mb-5" style="width: 20%; max-width: 600px;">
-            <a href="" class="btn text-light header-button d-none d-lg-block" style="border-radius: 25px ;">Nos offres</a>
+            <a href="#services" class="btn text-light header-button d-none d-lg-block" style="border-radius: 25px ;">Nos offres</a>
         </div>
     </div>
 </div>
@@ -35,6 +36,11 @@
 
                     <img class="position-absolute w-100 h-100" src="{% static 'img/about.jpg' %}" style="object-fit: cover;">
 
+
+                    <img class="position-absolute w-100 h-100" src="{% static 'img/about.jpg' %}" style="object-fit: cover;">
+
+                    <img class="position-absolute w-100 h-100" src="{% static 'img/apropos2.png' %}" style="object-fit: cover;">
+
                 </div>
             </div>
             <div class="col-lg-7">
@@ -45,9 +51,13 @@
                 <p>MiabeInnovation est votre centre de solutions et innovations technologiques. Nous concevons et déployons des services digitaux adaptés à vos besoins, en combinant expertise, créativité et performance. Notre mission est de vous accompagner dans votre transformation numérique, en automatisant vos tâches, en développant des systèmes embarqués et en créant des outils sur mesure pour améliorer votre quotidien et celui de vos clients.
                 </p>
                 <div class="row pt-3 mx-0">
-                    <a href="" class="btn text-light about-button d-none d-lg-block mx-4 px-4" style="border-radius: 25px ;">En savoir plus</a>
+                    <a href="{% url 'qui_sommes_nous' %}" class="btn text-light about-button d-none d-lg-block mx-4 px-4" style="border-radius: 25px;">
+                        En savoir plus <i class="fas fa-arrow-right"></i>
+                    </a>
                     
-                    <a href="" class="btn text-light about-button d-none d-lg-block mx-4 px-4" style="border-radius: 25px ;">Nous contacter</a>
+                    <a href="{% url 'entree_contact' %}" class="btn text-light about-button d-none d-lg-block mx-4 px-4" style="border-radius: 25px;">
+                        Nous contacter <i class="fas fa-phone"></i>
+                    </a>
                 </div>
             </div>
         </div>
@@ -110,10 +120,17 @@
             <div class="col-lg-5" style="min-height: 500px;">
                 <div class="position-relative h-100">
 
+
                     <img class="position-absolute w-100 h-100" src="{% static 'img/nous-choisir1.jpg' %}" style="object-fit: cover;">
 
                     <img class="position-absolute w-100 h-100" src="{% static 'img/feature.jpg' %}" style="object-fit: cover;">
 
+
+                    <img class="position-absolute w-100 h-100" src="{% static 'img/feature.jpg' %}" style="object-fit: cover;">
+
+                    <img class="position-absolute w-100 h-100" src="{% static 'img/nous-choisir1.jpg' %}" style="object-fit: cover;">
+
+                </div>
             </div>
         </div>
     </div>
@@ -127,13 +144,15 @@
         <div class="col-lg-6">
             <div class="section-title text-center position-relative mb-4">
                 <h6 class="d-inline-block position-relative service-title text-secondary text-uppercase pb-2">Nos Services</h6>
-                <h1 class="display-4">Services en vedette</h1>
+
+                <h1 class="display-4" id ="services">Services en vedette</h1>
+
             </div>
         </div>
     </div>
     <div class="owl-carousel courses-carousel">
         <div class="courses-item position-relative">
-            <img class="img-fluid" src="{%  static 'img/courses-1.jpg' %}" alt="">
+            <img class="img-fluid" src="{%  static 'img/dev-apps.webp' %}" alt="">
             <div class="courses-text">
                 <h4 class="text-center text-white px-3">Développement d'applications</h4>
                 <div class="w-100 bg-white text-center p-4" >
@@ -142,7 +161,7 @@
             </div>
         </div>
         <div class="courses-item position-relative">
-            <img class="img-fluid" src="{% static 'img/courses-2.jpg' %}" alt="">
+            <img class="img-fluid" src="{% static 'img/ia-auto.jpg' %}" alt="">
             <div class="courses-text">
                 <h4 class="text-center text-white px-3">Automatisation des  Systemes avec IA</h4>
                 <div class="w-100 bg-white text-center p-4" >
@@ -151,7 +170,7 @@
             </div>
         </div>
         <div class="courses-item position-relative">
-            <img class="img-fluid" src="{% static 'img/courses-3.jpg' %}" alt="">
+            <img class="img-fluid" src="{% static 'img/web-design-multimedia.jpg' %}" alt="">
             <div class="courses-text">
                 <h4 class="text-center text-white px-3">Web design & Multimédia</h4>
                 <div class="w-100 bg-white text-center p-4" >
@@ -160,7 +179,7 @@
             </div>
         </div>
         <div class="courses-item position-relative">
-            <img class="img-fluid" src="{% static 'img/courses-4.jpg' %}" alt="">
+            <img class="img-fluid" src="{% static 'img/community-management.jpg' %}" alt="">
             <div class="courses-text">
                 <h4 class="text-center text-white px-3">Community Management</h4>
                 <div class="w-100 bg-white text-center p-4" >
@@ -169,7 +188,7 @@
             </div>
         </div>
         <div class="courses-item position-relative">
-            <img class="img-fluid" src="{% static 'img/courses-5.jpg' %}" alt="">
+            <img class="img-fluid" src="{% static 'img/maintenances.jpg' %}" alt="">
             <div class="courses-text">
                 <h4 class="text-center text-white px-3">Maintenance Et installations des logiciels</h4>
                 <div class="w-100 bg-white text-center p-4" >
@@ -178,7 +197,7 @@
             </div>
         </div>
         <div class="courses-item position-relative">
-            <img class="img-fluid" src="{% static 'img/courses-6.jpg' %}" alt="">
+            <img class="img-fluid" src="{% static 'img/taches-auto.jpg' %}" alt="">
             <div class="courses-text">
                 <h4 class="text-center text-white px-3">Automatisation des tâches</h4>
                 <div class="w-100 bg-white text-center p-4" >
@@ -207,7 +226,7 @@
                     <div class="form-row">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <select class="custom-select bg-light border-0 px-3" style="height: 60px;" disabled>
+                                <select class="custom-select bg-light border-0 px-3" style="height: 60px;">
                                     <option selected>Sélectionner un service</option>
                                     <option value="1">Developpment d'applications</option>
                                     <option value="2">Community management</option>
@@ -368,7 +387,7 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                 <div class="team-item bg-light">
                     <div class="overflow-hidden">
-                        <img class="img-fluid" src="{% static 'img/team-3.jpg' %}" alt="">
+                        <img class="img-fluid" src="{% static 'img/sandrine.jpg' %}" alt="">
                     </div>
                     <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
                         <div class="bg-light d-flex justify-content-center pt-2 px-1">
@@ -406,7 +425,7 @@
                 <div class="owl-carousel testimonial-carousel">
                     <div class="bg-white p-5">
                         <i class="fa fa-3x fa-quote-left  temoignage-cote mb-4"></i>
-                        <p>Travailler ici a été une expérience incroyablement enrichissante. L'équipe est dynamique et créative, et j'ai eu l'opportunité de développer mes compétences en gestion de projet. Chaque jour, je suis motivée à apporter de nouvelles idées</p>
+                        <p> Collaborer avec MiabeInnovation a été une expérience très positive. Leur dynamisme, leur créativité et leur compréhension de nos besoins marketing ont largement dépassé nos attentes. Leur accompagnement a vraiment apporté une valeur ajoutée à nos projets.</p>
                         <div class="d-flex flex-shrink-0 align-items-center mt-4">
                             <div>
                                 <h5>Marie</h5>
@@ -416,7 +435,7 @@
                     </div>
                     <div class="bg-white p-5">
                         <i class="fa fa-3x fa-quote-left temoignage-cote mb-4"></i>
-                        <p>J'apprécie vraiment l'environnement de travail. Les défis techniques que je rencontre me poussent à apprendre constamment. De plus, la collaboration avec mes collègues rend chaque projet passionnant et stimulant</p>
+                        <p>Travailler avec MiabeInnovation a été une excellente décision pour notre entreprise. Leur expertise technique, leur réactivité et leur créativité ont permis de concrétiser nos projets numériques avec succès. C’est une équipe sérieuse et engagée, que je recommande sans hésitation.</p>
                         <div class="d-flex flex-shrink-0 align-items-center mt-4">
                             <div>
                                 <h5>Thomas </h5>
@@ -443,8 +462,8 @@
                             <i class="fa fa-2x fa-map-marker-alt text-white"></i>
                         </div>
                         <div class="mt-n1">
-                            <h4>Our Location</h4>
-                            <p class="m-0">123 Street, New York, USA</p>
+                            <h4>Notre Adresse</h4>
+                            <p class="m-0"> Lomé, TOGO</p>
                         </div>
                     </div>
                     <div class="d-flex align-items-center mb-5">
@@ -452,8 +471,8 @@
                             <i class="fa fa-2x fa-phone-alt text-white"></i>
                         </div>
                         <div class="mt-n1">
-                            <h4>Call Us</h4>
-                            <p class="m-0">+012 345 6789</p>
+                            <h4>Nous Contacter</h4>
+                            <p class="m-0">(+228) 93473496 / 99682745</p>
                         </div>
                     </div>
                     <div class="d-flex align-items-center">
@@ -461,35 +480,35 @@
                             <i class="fa fa-2x fa-envelope text-white"></i>
                         </div>
                         <div class="mt-n1">
-                            <h4>Email Us</h4>
-                            <p class="m-0">info@example.com</p>
+                            <h4>Joignez-nous</h4>
+                            <p class="m-0">info@miabeinnovation.com</p>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="col-lg-7">
                 <div class="section-title position-relative mb-4">
-                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">Need Help?</h6>
-                    <h1 class="display-4">Send Us A Message</h1>
+                    <h6 class="d-inline-block position-relative text-secondary text-uppercase pb-2">VOUS AVEZ UN PROJET EN TÊTE ?</h6>
+                    <h1 class="display-4">Envoyez nous un message</h1>
                 </div>
                 <div class="contact-form">
                     <form>
                         <div class="row">
                             <div class="col-6 form-group">
-                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your Name" required="required">
+                                <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Votre Nom" required="required">
                             </div>
                             <div class="col-6 form-group">
-                                <input type="email" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Your Email" required="required">
+                                <input type="email" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Votre Mail" required="required">
                             </div>
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Subject" required="required">
+                            <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Objet" required="required">
                         </div>
                         <div class="form-group">
                             <textarea class="form-control border-top-0 border-right-0 border-left-0 p-0" rows="5" placeholder="Message" required="required"></textarea>
                         </div>
                         <div>
-                            <button class="btn btn-primary py-3 px-5" type="submit">Send Message</button>
+                            <button class="btn btn-primary py-3 px-5" type="submit">Soumettre</button>
                         </div>
                     </form>
                 </div>

@@ -1,31 +1,35 @@
 {% load static %}
    <!-- Topbar Start -->
-   <div class="container-fluid bg-dark">
+   <div class="container-fluid bg-dark topbar-sticky">
     <div class="row py-2 px-lg-5">
         <div class="col-lg-6 text-center text-lg-left mb-2 mb-lg-0">
             <div class="d-inline-flex align-items-center text-white">
-                <small><i class="fa fa-phone-alt mr-2"></i>+012 345 6789</small>
+                <small><i class="fa fa-phone-alt mr-2"></i>(+228) 93473496 / 99682745</small>
                 <small class="px-3">|</small>
-                <small><i class="fa fa-envelope mr-2"></i>info@example.com</small>
+                <small><i class="fa fa-envelope mr-2"></i>info@miabeinnovation.com</small>
             </div>
         </div>
         <div class="col-lg-6 text-center text-lg-right">
             <div class="d-inline-flex align-items-center">
-                <a class="text-white px-2" href="">
+                <a class="text-white px-2" href="https://www.facebook.com/profile.php?id=61575632420279">
                     <i class="fab fa-facebook-f"></i>
                 </a>
-                <a class="text-white px-2" href="">
+                <a class="text-white px-2" href="https://x.com/miabeinnovation">
                     <i class="fab fa-twitter"></i>
                 </a>
-                <a class="text-white px-2" href="">
+                <a class="text-white px-2" href="https://www.linkedin.com/in/miab%C3%A9-innovation-941139360/">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
-                <a class="text-white px-2" href="">
+                <a class="text-white px-2" href="https://www.instagram.com/miabeinnovation/">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a class="text-white pl-2" href="">
+                <a class="text-white pl-2" href="https://www.youtube.com/@Miabeinnovation">
                     <i class="fab fa-youtube"></i>
                 </a>
+                <a class="text-white pl-2" href="https://www.tiktok.com/@miabeinnovation">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+
             </div>
         </div>
     </div>
@@ -34,7 +38,7 @@
 
 
 <!-- Navbar Start -->
-<div class="container-fluid p-0">
+<div class="container-fluid p-0 navbar-sticky">
     <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0 px-lg-5">
         <a href="{% url 'accueil' %}" class="navbar-brand ml-lg-3">
             <img src="{% static 'img/logo.png' %}" class="img-fluid" style="width: 150px;" alt="logo de MiabeInnovation">
@@ -44,29 +48,30 @@
         </button>
         <div class="collapse navbar-collapse justify-content-between px-lg-3" id="navbarCollapse">
             <div class="navbar-nav mx-auto py-0">
-                <a href="{% url 'accueil' %}" class="nav-item nav-link active">Accueil</a>
+                <a href="{% url 'accueil' %}" class="nav-item nav-link {% if active_page == 'accueil' %}active{% endif %}">Accueil</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">A propos</a>
                     <div class="dropdown-menu m-0">
                         <a href="{% url 'qui_sommes_nous' %}" class="dropdown-item">Qui sommes-nous ?</a>
                         <a href="{% url 'equipe' %}" class="dropdown-item">Equipe</a>
+                        <a href="{% url 'blog' %}" class="dropdown-item">Blog</a>
                     </div>
                 </div>
                 
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Services</a>
                     <div class="dropdown-menu m-0">
-                        <a href="{% url 'devApplication' %}" class="dropdown-item">Developpment d'applications</a>
-                        <a href="{% url 'communityManagement' %}" class="dropdown-item">Community management</a>
-                        <a href="{% url 'webDesignMultimedia' %}" class="dropdown-item">Web design & Multimédia</a>
-                        <a href="{% url 'maintenance' %}" class="dropdown-item">Maintenance & installation des logiciels </a>
-                        <a href="{% url 'automatisationIa' %}" class="dropdown-item">Automatisation des systèmes avec IA </a>
-                        <a href="{% url 'automatisationTache' %}" class="dropdown-item">Automatisation des tâches </a>
+                        <a href="{% url 'devApplication' %}" class="dropdown-item">Developpement d'Applications</a>
+                        <a href="{% url 'communityManagement' %}" class="dropdown-item">Community Management</a>
+                        <a href="{% url 'webDesignMultimedia' %}" class="dropdown-item">Web Design & Multimédia</a>
+                        <a href="{% url 'maintenance' %}" class="dropdown-item">Maintenance & Installation logicielle </a>
+                        <a href="{% url 'automatisationIa' %}" class="dropdown-item">Automatisation des Systèmes avec IA </a>
+                        <a href="{% url 'automatisationTache' %}" class="dropdown-item">Automatisation des Tâches </a>
                     </div>
                 </div>
 
-                <a href="{% url 'temoignages' %}" class="nav-item nav-link">Témoignages</a>
-                <div class="nav-item dropdown">
+                <a href="{% url 'temoignages' %}" class="nav-item nav-link {% if active_page == 'temoignages' %}active{% endif %}" >Témoignages</a>
+                <div class="nav-item dropdown {% if active_page in 'entree_contact devenir_partenaire faqs' %}active{% endif %}">
                     <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Contact</a>
                     <div class="dropdown-menu m-0">
                         <a href="{% url 'entree_contact' %}" class="dropdown-item">Entrée en contact</a>
@@ -75,7 +80,7 @@
                     </div>
                 </div>
             </div>
-            <a href="" class="btn btn-primary py-2 px-4 d-none d-lg-block">Devenir Partenaire</a>
+            <a href="{% url 'devenir_partenaire' %}" class="btn btn-primary py-2 px-4 d-none d-lg-block">Devenir Partenaire</a>
         </div>
     </nav>
 </div>

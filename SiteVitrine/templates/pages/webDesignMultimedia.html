@@ -1,0 +1,716 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+   <style>
+        /* Reset et Base */
+        :root {
+            --primary: #202548;
+            --secondary: #D85614;
+            --dark: #2C3E50;
+            --light: #F8F9FA;
+            --accent: #D85614;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .design-hero {
+            background: 
+linear-gradient(135deg, 
+    rgba(32, 37, 72, 0.95) 0%,
+    rgba(202, 52, 51, 0.85) 50%, 
+    rgba(216, 88, 20, 0.9) 100%),
+url('https://i.pinimg.com/736x/45/79/36/457936f2fd33dc98f0afd6cfc798b4a1.jpg') no-repeat center center/cover;
+
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: white;
+            text-align: center;
+            isolation: isolate;
+            overflow: hidden;
+        }
+        
+        .design-hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 150px;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 1200 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%23ffffff'/%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%23ffffff'/%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%23ffffff'/%3E%3C/svg%3E");
+            background-size: cover;
+            z-index: 2;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            width: 100%;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            padding: 8px 20px;
+            border-radius: 30px;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .hero-title {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .typed-text {
+            display: inline-block;
+            min-height: 2.2rem;
+        }
+        
+        .hero-description {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.6;
+        }
+        
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title {
+            font-size: 2.8rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-subtitle {
+            color: var(--primary);
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .section-description {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .service-description {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .service-features {
+            margin-bottom: 25px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .feature-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--accent);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-size: 0.8rem;
+        }
+        
+        /* Portfolio Section */
+        .portfolio-section {
+            padding: 100px 0;
+            background-color: white;
+        }
+        
+        .portfolio-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .filter-btn {
+            padding: 8px 20px;
+            background: var(--light);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .filter-btn.active, .filter-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+        
+        .portfolio-item {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            aspect-ratio: 1 / 1;
+        }
+        
+        .portfolio-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #202558;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Process Section */
+        .process-section {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
+        
+        .process-steps {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .process-step {
+            display: flex;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-right: 30px;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            flex: 1;
+        }
+        
+        .step-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .cta-description {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .process-step {
+                flex-direction: column;
+            }
+            
+            .step-number {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="design-hero">
+        <div class="container">
+            <div class="hero-content wow fadeIn">
+                <span class="hero-badge wow fadeInDown">Création Visuelle d'Excellence</span>
+                <h1 class="hero-title wow fadeInDown" data-wow-delay="0.2s">
+                    Design <span class="typed-text" data-typed='["Infographie", "Multimédia", "Créatif", "Impactant"]'></span>
+                </h1>
+                <p class="hero-description wow fadeIn" data-wow-delay="0.4s">
+                    Des créations visuelles percutantes qui captivent votre audience et renforcent votre identité de marque
+                </p>
+                <div class="hero-cta wow fadeIn" data-wow-delay="0.6s">
+                    <a href="#contact" class="cta-btn">Démarrer un projet</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header wow fadeInUp">
+                <span class="section-subtitle wow fadeInUp">Nos Expertises</span>
+                <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Services de Design Créatif</h2>
+                <p class="section-description wow fadeInUp" data-wow-delay="0.4s">
+                    Une gamme complète de services pour répondre à tous vos besoins en communication visuelle
+                </p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card wow fadeInUp">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Infographie">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Design d'Infographie</h3>
+                        <p class="service-description">
+                            Transformez vos données complexes en visuels percutants et facilement compréhensibles
+                        </p>
+                        <div class="service-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-chart-pie"></i>
+                                </div>
+                                <span>Visualisation de données</span>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-icons"></i>
+                                </div>
+                                <span>Illustrations vectorielles</span>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-layer-group"></i>
+                                </div>
+                                <span>Mises en page créatives</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Multimédia">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Design Multimédia</h3>
+                        <p class="service-description">
+                            Créations interactives et animées pour une expérience utilisateur immersive
+                        </p>
+                        <div class="service-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-play-circle"></i>
+                                </div>
+                                <span>Animations 2D/3D</span>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-film"></i>
+                                </div>
+                                <span>Montage vidéo</span>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-vr-cardboard"></i>
+                                </div>
+                                <span>Expériences interactives</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Identité visuelle">
+                    </div>
+                    <div class="service-content">
+                        <h3 class="service-title">Identité Visuelle</h3>
+                        <p class="service-description">
+                            Une image de marque cohérente et mémorable qui vous distingue de la concurrence
+                        </p>
+                        <div class="service-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-palette"></i>
+                                </div>
+                                <span>Charte graphique</span>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-logo"></i>
+                                </div>
+                                <span>Création de logo</span>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-book"></i>
+                                </div>
+                                <span>Supports print & digital</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="portfolio-section">
+        <div class="container">
+            <div class="section-header wow fadeInUp">
+                <span class="section-subtitle wow fadeInUp">Nos Réalisations</span>
+                <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Portfolio Créatif</h2>
+                <p class="section-description wow fadeInUp" data-wow-delay="0.4s">
+                    Découvrez une sélection de nos projets les plus marquants
+                </p>
+            </div>
+            
+            <div class="portfolio-filter wow fadeInUp" data-wow-delay="0.6s">
+                <button class="filter-btn active" data-filter="all">Tous</button>
+                <button class="filter-btn" data-filter="infographie">Infographie</button>
+                <button class="filter-btn" data-filter="animation">Animation</button>
+                <button class="filter-btn" data-filter="identite">Identité Visuelle</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-item wow fadeInUp" data-category="infographie">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Infographie" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Infographie Corporate</h3>
+                        <p>Visualisation de données financières</p>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-item wow fadeInUp" data-wow-delay="0.2s" data-category="animation">
+                    <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Animation" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Animation Produit</h3>
+                        <p>Présentation interactive de nouvelles technologies</p>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-item wow fadeInUp" data-wow-delay="0.4s" data-category="identite">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Identité visuelle" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Identité de Marque</h3>
+                        <p>Redesign complet pour une startup tech</p>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-item wow fadeInUp" data-category="infographie">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Infographie" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Infographie Scientifique</h3>
+                        <p>Visualisation de processus complexes</p>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-item wow fadeInUp" data-wow-delay="0.2s" data-category="animation">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Animation" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Motion Design</h3>
+                        <p>Animation publicitaire pour réseaux sociaux</p>
+                    </div>
+                </div>
+                
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-item wow fadeInUp" data-wow-delay="0.4s" data-category="identite">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Identité visuelle" class="portfolio-image">
+                    <div class="portfolio-overlay">
+                        <h3 class="portfolio-title">Packaging Design</h3>
+                        <p>Création d'une ligne de produits premium</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header wow fadeInUp">
+                <span class="section-subtitle wow fadeInUp">Notre Méthode</span>
+                <h2 class="section-title wow fadeInUp" data-wow-delay="0.2s">Processus Créatif</h2>
+                <p class="section-description wow fadeInUp" data-wow-delay="0.4s">
+                    Une approche structurée pour des résultats à la hauteur de vos attentes
+                </p>
+            </div>
+            
+            <div class="process-steps">
+                <!-- Step 1 -->
+                <div class="process-step wow fadeInLeft">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Brief & Recherche</h3>
+                        <p>Analyse approfondie de votre besoin, de votre cible et de votre secteur d'activité pour poser les bases du projet.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="process-step wow fadeInRight" data-wow-delay="0.2s">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Conception & Esquisses</h3>
+                        <p>Création des premières propositions visuelles et validation des directions artistiques.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="process-step wow fadeInLeft" data-wow-delay="0.4s">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Développement & Révisions</h3>
+                        <p>Production des créations finales avec des points de validation réguliers.</p>
+                    </div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="process-step wow fadeInRight" data-wow-delay="0.6s">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Livraison & Support</h3>
+                        <p>Fourniture des fichiers finaux dans tous les formats requis et accompagnement pour leur utilisation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="section-header wow fadeInUp">
+                <h2 class="cta-title wow fadeInUp">Prêt à donner vie à vos idées ?</h2>
+                <p class="cta-description wow fadeInUp" data-wow-delay="0.2s">
+                    Discutons de votre projet et créons ensemble des designs qui marquent les esprits
+                </p>
+                <a href="#contact" class="cta-btn wow fadeInUp" data-wow-delay="0.4s">Contactez-nous</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
+    <script>
+        // Initialisation des animations
+        new WOW().init();
+        
+        // Typed.js pour le texte animé
+        document.querySelectorAll('.typed-text').forEach(element => {
+            let strings = JSON.parse(element.getAttribute('data-typed'));
+            new Typed(element, {
+                strings: strings,
+                typeSpeed: 50,
+                backSpeed: 30,
+                loop: true
+            });
+        });
+        
+        // Filtrage du portfolio
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Active le bouton cliqué
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                document.querySelectorAll('.portfolio-item').forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+{% endblock %}
