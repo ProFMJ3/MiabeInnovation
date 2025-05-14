@@ -1,10 +1,10 @@
 from django.shortcuts import render, redirect
-from .models import Temoignage
-from django.http import HttpResponse
+
+
 from django.core.files.storage import FileSystemStorage
 from django.utils import timezone
-from django.urls import reverse
-from django.db import models
+
+from .models import Temoignage
 
 # Create your views here.
 
@@ -112,7 +112,7 @@ def automatisationIa(request):
 def automatisationTache(request):
     return render(request, 'pages/automatisationTache.html')
 
-<<<<<<< HEAD
+
  
 
 
@@ -146,7 +146,4 @@ def sauvegardeTemoignage(request):
         return render(request, 'pages/temoignages.html')
     
         
-=======
 
-
->>>>>>> 3acdd57f2d926ac39dd7919068f73682e0faba3e
