@@ -34,6 +34,6 @@ urlpatterns = [
 
 
     #URL DE SAUVEGARDE
-    #path('sauvegardeTemoignage/', views.sauvegardeTemoignage, name='sauvegardeTemoignage'),
+    path('sauvegardeTemoignage/', views.sauvegardeTemoignage, name='sauvegardeTemoignage'),
 
 ]
