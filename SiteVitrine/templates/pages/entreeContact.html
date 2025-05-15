@@ -179,50 +179,57 @@
                     </h2>
                 </div>
                 
-                <form method="post" class="mi-contact-form">
+                                <form method="post" class="mi-contact-form">
                     {% csrf_token %}
-                    <div class="row">
+                    
+                    <!-- Affichage des messages -->
+                    {% if messages %}
+                    <div class="alert-container">
+                        {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}">
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    <div class="row g-3">
                         <!-- Nom -->
                         <div class="col-md-6">
                             <div class="mi-input-group">
-                                <input type="text" id="id_nom" name="nom" class="mi-form-input" required>
-                                <label for="id_nom" class="mi-input-label">Nom</label>
+                                <input type="text" id="nom" name="nom" class="mi-form-input" 
+                                    value="{{ submitted_data.nom }}" required>
+                                <label for="nom" class="mi-input-label">Nom</label>
                                 <div class="mi-input-bar"></div>
                             </div>
-                            {% if form.nom.errors %}
-                                <div class="mi-form-error">{{ form.nom.errors }}</div>
-                            {% endif %}
                         </div>
                         
                         <!-- Prénom -->
                         <div class="col-md-6">
                             <div class="mi-input-group">
-                                <input type="text" id="id_prenom" name="prenom" class="mi-form-input" required>
-                                <label for="id_prenom" class="mi-input-label">Prénom</label>
+                                <input type="text" id="prenom" name="prenom" class="mi-form-input"
+                                    value="{{ submitted_data.prenom }}">
+                                <label for="prenom" class="mi-input-label">Prénom</label>
                                 <div class="mi-input-bar"></div>
                             </div>
-                            {% if form.prenom.errors %}
-                                <div class="mi-form-error">{{ form.prenom.errors }}</div>
-                            {% endif %}
                         </div>
                         
                         <!-- Email -->
                         <div class="col-md-6">
                             <div class="mi-input-group">
-                                <input type="email" id="id_email" name="email" class="mi-form-input" required>
-                                <label for="id_email" class="mi-input-label">Email</label>
+                                <input type="email" id="email" name="email" class="mi-form-input"
+                                    value="{{ submitted_data.email }}" required>
+                                <label for="email" class="mi-input-label">Email</label>
                                 <div class="mi-input-bar"></div>
                             </div>
-                            {% if form.email.errors %}
-                                <div class="mi-form-error">{{ form.email.errors }}</div>
-                            {% endif %}
                         </div>
                         
                         <!-- Téléphone -->
                         <div class="col-md-6">
                             <div class="mi-input-group">
-                                <input type="tel" id="id_telephone" name="telephone" class="mi-form-input">
-                                <label for="id_telephone" class="mi-input-label">Téléphone</label>
+                                <input type="tel" id="telephone" name="telephone" class="mi-form-input"
+                                    value="{{ submitted_data.telephone }}">
+                                <label for="telephone" class="mi-input-label">Téléphone</label>
                                 <div class="mi-input-bar"></div>
                             </div>
                         </div>
@@ -230,37 +237,28 @@
                         <!-- Sujet -->
                         <div class="col-12">
                             <div class="mi-input-group">
-                                <select id="id_sujet" name="sujet" class="mi-form-select" required>
-                                    <option value="" selected disabled></option>
-                                    <option value="support">Support technique</option>
-                                    <option value="devis">Demande de devis</option>
-                                    <option value="partenariat">Partenariat</option>
-                                    <option value="autre">Autre demande</option>
+                                <select id="sujet" name="sujet" class="mi-form-select" required>
+                                    {% for value, label in sujet_choices %}
+                                    <option value="{{ value }}" 
+                                            {% if submitted_data.sujet == value %}selected{% endif %}>
+                                        {{ label }}
+                                    </option>
+                                    {% endfor %}
                                 </select>
-                                <label for="id_sujet" class="mi-select-label">Sujet</label>
-                                <div class="mi-select-arrow"><i class="fas fa-chevron-down"></i></div>
+                                <label for="sujet" class="mi-select-label">Sujet</label>
+                                <div class="mi-select-arrow"></div>
                             </div>
-                            {% if form.sujet.errors %}
-                                <div class="mi-form-error">{{ form.sujet.errors }}</div>
-                            {% endif %}
                         </div>
                         
                         <!-- Message -->
                         <div class="col-12">
                             <div class="mi-input-group">
-                                <textarea id="id_message" name="message" class="mi-form-textarea" required></textarea>
-                                <label for="id_message" class="mi-textarea-label">Message</label>
+                                <textarea id="message" name="message" class="mi-form-textarea" required>{{ submitted_data.message }}</textarea>
+                                <label for="message" class="mi-textarea-label">Message</label>
                             </div>
-                            {% if form.message.errors %}
-                                <div class="mi-form-error">{{ form.message.errors }}</div>
-                            {% endif %}
                         </div>
                         
                         <div class="col-12">
-                            <p class="mi-terms-text">
-                                En soumettant ce formulaire, vous acceptez nos <strong>conditions générales</strong> ainsi que notre <strong>politique de confidentialité</strong>.
-                            </p>
-                            
                             <button type="submit" class="mi-submit-btn">
                                 <span>Envoyer</span>
                                 <i class="fas fa-paper-plane ms-2"></i>

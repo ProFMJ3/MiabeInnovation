@@ -120,45 +120,70 @@
             </div>
             <div class="col-lg-6">
                 <div class="mi-partner-form-container">
-                    <form class="mi-partner-form">
+                                        <!-- Dans devenirPartenaire.html -->
+                    <form class="mi-partner-form" method="post">
+                        {% csrf_token %}
+                        
+                        <!-- Affichage des messages d'erreur -->
+                        {% if messages %}
+                        <div class="mi-alert-container">
+                            {% for message in messages %}
+                            <div class="mi-alert mi-alert-{% if message.tags == 'error' %}danger{% else %}success{% endif %}">
+                                {{ message }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+
+                        <!-- Nom de l'entreprise -->
                         <div class="mi-form-group">
-                            <input type="text" id="company-name" required>
+                            <input type="text" id="company-name" name="company_name" 
+                                value="{{ submitted_data.company_name }}" required>
                             <label for="company-name">Nom de l'entreprise</label>
                             <div class="mi-input-underline"></div>
                         </div>
                         
+                        <!-- Personne de contact -->
                         <div class="mi-form-group">
-                            <input type="text" id="contact-person" required>
+                            <input type="text" id="contact-person" name="contact_person"
+                                value="{{ submitted_data.contact_person }}" required>
                             <label for="contact-person">Personne de contact</label>
                             <div class="mi-input-underline"></div>
                         </div>
                         
+                        <!-- Email professionnel -->
                         <div class="mi-form-group">
-                            <input type="email" id="company-email" required>
+                            <input type="email" id="company-email" name="company_email"
+                                value="{{ submitted_data.company_email }}" required>
                             <label for="company-email">Email professionnel</label>
                             <div class="mi-input-underline"></div>
                         </div>
                         
+                        <!-- Téléphone -->
                         <div class="mi-form-group">
-                            <input type="tel" id="company-phone">
+                            <input type="tel" id="company-phone" name="company_phone"
+                                value="{{ submitted_data.company_phone }}">
                             <label for="company-phone">Téléphone</label>
                             <div class="mi-input-underline"></div>
                         </div>
                         
+                        <!-- Type de partenariat -->
                         <div class="mi-form-group">
-                            <select id="partnership-type" required>
-                                <option value="" disabled selected></option>
-                                <option value="technology">Partenaire Technologique</option>
-                                <option value="reseller">Partenaire Revendeur</option>
-                                <option value="strategic">Partenaire Stratégique</option>
-                                <option value="other">Autre</option>
+                            <select id="partnership-type" name="partnership_type" required>
+                                {% for value, label in partnership_types %}
+                                <option value="{{ value }}" 
+                                        {% if submitted_data.partnership_type == value %}selected{% endif %}>
+                                    {{ label }}
+                                </option>
+                                {% endfor %}
                             </select>
                             <label for="partnership-type">Type de partenariat</label>
                             <div class="mi-select-arrow"></div>
                         </div>
                         
+                        <!-- Idées de collaboration -->
                         <div class="mi-form-group">
-                            <textarea id="collaboration-ideas" rows="4" required></textarea>
+                            <textarea id="collaboration-ideas" name="collaboration_ideas" required>{{ submitted_data.collaboration_ideas }}</textarea>
                             <label for="collaboration-ideas">Idées de collaboration</label>
                         </div>
                         
@@ -174,6 +199,7 @@
 </section>
 
 <!-- Testimonials from Partners -->
+ 
 <section class="mi-partner-testimonials">
     <div class="container">
         <div class="mi-section-header">
