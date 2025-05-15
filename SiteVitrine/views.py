@@ -152,40 +152,25 @@ def sauvegardeTemoignage(request):
         
 
 
-
-
 def partnership_view(request):
     if request.method == 'POST':
         form = PartnershipForm(request.POST)
         if form.is_valid():
-            # Création manuelle de l'objet si vous voulez sauvegarder
-            PartnershipRequest.objects.create(
-                company_name=form.cleaned_data['company_name'],
-                contact_person=form.cleaned_data['contact_person'],
-                company_email=form.cleaned_data['company_email'],
-                company_phone=form.cleaned_data['company_phone'],
-                partnership_type=form.cleaned_data['partnership_type'],
-                collaboration_ideas=form.cleaned_data['collaboration_ideas']
-            )
-            
-            messages.success(
-                request,
-                "Votre demande de partenariat a été envoyée avec succès. "
-                "Notre équipe vous contactera dans les 24 heures."
-            )
+            PartnershipRequest.objects.create(**form.cleaned_data)
+            messages.success(request, "Votre demande a été envoyée avec succès. Nous vous contacterons dans les 24h.")
             return redirect('success')
     else:
         form = PartnershipForm()
     
-    return render(request, 'pages/devenirPartenaire.html', {'form': form})
+    return render(request, 'pages/devenirPartenaire.html', {
+        'form': form,
+        'active_tab': 'partnership'  # Pour highlight la navigation si nécessaire
+    })
 
 def partnership_success_view(request):
-    return render(request, 'gestionFormulaire/partnership_success.html')
-
-
-
-
-
+    return render(request, 'gestionFormulaire/partnership_success.html', {
+        'title': 'Demande envoyée'
+    })
 
 def contact_view(request):
     if request.method == 'POST':

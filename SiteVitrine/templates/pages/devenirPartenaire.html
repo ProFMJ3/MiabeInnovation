@@ -2,8 +2,7 @@
 {% load static %}
 
 {% block body%}
-<link rel="stylesheet" href="{% static 'pages/css/partenaire.css %}">
-
+<link rel="stylesheet" href="{% static 'pages/css/partenaire.css' %}">
 
 <!-- Hero Section with Particle Animation -->
 <div class="mi-partner-hero">
@@ -85,8 +84,6 @@
     </div>
 </section>
 
-
-
 <!-- Partnership Form Section -->
 <section class="mi-partner-form-section">
     <div class="container">
@@ -123,26 +120,47 @@
             </div>
             <div class="col-lg-6">
                 <div class="mi-partner-form-container">
-                    <form class="mi-partner-form" method="post" action="{% url 'partnership_form' %}">
-                        {% csrf_token %}
-                        
-                        {% for field in form %}
+                    <form class="mi-partner-form">
                         <div class="mi-form-group">
-                            {{ field }}
-                            <label for="{{ field.id_for_label }}">{{ field.label }}</label>
-                            {% if field.field.widget.input_type != 'select' and field.field.widget.input_type != 'textarea' %}
+                            <input type="text" id="company-name" required>
+                            <label for="company-name">Nom de l'entreprise</label>
                             <div class="mi-input-underline"></div>
-                            {% elif field.field.widget.input_type == 'select' %}
-                            <div class="mi-select-arrow"></div>
-                            {% endif %}
-                            
-                            {% if field.errors %}
-                            <div class="mi-form-error">
-                                {{ field.errors }}
-                            </div>
-                            {% endif %}
                         </div>
-                        {% endfor %}
+                        
+                        <div class="mi-form-group">
+                            <input type="text" id="contact-person" required>
+                            <label for="contact-person">Personne de contact</label>
+                            <div class="mi-input-underline"></div>
+                        </div>
+                        
+                        <div class="mi-form-group">
+                            <input type="email" id="company-email" required>
+                            <label for="company-email">Email professionnel</label>
+                            <div class="mi-input-underline"></div>
+                        </div>
+                        
+                        <div class="mi-form-group">
+                            <input type="tel" id="company-phone">
+                            <label for="company-phone">Téléphone</label>
+                            <div class="mi-input-underline"></div>
+                        </div>
+                        
+                        <div class="mi-form-group">
+                            <select id="partnership-type" required>
+                                <option value="" disabled selected></option>
+                                <option value="technology">Partenaire Technologique</option>
+                                <option value="reseller">Partenaire Revendeur</option>
+                                <option value="strategic">Partenaire Stratégique</option>
+                                <option value="other">Autre</option>
+                            </select>
+                            <label for="partnership-type">Type de partenariat</label>
+                            <div class="mi-select-arrow"></div>
+                        </div>
+                        
+                        <div class="mi-form-group">
+                            <textarea id="collaboration-ideas" rows="4" required></textarea>
+                            <label for="collaboration-ideas">Idées de collaboration</label>
+                        </div>
                         
                         <button type="submit" class="mi-submit-btn">
                             <span>Envoyer la demande</span>
@@ -154,7 +172,6 @@
         </div>
     </div>
 </section>
-
 
 <!-- Testimonials from Partners -->
 <section class="mi-partner-testimonials">

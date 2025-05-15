@@ -1,19 +1,12 @@
 
 from django.urls import path
-
 from . import views
-
-
 from SiteVitrine import  views
-from .views import PartnershipView, PartnershipSuccessView
+
 
 
 urlpatterns = [
-    path('', views.home, name ='home'),
-
-
-
-
+    # URLS DE BASE
     path("", views.home, name="accueil"),
     path('quiSommesNous/', views.quiSommesNous, name='qui_sommes_nous'),
     path('equipe/', views.equipe, name='equipe'),
@@ -37,8 +30,8 @@ urlpatterns = [
     #URL DE SAUVEGARDE
     path('sauvegardeTemoignage/', views.sauvegardeTemoignage, name='sauvegardeTemoignage'),
 
-    path('partnership_form', PartnershipView.as_view(), name='partnership_form'),
-    path('success/', PartnershipSuccessView.as_view(), name='success'),
+    path('partnership_form', views.partnership_view, name='partnership_form'),
+    path('success/', views.partnership_success_view, name='success'),
 
     path('contact/', views.contact_view, name='contact'),
 
