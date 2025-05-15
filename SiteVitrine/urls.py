@@ -5,6 +5,7 @@ from . import views
 
 
 from SiteVitrine import  views
+from .views import PartnershipView, PartnershipSuccessView
 
 
 urlpatterns = [
@@ -36,4 +37,10 @@ urlpatterns = [
     #URL DE SAUVEGARDE
     path('sauvegardeTemoignage/', views.sauvegardeTemoignage, name='sauvegardeTemoignage'),
 
+    path('partnership_form', PartnershipView.as_view(), name='partnership_form'),
+    path('success/', PartnershipSuccessView.as_view(), name='success'),
+
+    path('contact/', views.contact_view, name='contact'),
+
 ]
+

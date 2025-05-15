@@ -10,78 +10,108 @@
 <div class="mi-contact-container" style="margin-top: -150px;">
     <div class="container">
         <div class="row g-4">
-            <!-- Contact Form -->
-            <div class="col-lg-7">
-                <div class="mi-form-card animate__animated animate__fadeInUp">
-                    <div class="mi-form-header">
-                        <h2 class="mi-form-title text-white"><i class="fas fa-paper-plane me-2"></i>Envoyez-nous un message</h2>
-                    </div>
-                    <form method="post" class="mi-contact-form">
-                        {% csrf_token %}
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="mi-input-group">
-                                    <input type="text" id="nom" name="nom" class="mi-form-input" required>
-                                    <label for="nom" class="mi-input-label">Nom</label>
-                                    <div class="mi-input-bar"></div>
+
+        <!-- Contact Form -->
+
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="mi-form-card animate__animated animate__fadeInUp">
+                        <div class="mi-form-header">
+                            <h2 class="mi-form-title text-white">
+                                <i class="fas fa-paper-plane me-2"></i>Envoyez-nous un message
+                            </h2>
+                        </div>
+                        
+                        <form method="post" class="mi-contact-form">
+                            {% csrf_token %}
+                            <div class="row g-3">
+                                <!-- Nom -->
+                                <div class="col-md-6">
+                                    <div class="mi-input-group">
+                                        {{ form.nom }}
+                                        <label for="nom" class="mi-input-label">Nom</label>
+                                        <div class="mi-input-bar"></div>
+                                    </div>
+                                    {% if form.nom.errors %}
+                                        <div class="mi-form-error">{{ form.nom.errors }}</div>
+                                    {% endif %}
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mi-input-group">
-                                    <input type="text" id="prenom" name="prenom" class="mi-form-input" required>
-                                    <label for="prenom" class="mi-input-label">Prénom</label>
-                                    <div class="mi-input-bar"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mi-input-group">
-                                    <input type="email" id="email" name="email" class="mi-form-input" required>
-                                    <label for="email" class="mi-input-label">Email</label>
-                                    <div class="mi-input-bar"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mi-input-group">
-                                    <input type="tel" id="telephone" name="telephone" class="mi-form-input">
-                                    <label for="telephone" class="mi-input-label">Téléphone</label>
-                                    <div class="mi-input-bar"></div>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="mi-input-group">
-                                    <select id="sujet" name="sujet" class="mi-form-select" required>
-                                        <option value="" selected disabled hidden></option>
-                                        <option value="support">Support technique</option>
-                                        <option value="devis">Demande de devis</option>
-                                        <option value="partenariat">Partenariat</option>
-                                        <option value="autre">Autre demande</option>
-                                    </select>
-                                    <label for="sujet" class="mi-select-label">Sujet</label>
-                                    <div class="mi-select-arrow"></div>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="mi-input-group">
-                                    <textarea id="message" name="message" class="mi-form-textarea" required></textarea>
-                                    <label for="message" class="mi-textarea-label">Message</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <p class="text-muted">
-                                    En soumettant ce formulaire, vous accepte <strong class ="min-text"><u>nos conditions générales ainsi que notre politique de
-                                    confidentialité</u></strong>, qui explique comment nous pouvons collecter, utiliser et divulguer vos informations
-                                    personnelles, y compris à des tiers.                                    
-                                </p>
                                 
-                                <button type="submit" class="mi-submit-btn">
-                                    <span>Envoyer</span>
-                                    <i class="fas fa-paper-plane ms-2"></i>
-                                </button>
+                                <!-- Prénom -->
+                                <div class="col-md-6">
+                                    <div class="mi-input-group">
+                                        {{ form.prenom }}
+                                        <label for="prenom" class="mi-input-label">Prénom</label>
+                                        <div class="mi-input-bar"></div>
+                                    </div>
+                                    {% if form.prenom.errors %}
+                                        <div class="mi-form-error">{{ form.prenom.errors }}</div>
+                                    {% endif %}
+                                </div>
+                                
+                                <!-- Email -->
+                                <div class="col-md-6">
+                                    <div class="mi-input-group">
+                                        {{ form.email }}
+                                        <label for="email" class="mi-input-label">Email</label>
+                                        <div class="mi-input-bar"></div>
+                                    </div>
+                                    {% if form.email.errors %}
+                                        <div class="mi-form-error">{{ form.email.errors }}</div>
+                                    {% endif %}
+                                </div>
+                                
+                                <!-- Téléphone -->
+                                <div class="col-md-6">
+                                    <div class="mi-input-group">
+                                        {{ form.telephone }}
+                                        <label for="telephone" class="mi-input-label">Téléphone</label>
+                                        <div class="mi-input-bar"></div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Sujet -->
+                                <div class="col-12">
+                                    <div class="mi-input-group">
+                                        {{ form.sujet }}
+                                        <label for="sujet" class="mi-select-label">Sujet</label>
+                                        <div class="mi-select-arrow"></div>
+                                    </div>
+                                    {% if form.sujet.errors %}
+                                        <div class="mi-form-error">{{ form.sujet.errors }}</div>
+                                    {% endif %}
+                                </div>
+                                
+                                <!-- Message -->
+                                <div class="col-12">
+                                    <div class="mi-input-group">
+                                        {{ form.message }}
+                                        <label for="message" class="mi-textarea-label">Message</label>
+                                    </div>
+                                    {% if form.message.errors %}
+                                        <div class="mi-form-error">{{ form.message.errors }}</div>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="col-12">
+                                    <p class="text-muted">
+                                        En soumettant ce formulaire, vous acceptez <strong class="min-text"><u>nos conditions générales ainsi que notre politique de
+                                        confidentialité</u></strong>.
+                                    </p>
+                                    
+                                    <button type="submit" class="mi-submit-btn">
+                                        <span>Envoyer</span>
+                                        <i class="fas fa-paper-plane ms-2"></i>
+                                    </button>
+                                        </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
+
 
             <!-- Contact Info -->
             <div class="col-lg-5">

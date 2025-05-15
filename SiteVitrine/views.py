@@ -1,10 +1,15 @@
 from django.shortcuts import render, redirect
 
-
+from django.contrib import messages
 from django.core.files.storage import FileSystemStorage
 from django.utils import timezone
 
+from .forms import PartnershipForm
+from .models import PartnershipRequest  # Si vous voulez quand même sauvegarder en base
+
 from .models import Temoignage
+from .forms import ContactForm
+from .models import ContactMessage
 
 # Create your views here.
 
@@ -113,7 +118,6 @@ def automatisationTache(request):
     return render(request, 'pages/automatisationTache.html')
 
 
- 
 
 
 def sauvegardeTemoignage(request):
@@ -147,3 +151,59 @@ def sauvegardeTemoignage(request):
     
         
 
+
+
+
+def partnership_view(request):
+    if request.method == 'POST':
+        form = PartnershipForm(request.POST)
+        if form.is_valid():
+            # Création manuelle de l'objet si vous voulez sauvegarder
+            PartnershipRequest.objects.create(
+                company_name=form.cleaned_data['company_name'],
+                contact_person=form.cleaned_data['contact_person'],
+                company_email=form.cleaned_data['company_email'],
+                company_phone=form.cleaned_data['company_phone'],
+                partnership_type=form.cleaned_data['partnership_type'],
+                collaboration_ideas=form.cleaned_data['collaboration_ideas']
+            )
+            
+            messages.success(
+                request,
+                "Votre demande de partenariat a été envoyée avec succès. "
+                "Notre équipe vous contactera dans les 24 heures."
+            )
+            return redirect('success')
+    else:
+        form = PartnershipForm()
+    
+    return render(request, 'pages/devenirPartenaire.html', {'form': form})
+
+def partnership_success_view(request):
+    return render(request, 'gestionFormulaire/partnership_success.html')
+
+
+
+
+
+
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            # Création manuelle de l'objet ContactMessage
+            ContactMessage.objects.create(
+                nom=form.cleaned_data['nom'],
+                prenom=form.cleaned_data['prenom'],
+                email=form.cleaned_data['email'],
+                telephone=form.cleaned_data['telephone'],
+                sujet=form.cleaned_data['sujet'],
+                message=form.cleaned_data['message']
+            )
+            
+            messages.success(request, 'Votre message a été envoyé avec succès!')
+            return redirect('contact')
+    else:
+        form = ContactForm()
+    
+    return render(request, 'pages/entreecontact.html', {'form': form})

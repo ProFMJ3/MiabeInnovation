@@ -1,0 +1,590 @@
+
+
+    :root {
+        --mi-blue-night: #202548;
+        --mi-orange: #D85814;
+        --mi-light: #f8f9fa;
+        --mi-dark: #1a1a1a;
+        --mi-gray: #6c757d;
+    }
+
+    /* Hero Section */
+    .mi-partner-hero {
+        height: 80vh;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    #mi-particle-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--mi-blue-night);
+    }
+
+    .mi-hero-content {
+        position: relative;
+        z-index: 10;
+        max-width: 800px;
+        padding: 0 20px;
+    }
+
+    .mi-hero-title {
+        font-size: 4.5rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    }
+
+    .mi-hero-subtitle {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+    }
+
+    .mi-scroll-hint {
+        font-size: 2.5rem;
+        margin-top: 4rem;
+        animation-duration: 2s;
+    }
+
+    /* Benefits Section */
+    .mi-benefits-section {
+        padding: 100px 0;
+        background: white;
+    }
+
+    .mi-section-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .mi-section-header h2 {
+        color: var(--mi-blue-night);
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .mi-section-header p {
+        color: var(--mi-gray);
+        font-size: 1.2rem;
+    }
+
+    .mi-benefit-card {
+        background: white;
+        border-radius: 15px;
+        padding: 40px 30px;
+        height: 100%;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+
+    .mi-benefit-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background: var(--mi-orange);
+        transition: all 0.4s ease;
+        z-index: -1;
+    }
+
+    .mi-benefit-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+
+    .mi-benefit-card:hover::before {
+        height: 100%;
+    }
+
+    .mi-benefit-icon {
+        font-size: 2.5rem;
+        color: var(--mi-orange);
+        margin-bottom: 25px;
+        transition: all 0.4s ease;
+    }
+
+    .mi-benefit-card:hover .mi-benefit-icon {
+        color: white;
+        transform: rotate(15deg) scale(1.2);
+    }
+
+    .mi-benefit-card h3 {
+        color: var(--mi-blue-night);
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        transition: all 0.4s ease;
+    }
+
+    .mi-benefit-card p {
+        color: var(--mi-gray);
+        transition: all 0.4s ease;
+    }
+
+    .mi-benefit-card:hover h3,
+    .mi-benefit-card:hover p {
+        color: white;
+    }
+
+    /* Partners Gallery */
+    .mi-partners-gallery {
+        padding: 80px 0;
+        background: var(--mi-light);
+    }
+
+    .mi-partners-slider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+
+    .mi-partner-logo {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        transition: all 0.3s ease;
+    }
+
+    .mi-partner-logo:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .mi-partner-logo img {
+        height: 60px;
+        width: auto;
+        filter: grayscale(100%);
+        opacity: 0.7;
+        transition: all 0.3s ease;
+    }
+
+    .mi-partner-logo:hover img {
+        filter: grayscale(0%);
+        opacity: 1;
+    }
+
+    /* Form Section */
+    .mi-partner-form-section {
+        padding: 100px 0;
+        background: white;
+    }
+
+    .mi-form-intro {
+        padding-right: 40px;
+    }
+
+    .mi-form-intro h2 {
+        color: var(--mi-blue-night);
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+    }
+
+    .mi-form-intro p {
+        color: var(--mi-gray);
+        margin-bottom: 40px;
+        font-size: 1.1rem;
+        line-height: 1.7;
+    }
+
+    .mi-process-steps {
+        margin-top: 50px;
+    }
+
+    .mi-process-step {
+        display: flex;
+        margin-bottom: 30px;
+        align-items: flex-start;
+    }
+
+    .mi-step-number {
+        background: var(--mi-orange);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        margin-right: 20px;
+        flex-shrink: 0;
+    }
+
+    .mi-step-content h4 {
+        color: var(--mi-blue-night);
+        margin-bottom: 5px;
+    }
+
+    .mi-step-content p {
+        color: var(--mi-gray);
+        margin: 0;
+    }
+
+    .mi-partner-form-container {
+        background: white;
+        border-radius: 15px;
+        padding: 40px;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    }
+
+    .mi-partner-form {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .mi-form-group {
+        position: relative;
+    }
+
+    .mi-form-group input,
+    .mi-form-group select,
+    .mi-form-group textarea {
+        width: 100%;
+        padding: 15px 0;
+        border: none;
+        border-bottom: 2px solid #eee;
+        font-size: 16px;
+        background: transparent;
+        transition: all 0.3s ease;
+    }
+
+    .mi-form-group textarea {
+        min-height: 100px;
+        resize: vertical;
+    }
+
+    .mi-form-group label {
+        position: absolute;
+        top: 15px;
+        left: 0;
+        color: var(--mi-gray);
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+
+    .mi-form-group input:focus,
+    .mi-form-group select:focus,
+    .mi-form-group textarea:focus {
+        outline: none;
+        border-bottom-color: var(--mi-orange);
+    }
+
+    .mi-form-group input:focus + label,
+    .mi-form-group input:not(:placeholder-shown) + label,
+    .mi-form-group select:focus + label,
+    .mi-form-group select:not([value=""]) + label,
+    .mi-form-group textarea:focus + label,
+    .mi-form-group textarea:not(:placeholder-shown) + label {
+        top: -10px;
+        font-size: 12px;
+        color: var(--mi-orange);
+    }
+
+    .mi-input-underline {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--mi-orange);
+        transition: width 0.3s ease;
+    }
+
+    .mi-form-group input:focus ~ .mi-input-underline {
+        width: 100%;
+    }
+
+    .mi-select-arrow {
+        position: absolute;
+        right: 0;
+        bottom: 15px;
+        width: 0;
+        height: 0;
+        border-left: 6px solid transparent;
+        border-right: 6px solid transparent;
+        border-top: 6px solid var(--mi-gray);
+        pointer-events: none;
+        transition: all 0.3s ease;
+    }
+
+    .mi-form-group select:focus ~ .mi-select-arrow {
+        border-top-color: var(--mi-orange);
+    }
+
+    .mi-submit-btn {
+        background: var(--mi-blue-night);
+        color: white;
+        border: none;
+        padding: 18px 30px;
+        border-radius: 50px;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition: all 0.4s ease;
+        margin-top: 20px;
+    }
+
+    .mi-submit-btn:hover {
+        background: var(--mi-orange);
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(216, 88, 20, 0.3);
+    }
+
+    /* Testimonials */
+    .mi-partner-testimonials {
+        padding: 100px 0;
+        background: var(--mi-light);
+    }
+
+    .mi-testimonial-slider {
+        display: flex;
+        gap: 30px;
+        overflow-x: auto;
+        padding: 20px 0;
+    }
+
+    .mi-testimonial-card {
+        background: white;
+        border-radius: 15px;
+        padding: 40px;
+        min-width: 450px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+
+    .mi-testimonial-content {
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+    .mi-quote-icon {
+        color: var(--mi-orange);
+        opacity: 0.2;
+        font-size: 3rem;
+        position: absolute;
+        top: -15px;
+        left: -10px;
+    }
+
+    .mi-testimonial-content p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--mi-dark);
+        font-style: italic;
+        position: relative;
+    }
+
+    .mi-testimonial-author {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .mi-testimonial-author img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .mi-testimonial-author h4 {
+        color: var(--mi-blue-night);
+        margin-bottom: 5px;
+    }
+
+    .mi-testimonial-author p {
+        color: var(--mi-gray);
+        margin: 0;
+        font-size: 0.9rem;
+    }
+
+    /* Partnership Levels */
+    .mi-partner-levels {
+        padding: 100px 0;
+        background: white;
+    }
+
+    .mi-level-card {
+        background: white;
+        border-radius: 15px;
+        padding: 0;
+        height: 100%;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .mi-level-card.featured {
+        transform: scale(1.05);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    }
+
+    .mi-level-badge {
+        position: absolute;
+        top: 20px;
+        right: -30px;
+        background: var(--mi-orange);
+        color: white;
+        padding: 5px 30px;
+        transform: rotate(45deg);
+        font-weight: bold;
+        font-size: 0.8rem;
+    }
+
+    .mi-level-header {
+        padding: 30px;
+        background: var(--mi-blue-night);
+        color: white;
+        text-align: center;
+    }
+
+    .mi-level-header h3 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+
+    .mi-level-price {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .mi-level-features {
+        padding: 30px;
+        list-style: none;
+    }
+
+    .mi-level-features li {
+        padding: 10px 0;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .mi-level-features li i.fa-check {
+        color: var(--mi-orange);
+    }
+
+    .mi-level-features li.na {
+        opacity: 0.5;
+    }
+
+    .mi-level-btn {
+        display: block;
+        width: calc(100% - 60px);
+        margin: 0 30px 30px;
+        padding: 15px;
+        border: 2px solid var(--mi-blue-night);
+        background: white;
+        color: var(--mi-blue-night);
+        border-radius: 50px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .mi-level-card.featured .mi-level-btn {
+        background: var(--mi-orange);
+        color: white;
+        border-color: var(--mi-orange);
+    }
+
+    .mi-level-btn:hover {
+        background: var(--mi-blue-night);
+        color: white;
+    }
+
+    .mi-level-card.featured .mi-level-btn:hover {
+        background: var(--mi-blue-night);
+        border-color: var(--mi-blue-night);
+    }
+
+    .invalid-feedback.d-block {
+    display: block !important;
+    }
+    .form-control.is-invalid {
+        border-color: #dc3545;
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+        .mi-hero-title {
+            font-size: 3.5rem;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .mi-hero-title {
+            font-size: 3rem;
+        }
+        
+        .mi-form-intro {
+            padding-right: 0;
+            margin-bottom: 50px;
+        }
+        
+        .mi-level-card.featured {
+            transform: none;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .mi-hero-title {
+            font-size: 2.5rem;
+        }
+        
+        .mi-hero-subtitle {
+            font-size: 1.3rem;
+        }
+        
+        .mi-partners-slider {
+            gap: 20px;
+        }
+        
+        .mi-partner-logo {
+            padding: 15px;
+        }
+        
+        .mi-partner-logo img {
+            height: 40px;
+        }
+        
+        .mi-testimonial-card {
+            min-width: 300px;
+            padding: 30px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .mi-hero-title {
+            font-size: 2.2rem;
+        }
+        
+        .mi-benefit-card {
+            padding: 30px 20px;
+        }
+        
+        .mi-partner-form-container {
+            padding: 30px 20px;
+        }
+    }
