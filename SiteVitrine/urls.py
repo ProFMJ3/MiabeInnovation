@@ -1,7 +1,11 @@
 
 from django.urls import path
 
+from . import views
+
+
 from SiteVitrine import  views
+
 
 urlpatterns = [
     path('', views.home, name ='home'),
@@ -27,5 +31,9 @@ urlpatterns = [
     path("automatisation-des-taches", views.automatisationTache, name="automatisationTache"),
     path("community-management", views.communityManagement, name="communityManagement"),
     path("maintenance-logiciels", views.maintenance, name="maintenance"),
+
+
+    #URL DE SAUVEGARDE
+    path('sauvegardeTemoignage/', views.sauvegardeTemoignage, name='sauvegardeTemoignage'),
 
 ]

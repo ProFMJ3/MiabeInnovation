@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<!-- Header Start -->
+<div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="background-image: url('{% static 'img/maintenances.jpg' %}'); background-size: cover;">
+    <div class="container text-center my-5 py-5 content-overlay">
+        <h1 class="text-white display-3 mb-5">Maintenance & Installation Logicielle</h1>
+        <h1 class="text-white mt-4 mb-4">Des systèmes stables et performants pour votre entreprise</h1>
+    </div>
+</div>
+<!-- Header End -->
+
+<!-- Service Detail Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="section-title position-relative mb-4">
+                    <h6 class="d-inline-block position-relative about-title text-uppercase pb-2">Service Complet</h6>
+                    <h1 class="display-4">Optimisation et Sécurité de vos Systèmes</h1>
+                </div>
+                <p>Notre service de maintenance et installation logicielle offre une solution complète pour garder vos systèmes à jour, sécurisés et fonctionnant à leur plein potentiel. Nous intervenons aussi bien en préventif qu'en curatif pour garantir la continuité de vos activités.</p>
+                
+                <div class="row pt-3">
+                    <div class="col-md-6 mb-4">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="btn-icon bg-primary mr-3">
+                                <i class="fas fa-cogs text-white"></i>
+                            </div>
+                            <h4 class="m-0">Installation Professionnelle</h4>
+                        </div>
+                        <p>Déploiement et configuration de tous types de logiciels métiers avec une méthodologie rigoureuse.</p>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="btn-icon bg-primary mr-3">
+                                <i class="fas fa-shield-alt text-white"></i>
+                            </div>
+                            <h4 class="m-0">Mises à Jour Sécurisées</h4>
+                        </div>
+                        <p>Actualisation régulière de vos logiciels pour corriger les vulnérabilités et améliorer les performances.</p>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="btn-icon bg-primary mr-3">
+                                <i class="fas fa-tools text-white"></i>
+                            </div>
+                            <h4 class="m-0">Dépannage Technique</h4>
+                        </div>
+                        <p>Intervention rapide et efficace pour résoudre tout dysfonctionnement logiciel.</p>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="btn-icon bg-primary mr-3">
+                                <i class="fas fa-clock text-white"></i>
+                            </div>
+                            <h4 class="m-0">Maintenance Préventive</h4>
+                        </div>
+                        <p>Surveillance proactive pour anticiper et prévenir les pannes potentielles.</p>
+                    </div>
+                </div>
+
+                <div class="bg-light p-5 mt-4">
+                    <h3 class="mb-4">Témoignage Client</h3>
+                    <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                    <p class="mb-4">"Depuis que nous avons externalisé notre maintenance logicielle avec MiabeInnovation, nos systèmes sont plus stables et notre productivité a augmenté de 30%. Leur réactivité est exceptionnelle."</p>
+                    <div class="d-flex align-items-center">
+                        <div class="pl-3">
+                            <h5>Directeur IT</h5>
+                            <span>Entreprise XYZ</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="bg-light p-5">
+                    <h3 class="mb-4">Demande d'Intervention</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Votre Nom" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Votre Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Votre Téléphone" required>
+                        </div>
+                        <div class="form-group">
+                            <select class="form-control">
+                                <option>Type d'intervention</option>
+                                <option>Installation logicielle</option>
+                                <option>Maintenance corrective</option>
+                                <option>Maintenance préventive</option>
+                                <option>Mise à jour système</option>
+                                <option>Autre demande</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" rows="3" placeholder="Description du problème"></textarea>
+                        </div>
+                        <button class="btn btn-primary btn-block py-3" type="submit">Envoyer la demande</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service Detail End -->
+{% endblock %}
