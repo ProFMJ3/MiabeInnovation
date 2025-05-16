@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils import timezone
+from django.core.validators import EmailValidator
 
 class Temoignage(models.Model):
     # Choix pour le statut de modération
@@ -77,3 +78,110 @@ class Temoignage(models.Model):
     @property
     def est_publie(self):
         return self.statut == 'approuve' and self.date_publication is not None
+
+
+
+
+class PartnershipRequest(models.Model):
+    PARTNERSHIP_TYPES = [
+        ('technology', 'Partenaire Technologique'),
+        ('reseller', 'Partenaire Revendeur'),
+        ('strategic', 'Partenaire Stratégique'),
+        ('other', 'Autre'),
+    ]
+    
+    company_name = models.CharField(max_length=100)
+    contact_person = models.CharField(max_length=100)
+    company_email = models.EmailField()
+    company_phone = models.CharField(max_length=20, blank=True, null=True)
+    partnership_type = models.CharField(max_length=20, choices=PARTNERSHIP_TYPES)
+    collaboration_ideas = models.TextField()
+    submission_date = models.DateTimeField(auto_now_add=True)
+    is_processed = models.BooleanField(default=False)
+    
+    def __str__(self):
+        return f"Demande de {self.company_name}"
+    PARTNERSHIP_TYPES = [
+        ('technology', 'Partenaire Technologique'),
+        ('reseller', 'Partenaire Revendeur'),
+        ('strategic', 'Partenaire Stratégique'),
+        ('other', 'Autre'),
+    ]
+    
+    company_name = models.CharField(
+        max_length=100,
+        verbose_name="Nom de l'entreprise",
+        help_text="Nom complet de votre entreprise"
+    )
+    
+    contact_person = models.CharField(
+        max_length=100,
+        verbose_name="Personne de contact"
+    )
+    
+    company_email = models.EmailField(
+        max_length=100,
+        validators=[EmailValidator()],
+        verbose_name="Email professionnel"
+    )
+    
+    company_phone = models.CharField(
+        max_length=20,
+        blank=True,
+        null=True,
+        verbose_name="Téléphone"
+    )
+    
+    partnership_type = models.CharField(
+        max_length=20,
+        choices=PARTNERSHIP_TYPES,
+        verbose_name="Type de partenariat"
+    )
+    
+    collaboration_ideas = models.TextField(
+        verbose_name="Idées de collaboration"
+    )
+    
+    submission_date = models.DateTimeField(
+        auto_now_add=True,
+        verbose_name="Date de soumission"
+    )
+    
+    is_processed = models.BooleanField(
+        default=False,
+        verbose_name="Demande traitée"
+    )
+    
+    class Meta:
+        verbose_name = "Demande de partenariat"
+        verbose_name_plural = "Demandes de partenariat"
+        ordering = ['-submission_date']
+    
+    def __str__(self):
+        return f"Demande de {self.company_name} ({self.get_partnership_type_display()})"
+
+
+
+
+class ContactMessage(models.Model):
+    SUJET_CHOICES = [
+        ('support', 'Support technique'),
+        ('devis', 'Demande de devis'),
+        ('partenariat', 'Partenariat'),
+        ('autre', 'Autre demande'),
+    ]
+    
+    nom = models.CharField(max_length=100)
+    prenom = models.CharField(max_length=100)
+    email = models.EmailField()
+    telephone = models.CharField(max_length=20, blank=True, null=True)
+    sujet = models.CharField(max_length=20, choices=SUJET_CHOICES)
+    message = models.TextField()
+    date_soumission = models.DateTimeField(auto_now_add=True)
+    traite = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"Message de {self.prenom} {self.nom}"
+
+
+        

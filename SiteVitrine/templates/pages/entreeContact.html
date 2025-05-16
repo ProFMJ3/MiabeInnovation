@@ -2,264 +2,79 @@
 {% load static %}
 
 {% block body %}
-<!-- Hero Section - Background Only -->
-<div class="mi-hero-bg" style="background: url('{% static 'img/bureau.jpg' %}') no-repeat center center; background-size: cover; height: 60vh;">
-</div>
-
-<!-- Content Section -->
-<div class="mi-contact-container" style="margin-top: -150px;">
-    <div class="container">
-        <div class="row g-4">
-            <!-- Contact Form -->
-            <div class="col-lg-7">
-                <div class="mi-form-card animate__animated animate__fadeInUp">
-                    <div class="mi-form-header">
-                        <h2 class="mi-form-title text-white"><i class="fas fa-paper-plane me-2"></i>Envoyez-nous un message</h2>
-                    </div>
-                    <form method="post" class="mi-contact-form">
-                        {% csrf_token %}
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <div class="mi-input-group">
-                                    <input type="text" id="nom" name="nom" class="mi-form-input" required>
-                                    <label for="nom" class="mi-input-label">Nom</label>
-                                    <div class="mi-input-bar"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mi-input-group">
-                                    <input type="text" id="prenom" name="prenom" class="mi-form-input" required>
-                                    <label for="prenom" class="mi-input-label">Prénom</label>
-                                    <div class="mi-input-bar"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mi-input-group">
-                                    <input type="email" id="email" name="email" class="mi-form-input" required>
-                                    <label for="email" class="mi-input-label">Email</label>
-                                    <div class="mi-input-bar"></div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="mi-input-group">
-                                    <input type="tel" id="telephone" name="telephone" class="mi-form-input">
-                                    <label for="telephone" class="mi-input-label">Téléphone</label>
-                                    <div class="mi-input-bar"></div>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="mi-input-group">
-                                    <select id="sujet" name="sujet" class="mi-form-select" required>
-                                        <option value="" selected disabled hidden></option>
-                                        <option value="support">Support technique</option>
-                                        <option value="devis">Demande de devis</option>
-                                        <option value="partenariat">Partenariat</option>
-                                        <option value="autre">Autre demande</option>
-                                    </select>
-                                    <label for="sujet" class="mi-select-label">Sujet</label>
-                                    <div class="mi-select-arrow"></div>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="mi-input-group">
-                                    <textarea id="message" name="message" class="mi-form-textarea" required></textarea>
-                                    <label for="message" class="mi-textarea-label">Message</label>
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <p class="text-muted">
-                                    En soumettant ce formulaire, vous accepte <strong class ="min-text"><u>nos conditions générales ainsi que notre politique de
-                                    confidentialité</u></strong>, qui explique comment nous pouvons collecter, utiliser et divulguer vos informations
-                                    personnelles, y compris à des tiers.                                    
-                                </p>
-                                
-                                <button type="submit" class="mi-submit-btn">
-                                    <span>Envoyer</span>
-                                    <i class="fas fa-paper-plane ms-2"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Contact Info -->
-            <div class="col-lg-5">
-                <div class="mi-info-card animate__animated animate__fadeInUp animate__delay-1s">
-                    <div class="mi-info-header">
-                        <h2 class="mi-info-title text-white"><i class="fas fa-info-circle me-2"></i>Nos coordonnées</h2>
-                    </div>
-                    <div class="mi-info-content">
-                        <div class="mi-contact-item">
-                            <div class="mi-contact-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h3 class="mi-contact-category">Adresse</h3>
-                                <p class="mi-contact-detail">123 Avenue des Technologies<br>Lomé, Togo</p>
-                            </div>
-                        </div>
-                        <div class="mi-contact-item">
-                            <div class="mi-contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h3 class="mi-contact-category">Email</h3>
-                                <p class="mi-contact-detail">
-                                    <a href="mailto:info@miabeinnovation.com?subject=Demande%20de%20renseignements&body=Bonjour%2C%0A%0AJe%20souhaite%20en%20savoir%20plus%20sur%20vos%20services.%20Merci%20de%20me%20recontacter.%0A%0ACordialement%2C" class="mi-email-link">
-                                        info@miabeinnovation.com
-                                    </a>
-                                </p>
-                                
-                                <small>Envoyez-nous un email pour toute
-                                    demande générale, y compris les
-                                    opportunites de marketing et de
-                                    partenariat.</small>
-                            </div>
-                        </div>
-                        <div class="mi-contact-item">
-                            <div class="mi-contact-icon">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div>
-                                <h3 class="mi-contact-category">Téléphone</h3>
-                                <p class="mi-contact-detail">(+228) 93 47 34 96 / 99 68 27 45</p>
-                                <small>24/7 Appelez-nous pour parler à un
-                                    membre de notre equipe. Nous sommes
-                                    toujours ravis de vous aider.
-                                    
-                                    (+228) 93 47 34 96 / 99 68 27 45</small>
-                            </div>
-                        </div>
-                        <div class="mi-contact-item">
-                            <div class="mi-contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div>
-                                <h3 class="mi-contact-category">Horaires</h3>
-                                <p class="mi-contact-detail"> 24h/24 et 7j/7</p>
-                            </div>
-                        </div>
-                        <div class="mi-social-links">
-                            <a href="https://www.facebook.com/profile.php?id=61575632420279" class="mi-social-link"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://x.com/miabeinnovation" class="mi-social-link"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.linkedin.com/in/miab%C3%A9-innovation-941139360/" class="mi-social-link"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="https://www.instagram.com/miabeinnovation/" class="mi-social-link"><i class="fab fa-instagram"></i></a>
-                            <a href="https://www.youtube.com/@Miabeinnovation" class="mi-social-link"><i class="fab fa-youtube"></i></a>
-                            <a href="https://www.tiktok.com/@miabeinnovation" class="mi-social-link"><i class="fab fa-tiktok"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 <style>
-    /* Variables */
+    /* Couleurs du logo */
     :root {
         --mi-blue-night: #202548;
         --mi-orange: #D85814;
-        --mi-white: #ffffff;
-        --mi-light-bg: rgba(255, 255, 255, 0.9);
     }
-
-    .min-text {
-        font-size: 10 rem;
-        color: #202548;
-    }
-
-    /* Background Hero */
-    .mi-hero-bg {
-        position: relative;
-        z-index: 1;
-    }
-
-    /* Contact Container */
-    .mi-contact-container {
-        position: relative;
-        z-index: 2;
-    }
-
-    /* Cards */
-    .mi-form-card, .mi-info-card {
-        background: var(--mi-light-bg);
-        backdrop-filter: blur(10px);
-        border-radius: 15px;
+    
+    /* Styles spécifiques au formulaire */
+    .mi-form-card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         overflow: hidden;
-        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        margin-bottom: 30px;
     }
-
-    .mi-form-card:hover, .mi-info-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-    }
-
-    /* Headers */
-    .mi-form-header, .mi-info-header {
+    
+    .mi-form-header {
         background: var(--mi-blue-night);
-        padding: 25px;
-        text-align: center;
+        padding: 20px;
+        color: white;
     }
-
-    .mi-form-title, .mi-info-title {
-        font-weight: 600;
+    
+    .mi-form-title {
         margin: 0;
         font-size: 1.5rem;
     }
-
-    /* Form Elements */
+    
     .mi-contact-form {
         padding: 30px;
     }
-
+    
     .mi-input-group {
         position: relative;
         margin-bottom: 25px;
     }
-
+    
     .mi-form-input, .mi-form-select, .mi-form-textarea {
         width: 100%;
         padding: 15px 0 5px 0;
         border: none;
         border-bottom: 2px solid #ddd;
         background: transparent;
+        transition: all 0.3s;
         font-size: 16px;
-        transition: all 0.3s ease;
     }
-
-    .mi-form-textarea {
-        min-height: 100px;
-        resize: none;
+    
+    .mi-form-input:focus, .mi-form-select:focus, .mi-form-textarea:focus {
+        outline: none;
+        border-bottom-color: var(--mi-orange);
     }
-
+    
     .mi-input-label, .mi-select-label, .mi-textarea-label {
         position: absolute;
         top: 15px;
         left: 0;
         color: #777;
-        font-size: 16px;
+        transition: all 0.3s;
         pointer-events: none;
-        transition: all 0.3s ease;
+        font-size: 16px;
+        font-weight: 400;
     }
-
-    .mi-form-input:focus, .mi-form-select:focus, .mi-form-textarea:focus {
-        outline: none;
-        border-color: var(--mi-orange);
-    }
-
+    
     .mi-form-input:focus + label,
-    .mi-form-input:valid + label,
+    .mi-form-input:not(:placeholder-shown) + label,
     .mi-form-select:focus + label,
-    .mi-form-select:valid + label,
+    .mi-form-select:not([value=""]) + label,
     .mi-form-textarea:focus + label,
-    .mi-form-textarea:valid + label {
-        top: -5px;
-        font-size: 12px;
+    .mi-form-textarea:not(:placeholder-shown) + label {
+        top: -15px;
+        font-size: 13px;
         color: var(--mi-orange);
     }
-
+    
     .mi-input-bar {
         position: absolute;
         bottom: 0;
@@ -267,159 +82,286 @@
         width: 0;
         height: 2px;
         background: var(--mi-orange);
-        transition: width 0.3s ease;
+        transition: width 0.3s;
     }
-
-    .mi-form-input:focus ~ .mi-input-bar,
-    .mi-form-select:focus ~ .mi-input-bar {
+    
+    .mi-form-input:focus ~ .mi-input-bar {
         width: 100%;
     }
-
-    /* Select Dropdown */
-    .mi-form-select {
-        appearance: none;
-        cursor: pointer;
-    }
-
+    
     .mi-select-arrow {
         position: absolute;
         right: 0;
-        bottom: 10px;
-        width: 0;
-        height: 0;
-        border-left: 6px solid transparent;
-        border-right: 6px solid transparent;
-        border-top: 6px solid #777;
+        top: 50%;
+        transform: translateY(-50%);
         pointer-events: none;
-        transition: all 0.3s ease;
+        color: #777;
     }
-
-    .mi-form-select:focus ~ .mi-select-arrow {
-        border-top-color: var(--mi-orange);
+    
+    .mi-form-textarea {
+        min-height: 120px;
+        resize: vertical;
     }
-
-    /* Hover effect for dropdown options */
-    .mi-form-select option:hover {
-        background-color: var(--mi-orange) !important;
-        color: white !important;
+    
+    .mi-form-error {
+        color: #e74c3c;
+        font-size: 13px;
+        margin-top: 5px;
     }
-
-    /* Submit Button */
+    
     .mi-submit-btn {
-        background: var(--mi-blue-night);
+        background: var(--mi-orange);
         color: white;
         border: none;
-        padding: 15px 30px;
-        border-radius: 50px;
-        font-size: 16px;
-        font-weight: 600;
+        padding: 12px 30px;
+        border-radius: 4px;
         cursor: pointer;
+        font-size: 16px;
+        transition: all 0.3s;
         display: inline-flex;
         align-items: center;
-        justify-content: center;
-        transition: all 0.4s ease;
-        width: 100%;
+        margin-top: 15px;
     }
-
+    
     .mi-submit-btn:hover {
-        background: var(--mi-orange);
-        transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(216, 88, 20, 0.3);
+        background: #c04b12;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(216, 88, 20, 0.3);
     }
-
-    /* Contact Info */
+    
+    .mi-submit-btn i {
+        margin-left: 8px;
+    }
+    
+    .mi-terms-text {
+        font-size: 14px;
+        color: #666;
+        margin-top: 20px;
+        line-height: 1.5;
+    }
+    
+    /* Styles pour la carte d'informations */
+    .mi-info-card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+    
+    .mi-info-header {
+        background: var(--mi-blue-night);
+        padding: 20px;
+        color: white;
+    }
+    
+    .mi-info-title {
+        margin: 0;
+        font-size: 1.5rem;
+    }
+    
     .mi-info-content {
         padding: 30px;
     }
-
-    .mi-contact-item {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 25px;
-        transition: all 0.3s ease;
-    }
-
-    .mi-contact-item:hover {
-        transform: translateX(5px);
-    }
-
-    .mi-contact-icon {
-        background: var(--mi-blue-night);
-        color: white;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 15px;
-        flex-shrink: 0;
-        transition: all 0.3s ease;
-    }
-
-    .mi-contact-item:hover .mi-contact-icon {
-        background: var(--mi-orange);
-        transform: rotate(15deg);
-    }
-
-    .mi-contact-category {
-        color: var(--mi-blue-night);
-        font-size: 1rem;
-        margin-bottom: 5px;
-    }
-
-    .mi-contact-detail {
-        color: #555;
-        margin: 0;
-        line-height: 1.5;
-    }
-
-    /* Social Links */
-    .mi-social-links {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin-top: 30px;
-    }
-
-    .mi-social-link {
-        color: var(--mi-blue-night);
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 18px;
-        transition: all 0.3s ease;
-        border: 1px solid var(--mi-blue-night);
-    }
-
-    .mi-social-link:hover {
-        background: var(--mi-blue-night);
-        color: white;
-        transform: translateY(-5px);
-    }
-
-    /* Responsive */
-    @media (max-width: 992px) {
-        .mi-hero-bg {
-            height: 40vh;
-        }
-        .mi-contact-container {
-            margin-top: -100px;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .mi-hero-bg {
-            height: 30vh;
-        }
-    }
 </style>
+
+<!-- Hero Section -->
+<div class="mi-hero-bg" style="background: url('{% static 'img/bureau.jpg' %}') no-repeat center center; background-size: cover; height: 60vh;"></div>
+
+<!-- Content Section -->
+<div class="container" style="margin-top: -100px;">
+    <div class="row">
+        <!-- Contact Form -->
+        <div class="col-lg-7 mb-5">
+            <div class="mi-form-card animate__animated animate__fadeInUp">
+                <div class="mi-form-header">
+                    <h2 class="mi-form-title text-white">
+                        <i class="fas fa-paper-plane me-2"></i>Envoyez-nous un message
+                    </h2>
+                </div>
+                
+                                <form method="post" class="mi-contact-form">
+                    {% csrf_token %}
+                    
+                    <!-- Affichage des messages -->
+                    {% if messages %}
+                    <div class="alert-container">
+                        {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }}">
+                            {{ message }}
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+
+                    <div class="row g-3">
+                        <!-- Nom -->
+                        <div class="col-md-6">
+                            <div class="mi-input-group">
+                                <input type="text" id="nom" name="nom" class="mi-form-input" 
+                                    value="{{ submitted_data.nom }}" required>
+                                <label for="nom" class="mi-input-label">Nom</label>
+                                <div class="mi-input-bar"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Prénom -->
+                        <div class="col-md-6">
+                            <div class="mi-input-group">
+                                <input type="text" id="prenom" name="prenom" class="mi-form-input"
+                                    value="{{ submitted_data.prenom }}">
+                                <label for="prenom" class="mi-input-label">Prénom</label>
+                                <div class="mi-input-bar"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="col-md-6">
+                            <div class="mi-input-group">
+                                <input type="email" id="email" name="email" class="mi-form-input"
+                                    value="{{ submitted_data.email }}" required>
+                                <label for="email" class="mi-input-label">Email</label>
+                                <div class="mi-input-bar"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Téléphone -->
+                        <div class="col-md-6">
+                            <div class="mi-input-group">
+                                <input type="tel" id="telephone" name="telephone" class="mi-form-input"
+                                    value="{{ submitted_data.telephone }}">
+                                <label for="telephone" class="mi-input-label">Téléphone</label>
+                                <div class="mi-input-bar"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Sujet -->
+                        <div class="col-12">
+                            <div class="mi-input-group">
+                                <select id="sujet" name="sujet" class="mi-form-select" required>
+                                    {% for value, label in sujet_choices %}
+                                    <option value="{{ value }}" 
+                                            {% if submitted_data.sujet == value %}selected{% endif %}>
+                                        {{ label }}
+                                    </option>
+                                    {% endfor %}
+                                </select>
+                                <label for="sujet" class="mi-select-label">Sujet</label>
+                                <div class="mi-select-arrow"></div>
+                            </div>
+                        </div>
+                        
+                        <!-- Message -->
+                        <div class="col-12">
+                            <div class="mi-input-group">
+                                <textarea id="message" name="message" class="mi-form-textarea" required>{{ submitted_data.message }}</textarea>
+                                <label for="message" class="mi-textarea-label">Message</label>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12">
+                            <button type="submit" class="mi-submit-btn">
+                                <span>Envoyer</span>
+                                <i class="fas fa-paper-plane ms-2"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-lg-5 mb-5">
+            <div class="mi-info-card animate__animated animate__fadeInUp animate__delay-1s">
+                <div class="mi-info-header">
+                    <h2 class="mi-info-title text-white"><i class="fas fa-info-circle me-2"></i>Nos coordonnées</h2>
+                </div>
+                <div class="mi-info-content">
+                    <div class="mi-contact-item">
+                        <div class="mi-contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3 class="mi-contact-category">Adresse</h3>
+                            <p class="mi-contact-detail">123 Avenue des Technologies<br>Lomé, Togo</p>
+                        </div>
+                    </div>
+                    <div class="mi-contact-item">
+                        <div class="mi-contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3 class="mi-contact-category">Email</h3>
+                            <p class="mi-contact-detail">
+                                <a href="mailto:info@miabeinnovation.com" class="mi-email-link">
+                                    info@miabeinnovation.com
+                                </a>
+                            </p>
+                            <small class="text-muted">Envoyez-nous un email pour toute demande générale</small>
+                        </div>
+                    </div>
+                    <div class="mi-contact-item">
+                        <div class="mi-contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h3 class="mi-contact-category">Téléphone</h3>
+                            <p class="mi-contact-detail">(+228) 93 47 34 96</p>
+                            <small class="text-muted">Disponible 24h/24 et 7j/7</small>
+                        </div>
+                    </div>
+                    <div class="mi-social-links mt-4">
+                        <a href="https://www.facebook.com/profile.php?id=61575632420279" class="mi-social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/miabeinnovation" class="mi-social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/miab%C3%A9-innovation-941139360/" class="mi-social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.instagram.com/miabeinnovation/" class="mi-social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <!-- Add these in your base template or head section -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Animation des labels
+    const inputs = document.querySelectorAll('.mi-form-input, .mi-form-select, .mi-form-textarea');
+    
+    inputs.forEach(input => {
+        // Initialiser les labels si le champ est pré-rempli
+        if (input.value) {
+            const label = input.nextElementSibling;
+            label.style.top = '-15px';
+            label.style.fontSize = '13px';
+            label.style.color = 'var(--mi-orange)';
+        }
+        
+        // Gérer le focus
+        input.addEventListener('focus', function() {
+            const label = this.nextElementSibling;
+            label.style.top = '-15px';
+            label.style.fontSize = '13px';
+            label.style.color = 'var(--mi-orange)';
+        });
+        
+        // Gérer le blur
+        input.addEventListener('blur', function() {
+            if (!this.value && this.tagName !== 'SELECT') {
+                const label = this.nextElementSibling;
+                label.style.top = '15px';
+                label.style.fontSize = '16px';
+                label.style.color = '#777';
+            }
+        });
+    });
+});
+</script>
+
 {% endblock %}
+
+
+
+
