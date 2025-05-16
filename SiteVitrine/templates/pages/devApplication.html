@@ -10,7 +10,7 @@
             rgba(216, 88, 20, 0.8) 0%, 
             rgba(202, 52, 51, 0.7) 30%, 
             rgba(32, 37, 72, 0.9) 100%),
-        url('https://i.pinimg.com/736x/71/0c/30/710c308569d6fab4983b8a605c6657ef.jpg') no-repeat center center;
+        url('{% static 'img/appdev.jpg' %}') no-repeat center center;
         background-size: cover;
         background-blend-mode: overlay;">
             <div class="code-particle" id="code-particle"></div>
@@ -259,21 +259,345 @@
                     
                     <!-- Web -->
                     <div class="tab-pane fade" id="web" role="tabpanel">
-                        <!-- Contenu similaire pour Web -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="tech-stack">
+                                    <h3><i class="fas fa-layer-group"></i> Notre Stack Technique</h3>
+                                    <ul class="tech-list">
+                                        <li>
+                                            <div class="tech-icon">
+                                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React">
+                                            </div>
+                                            <div class="tech-info">
+                                                <h4>React.js</h4>
+                                                <p>Librairie JavaScript moderne pour interfaces riches</p>
+                                            </div>
+                                            <div class="tech-progress">
+                                                <div class="progress-bar" style="width: 95%; background-color: #D85814;"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tech-icon">
+                                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js">
+                                            </div>
+                                            <div class="tech-info">
+                                                <h4>Node.js</h4>
+                                                <p>Environnement serveur JavaScript performant</p>
+                                            </div>
+                                            <div class="tech-progress">
+                                                <div class="progress-bar" style="width: 90%; background-color: #D85814;"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tech-icon">
+                                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js">
+                                            </div>
+                                            <div class="tech-info">
+                                                <h4>Vue.js</h4>
+                                                <p>Framework progressif pour applications web</p>
+                                            </div>
+                                            <div class="tech-progress">
+                                                <div class="progress-bar" style="width: 85%; background-color: #D85814;"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tech-icon">
+                                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django">
+                                            </div>
+                                            <div class="tech-info">
+                                                <h4>Django</h4>
+                                                <p>Framework web Python haut niveau</p>
+                                            </div>
+                                            <div class="tech-progress">
+                                                <div class="progress-bar" style="width: 85%; background-color: #D85814;"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tech-icon">
+                                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
+                                            </div>
+                                            <div class="tech-info">
+                                                <h4>PHP</h4>
+                                                <p>Langage de script côté serveur</p>
+                                            </div>
+                                            <div class="tech-progress">
+                                                <div class="progress-bar" style="width: 85%; background-color: #D85814;"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tech-icon">
+                                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/symfony/symfony-original.svg" alt="Symfony">
+                                            </div>
+                                            <div class="tech-info">
+                                                <h4>Symfony</h4>
+                                                <p>Framework PHP pour applications web</p>
+                                            </div>
+                                            <div class="tech-progress">
+                                                <div class="progress-bar" style="width: 85%; background-color: #D85814;"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tech-icon">
+                                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" alt="Laravel">
+                                            </div>
+                                            <div class="tech-info">
+                                                <h4>Laravel</h4>
+                                                <p>Framework PHP élégant et expressif</p>
+                                            </div>
+                                            <div class="tech-progress">
+                                                <div class="progress-bar" style="width: 85%; background-color: #D85814;"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tech-icon">
+                                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" alt="WordPress">
+                                            </div>
+                                            <div class="tech-info">
+                                                <h4>WordPress</h4>
+                                                <p>Système de gestion de contenu</p>
+                                            </div>
+                                            <div class="tech-progress">
+                                                <div class="progress-bar" style="width: 85%; background-color: #D85814;"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="expertise-details">
+                                    <h3><i class="fas fa-users"></i> Équipe Web</h3>
+                                    <p>Nos 8 développeurs full-stack créent des expériences web exceptionnelles :</p>
+                                    
+                                    <div class="team-skills">
+                                        <div class="skill-badge">
+                                            <div class="skill-icon">
+                                                <i class="fas fa-paint-brush"></i>
+                                            </div>
+                                            <span>UI/UX Design</span>
+                                        </div>
+                                        <div class="skill-badge">
+                                            <div class="skill-icon">
+                                                <i class="fas fa-tachometer-alt"></i>
+                                            </div>
+                                            <span>Optimisation SEO</span>
+                                        </div>
+                                        <div class="skill-badge">
+                                            <div class="skill-icon">
+                                                <i class="fas fa-shield-alt"></i>
+                                            </div>
+                                            <span>Sécurité Web</span>
+                                        </div>
+                                        <div class="skill-badge">
+                                            <div class="skill-icon">
+                                                <i class="fas fa-rocket"></i>
+                                            </div>
+                                            <span>Performance</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="project-showcase">
+                                        <h4>Projet Récent:</h4>
+                                        <div class="showcase-card">
+                                            <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Projet web">
+                                            <div class="showcase-overlay">
+                                                <h5>Plateforme E-commerce</h5>
+                                                <p>+30% de conversion</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    
+                              
                     <!-- Desktop -->
                     <div class="tab-pane fade" id="desktop" role="tabpanel">
-                        <!-- Contenu similaire pour Desktop -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="tech-stack">
+                                    <h3><i class="fas fa-layer-group"></i> Notre Stack Technique</h3>
+                                    <ul class="tech-list">
+                                        <li>
+                                            <div class="tech-icon">
+                                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.svg" alt="Electron">
+                                            </div>
+                                            <div class="tech-info">
+                                                <h4>Electron</h4>
+                                                <p>Applications desktop cross-platform</p>
+                                            </div>
+                                            <div class="tech-progress">
+                                                <div class="progress-bar" style="width: 88%; background-color: #D85814;"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tech-icon">
+                                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#">
+                                            </div>
+                                            <div class="tech-info">
+                                                <h4>C#</h4>
+                                                <p>Développement Windows performant</p>
+                                            </div>
+                                            <div class="tech-progress">
+                                                <div class="progress-bar" style="width: 82%; background-color: #D85814;"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tech-icon">
+                                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
+                                            </div>
+                                            <div class="tech-info">
+                                                <h4>Java</h4>
+                                                <p>Applications d'entreprise multiplateforme</p>
+                                            </div>
+                                            <div class="tech-progress">
+                                                <div class="progress-bar" style="width: 85%; background-color: #D85814;"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="expertise-details">
+                                    <h3><i class="fas fa-users"></i> Équipe Desktop</h3>
+                                    <p>Nos 4 spécialistes en développement desktop créent des logiciels puissants :</p>
+                                    
+                                    <div class="team-skills">
+                                        <div class="skill-badge">
+                                            <div class="skill-icon">
+                                                <i class="fas fa-window-maximize"></i>
+                                            </div>
+                                            <span>Interfaces natives</span>
+                                        </div>
+                                        <div class="skill-badge">
+                                            <div class="skill-icon">
+                                                <i class="fas fa-microchip"></i>
+                                            </div>
+                                            <span>Performance système</span>
+                                        </div>
+                                        <div class="skill-badge">
+                                            <div class="skill-icon">
+                                                <i class="fas fa-database"></i>
+                                            </div>
+                                            <span>Gestion de données</span>
+                                        </div>
+                                        <div class="skill-badge">
+                                            <div class="skill-icon">
+                                                <i class="fas fa-sync"></i>
+                                            </div>
+                                            <span>Intégration cloud</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="project-showcase">
+                                        <h4>Projet Récent:</h4>
+                                        <div class="showcase-card">
+                                            <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Projet desktop">
+                                            <div class="showcase-overlay">
+                                                <h5>Logiciel de Gestion Commerciale</h5>
+                                                <p>+150 entreprises clientes</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     
                     <!-- Cloud -->
                     <div class="tab-pane fade" id="cloud" role="tabpanel">
-                        <!-- Contenu similaire pour Cloud -->
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="tech-stack">
+                                    <h3><i class="fas fa-layer-group"></i> Notre Stack Technique</h3>
+                                    <ul class="tech-list">
+                                        <li>
+                                            <div class="tech-icon">
+                                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS">
+                                            </div>
+                                            <div class="tech-info">
+                                                <h4>AWS</h4>
+                                                <p>Infrastructure cloud complète</p>
+                                            </div>
+                                            <div class="tech-progress">
+                                                <div class="progress-bar" style="width: 92%; background-color: #D85814;"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tech-icon">
+                                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure">
+                                            </div>
+                                            <div class="tech-info">
+                                                <h4>Microsoft Azure</h4>
+                                                <p>Solutions cloud d'entreprise</p>
+                                            </div>
+                                            <div class="tech-progress">
+                                                <div class="progress-bar" style="width: 85%; background-color: #D85814;"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tech-icon">
+                                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" alt="Google Cloud">
+                                            </div>
+                                            <div class="tech-info">
+                                                <h4>Google Cloud</h4>
+                                                <p>Solutions data et machine learning</p>
+                                            </div>
+                                            <div class="tech-progress">
+                                                <div class="progress-bar" style="width: 80%; background-color: #D85814;"></div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="expertise-details">
+                                    <h3><i class="fas fa-users"></i> Équipe Cloud</h3>
+                                    <p>Nos 6 architectes cloud certifiés optimisent votre infrastructure :</p>
+                                    
+                                    <div class="team-skills">
+                                        <div class="skill-badge">
+                                            <div class="skill-icon">
+                                                <i class="fas fa-server"></i>
+                                            </div>
+                                            <span>Architecture cloud</span>
+                                        </div>
+                                        <div class="skill-badge">
+                                            <div class="skill-icon">
+                                                <i class="fas fa-lock"></i>
+                                            </div>
+                                            <span>Sécurité</span>
+                                        </div>
+                                        <div class="skill-badge">
+                                            <div class="skill-icon">
+                                                <i class="fas fa-chart-line"></i>
+                                            </div>
+                                            <span>Scalabilité</span>
+                                        </div>
+                                        <div class="skill-badge">
+                                            <div class="skill-icon">
+                                                <i class="fas fa-dollar-sign"></i>
+                                            </div>
+                                            <span>Optimisation coûts</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="project-showcase">
+                                        <h4>Projet Récent:</h4>
+                                        <div class="showcase-card">
+                                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Projet cloud">
+                                            <div class="showcase-overlay">
+                                                <h5>Migration vers AWS</h5>
+                                                <p>-40% de coûts infrastructure</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </div> 
             </div>
-        </div>
+        </div>  
     </section>
 
     <!-- Cas Clients - Section Carousel 3D -->
@@ -1320,6 +1644,50 @@
             grid-template-columns: 1fr;
         }
     }
+
+    
 </style>
+
+<script>
+    // Initialisation des onglets Bootstrap
+    document.addEventListener('DOMContentLoaded', function() {
+        // Cette partie n'est nécessaire que si vous n'utilisez pas déjà Bootstrap JS
+        const tabElms = document.querySelectorAll('button[data-bs-toggle="tab"]');
+        tabElms.forEach(tabEl => {
+            tabEl.addEventListener('click', function(event) {
+                event.preventDefault();
+                const tabTarget = this.getAttribute('data-bs-target');
+                const tabPane = document.querySelector(tabTarget);
+                
+                // Masquer tous les panneaux
+                document.querySelectorAll('.tab-pane').forEach(pane => {
+                    pane.classList.remove('show', 'active');
+                });
+                
+                // Désactiver tous les onglets
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.classList.remove('active');
+                });
+                
+                // Activer l'onglet courant
+                this.classList.add('active');
+                
+                // Afficher le panneau courant
+                tabPane.classList.add('show', 'active');
+            });
+        });
+  
+        
+        // Animation des barres de progression
+        const progressBars = document.querySelectorAll('.progress-bar');
+        progressBars.forEach(bar => {
+            const width = bar.style.width;
+            bar.style.width = '0';
+            setTimeout(() => {
+                bar.style.width = width;
+            }, 500);
+        });
+    });
+</script>
 
 {% endblock %}

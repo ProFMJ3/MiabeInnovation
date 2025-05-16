@@ -3,137 +3,528 @@
 
 {% block body %}
 <!-- Header Start -->
-<div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="background-image: url('{% static 'img/taches-auto.jpg' %}'); background-size: cover;">
-    <div class="container text-center my-5 py-5 content-overlay">
-        <h1 class="text-white display-3 mb-5">Automatisation des Tâches</h1>
-        <h1 class="text-white mt-4 mb-4">Libérez votre équipe des tâches répétitives et chronophages</h1>
+<!-- Hero Section - Light & Clean -->
+<div class="auto-hero" style="background: linear-gradient(145deg, #f8f9fa 0%, #e9ecef 100%); position: relative; overflow: hidden;">
+    <!-- Animated geometric background -->
+    <div class="auto-hero-bg" style="position: absolute; width: 100%; height: 100%;">
+        <div class="geometric-shape" style="position: absolute; top: 10%; right: 5%; width: 200px; height: 200px; background: rgba(32, 37, 72, 0.05); border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; animation: float 8s ease-in-out infinite;"></div>
+        <div class="geometric-shape" style="position: absolute; bottom: 15%; left: 8%; width: 300px; height: 300px; background: rgba(216, 88, 20, 0.05); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; animation: float 10s ease-in-out infinite reverse;"></div>
     </div>
-</div>
-<!-- Header End -->
 
-<!-- Service Detail Start -->
-<div class="container-fluid py-5">
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="section-title position-relative mb-4">
-                    <h6 class="d-inline-block position-relative about-title text-uppercase pb-2">Productivité</h6>
-                    <h1 class="display-4">Optimisez vos processus métiers</h1>
+    <div class="container py-5 position-relative" style="z-index: 2;">
+        <div class="row align-items-center py-5">
+            <div class="col-lg-6">
+                <div class="d-inline-block px-3 py-2 rounded-pill bg-white shadow-sm mb-4">
+                    <span class="text-gradient-blue fw-bold">AUTOMATISATION SIMPLE</span>
                 </div>
-                <p>Nos solutions d'automatisation des tâches permettent de gagner du temps, de réduire les erreurs humaines et d'augmenter l'efficacité opérationnelle. Nous identifions avec vous les processus répétitifs qui peuvent être automatisés et nous déployons des solutions sur mesure.</p>
-                
-                <div class="row mt-5">
-                    <div class="col-md-6 mb-4">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="btn-icon bg-primary mr-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
-                                <i class="fas fa-tasks fa-2x text-white"></i>
-                            </div>
-                            <h4 class="m-0">Processus Automatisés</h4>
-                        </div>
-                        <p>Automatisation complète des workflows métiers répétitifs avec intégration à vos outils existants.</p>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="btn-icon bg-primary mr-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
-                                <i class="fas fa-database fa-2x text-white"></i>
-                            </div>
-                            <h4 class="m-0">Traitement des Données</h4>
-                        </div>
-                        <p>Saisie, extraction et traitement automatique des données depuis multiples sources.</p>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="btn-icon bg-primary mr-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
-                                <i class="fas fa-envelope fa-2x text-white"></i>
-                            </div>
-                            <h4 class="m-0">Gestion des Emails</h4>
-                        </div>
-                        <p>Tri, classification et réponse automatique aux emails selon des règles personnalisées.</p>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="d-flex align-items-center mb-3">
-                            <div class="btn-icon bg-primary mr-3 rounded-circle d-flex align-items-center justify-content-center" style="width: 60px; height: 60px;">
-                                <i class="fas fa-file-alt fa-2x text-white"></i>
-                            </div>
-                            <h4 class="m-0">Génération de Rapports</h4>
-                        </div>
-                        <p>Création et envoi programmé de rapports personnalisés sans intervention humaine.</p>
-                    </div>
-                </div>
-
-                <div class="bg-light p-5 mt-4">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h3 class="mb-4">Exemple de ROI</h3>
-                            <div class="mb-3">
-                                <h5 class="d-inline-block mr-2">20 heures/semaine</h5>
-                                <span>de travail administratif économisées</span>
-                            </div>
-                            <div class="mb-3">
-                                <h5 class="d-inline-block mr-2">15 000€/an</h5>
-                                <span>en erreurs évitées</span>
-                            </div>
-                            <div>
-                                <h5 class="d-inline-block mr-2">50%</h5>
-                                <span>de réduction du temps de formation</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <h3 class="mb-4">Domaines d'Application</h3>
-                            <ul class="list-unstyled">
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary mr-2"></i> Comptabilité</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary mr-2"></i> Ressources Humaines</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary mr-2"></i> Service Client</li>
-                                <li class="mb-2"><i class="fas fa-check-circle text-primary mr-2"></i> Logistique</li>
-                                <li><i class="fas fa-check-circle text-primary mr-2"></i> Marketing</li>
-                            </ul>
-                        </div>
-                    </div>
+                <h1 class="display-4 fw-bold mb-4" style="color: var(--bleu-nuit);">
+                    Libérez-vous des <span class="text-gradient-orange">tâches répétitives</span>
+                </h1>
+                <p class="lead mb-4" style="color: #495057; font-size: 1.25rem;">
+                    Gagnez des heures chaque jour avec nos solutions d'automatisation clés en main
+                </p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="#solutions" class="btn btn-orange btn-lg px-4 py-3 rounded-pill fw-bold shadow hover-3d">
+                        Voir les solutions <i class="fas fa-arrow-down ms-2"></i>
+                    </a>
+                    <a href="#demo" class="btn btn-outline-dark btn-lg px-4 py-3 rounded-pill fw-bold hover-3d">
+                        Voir la démo <i class="fas fa-play-circle ms-2"></i>
+                    </a>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="bg-light p-5 mb-4">
-                    <h3 class="mb-4">Audit Gratuit</h3>
-                    <p>Identifiez les tâches automatisables dans votre entreprise avec notre audit gratuit.</p>
-                    <form>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Votre Nom" required>
+            <div class="col-lg-6">
+                <div class="auto-hero-visual" style="position: relative;">
+                    <div class="main-visual" style="background: white; border-radius: 20px; padding: 20px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.1); position: relative; z-index: 2; border: 1px solid rgba(0,0,0,0.05);">
+                        <img src="{% static 'images/auto-dashboard.png' %}" alt="Dashboard automation" class="img-fluid rounded-3">
+                    </div>
+                    <div class="floating-elements">
+                        <div class="floating-icon" style="position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; background: white; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.1); z-index: 3; animation: float 6s ease-in-out infinite;">
+                            <i class="fas fa-clock fa-2x text-orange"></i>
                         </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Votre Email" required>
+                        <div class="floating-icon" style="position: absolute; bottom: -30px; left: -30px; width: 100px; height: 100px; background: var(--orange); border-radius: 25px; display: flex; align-items: center; justify-content: center; box-shadow: 0 15px 30px -5px rgba(216,88,20,0.3); z-index: 1; animation: float 7s ease-in-out infinite reverse;">
+                            <i class="fas fa-robot fa-3x text-white"></i>
                         </div>
-                        <div class="form-group">
-                            <input type="tel" class="form-control" placeholder="Votre Téléphone" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" rows="3" placeholder="Décrivez brièvement vos processus"></textarea>
-                        </div>
-                        <button class="btn btn-primary btn-block py-3" type="submit">Demander l'audit</button>
-                    </form>
-                </div>
-                <div class="bg-light p-5">
-                    <h3 class="mb-4">Fonctionnalités Clés</h3>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item bg-transparent border-left-0 border-right-0 px-0">
-                            <i class="fas fa-check text-primary mr-2"></i> Interface simple sans codage
-                        </li>
-                        <li class="list-group-item bg-transparent border-left-0 border-right-0 px-0">
-                            <i class="fas fa-check text-primary mr-2"></i> Journalisation complète
-                        </li>
-                        <li class="list-group-item bg-transparent border-left-0 border-right-0 px-0">
-                            <i class="fas fa-check text-primary mr-2"></i> Déclencheurs multiples
-                        </li>
-                        <li class="list-group-item bg-transparent border-left-0 border-right-0 px-0">
-                            <i class="fas fa-check text-primary mr-2"></i> Intégration API
-                        </li>
-                        <li class="list-group-item bg-transparent border-left-0 border-right-0 px-0">
-                            <i class="fas fa-check text-primary mr-2"></i> Notifications intelligentes
-                        </li>
-                    </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<!-- Value Proposition -->
+<div class="py-5 bg-white">
+    <div class="container py-5">
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h2 class="fw-bold mb-4" style="color: var(--bleu-nuit);">
+                    Automatisez en <span class="text-gradient-orange">quelques clics</span> ce qui vous prenait des heures
+                </h2>
+                <p class="lead mb-5 mx-auto" style="max-width: 700px; color: #495057;">
+                    Nos solutions simples mais puissantes s'intègrent à vos outils existants pour éliminer les tâches répétitives sans complexité technique
+                </p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="value-card h-100 p-4 rounded-4 border-0 shadow-sm bg-white">
+                    <div class="value-icon mb-4" style="width: 60px; height: 60px; background: rgba(32,37,72,0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-magic fa-2x" style="color: var(--bleu-nuit);"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3" style="color: var(--bleu-nuit);">Configuration Visuelle</h4>
+                    <p style="color: #6c757d;">Interface glisser-déposer pour créer vos automatisations sans coder</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="value-card h-100 p-4 rounded-4 border-0 shadow-sm bg-white">
+                    <div class="value-icon mb-4" style="width: 60px; height: 60px; background: rgba(216,88,20,0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-plug fa-2x" style="color: var(--orange);"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3" style="color: var(--bleu-nuit);">100+ Intégrations</h4>
+                    <p style="color: #6c757d;">Connectez tous vos outils en quelques secondes</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="value-card h-100 p-4 rounded-4 border-0 shadow-sm bg-white">
+                    <div class="value-icon mb-4" style="width: 60px; height: 60px; background: rgba(32,37,72,0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-bolt fa-2x" style="color: var(--bleu-nuit);"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3" style="color: var(--bleu-nuit);">Démarrage Immédiat</h4>
+                    <p style="color: #6c757d;">Des centaines de templates prêts à l'emploi</p>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="value-card h-100 p-4 rounded-4 border-0 shadow-sm bg-white">
+                    <div class="value-icon mb-4" style="width: 60px; height: 60px; background: rgba(216,88,20,0.1); border-radius: 16px; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-lock fa-2x" style="color: var(--orange);"></i>
+                    </div>
+                    <h4 class="fw-bold mb-3" style="color: var(--bleu-nuit);">Sécurité Maximale</h4>
+                    <p style="color: #6c757d;">Données chiffrées et conformité RGPD</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Solutions Section -->
+<div class="py-5" id="solutions" style="background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold mb-3" style="color: var(--bleu-nuit);">
+                Solutions d'<span class="text-gradient-orange">Automatisation</span>
+            </h2>
+            <p class="lead mx-auto" style="max-width: 700px; color: #495057;">
+                Découvrez nos modules prêts à déployer pour automatiser vos processus métiers
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Solution 1 -->
+            <div class="col-lg-4">
+                <div class="solution-card rounded-4 overflow-hidden shadow-sm border-0 bg-white h-100">
+                    <div class="solution-header" style="background: linear-gradient(135deg, var(--bleu-nuit) 0%, #3a4b8a 100%); padding: 20px; position: relative;">
+                        <div class="solution-icon" style="position: absolute; top: -25px; right: 25px; width: 80px; height: 80px; background: white; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                            <i class="fas fa-envelope fa-3x text-gradient-blue"></i>
+                        </div>
+                        <h3 class="text-white mb-0">Email Automation</h3>
+                    </div>
+                    <div class="solution-body p-4">
+                        <p style="color: #6c757d;">Automatisez l'envoi, le tri et le suivi de vos emails</p>
+                        <ul class="solution-features" style="list-style: none; padding-left: 0;">
+                            <li class="mb-2"><i class="fas fa-check-circle text-orange me-2"></i> Réponses automatiques</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-orange me-2"></i> Tri des emails entrants</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-orange me-2"></i> Suivi des ouvertures/clics</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-orange me-2"></i> Templates personnalisés</li>
+                        </ul>
+                        <div class="solution-cta mt-4">
+                            <a href="#" class="btn btn-outline-orange w-100 py-2 rounded-pill fw-bold">Voir détails</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solution 2 -->
+            <div class="col-lg-4">
+                <div class="solution-card rounded-4 overflow-hidden shadow-sm border-0 bg-white h-100">
+                    <div class="solution-header" style="background: linear-gradient(135deg, var(--orange) 0%, #e67e22 100%); padding: 20px; position: relative;">
+                        <div class="solution-icon" style="position: absolute; top: -25px; right: 25px; width: 80px; height: 80px; background: white; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                            <i class="fas fa-file-invoice-dollar fa-3x text-gradient-orange"></i>
+                        </div>
+                        <h3 class="text-white mb-0">Facturation Auto</h3>
+                    </div>
+                    <div class="solution-body p-4">
+                        <p style="color: #6c757d;">Gérez vos factures et paiements en automatique</p>
+                        <ul class="solution-features" style="list-style: none; padding-left: 0;">
+                            <li class="mb-2"><i class="fas fa-check-circle text-orange me-2"></i> Création de factures</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-orange me-2"></i> Rappels automatiques</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-orange me-2"></i> Synchronisation comptable</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-orange me-2"></i> Statistiques de paiement</li>
+                        </ul>
+                        <div class="solution-cta mt-4">
+                            <a href="#" class="btn btn-outline-orange w-100 py-2 rounded-pill fw-bold">Voir détails</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solution 3 -->
+            <div class="col-lg-4">
+                <div class="solution-card rounded-4 overflow-hidden shadow-sm border-0 bg-white h-100">
+                    <div class="solution-header" style="background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%); padding: 20px; position: relative;">
+                        <div class="solution-icon" style="position: absolute; top: -25px; right: 25px; width: 80px; height: 80px; background: white; border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                            <i class="fas fa-database fa-3x text-gradient-purple"></i>
+                        </div>
+                        <h3 class="text-white mb-0">Gestion de Données</h3>
+                    </div>
+                    <div class="solution-body p-4">
+                        <p style="color: #6c757d;">Automatisez la collecte et l'organisation de vos données</p>
+                        <ul class="solution-features" style="list-style: none; padding-left: 0;">
+                            <li class="mb-2"><i class="fas fa-check-circle text-orange me-2"></i> Import/export automatique</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-orange me-2"></i> Nettoyage des données</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-orange me-2"></i> Synchronisation entre outils</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-orange me-2"></i> Rapports programmés</li>
+                        </ul>
+                        <div class="solution-cta mt-4">
+                            <a href="#" class="btn btn-outline-orange w-100 py-2 rounded-pill fw-bold">Voir détails</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Demo Section -->
+<div class="py-5 bg-white" id="demo">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="demo-visual rounded-4 overflow-hidden shadow-lg" style="position: relative; border: 1px solid rgba(0,0,0,0.05);">
+                    <img src="{% static 'images/auto-demo-screen.png' %}" alt="Demo automation" class="img-fluid">
+                    <div class="demo-play-btn" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 80px; height: 80px; background: rgba(255,255,255,0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.3s ease;">
+                        <i class="fas fa-play fa-2x text-orange"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h2 class="fw-bold mb-4" style="color: var(--bleu-nuit);">
+                    <span class="text-gradient-orange">Voyez-le</span> en action
+                </h2>
+                <p class="mb-4" style="color: #495057; font-size: 1.1rem;">
+                    Découvrez comment configurer une automatisation en moins de 2 minutes avec notre interface intuitive.
+                </p>
+                
+                <div class="demo-steps mb-5">
+                    <div class="d-flex mb-4">
+                        <div class="me-4">
+                            <div class="step-number bg-orange text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                1
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold mb-2" style="color: var(--bleu-nuit);">Sélectionnez un template</h4>
+                            <p class="mb-0" style="color: #6c757d;">Choisissez parmi des centaines de scénarios pré-configurés</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-4">
+                        <div class="me-4">
+                            <div class="step-number bg-orange text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                2
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold mb-2" style="color: var(--bleu-nuit);">Connectez vos outils</h4>
+                            <p class="mb-0" style="color: #6c757d;">Liez vos applications en quelques clics</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="me-4">
+                            <div class="step-number bg-orange text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                                3
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold mb-2" style="color: var(--bleu-nuit);">Lancez l'automatisation</h4>
+                            <p class="mb-0" style="color: #6c757d;">Activez et laissez le système travailler pour vous</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="#contact" class="btn btn-orange btn-lg px-4 py-3 rounded-pill fw-bold shadow hover-3d">
+                    Essai gratuit 14 jours <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Testimonials -->
+<div class="py-5" style="background: linear-gradient(135deg, var(--bleu-nuit) 0%, #151a36 100%);">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold text-white mb-3">
+                Ils ont <span class="text-gradient-orange">automatisé</span> leurs processus
+            </h2>
+            <p class="text-light mx-auto" style="max-width: 700px;">
+                Découvrez comment nos clients gagnent des heures chaque semaine
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="testimonial-card bg-white rounded-4 p-4 h-100 shadow-sm">
+                    <div class="d-flex align-items-center mb-4">
+                        <img src="{% static 'images/client1.jpg' %}" alt="Client" class="rounded-circle me-3" width="60">
+                        <div>
+                            <h5 class="fw-bold mb-0" style="color: var(--bleu-nuit);">Sarah K.</h5>
+                            <p class="text-orange mb-0">Responsable Marketing</p>
+                        </div>
+                    </div>
+                    <p class="mb-4" style="color: #495057;">
+                        "En automatisant nos campagnes email, nous avons gagné 15 heures par semaine et augmenté nos conversions de 30%."
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <div class="me-3">
+                            <img src="{% static 'images/company1.png' %}" alt="Company" width="80">
+                        </div>
+                        <div class="border-start ps-3" style="border-color: rgba(0,0,0,0.1) !important;">
+                            <p class="mb-0 small" style="color: #6c757d;">Secteur: E-commerce</p>
+                            <p class="mb-0 fw-bold" style="color: var(--bleu-nuit);">+45% d'efficacité</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="testimonial-card bg-white rounded-4 p-4 h-100 shadow-sm">
+                    <div class="d-flex align-items-center mb-4">
+                        <img src="{% static 'images/client2.jpg' %}" alt="Client" class="rounded-circle me-3" width="60">
+                        <div>
+                            <h5 class="fw-bold mb-0" style="color: var(--bleu-nuit);">Pierre L.</h5>
+                            <p class="text-orange mb-0">Directeur Financier</p>
+                        </div>
+                    </div>
+                    <p class="mb-4" style="color: #495057;">
+                        "La facturation automatique a éliminé 90% de nos erreurs et réduit notre temps de traitement de 20 heures à 2 heures mensuelles."
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <div class="me-3">
+                            <img src="{% static 'images/company2.png' %}" alt="Company" width="80">
+                        </div>
+                        <div class="border-start ps-3" style="border-color: rgba(0,0,0,0.1) !important;">
+                            <p class="mb-0 small" style="color: #6c757d;">Secteur: Services</p>
+                            <p class="mb-0 fw-bold" style="color: var(--bleu-nuit);">+90% de précision</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="testimonial-card bg-white rounded-4 p-4 h-100 shadow-sm">
+                    <div class="d-flex align-items-center mb-4">
+                        <img src="{% static 'images/client3.jpg' %}" alt="Client" class="rounded-circle me-3" width="60">
+                        <div>
+                            <h5 class="fw-bold mb-0" style="color: var(--bleu-nuit);">Emma T.</h5>
+                            <p class="text-orange mb-0">Responsable RH</p>
+                        </div>
+                    </div>
+                    <p class="mb-4" style="color: #495057;">
+                        "L'automatisation de notre onboarding a permis de réduire le temps d'intégration de 5 jours à 1 jour seulement."
+                    </p>
+                    <div class="d-flex align-items-center">
+                        <div class="me-3">
+                            <img src="{% static 'images/company3.png' %}" alt="Company" width="80">
+                        </div>
+                        <div class="border-start ps-3" style="border-color: rgba(0,0,0,0.1) !important;">
+                            <p class="mb-0 small" style="color: #6c757d;">Secteur: Technologie</p>
+                            <p class="mb-0 fw-bold" style="color: var(--bleu-nuit);">-80% de temps</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<div class="py-5 bg-white">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <div class="cta-card rounded-4 p-5 shadow-sm" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border: 1px solid rgba(0,0,0,0.05);">
+                    <h2 class="display-5 fw-bold mb-4" style="color: var(--bleu-nuit);">
+                        Prêt à <span class="text-gradient-orange">automatiser</span> vos tâches ?
+                    </h2>
+                    <p class="lead mb-5 mx-auto" style="max-width: 600px; color: #495057;">
+                        Commencez dès aujourd'hui et économisez des heures de travail chaque semaine
+                    </p>
+                    
+                    <div class="d-flex justify-content-center gap-3 flex-wrap">
+                        <a href="#contact" class="btn btn-orange btn-lg px-5 py-3 rounded-pill fw-bold shadow hover-3d">
+                            Démarrer maintenant <i class="fas fa-rocket ms-2"></i>
+                        </a>
+                        <a href="#" class="btn btn-outline-dark btn-lg px-5 py-3 rounded-pill fw-bold hover-3d">
+                            Voir tous les templates <i class="fas fa-th-large ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Variables */
+    :root {
+        --bleu-nuit: #202548;
+        --orange: #D85814;
+        --light-bg: #f8f9fa;
+        --text-dark: #212529;
+        --text-gray: #6c757d;
+    }
+    
+    /* Text gradients */
+    .text-gradient-orange {
+        background: linear-gradient(90deg, var(--orange), #e67e22);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: inline;
+    }
+    
+    .text-gradient-blue {
+        background: linear-gradient(90deg, var(--bleu-nuit), #3a4b8a);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: inline;
+    }
+    
+    .text-gradient-purple {
+        background: linear-gradient(90deg, #2b5876, #4e4376);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: inline;
+    }
+    
+    /* Buttons */
+    .btn-orange {
+        background-color: var(--orange);
+        color: white;
+        border: none;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-orange:hover {
+        background-color: #c04b0d;
+        color: white;
+        transform: translateY(-2px);
+    }
+    
+    .btn-outline-orange {
+        border: 2px solid var(--orange);
+        color: var(--orange);
+        background: transparent;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-outline-orange:hover {
+        background-color: var(--orange);
+        color: white;
+    }
+    
+    /* Animations */
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+    }
+    
+    /* Cards */
+    .value-card {
+        transition: all 0.3s ease;
+    }
+    
+    .value-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px -10px rgba(0,0,0,0.1) !important;
+    }
+    
+    .solution-card {
+        transition: all 0.3s ease;
+    }
+    
+    .solution-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px -10px rgba(0,0,0,0.15) !important;
+    }
+    
+    .testimonial-card {
+        transition: all 0.3s ease;
+    }
+    
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px -5px rgba(0,0,0,0.1) !important;
+    }
+    
+    /* Demo play button */
+    .demo-play-btn:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+        background: white;
+    }
+    
+    /* Hover 3D effect */
+    .hover-3d {
+        transition: all 0.3s ease;
+    }
+    
+    .hover-3d:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+</style>
+
+<script>
+    // Animation for demo play button
+    document.addEventListener('DOMContentLoaded', function() {
+        const playBtn = document.querySelector('.demo-play-btn');
+        if (playBtn) {
+            playBtn.addEventListener('click', function() {
+                // Here you would typically open a modal with the video
+                alert('Lecture de la démo vidéo...');
+            });
+        }
+        
+        // Simple animation for elements when they come into view
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.value-card, .solution-card, .testimonial-card');
+            
+            elements.forEach(el => {
+                const elPosition = el.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elPosition < screenPosition) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Set initial state
+        document.querySelectorAll('.value-card, .solution-card, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.5s ease';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run once on load
+    });
+</script>
 <!-- Service Detail End -->
 {% endblock %}
