@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<section class="mi-partner-success-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <div class="mi-success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Demande envoyée avec succès!</h2>
+                <p class="lead">
+                    Nous avons bien reçu votre demande de partenariat. Notre équipe 
+                    vous contactera dans les 24 heures pour discuter des prochaines étapes.
+                </p>
+                <a href="{% url 'home' %}" class="mi-btn mi-btn-primary">
+                    Retour à l'accueil
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

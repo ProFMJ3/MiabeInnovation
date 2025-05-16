@@ -1,10 +1,18 @@
 from django.shortcuts import render, redirect
 
-
+from django.contrib import messages
 from django.core.files.storage import FileSystemStorage
 from django.utils import timezone
 
+from .forms import PartnershipForm
+from .models import PartnershipRequest  # Si vous voulez quand même sauvegarder en base
+
 from .models import Temoignage
+from .forms import ContactForm
+from .models import ContactMessage
+from django.shortcuts import render, redirect
+from django.contrib import messages
+
 
 # Create your views here.
 
@@ -113,7 +121,6 @@ def automatisationTache(request):
     return render(request, 'pages/automatisationTache.html')
 
 
- 
 
 
 def sauvegardeTemoignage(request):
@@ -147,3 +154,130 @@ def sauvegardeTemoignage(request):
     
         
 
+
+
+def partnership_view(request):
+    if request.method == 'POST':
+        # Récupération des données manuellement
+        company_name = request.POST.get('company_name')
+        contact_person = request.POST.get('contact_person')
+        company_email = request.POST.get('company_email')
+        company_phone = request.POST.get('company_phone')
+        partnership_type = request.POST.get('partnership_type')
+        collaboration_ideas = request.POST.get('collaboration_ideas')
+
+        # Validation manuelle
+        errors = []
+        if not company_name:
+            errors.append("Le nom de l'entreprise est requis")
+        if not contact_person:
+            errors.append("La personne de contact est requise")
+        if not company_email:
+            errors.append("L'email professionnel est requis")
+        elif '@' not in company_email:
+            errors.append("Veuillez entrer un email valide")
+        if not partnership_type:
+            errors.append("Veuillez sélectionner un type de partenariat")
+        if not collaboration_ideas:
+            errors.append("Veuillez décrire vos idées de collaboration")
+
+        if not errors:
+            # Création de la demande de partenariat
+            PartnershipRequest.objects.create(
+                company_name=company_name,
+                contact_person=contact_person,
+                company_email=company_email,
+                company_phone=company_phone,
+                partnership_type=partnership_type,
+                collaboration_ideas=collaboration_ideas
+            )
+            messages.success(request, "Votre demande a été envoyée avec succès. Nous vous contacterons dans les 24h.")
+            return redirect('partnership_success')
+        else:
+            for error in errors:
+                messages.error(request, error)
+
+    # Préparation des données pour le template
+    partnership_types = [
+        ('', 'Sélectionnez un type'),
+        ('technology', 'Partenaire Technologique'),
+        ('reseller', 'Partenaire Revendeur'),
+        ('strategic', 'Partenaire Stratégique'),
+        ('other', 'Autre'),
+    ]
+
+    context = {
+        'submitted_data': {
+            'company_name': request.POST.get('company_name', ''),
+            'contact_person': request.POST.get('contact_person', ''),
+            'company_email': request.POST.get('company_email', ''),
+            'company_phone': request.POST.get('company_phone', ''),
+            'partnership_type': request.POST.get('partnership_type', ''),
+            'collaboration_ideas': request.POST.get('collaboration_ideas', ''),
+        },
+        'partnership_types': partnership_types,
+        'active_tab': 'partnership'
+    }
+    return render(request, 'pages/devenirPartenaire.html', context)
+
+def partnership_success_view(request):
+    return render(request, 'gestionFormulaire/partnership_success.html', {
+        'title': 'Demande envoyée'
+    })
+
+# Contact form view
+
+def contact_view(request):
+    if request.method == 'POST':
+        # Récupération des données du formulaire
+        nom = request.POST.get('nom')
+        prenom = request.POST.get('prenom')
+        email = request.POST.get('email')
+        telephone = request.POST.get('telephone')
+        sujet = request.POST.get('sujet')
+        message = request.POST.get('message')
+
+        # Validation de base
+        errors = []
+        if not nom:
+            errors.append("Le nom est obligatoire")
+        if not email:
+            errors.append("L'email est obligatoire")
+        if not message:
+            errors.append("Le message est obligatoire")
+
+        if not errors:
+            # Création et sauvegarde du message
+            ContactMessage.objects.create(
+                nom=nom,
+                prenom=prenom,
+                email=email,
+                telephone=telephone,
+                sujet=sujet,
+                message=message
+            )
+            messages.success(request, 'Votre message a été envoyé avec succès!')
+            return redirect('contact')
+        else:
+            for error in errors:
+                messages.error(request, error)
+
+    # Contexte avec les valeurs soumises pour ré-affichage
+    context = {
+        'submitted_data': {
+            'nom': request.POST.get('nom', ''),
+            'prenom': request.POST.get('prenom', ''),
+            'email': request.POST.get('email', ''),
+            'telephone': request.POST.get('telephone', ''),
+            'sujet': request.POST.get('sujet', ''),
+            'message': request.POST.get('message', ''),
+        },
+        'sujet_choices': [
+            ('', 'Sélectionnez un sujet'),
+            ('support', 'Support technique'),
+            ('devis', 'Demande de devis'),
+            ('partenariat', 'Partenariat'),
+            ('autre', 'Autre demande'),
+        ]
+    }
+    return render(request, 'pages/entreecontact.html', context)
