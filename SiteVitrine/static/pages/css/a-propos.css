@@ -1,0 +1,483 @@
+/* Styles généraux améliorés */
+    .about-page {
+        font-family: 'Poppins', sans-serif;
+        overflow-x: hidden;
+        line-height: 1.6;
+    }
+    
+    .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+    
+    .section-header h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #202548;
+        position: relative;
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+    
+    .section-header .divider {
+        width: 80px;
+        height: 4px;
+        background-color: #D85814;
+        margin: 0 auto 20px;
+    }
+    
+    .section-header p {
+        font-size: 1.2rem;
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    /* Hero Section améliorée */
+    .hero-section {
+        padding: 180px 0 150px;
+        color: white;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .particle-bg {
+        position: relative;
+    }
+    
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+    
+    .hero-content {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .hero-content h1 {
+        font-size: 4rem;
+        font-weight: 800;
+        margin-bottom: 25px;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .hero-content p {
+        font-size: 1.5rem;
+        max-width: 700px;
+        margin: 0 auto 40px;
+        text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+    .question-mark {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 30px;
+        filter: drop-shadow(0 0 15px rgba(216, 88, 20, 0.7));
+    }
+    
+    .floating {
+        animation: float 6s ease-in-out infinite;
+    }
+    
+    .btn-scroll {
+        color: white;
+        font-size: 1.5rem;
+        width: 50px;
+        height: 50px;
+        border: 2px solid white;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        margin-top: 30px;
+    }
+    
+    .btn-scroll:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(5px);
+    }
+    
+    /* Timeline améliorée */
+    .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 0;
+    }
+    
+    .timeline::after {
+        content: '';
+        position: absolute;
+        width: 4px;
+        background-color: #D85814;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -2px;
+        border-radius: 2px;
+    }
+    
+    .timeline-item {
+        padding: 10px 40px;
+        position: relative;
+        width: 50%;
+        box-sizing: border-box;
+    }
+    
+    .timeline-item:nth-child(odd) {
+        left: 0;
+    }
+    
+    .timeline-item:nth-child(even) {
+        left: 50%;
+    }
+    
+    .timeline-content {
+        padding: 30px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        position: relative;
+    }
+    
+    .timeline-date {
+        color: white;
+        padding: 8px 15px;
+        font-weight: 600;
+        border-radius: 20px;
+        position: absolute;
+        top: -15px;
+        width: auto;
+        min-width: 100px;
+        text-align: center;
+    }
+    
+    .timeline-item:nth-child(odd) .timeline-date {
+        right: -50px;
+    }
+    
+    .timeline-item:nth-child(even) .timeline-date {
+        left: -50px;
+    }
+    
+    .timeline h3 {
+        color: #202548;
+        margin-top: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .timeline p {
+        color: #666;
+    }
+    
+    /* Philosophie Section */
+    .philosophy-card {
+        background: white;
+        border-radius: 10px;
+        padding: 40px 30px;
+        text-align: center;
+        height: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .philosophy-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .philosophy-icon {
+        font-size: 2.5rem;
+        margin-bottom: 25px;
+    }
+    
+    .philosophy-card h3 {
+        color: #202548;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+    
+    /* Services Tabs */
+    .services-tabs {
+        margin-top: 50px;
+    }
+    
+    .nav-tabs {
+        border-bottom: 2px solid #eee;
+        justify-content: center;
+    }
+    
+    .nav-tabs .nav-link {
+        border: none;
+        color: #666;
+        font-weight: 600;
+        padding: 15px 25px;
+        margin: 0 5px;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-tabs .nav-link:hover {
+        color: #202548;
+    }
+    
+    .nav-tabs .nav-link.active {
+        background-color: #202548;
+        color: white;
+    }
+    
+    .service-detail {
+        padding: 30px;
+    }
+    
+    .service-detail h3 {
+        color: #202548;
+        font-size: 1.8rem;
+        margin-bottom: 25px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .service-detail h3 i {
+        margin-right: 15px;
+        font-size: 1.5rem;
+    }
+    
+    .service-detail ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    
+    .service-detail li {
+        position: relative;
+        padding-left: 30px;
+        margin-bottom: 15px;
+        color: #555;
+    }
+    
+    .service-detail li::before {
+        content: '\f00c';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        position: absolute;
+        left: 0;
+        color: #D85814;
+    }
+    
+    /* Achievements */
+    .achievement-box {
+        text-align: center;
+        padding: 30px 20px;
+        margin-bottom: 30px;
+    }
+    
+    .achievement-value {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: #D85814;
+        margin-bottom: 10px;
+    }
+    
+    .achievement-label {
+        font-size: 1.2rem;
+        color: white;
+        opacity: 0.9;
+    }
+    
+    /* News améliorée */
+    .news-card {
+        background: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
+    }
+    
+    .news-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .news-image {
+        position: relative;
+        height: 200px;
+        overflow: hidden;
+    }
+    
+    .news-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .news-card:hover .news-image img {
+        transform: scale(1.1);
+    }
+    
+    .news-date {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background-color: #D85814;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+    
+    .news-content {
+        padding: 25px;
+    }
+    
+    .news-content h3 {
+        color: #202548;
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+    
+    .news-content p {
+        color: #666;
+        margin-bottom: 20px;
+    }
+    
+    .read-more {
+        color: #D85814;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        transition: color 0.3s ease;
+    }
+    
+    .read-more i {
+        margin-left: 8px;
+        transition: transform 0.3s ease;
+    }
+    
+    .read-more:hover {
+        color: #202548;
+    }
+    
+    .read-more:hover i {
+        transform: translateX(5px);
+    }
+    
+    /* CTA Section */
+    .cta-section {
+        padding: 80px 0;
+        color: white;
+    }
+    
+    .cta-section h2 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+    
+    .cta-section p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        margin-bottom: 0;
+    }
+    
+    .btn-light {
+        background-color: white;
+        color: #202548;
+        padding: 12px 30px;
+        font-weight: 600;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-light:hover {
+        background-color: #f8f9fa;
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Animations */
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+        .timeline::after {
+            left: 31px;
+        }
+        
+        .timeline-item {
+            width: 100%;
+            padding-left: 70px;
+            padding-right: 25px;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-date,
+        .timeline-item:nth-child(even) .timeline-date {
+            left: 15px;
+            right: auto;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .section-header h2 {
+            font-size: 2rem;
+        }
+        
+        .hero-section {
+            padding: 120px 0 100px;
+        }
+        
+        .question-mark {
+            width: 80px;
+            height: 80px;
+        }
+        
+        .services-tabs .nav-link {
+            padding: 10px 15px;
+            font-size: 0.9rem;
+        }
+    }
+    
+    @media (max-width: 576px) {
+        .achievement-item {
+            margin-bottom: 20px;
+        }
+        
+        .achievement-value {
+            font-size: 2.5rem;
+        }
+        
+        .cta-section .row > div {
+            text-align: center !important;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section .btn {
+            width: 100%;
+        }
+    }

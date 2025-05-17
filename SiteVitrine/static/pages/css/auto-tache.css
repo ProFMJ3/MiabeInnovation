@@ -1,0 +1,110 @@
+/* Variables */
+    :root {
+        --bleu-nuit: #202548;
+        --orange: #D85814;
+        --light-bg: #f8f9fa;
+        --text-dark: #212529;
+        --text-gray: #6c757d;
+    }
+    
+    /* Text gradients */
+    .text-gradient-orange {
+        background: linear-gradient(90deg, var(--orange), #e67e22);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: inline;
+    }
+    
+    .text-gradient-blue {
+        background: linear-gradient(90deg, var(--bleu-nuit), #3a4b8a);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: inline;
+    }
+    
+    .text-gradient-purple {
+        background: linear-gradient(90deg, #2b5876, #4e4376);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: inline;
+    }
+    
+    /* Buttons */
+    .btn-orange {
+        background-color: var(--orange);
+        color: white;
+        border: none;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-orange:hover {
+        background-color: #c04b0d;
+        color: white;
+        transform: translateY(-2px);
+    }
+    
+    .btn-outline-orange {
+        border: 2px solid var(--orange);
+        color: var(--orange);
+        background: transparent;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-outline-orange:hover {
+        background-color: var(--orange);
+        color: white;
+    }
+    
+    /* Animations */
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-15px); }
+        100% { transform: translateY(0px); }
+    }
+    
+    /* Cards */
+    .value-card {
+        transition: all 0.3s ease;
+    }
+    
+    .value-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px -10px rgba(0,0,0,0.1) !important;
+    }
+    
+    .solution-card {
+        transition: all 0.3s ease;
+    }
+    
+    .solution-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px -10px rgba(0,0,0,0.15) !important;
+    }
+    
+    .testimonial-card {
+        transition: all 0.3s ease;
+    }
+    
+    .testimonial-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px -5px rgba(0,0,0,0.1) !important;
+    }
+    
+    /* Demo play button */
+    .demo-play-btn:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+        background: white;
+    }
+    
+    /* Hover 3D effect */
+    .hover-3d {
+        transition: all 0.3s ease;
+    }
+    
+    .hover-3d:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
