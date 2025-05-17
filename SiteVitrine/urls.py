@@ -29,18 +29,16 @@ urlpatterns = [
 
     #URL DE SAUVEGARDE
     path('sauvegardeTemoignage/', views.sauvegardeTemoignage, name='sauvegardeTemoignage'),
-<<<<<<< HEAD
-
-=======
->>>>>>> 9a68b9f1a9803d0eb386c315b426b53b50ecb377
 
 
-<<<<<<< HEAD
-    path('contact/', views.contact_view, name='contact'),
-=======
+
+
+
+
+    path('contact/', views.entreeContact, name='contact'),
+
     path('partnership_success/', views.partnership_success_view, name='partnership_success'),
 
->>>>>>> 9a68b9f1a9803d0eb386c315b426b53b50ecb377
 
 
 ]
