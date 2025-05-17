@@ -34,15 +34,15 @@
         </div>
         <div class="mi-team-stats">
             <div class="mi-stat-card">
-                <div class="mi-stat-number" data-count="50">0</div>
+                <div class="mi-stat-number" data-count="8">0</div>
                 <div class="mi-stat-label">Experts</div>
             </div>
             <div class="mi-stat-card">
-                <div class="mi-stat-number" data-count="12">0</div>
+                <div class="mi-stat-number" data-count="10">0</div>
                 <div class="mi-stat-label">Départements</div>
             </div>
             <div class="mi-stat-card">
-                <div class="mi-stat-number" data-count="85">0</div>
+                <div class="mi-stat-number" data-count="10">0</div>
                 <div class="mi-stat-label">Projets réalisés</div>
             </div>
             <div class="mi-stat-card">
@@ -143,6 +143,7 @@
                 <div class="mi-tab" data-tab="operations">Opérations</div>
             </div>
             
+            <!-- Technologie -->
             <div class="mi-tab-content active" data-tab="tech">
                 <div class="mi-dept-team">
                     <!-- Team Member 1 -->
@@ -180,51 +181,9 @@
                             <p>Mobile Engineer</p>
                         </div>
                     </div>
-                    
-                    <!-- Design... -->
-                <div class="mi-tab-content" data-tab="design">
-                    <div class="mi-dept-team">
-                        <!-- Membre Design 1 -->
-                        <div class="mi-team-member">
-                            <div class="mi-member-image">
-                                <img src="{% static 'img/team/design1.jpg' %}" alt="Designer UI/UX">
-                                 <div class="mi-member-overlay">
-                                    <h4>Spécialité : Expérience Utilisateur</h4>
-                                    <div class="mi-social-links">
-                                        <a href="#"><i class="fab fa-behance"></i></a>
-                                        <a href="#"><i class="fab fa-dribbble"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mi-member-info">
-                                <h3>Sarah Mensah</h3>
-                                <p>UI/UX Designer</p>
-                            </div>
-                        </div>
-                        <!-- Ajoutez d'autres membres -->
-                    </div>
-                    <div class="mi-dept-achievements">
-                        <h3>Réalisations Design</h3>
-                        <ul>
-                            <li>50+ interfaces utilisateur créées</li>
-                            <li>Augmentation de 40% de l'engagement utilisateur</li>
-                            <li>Design system primé</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="mi-tab-content" data-tab="marketing">
-                    <!-- Contenu Marketing similaire -->
                 </div>
                 
-                <div class="mi-tab-content" data-tab="operations">
-                    <!-- Contenu Opérations similaire -->
-                </div>
-
-            </div>
-
-                
-            <div class="mi-dept-achievements">
+                <div class="mi-dept-achievements">
                     <h3>Réalisations Clés</h3>
                     <ul>
                         <li>Développement de 15+ applications IA</li>
@@ -234,7 +193,152 @@
                 </div>
             </div>
             
-            <!-- Other department tabs content... -->
+            <!-- Design -->
+            <div class="mi-tab-content" data-tab="design">
+                <div class="mi-dept-team">
+                    <!-- Membre Design 1 -->
+                    <div class="mi-team-member">
+                        <div class="mi-member-image">
+                            <img src="{% static 'img/team/design1.jpg' %}" alt="Designer UI/UX">
+                             <div class="mi-member-overlay">
+                                <h4>Spécialité : Expérience Utilisateur</h4>
+                                <div class="mi-social-links">
+                                    <a href="#"><i class="fab fa-behance"></i></a>
+                                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mi-member-info">
+                            <h3>Sarah Mensah</h3>
+                            <p>UI/UX Designer</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Membre Design 2 -->
+                    <div class="mi-team-member">
+                        <div class="mi-member-image">
+                            <img src="{% static 'img/team/design2.jpg' %}" alt="Designer Graphique">
+                             <div class="mi-member-overlay">
+                                <h4>Spécialité : Identité Visuelle</h4>
+                                <div class="mi-social-links">
+                                    <a href="#"><i class="fab fa-behance"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mi-member-info">
+                            <h3>Kwame Asante</h3>
+                            <p>Graphic Designer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mi-dept-achievements">
+                    <h3>Réalisations Design</h3>
+                    <ul>
+                        <li>50+ interfaces utilisateur créées</li>
+                        <li>Augmentation de 40% de l'engagement utilisateur</li>
+                        <li>Design system primé</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Marketing -->
+            <div class="mi-tab-content" data-tab="marketing">
+                <div class="mi-dept-team">
+                    <!-- Membre Marketing 1 -->
+                    <div class="mi-team-member">
+                        <div class="mi-member-image">
+                            <img src="{% static 'img/team/marketing1.jpg' %}" alt="Responsable Marketing">
+                            <div class="mi-member-overlay">
+                                <h4>Spécialité : Stratégie Digitale</h4>
+                                <div class="mi-social-links">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mi-member-info">
+                            <h3>Ama Dogbe</h3>
+                            <p>Marketing Director</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Membre Marketing 2 -->
+                    <div class="mi-team-member">
+                        <div class="mi-member-image">
+                            <img src="{% static 'img/team/marketing2.jpg' %}" alt="Spécialiste SEO">
+                            <div class="mi-member-overlay">
+                                <h4>Spécialité : Acquisition Clients</h4>
+                                <div class="mi-social-links">
+                                    <a href="#"><i class="fab fa-google"></i></a>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mi-member-info">
+                            <h3>Yaw Boateng</h3>
+                            <p>Growth Marketer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mi-dept-achievements">
+                    <h3>Réalisations Marketing</h3>
+                    <ul>
+                        <li>+300% de trafic organique en 6 mois</li>
+                        <li>Campagnes générant 1M+ de revenus</li>
+                        <li>Stratégie de contenu primée</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Opérations -->
+            <div class="mi-tab-content" data-tab="operations">
+                <div class="mi-dept-team">
+                    <!-- Membre Opérations 1 -->
+                    <div class="mi-team-member">
+                        <div class="mi-member-image">
+                            <img src="{% static 'img/team/ops1.jpg' %}" alt="Responsable Opérations">
+                            <div class="mi-member-overlay">
+                                <h4>Spécialité : Gestion de Projet</h4>
+                                <div class="mi-social-links">
+                                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mi-member-info">
+                            <h3>Nana Kwesi</h3>
+                            <p>Operations Manager</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Membre Opérations 2 -->
+                    <div class="mi-team-member">
+                        <div class="mi-member-image">
+                            <img src="{% static 'img/team/ops2.jpg' %}" alt="Assistante Opérations">
+                            <div class="mi-member-overlay">
+                                <h4>Spécialité : Support Client</h4>
+                                <div class="mi-social-links">
+                                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                                    <a href="#"><i class="fas fa-headset"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mi-member-info">
+                            <h3>Esi Coleman</h3>
+                            <p>Customer Success</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mi-dept-achievements">
+                    <h3>Réalisations Opérations</h3>
+                    <ul>
+                        <li>Processus optimisés réduisant les coûts de 25%</li>
+                        <li>Satisfaction client à 98%</li>
+                        <li>Gestion de 50+ projets simultanés</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </section>
