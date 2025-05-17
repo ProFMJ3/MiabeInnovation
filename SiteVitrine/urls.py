@@ -38,5 +38,6 @@ urlpatterns = [
     path('contact/', views.contact_view, name='contact'),
 
 
+
 ]
 

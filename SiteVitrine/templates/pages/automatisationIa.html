@@ -3,144 +3,165 @@
 
 {% block body %}
 <!-- Header Start -->
-<div class="jumbotron jumbotron-fluid position-relative overlay-bottom" style="background-image: url('{% static 'img/ia-auto.jpg' %}'); background-size: cover;">
-    <div class="container text-center my-5 py-5 content-overlay">
-        <h1 class="text-white display-3 mb-5">Automatisation des Systèmes avec IA</h1>
-        <h1 class="text-white mt-4 mb-4">Donnez une intelligence artificielle à vos processus métiers</h1>
-    </div>
-</div>
-<!-- Header End -->
-
-<!-- Service Detail Start -->
-<div class="container-fluid py-5">
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-lg-8">
-                <div class="section-title position-relative mb-4">
-                    <h6 class="d-inline-block position-relative about-title text-uppercase pb-2">Innovation IA</h6>
-                    <h1 class="display-4">Transformez votre entreprise avec l'Intelligence Artificielle</h1>
+<!-- AI Automation Hero -->
+<div class="ai-hero" style="background: radial-gradient(circle at 75% 30%, var(--bleu-nuit) 0%, #0f1220 100%); position: relative; overflow: hidden;">
+    <!-- Particules animées en canvas -->
+    <canvas id="aiParticles" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.3;"></canvas>
+    
+    <!-- Effet de lumière animé -->
+    <div class="ai-light-effect" style="position: absolute; width: 300px; height: 300px; background: radial-gradient(circle, rgba(216,88,20,0.4) 0%, transparent 70%); border-radius: 50%; top: 50%; left: 30%; transform: translate(-50%, -50%); filter: blur(30px); animation: pulse 8s infinite alternate;"></div>
+    
+    <div class="container py-5 position-relative" style="z-index: 10;">
+        <div class="row align-items-center py-5">
+            <div class="col-lg-6 text-white">
+                <div class="d-inline-block px-3 py-1 rounded-pill bg-orange mb-3" style="backdrop-filter: blur(10px);">
+                    <span class="fw-bold">IA GÉNÉRATIVE</span>
                 </div>
-                <p>Nos solutions d'automatisation intelligente alimentées par l'IA permettent d'optimiser vos processus métiers, d'anticiper les tendances et de prendre des décisions plus éclairées. Nous développons des systèmes adaptatifs qui apprennent et s'améliorent continuellement.</p>
-                
-                <div class="row mt-5">
-                    <div class="col-md-6">
-                        <h3 class="mb-4">Nos Solutions IA</h3>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item bg-transparent border-left-0 border-right-0 px-0">
-                                <i class="fas fa-check-circle text-primary mr-2"></i> Analyse prédictive
-                            </li>
-                            <li class="list-group-item bg-transparent border-left-0 border-right-0 px-0">
-                                <i class="fas fa-check-circle text-primary mr-2"></i> Chatbots intelligents
-                            </li>
-                            <li class="list-group-item bg-transparent border-left-0 border-right-0 px-0">
-                                <i class="fas fa-check-circle text-primary mr-2"></i> Reconnaissance d'images
-                            </li>
-                            <li class="list-group-item bg-transparent border-left-0 border-right-0 px-0">
-                                <i class="fas fa-check-circle text-primary mr-2"></i> Traitement du langage naturel
-                            </li>
-                            <li class="list-group-item bg-transparent border-left-0 border-right-0 px-0">
-                                <i class="fas fa-check-circle text-primary mr-2"></i> Optimisation en temps réel
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <h3 class="mb-4">Bénéfices Clients</h3>
-                        <div class="d-flex mb-3">
-                            <div class="btn-icon bg-primary mr-4 rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
-                                <i class="fas fa-chart-line text-white"></i>
-                            </div>
-                            <div>
-                                <h5 class="mb-1">+40%</h5>
-                                <p>Précision des prévisions</p>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <div class="btn-icon bg-primary mr-4 rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
-                                <i class="fas fa-clock text-white"></i>
-                            </div>
-                            <div>
-                                <h5 class="mb-1">-65%</h5>
-                                <p>Temps de traitement des demandes</p>
-                            </div>
-                        </div>
-                        <div class="d-flex">
-                            <div class="btn-icon bg-primary mr-4 rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px;">
-                                <i class="fas fa-robot text-white"></i>
-                            </div>
-                            <div>
-                                <h5 class="mb-1">80%</h5>
-                                <p>Processus analytiques automatisés</p>
-                            </div>
-                        </div>
-                    </div>
+                <h1 class="display-3 fw-bold mb-4" style="line-height: 1.2; text-shadow: 0 0 15px rgba(216,88,20,0.3);">
+                    Automatisation <span class="text-gradient-orange">Intelligente</span> des Systèmes
+                </h1>
+                <p class="lead mb-4 fs-4" style="opacity: 0.9;">
+                    L'IA révolutionne vos processus métiers avec une efficacité inégalée
+                </p>
+                <div class="d-flex gap-3">
+                    <a href="#demo" class="btn btn-orange btn-lg px-4 py-3 rounded-pill fw-bold hover-3d">
+                        Voir la démo <i class="fas fa-robot ms-2"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-outline-light btn-lg px-4 py-3 rounded-pill fw-bold hover-3d">
+                        Expert Consultation
+                    </a>
                 </div>
-
-                <div class="mt-5">
-                    <h3 class="mb-4">Technologies Utilisées</h3>
-                    <div class="row text-center">
-                        <div class="col-4 col-md-2 mb-4">
-                            <div class="tech-icon p-3">
-                                <i class="fas fa-brain fa-3x text-primary"></i>
-                                <p class="mt-2 mb-0">Machine Learning</p>
-                            </div>
-                        </div>
-                        <div class="col-4 col-md-2 mb-4">
-                            <div class="tech-icon p-3">
-                                <i class="fas fa-language fa-3x text-primary"></i>
-                                <p class="mt-2 mb-0">NLP</p>
-                            </div>
-                        </div>
-                        <div class="col-4 col-md-2 mb-4">
-                            <div class="tech-icon p-3">
-                                <i class="fas fa-eye fa-3x text-primary"></i>
-                                <p class="mt-2 mb-0">Computer Vision</p>
-                            </div>
-                        </div>
-                        <div class="col-4 col-md-2 mb-4">
-                            <div class="tech-icon p-3">
-                                <i class="fas fa-network-wired fa-3x text-primary"></i>
-                                <p class="mt-2 mb-0">Réseaux Neuronaux</p>
-                            </div>
-                        </div>
-                        <div class="col-4 col-md-2 mb-4">
-                            <div class="tech-icon p-3">
-                                <i class="fas fa-chart-bar fa-3x text-primary"></i>
-                                <p class="mt-2 mb-0">Analyse Prédictive</p>
-                            </div>
-                        </div>
-                        <div class="col-4 col-md-2 mb-4">
-                            <div class="tech-icon p-3">
-                                <i class="fas fa-cogs fa-3x text-primary"></i>
-                                <p class="mt-2 mb-0">Algorithmes</p>
-                            </div>
-                        </div>
+            </div>
+            <div class="col-lg-6">
+                <!-- Hologramme 3D -->
+                <div class="ai-hologram" style="position: relative; perspective: 1000px;">
+                    <div class="hologram-container" style="transform-style: preserve-3d; animation: rotateHologram 20s infinite linear;">
+                        <img src="{% static 'images/ai-core.png' %}" alt="AI Core" class="img-fluid hologram-img" style="filter: drop-shadow(0 0 30px rgba(216,88,20,0.6));">
+                        <div class="hologram-ring" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotateX(75deg); width: 120%; height: 120%; border: 2px dashed rgba(216,88,20,0.6); border-radius: 50%; animation: pulseRing 4s infinite;"></div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="bg-light p-5 mb-4">
-                    <h3 class="mb-4">Demande de Démonstration</h3>
-                    <p>Découvrez comment l'IA peut transformer votre entreprise avec une démonstration personnalisée de nos solutions.</p>
-                    <a href="{% url 'entree_contact' %}" class="btn btn-primary btn-block py-3">Demander une démo</a>
+        </div>
+    </div>
+</div>
+
+<!-- AI Capabilities Grid -->
+<div class="py-5" style="background: url('{% static 'images/hex-pattern.png' %}') var(--bleu-nuit); background-size: 400px; position: relative;">
+    <div class="ai-grid-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, rgba(32,37,72,0.9) 0%, rgba(15,18,32,0.95) 100%);"></div>
+    
+    <div class="container py-5 position-relative" style="z-index: 2;">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold text-white mb-3">Transformez vos <span class="text-orange">Opérations</span> avec l'IA</h2>
+            <p class="text-light w-75 mx-auto fs-5">Nos solutions d'automatisation intelligente s'adaptent et évoluent avec votre entreprise</p>
+        </div>
+        
+        <!-- Grille interactive -->
+        <div class="ai-capabilities-grid">
+            <div class="grid-container">
+                <!-- Case 1 -->
+                <div class="grid-item" data-aos="fade-up">
+                    <div class="grid-card">
+                        <div class="grid-icon">
+                            <i class="fas fa-brain fa-3x"></i>
+                        </div>
+                        <h4 class="fw-bold text-white">Machine Learning</h4>
+                        <p class="text-light">Systèmes qui apprennent et s'améliorent continuellement</p>
+                        <div class="grid-hover-content">
+                            <ul class="text-start">
+                                <li>Analyse prédictive</li>
+                                <li>Recommandations intelligentes</li>
+                                <li>Détection d'anomalies</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-light p-5">
-                    <h3 class="mb-4">Cas d'Usage</h3>
-                    <div class="card mb-3 border-0">
-                        <div class="card-body p-0">
-                            <h5 class="card-title">Service Client Automatisé</h5>
-                            <p class="card-text">Chatbot intelligent capable de traiter 80% des requêtes courantes sans intervention humaine.</p>
+                
+                <!-- Case 2 -->
+                <div class="grid-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="grid-card">
+                        <div class="grid-icon">
+                            <i class="fas fa-robot fa-3x"></i>
+                        </div>
+                        <h4 class="fw-bold text-white">RPA Avancé</h4>
+                        <p class="text-light">Automatisation des processus robotisés</p>
+                        <div class="grid-hover-content">
+                            <ul class="text-start">
+                                <li>Automatisation des tâches répétitives</li>
+                                <li>Intégration cross-plateformes</li>
+                                <li>Exécution 24/7 sans fatigue</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="card mb-3 border-0">
-                        <div class="card-body p-0">
-                            <h5 class="card-title">Détection d'Anomalies</h5>
-                            <p class="card-text">Surveillance automatique des processus industriels avec alerte précoce des déviations.</p>
+                </div>
+                
+                <!-- Case 3 -->
+                <div class="grid-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="grid-card">
+                        <div class="grid-icon">
+                            <i class="fas fa-comments fa-3x"></i>
+                        </div>
+                        <h4 class="fw-bold text-white">Chatbots IA</h4>
+                        <p class="text-light">Assistants conversationnels intelligents</p>
+                        <div class="grid-hover-content">
+                            <ul class="text-start">
+                                <li>Support client 24/7</li>
+                                <li>Compréhension naturelle</li>
+                                <li>Intégration CRM</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="card border-0">
-                        <div class="card-body p-0">
-                            <h5 class="card-title">Recommandation Produits</h5>
-                            <p class="card-text">Système de recommandation personnalisé augmentant les ventes croisées de 25%.</p>
+                </div>
+                
+                <!-- Case 4 -->
+                <div class="grid-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="grid-card">
+                        <div class="grid-icon">
+                            <i class="fas fa-chart-line fa-3x"></i>
+                        </div>
+                        <h4 class="fw-bold text-white">Analyse en Temps Réel</h4>
+                        <p class="text-light">Décisions basées sur les données</p>
+                        <div class="grid-hover-content">
+                            <ul class="text-start">
+                                <li>Tableaux de bord interactifs</li>
+                                <li>Alertes intelligentes</li>
+                                <li>Visualisation avancée</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Case 5 -->
+                <div class="grid-item" data-aos="fade-up" data-aos-delay="400">
+                    <div class="grid-card">
+                        <div class="grid-icon">
+                            <i class="fas fa-cogs fa-3x"></i>
+                        </div>
+                        <h4 class="fw-bold text-white">Workflows Intelligents</h4>
+                        <p class="text-light">Orchestration automatisée</p>
+                        <div class="grid-hover-content">
+                            <ul class="text-start">
+                                <li>Coordination multi-systèmes</li>
+                                <li>Gestion des exceptions</li>
+                                <li>Adaptation dynamique</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Case 6 -->
+                <div class="grid-item" data-aos="fade-up" data-aos-delay="500">
+                    <div class="grid-card">
+                        <div class="grid-icon">
+                            <i class="fas fa-eye fa-3x"></i>
+                        </div>
+                        <h4 class="fw-bold text-white">Vision par Ordinateur</h4>
+                        <p class="text-light">Analyse d'images et vidéos</p>
+                        <div class="grid-hover-content">
+                            <ul class="text-start">
+                                <li>Reconnaissance d'objets</li>
+                                <li>Détection de défauts</li>
+                                <li>Analyse comportementale</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -148,5 +169,669 @@
         </div>
     </div>
 </div>
+
+<!-- AI Demo Showcase -->
+<div class="py-5 bg-dark" id="demo">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0">
+                <div class="ai-demo-container">
+                    <div class="ai-demo-screen">
+                        <div class="ai-demo-content">
+                            <!-- Contenu de démo animé -->
+                            <div class="ai-process" style="--delay: 0s;">
+                                <div class="ai-process-icon">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="ai-process-text">
+                                    <div class="ai-process-bar" style="width: 100%;"></div>
+                                    <span>Collecte des données</span>
+                                </div>
+                            </div>
+                            <div class="ai-process" style="--delay: 1s;">
+                                <div class="ai-process-icon">
+                                    <i class="fas fa-microchip"></i>
+                                </div>
+                                <div class="ai-process-text">
+                                    <div class="ai-process-bar" style="width: 90%;"></div>
+                                    <span>Traitement IA</span>
+                                </div>
+                            </div>
+                            <div class="ai-process" style="--delay: 2s;">
+                                <div class="ai-process-icon">
+                                    <i class="fas fa-chart-bar"></i>
+                                </div>
+                                <div class="ai-process-text">
+                                    <div class="ai-process-bar" style="width: 85%;"></div>
+                                    <span>Analyse prédictive</span>
+                                </div>
+                            </div>
+                            <div class="ai-process" style="--delay: 3s;">
+                                <div class="ai-process-icon">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <div class="ai-process-text">
+                                    <div class="ai-process-bar" style="width: 95%;"></div>
+                                    <span>Exécution automatisée</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ai-demo-base"></div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <h2 class="fw-bold text-white mb-4"><span class="text-orange">Démo Interactive</span> de Notre IA en Action</h2>
+                <p class="text-light mb-4 fs-5">Découvrez comment notre système d'automatisation intelligente peut transformer vos flux de travail complexes en processus automatisés et optimisés.</p>
+                
+                <div class="ai-demo-features mb-5">
+                    <div class="d-flex mb-3">
+                        <div class="me-3">
+                            <div class="ai-feature-badge bg-orange text-white rounded-circle d-flex align-items-center justify-content-center">
+                                <i class="fas fa-check"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold text-white mb-1">Réduction des Coûts</h4>
+                            <p class="text-light mb-0">Jusqu'à 70% d'économie sur les processus répétitifs</p>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div class="me-3">
+                            <div class="ai-feature-badge bg-orange text-white rounded-circle d-flex align-items-center justify-content-center">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold text-white mb-1">Vitesse d'Exécution</h4>
+                            <p class="text-light mb-0">Traitement 100x plus rapide que les méthodes traditionnelles</p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="me-3">
+                            <div class="ai-feature-badge bg-orange text-white rounded-circle d-flex align-items-center justify-content-center">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold text-white mb-1">Précision Optimale</h4>
+                            <p class="text-light mb-0">99.8% de taux de réussite sur les tâches automatisées</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="#contact" class="btn btn-orange btn-lg px-4 py-3 rounded-pill fw-bold hover-3d">
+                    Personnaliser une Démo <i class="fas fa-magic ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- AI Stats Visualization -->
+<div class="py-5" style="background: linear-gradient(to right, var(--bleu-nuit) 0%, #151a36 100%);">
+    <div class="container py-5">
+        <div class="row g-4">
+            <div class="col-lg-6">
+                <h2 class="fw-bold text-white mb-4">L'Impact de <span class="text-orange">l'Automatisation IA</span></h2>
+                <p class="text-light mb-5 fs-5">Nos solutions transforment radicalement les performances opérationnelles de nos clients</p>
+                
+                <div class="ai-radial-stats">
+                    <div class="radial-stat" style="--percentage: 92;">
+                        <div class="radial-progress">
+                            <svg class="radial-svg" viewBox="0 0 100 100">
+                                <circle class="radial-bg" cx="50" cy="50" r="45"></circle>
+                                <circle class="radial-fill" cx="50" cy="50" r="45" style="stroke-dashoffset: calc(283 - (283 * 92) / 100);"></circle>
+                            </svg>
+                            <div class="radial-value text-orange fw-bold">92%</div>
+                        </div>
+                        <div class="radial-label text-white">Efficacité Accrue</div>
+                    </div>
+                    
+                    <div class="radial-stat" style="--percentage: 78;">
+                        <div class="radial-progress">
+                            <svg class="radial-svg" viewBox="0 0 100 100">
+                                <circle class="radial-bg" cx="50" cy="50" r="45"></circle>
+                                <circle class="radial-fill" cx="50" cy="50" r="45" style="stroke-dashoffset: calc(283 - (283 * 78) / 100);"></circle>
+                            </svg>
+                            <div class="radial-value text-orange fw-bold">78%</div>
+                        </div>
+                        <div class="radial-label text-white">Réduction d'Erreurs</div>
+                    </div>
+                    
+                    <div class="radial-stat" style="--percentage: 85;">
+                        <div class="radial-progress">
+                            <svg class="radial-svg" viewBox="0 0 100 100">
+                                <circle class="radial-bg" cx="50" cy="50" r="45"></circle>
+                                <circle class="radial-fill" cx="50" cy="50" r="45" style="stroke-dashoffset: calc(283 - (283 * 85) / 100);"></circle>
+                            </svg>
+                            <div class="radial-value text-orange fw-bold">85%</div>
+                        </div>
+                        <div class="radial-label text-white">Clients Satisfaits</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-6">
+                <div class="ai-bar-chart">
+                    <h4 class="text-white fw-bold mb-4">Gains de Productivité par Secteur</h4>
+                    
+                    <div class="chart-bar mb-3">
+                        <div class="chart-label text-white">Fabrication</div>
+                        <div class="chart-track">
+                            <div class="chart-progress bg-orange" style="width: 88%;" data-value="88"></div>
+                        </div>
+                        <div class="chart-value text-orange fw-bold">88%</div>
+                    </div>
+                    
+                    <div class="chart-bar mb-3">
+                        <div class="chart-label text-white">Santé</div>
+                        <div class="chart-track">
+                            <div class="chart-progress bg-orange" style="width: 76%;" data-value="76"></div>
+                        </div>
+                        <div class="chart-value text-orange fw-bold">76%</div>
+                    </div>
+                    
+                    <div class="chart-bar mb-3">
+                        <div class="chart-label text-white">Finance</div>
+                        <div class="chart-track">
+                            <div class="chart-progress bg-orange" style="width: 92%;" data-value="92"></div>
+                        </div>
+                        <div class="chart-value text-orange fw-bold">92%</div>
+                    </div>
+                    
+                    <div class="chart-bar mb-3">
+                        <div class="chart-label text-white">Logistique</div>
+                        <div class="chart-track">
+                            <div class="chart-progress bg-orange" style="width: 84%;" data-value="84"></div>
+                        </div>
+                        <div class="chart-value text-orange fw-bold">84%</div>
+                    </div>
+                    
+                    <div class="chart-bar">
+                        <div class="chart-label text-white">Commerce</div>
+                        <div class="chart-track">
+                            <div class="chart-progress bg-orange" style="width: 79%;" data-value="79"></div>
+                        </div>
+                        <div class="chart-value text-orange fw-bold">79%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- AI CTA Section -->
+<div class="py-5 position-relative ai-cta" style="overflow: hidden;">
+    <div class="ai-cta-bg" style="background: linear-gradient(135deg, rgba(216,88,20,0.9) 0%, rgba(232,121,51,0.9) 100%);"></div>
+    
+    <div class="container py-5 position-relative" style="z-index: 2;">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <h2 class="display-5 fw-bold text-white mb-4">Prêt à Automatiser votre Entreprise avec <span class="text-dark">l'Intelligence Artificielle</span>?</h2>
+                <p class="text-white mb-5 fs-4">Réservez une consultation gratuite avec nos experts en IA dès aujourd'hui</p>
+                
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="#contact" class="btn btn-dark btn-lg px-5 py-3 rounded-pill fw-bold hover-3d">
+                        <i class="fas fa-calendar-check me-2"></i> Planifier un Appel
+                    </a>
+                    <a href="tel:+123456789" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill fw-bold hover-3d">
+                        <i class="fas fa-phone-alt me-2"></i> Nous Appeler
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Styles de base */
+    :root {
+        --bleu-nuit: #202548;
+        --orange: #D85814;
+        --orange-light: rgba(216, 88, 20, 0.1);
+        --dark-bg: #0f1220;
+    }
+    
+    .text-orange {
+        color: var(--orange) !important;
+    }
+    
+    .bg-orange {
+        background-color: var(--orange) !important;
+    }
+    
+    .bg-bleu-nuit {
+        background-color: var(--bleu-nuit) !important;
+    }
+    
+    /* Effets de texte */
+    .text-gradient-orange {
+        background: linear-gradient(90deg, var(--orange), #f39c12);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        display: inline;
+    }
+    
+    /* Animations */
+    @keyframes pulse {
+        0% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+        50% { transform: translate(-50%, -50%) scale(1.2); opacity: 0.2; }
+        100% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+    }
+    
+    @keyframes rotateHologram {
+        0% { transform: rotateY(0deg); }
+        100% { transform: rotateY(360deg); }
+    }
+    
+    @keyframes pulseRing {
+        0% { transform: translate(-50%, -50%) rotateX(75deg) scale(1); opacity: 0.6; }
+        50% { transform: translate(-50%, -50%) rotateX(75deg) scale(1.1); opacity: 0.3; }
+        100% { transform: translate(-50%, -50%) rotateX(75deg) scale(1); opacity: 0.6; }
+    }
+    
+    /* Effets 3D au survol */
+    .hover-3d {
+        transition: all 0.3s ease;
+        transform-style: preserve-3d;
+    }
+    
+    .hover-3d:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Grille des capacités IA */
+    .ai-capabilities-grid {
+        margin: 0 auto;
+        max-width: 1200px;
+    }
+    
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    
+    .grid-item {
+        perspective: 1000px;
+    }
+    
+    .grid-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        padding: 30px;
+        height: 100%;
+        transition: all 0.5s ease;
+        transform-style: preserve-3d;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .grid-card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(216,88,20,0.1) 0%, transparent 70%);
+        transform: rotate(30deg);
+        transition: all 0.5s ease;
+        opacity: 0;
+    }
+    
+    .grid-card:hover {
+        transform: translateY(-10px) rotateX(5deg);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        border-color: var(--orange);
+    }
+    
+    .grid-card:hover::before {
+        opacity: 1;
+        animation: gridShine 3s linear infinite;
+    }
+    
+    @keyframes gridShine {
+        0% { transform: translateX(-100%) rotate(30deg); }
+        100% { transform: translateX(100%) rotate(30deg); }
+    }
+    
+    .grid-icon {
+        margin-bottom: 20px;
+        color: var(--orange);
+        transition: all 0.3s ease;
+    }
+    
+    .grid-card:hover .grid-icon {
+        transform: scale(1.2);
+    }
+    
+    .grid-hover-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.5s ease;
+        opacity: 0;
+    }
+    
+    .grid-card:hover .grid-hover-content {
+        max-height: 200px;
+        opacity: 1;
+        margin-top: 15px;
+    }
+    
+    /* Démo IA */
+    .ai-demo-container {
+        position: relative;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .ai-demo-screen {
+        background: linear-gradient(145deg, #1a203a, #0d1124);
+        border-radius: 20px;
+        padding: 20px;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        position: relative;
+        z-index: 2;
+    }
+    
+    .ai-demo-screen::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: 16px;
+        padding: 2px;
+        background: linear-gradient(135deg, rgba(216,88,20,0.5), transparent);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        pointer-events: none;
+    }
+    
+    .ai-demo-base {
+        position: absolute;
+        bottom: -20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        height: 30px;
+        background: linear-gradient(to bottom, #333, #111);
+        border-radius: 0 0 10px 10px;
+        filter: blur(5px);
+        opacity: 0.7;
+        z-index: 1;
+    }
+    
+    .ai-process {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+        animation: fadeIn 0.5s ease-out forwards;
+        animation-delay: var(--delay);
+        opacity: 0;
+    }
+    
+    @keyframes fadeIn {
+        to { opacity: 1; }
+    }
+    
+    .ai-process-icon {
+        width: 40px;
+        height: 40px;
+        background: rgba(216,88,20,0.2);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        color: var(--orange);
+    }
+    
+    .ai-process-text {
+        flex: 1;
+    }
+    
+    .ai-process-bar {
+        height: 6px;
+        background: linear-gradient(90deg, var(--orange), #f39c12);
+        border-radius: 3px;
+        margin-bottom: 5px;
+        animation: progressBar 1s ease-out forwards;
+        animation-delay: calc(var(--delay) + 0.5s);
+        transform-origin: left;
+        transform: scaleX(0);
+    }
+    
+    @keyframes progressBar {
+        to { transform: scaleX(1); }
+    }
+    
+    /* Statistiques radiales */
+    .ai-radial-stats {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-top: 40px;
+    }
+    
+    .radial-stat {
+        text-align: center;
+        flex: 1;
+        min-width: 120px;
+    }
+    
+    .radial-progress {
+        position: relative;
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 15px;
+    }
+    
+    .radial-svg {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .radial-bg {
+        fill: none;
+        stroke: rgba(255,255,255,0.1);
+        stroke-width: 8;
+    }
+    
+    .radial-fill {
+        fill: none;
+        stroke: var(--orange);
+        stroke-width: 8;
+        stroke-linecap: round;
+        stroke-dasharray: 283;
+        transform: rotate(-90deg);
+        transform-origin: 50% 50%;
+    }
+    
+    .radial-value {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.5rem;
+    }
+    
+    .radial-label {
+        font-size: 0.9rem;
+    }
+    
+    /* Bar chart */
+    .chart-bar {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    
+    .chart-label {
+        width: 100px;
+        text-align: right;
+        padding-right: 15px;
+    }
+    
+    .chart-track {
+        flex: 1;
+        height: 10px;
+        background: rgba(255,255,255,0.1);
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    
+    .chart-progress {
+        height: 100%;
+        border-radius: 5px;
+        transition: width 1s ease-out;
+    }
+    
+    .chart-value {
+        width: 50px;
+        text-align: right;
+        padding-left: 10px;
+    }
+    
+    /* CTA Section */
+    .ai-cta {
+        position: relative;
+    }
+    
+    .ai-cta-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        z-index: 1;
+    }
+    
+    .ai-cta-bg::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('{% static 'images/ai-circuit.png' %}') center/cover;
+        opacity: 0.1;
+    }
+</style>
+
+<script>
+    // Animation des particules
+    document.addEventListener('DOMContentLoaded', function() {
+        // Configuration des particules
+        const canvas = document.getElementById('aiParticles');
+        const ctx = canvas.getContext('2d');
+        
+        // Redimensionnement du canvas
+        function resizeCanvas() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+        
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        
+        // Paramètres des particules
+        const particles = [];
+        const particleCount = Math.floor(canvas.width / 10);
+        
+        // Création des particules
+        for (let i = 0; i < particleCount; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                size: Math.random() * 3 + 1,
+                speedX: (Math.random() - 0.5) * 0.5,
+                speedY: (Math.random() - 0.5) * 0.5,
+                color: `rgba(216, 88, 20, ${Math.random() * 0.5 + 0.1})`
+            });
+        }
+        
+        // Animation des particules
+        function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            
+            // Mise à jour et dessin des particules
+            for (let i = 0; i < particles.length; i++) {
+                const p = particles[i];
+                
+                // Mise à jour de la position
+                p.x += p.speedX;
+                p.y += p.speedY;
+                
+                // Rebond sur les bords
+                if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
+                
+                // Dessin de la particule
+                ctx.fillStyle = p.color;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+                
+                // Dessin des connexions
+                for (let j = i + 1; j < particles.length; j++) {
+                    const p2 = particles[j];
+                    const distance = Math.sqrt(
+                        Math.pow(p.x - p2.x, 2) + 
+                        Math.pow(p.y - p2.y, 2)
+                    );
+                    
+                    if (distance < 100) {
+                        ctx.strokeStyle = `rgba(216, 88, 20, ${1 - distance/100})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            
+            requestAnimationFrame(animateParticles);
+        }
+        
+        animateParticles();
+        
+        // Animation des barres du graphique
+        const chartBars = document.querySelectorAll('.chart-progress');
+        chartBars.forEach(bar => {
+            const targetWidth = bar.getAttribute('data-value') + '%';
+            bar.style.width = '0';
+            setTimeout(() => {
+                bar.style.width = targetWidth;
+            }, 500);
+        });
+        
+        // Initialisation des animations au scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('[data-aos]').forEach(el => {
+            observer.observe(el);
+        });
+    });
+</script>
 <!-- Service Detail End -->
 {% endblock %}
