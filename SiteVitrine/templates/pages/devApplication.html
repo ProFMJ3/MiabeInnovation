@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block body %}
-
+<link rel="stylesheet" href="{% static 'pages/css/dev-app.css' %}">
 <div class="service-page dev-page">
     <!-- Hero Section avec effet Parallax 3D -->
     <section class="service-hero parallax-3d">
@@ -173,6 +173,18 @@
                                     <ul class="tech-list">
                                         <li>
                                             <div class="tech-icon">
+                                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React Native">
+                                            </div>
+                                            <div class="tech-info">
+                                                <h4>React Native</h4>
+                                                <p>Framework mobile basé sur React <br>pour apps iOS et Android</p>
+                                            </div>
+                                            <div class="tech-progress">
+                                                <div class="progress-bar" style="width: 85%; background-color: #D85814"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tech-icon">
                                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter">
                                             </div>
                                             <div class="tech-info">
@@ -273,7 +285,7 @@
                                                 <p>Librairie JavaScript moderne pour interfaces riches</p>
                                             </div>
                                             <div class="tech-progress">
-                                                <div class="progress-bar" style="width: 95%; background-color: #D85814;"></div>
+                                                <div class="progress-bar" style="width: 85%; background-color: #D85814;"></div>
                                             </div>
                                         </li>
                                         <li>
@@ -285,7 +297,7 @@
                                                 <p>Environnement serveur JavaScript performant</p>
                                             </div>
                                             <div class="tech-progress">
-                                                <div class="progress-bar" style="width: 90%; background-color: #D85814;"></div>
+                                                <div class="progress-bar" style="width: 85%; background-color: #D85814;"></div>
                                             </div>
                                         </li>
                                         <li>
@@ -312,6 +324,7 @@
                                                 <div class="progress-bar" style="width: 85%; background-color: #D85814;"></div>
                                             </div>
                                         </li>
+                                                                               
                                         <li>
                                             <div class="tech-icon">
                                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP">
@@ -338,11 +351,30 @@
                                         </li>
                                         <li>
                                             <div class="tech-icon">
-                                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/laravel/laravel-plain.svg" alt="Laravel">
+                                                <img src="{% static 'img/laravel.svg'%}" alt="Laravel">
                                             </div>
                                             <div class="tech-info">
                                                 <h4>Laravel</h4>
-                                                <p>Framework PHP élégant et expressif</p>
+                                                <p>Framework PHP  élégant pour développement <br>web</p>
+                                            </div>
+                                            <div class="tech-progress">
+                                                <div class="progress-bar" style="width: 85%; background-color: #D85814;"></div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="tech-icon">
+                                                <!-- Alternative 1: SVG directement -->
+                                                <svg viewBox="0 0 128 128" width="40" height="40">
+                                                    <path fill="#512BD4" d="M10.088 32.47l.022 63.062 53.86 31.9 53.796-31.9-.022-63.062-53.84-31.9-53.816 31.9z"></path>
+                                                    <path fill="#fff" d="M64.01 11.9l-42.97 25.5v50.9l42.97 25.5 42.97-25.5v-50.9l-42.97-25.5zm31.23 65.2l-31.23 18.5-31.23-18.5v-36.9l31.23-18.5 31.23 18.5v36.9z"></path>
+                                                    <path fill="#fff" d="M64 21.9l-26 15.4v30.8l26 15.4 26-15.4v-30.8l-26-15.4z"></path>
+                                                </svg>
+                                                <!-- Alternative 2: Lien CDN corrigé -->
+                                                <!-- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" alt="ASP.NET"> -->
+                                            </div>
+                                            <div class="tech-info">
+                                                <h4>ASP.NET</h4>
+                                                <p>Framework web Microsoft</p>
                                             </div>
                                             <div class="tech-progress">
                                                 <div class="progress-bar" style="width: 85%; background-color: #D85814;"></div>
@@ -512,14 +544,14 @@
                                     <ul class="tech-list">
                                         <li>
                                             <div class="tech-icon">
-                                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" alt="AWS">
+                                                <img src="{% static 'img/aws.svg'%}" alt="AWS">
                                             </div>
                                             <div class="tech-info">
                                                 <h4>AWS</h4>
                                                 <p>Infrastructure cloud complète</p>
                                             </div>
                                             <div class="tech-progress">
-                                                <div class="progress-bar" style="width: 92%; background-color: #D85814;"></div>
+                                                <div class="progress-bar" style="width: 85%; background-color: #D85814;"></div>
                                             </div>
                                         </li>
                                         <li>
@@ -688,7 +720,7 @@
             <div class="cta-content wow fadeInUp">
                 <h2>Prêt à <span class="highlight">Transformer</span> Vos Idées en Réalité?</h2>
                 <p>Discutons de votre projet et concevons ensemble la solution parfaite</p>
-                <a href="#contact" class="cta-btn">
+                <a href="{% url 'entree_contact'%}" class="cta-btn">
                     <span>Démarrer mon projet</span>
                     <div class="btn-hover-effect"></div>
                 </a>
@@ -702,949 +734,7 @@
 </div>
 
 <style>
-    /* Base Styles */
-    .service-page.dev-page {
-        font-family: 'Poppins', sans-serif;
-        overflow-x: hidden;
-    }
-
-    .highlight {
-        color: #D85814;
-        position: relative;
-        display: inline-block;
-    }
-
-    .highlight::after {
-        content: '';
-        position: absolute;
-        bottom: 5px;
-        left: 0;
-        width: 100%;
-        height: 8px;
-        background-color: rgba(216, 88, 20, 0.3);
-        z-index: -1;
-        border-radius: 4px;
-    }
-
-    /* Hero Section */
-    .service-hero.parallax-3d {
-        height: 100vh;
-        min-height: 800px;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-    }
-
-    .hero-bg {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    .code-particle {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    .floating-apps {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    .app-icon {
-        position: absolute;
-        width: 80px;
-        height: 80px;
-        background-color: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(5px);
-        border-radius: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2.5rem;
-        color: white;
-        animation: float 6s ease-in-out infinite;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    .app-icon:nth-child(1) {
-        animation-delay: 0s;
-    }
-
-    .app-icon:nth-child(2) {
-        animation-delay: 2s;
-    }
-
-    .app-icon:nth-child(3) {
-        animation-delay: 4s;
-    }
-
-    .hero-content {
-        text-align: center;
-        color: white;
-        position: relative;
-        z-index: 2;
-        padding: 0 20px;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .hero-content h1 {
-        font-size: 5rem;
-        font-weight: 800;
-        line-height: 1.2;
-        margin-bottom: 30px;
-        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    .hero-content p {
-        font-size: 1.5rem;
-        max-width: 700px;
-        margin: 0 auto 40px;
-        opacity: 0.9;
-    }
-
-    .cta-btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: 18px 40px;
-        background-color: #D85814;
-        color: white;
-        font-size: 1.1rem;
-        font-weight: 600;
-        border-radius: 50px;
-        text-decoration: none;
-        position: relative;
-        overflow: hidden;
-        border: none;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        z-index: 1;
-    }
-
-    .cta-btn span {
-        position: relative;
-        z-index: 2;
-    }
-
-    .btn-hover-effect {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, #D85814, #e67e51, #D85814);
-        background-size: 200% 100%;
-        z-index: 1;
-        transition: all 0.5s ease;
-    }
-
-    .cta-btn:hover .btn-hover-effect {
-        background-position: 100% 0;
-    }
-
-    .scroll-hint {
-        position: absolute;
-        bottom: 40px;
-        left: 50%;
-        transform: translateX(-50%);
-        color: white;
-        text-align: center;
-    }
-
-    .mouse {
-        width: 30px;
-        height: 50px;
-        border: 2px solid white;
-        border-radius: 15px;
-        position: relative;
-        margin: 0 auto;
-    }
-
-    .wheel {
-        width: 6px;
-        height: 10px;
-        background-color: white;
-        border-radius: 3px;
-        position: absolute;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        animation: scrollWheel 2s infinite;
-    }
-
-    /* Notre Approche */
-    .our-approach {
-        padding: 120px 0;
-        position: relative;
-    }
-
-    .our-approach::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100px;
-        background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0));
-        z-index: 1;
-    }
-
-    .section-header {
-        text-align: center;
-        margin-bottom: 80px;
-        position: relative;
-        z-index: 2;
-    }
-
-    .section-header h2 {
-        font-size: 3rem;
-        font-weight: 700;
-        margin-bottom: 15px;
-    }
-
-    .section-header .divider {
-        width: 80px;
-        height: 4px;
-        background-color: #D85814;
-        margin: 0 auto 20px;
-    }
-
-    .section-header p {
-        font-size: 1.2rem;
-        color: #666;
-        max-width: 700px;
-        margin: 0 auto;
-    }
-
-    .approach-steps {
-        max-width: 900px;
-        margin: 0 auto;
-        position: relative;
-    }
-
-    .approach-steps::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 50px;
-        width: 4px;
-        height: 100%;
-        background-color: #f0f0f0;
-        z-index: 1;
-    }
-
-    .step {
-        display: flex;
-        margin-bottom: 50px;
-        position: relative;
-        z-index: 2;
-    }
-
-    .step-number {
-        width: 60px;
-        height: 60px;
-        background-color: #202548;
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin-right: 30px;
-        flex-shrink: 0;
-    }
-
-    .step-content {
-        flex-grow: 1;
-        background: white;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    }
-
-    .step-content h3 {
-        font-size: 1.5rem;
-        color: #202548;
-        margin-bottom: 15px;
-    }
-
-    .step-content p {
-        color: #666;
-        line-height: 1.8;
-        margin-bottom: 20px;
-    }
-
-    .step-tools {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .tool-tag {
-        background-color: rgba(216, 88, 20, 0.1);
-        color: #D85814;
-        padding: 5px 15px;
-        border-radius: 20px;
-        font-size: 0.9rem;
-        font-weight: 600;
-    }
-
-    .step-icon {
-        width: 60px;
-        height: 60px;
-        background-color: #D85814;
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        margin-left: 30px;
-        flex-shrink: 0;
-    }
-
-    /* Expertises */
-    .expertise-section {
-        padding: 120px 0;
-    }
-
-    .expertise-tabs {
-        margin-top: 60px;
-    }
-
-    .nav-tabs {
-        border-bottom: none;
-        justify-content: center;
-        margin-bottom: 40px;
-    }
-
-    .nav-tabs .nav-link {
-        border: none;
-        color: #666;
-        font-weight: 600;
-        padding: 15px 30px;
-        margin: 0 10px;
-        border-radius: 50px;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-    }
-
-    .nav-tabs .nav-link i {
-        margin-right: 10px;
-        font-size: 1.2rem;
-    }
-
-    .nav-tabs .nav-link:hover {
-        color: #202548;
-    }
-
-    .nav-tabs .nav-link.active {
-        background-color: #202548;
-        color: white;
-    }
-
-    .tech-stack {
-        background: white;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        height: 100%;
-    }
-
-    .tech-stack h3 {
-        font-size: 1.5rem;
-        color: #202548;
-        margin-bottom: 30px;
-        display: flex;
-        align-items: center;
-    }
-
-    .tech-stack h3 i {
-        margin-right: 15px;
-        color: #D85814;
-    }
-
-    .tech-list {
-        list-style: none;
-        padding: 0;
-    }
-
-    .tech-list li {
-        display: flex;
-        align-items: center;
-        margin-bottom: 25px;
-    }
-
-    .tech-icon {
-        width: 50px;
-        height: 50px;
-        background-color: white;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-right: 20px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    }
-
-    .tech-icon img {
-        width: 30px;
-        height: 30px;
-    }
-
-    .tech-info {
-        flex-grow: 1;
-    }
-
-    .tech-info h4 {
-        font-size: 1.1rem;
-        color: #202548;
-        margin-bottom: 5px;
-    }
-
-    .tech-info p {
-        font-size: 0.9rem;
-        color: #666;
-        margin: 0;
-    }
-
-    .tech-progress {
-        width: 100px;
-        height: 6px;
-        background-color: #f0f0f0;
-        border-radius: 3px;
-        overflow: hidden;
-    }
-
-    .progress-bar {
-        height: 100%;
-        border-radius: 3px;
-    }
-
-    .expertise-details {
-        background: white;
-        padding: 30px;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-        height: 100%;
-    }
-
-    .expertise-details h3 {
-        font-size: 1.5rem;
-        color: #202548;
-        margin-bottom: 20px;
-        display: flex;
-        align-items: center;
-    }
-
-    .expertise-details h3 i {
-        margin-right: 15px;
-        color: #D85814;
-    }
-
-    .expertise-details p {
-        color: #666;
-        line-height: 1.8;
-        margin-bottom: 25px;
-    }
-
-    .team-skills {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 15px;
-        margin-bottom: 30px;
-    }
-
-    .skill-badge {
-        display: flex;
-        align-items: center;
-        background-color: rgba(32, 37, 72, 0.1);
-        padding: 8px 15px;
-        border-radius: 20px;
-    }
-
-    .skill-icon {
-        width: 25px;
-        height: 25px;
-        background-color: #202548;
-        color: white;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 0.8rem;
-        margin-right: 10px;
-    }
-
-    .project-showcase h4 {
-        font-size: 1.1rem;
-        color: #202548;
-        margin-bottom: 15px;
-    }
-
-    .showcase-card {
-        position: relative;
-        border-radius: 15px;
-        overflow: hidden;
-        height: 200px;
-    }
-
-    .showcase-card img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-    }
-
-    .showcase-card:hover img {
-        transform: scale(1.1);
-    }
-
-    .showcase-overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        padding: 20px;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-        color: white;
-    }
-
-    .showcase-overlay h5 {
-        font-size: 1.2rem;
-        margin-bottom: 5px;
-    }
-
-    .showcase-overlay p {
-        font-size: 0.9rem;
-        margin: 0;
-        opacity: 0.9;
-    }
-
-    /* Case Studies */
-    .case-studies {
-        padding: 120px 0;
-        background-color: white;
-    }
-
-    .case-carousel {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        margin-top: 60px;
-    }
-
-    .case-card {
-        background: white;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
-        transition: transform 0.5s ease, box-shadow 0.5s ease;
-    }
-
-    .case-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-    }
-
-    .case-image {
-        position: relative;
-        height: 250px;
-        overflow: hidden;
-    }
-
-    .case-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-    }
-
-    .case-card:hover .case-image img {
-        transform: scale(1.1);
-    }
-    .case-tag {
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        color: white;
-        padding: 8px 15px;
-        border-radius: 20px;
-        font-size: 0.9rem;
-        font-weight: 600;
-        z-index: 2;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    .case-content {
-        padding: 30px;
-    }
-
-    .case-content h3 {
-        font-size: 1.4rem;
-        color: #202548;
-        margin-bottom: 15px;
-    }
-
-    .case-stats {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 20px;
-    }
-
-    .stat {
-        text-align: center;
-    }
-
-    .stat-value {
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: #D85814;
-    }
-
-    .stat-label {
-        font-size: 0.9rem;
-        color: #666;
-    }
-
-    .case-content p {
-        color: #666;
-        line-height: 1.7;
-        margin-bottom: 25px;
-    }
-
-    .case-link {
-        display: inline-flex;
-        align-items: center;
-        color: #D85814;
-        text-decoration: none;
-        font-weight: 600;
-        transition: color 0.3s ease;
-    }
-
-    .case-link i {
-        margin-left: 8px;
-    }
-
-    .case-link:hover {
-        color: #202548;
-    }
-
-    /* Team Section */
-    .team-section {
-        padding: 120px 0;
-    }
-
-    .team-members {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 30px;
-        margin-top: 60px;
-    }
-
-    .team-member {
-        background: #2B305B;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        transition: transform 0.4s ease, box-shadow 0.4s ease;
-    }
-
-    .team-member:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-    }
-
-    .member-photo {
-        position: relative;
-        height: 250px;
-        overflow: hidden;
-    }
-
-    .member-photo img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: transform 0.4s ease;
-    }
-
-    .team-member:hover .member-photo img {
-        transform: scale(1.1);
-    }
-
-    .member-social {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-        opacity: 0;
-        transition: opacity 0.4s ease;
-    }
-
-    .team-member:hover .member-social {
-        opacity: 1;
-    }
-
-    .member-social a {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 35px;
-        height: 35px;
-        background-color: rgba(255, 255, 255, 0.1);
-        border-radius: 50%;
-        color: white;
-        font-size: 1rem;
-        transition: background-color 0.3s ease;
-    }
-
-    .member-social a:hover {
-        background-color: rgba(216, 88, 20, 0.8);
-    }
-
-    .member-info {
-        padding: 30px;
-    }
-
-    .member-info h3 {
-        font-size: 1.3rem;
-        margin-bottom: 8px;
-    }
-
-    .member-info p {
-        font-size: 0.9rem;
-        color: #ddd;
-        margin-bottom: 20px;
-    }
-
-    .member-skills {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-bottom: 20px;
-    }
-
-    .member-skills span {
-        background-color: rgba(216, 88, 20, 0.15);
-        color: #D85814;
-        padding: 6px 12px;
-        border-radius: 20px;
-        font-size: 0.8rem;
-    }
-
-    .member-bio {
-        font-size: 0.9rem;
-        color: #ccc;
-        line-height: 1.6;
-    }
-
-    /* Final CTA */
-    .final-cta {
-        padding: 120px 0;
-        background-color: #f9f9f9;
-    }
-
-    .cta-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 20px;
-    }
-
-    .cta-content {
-        flex: 1;
-        padding-right: 50px;
-    }
-
-    .cta-content h2 {
-        font-size: 3rem;
-        margin-bottom: 20px;
-    }
-
-    .cta-content p {
-        font-size: 1.2rem;
-        color: #666;
-        line-height: 1.8;
-        margin-bottom: 30px;
-    }
-
-    .cta-illustration {
-        flex-shrink: 0;
-        width: 40%;
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
-
-    .cta-illustration img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-    }
-
-    /* Animations */
-    @keyframes float {
-        0% {
-            transform: translateY(0);
-        }
-
-        50% {
-            transform: translateY(-15px);
-        }
-
-        100% {
-            transform: translateY(0);
-        }
-    }
-
-    @keyframes scrollWheel {
-        0% {
-            opacity: 0;
-        }
-
-        30% {
-            opacity: 1;
-        }
-
-        60% {
-            opacity: 1;
-        }
-
-        100% {
-            top: 40px;
-            opacity: 0;
-        }
-    }
-
-    /* Responsive Design */
-    @media (max-width: 1200px) {
-        .hero-content h1 {
-            font-size: 4rem;
-        }
-
-        .hero-content p {
-            font-size: 1.3rem;
-        }
-
-        .cta-container {
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .cta-content {
-            padding-right: 0;
-            margin-bottom: 40px;
-        }
-
-        .cta-illustration {
-            width: 80%;
-        }
-    }
-
-    @media (max-width: 992px) {
-        .hero-content h1 {
-            font-size: 3rem;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-        }
-
-        .approach-steps::before {
-            left: 25px;
-        }
-
-        .step {
-            flex-direction: column;
-        }
-
-        .step-number {
-            margin-right: 0;
-            margin-bottom: 15px;
-        }
-
-        .step-icon {
-            margin-left: 0;
-            margin-top: 15px;
-        }
-
-        .expertise-tabs .nav-link {
-            padding: 10px 20px;
-            font-size: 0.9rem;
-        }
-
-        .expertise-details h3 {
-            font-size: 1.3rem;
-        }
-    }
-
-    @media (max-width: 768px) {
-        .hero-content h1 {
-            font-size: 2.5rem;
-        }
-
-        .hero-content p {
-            font-size: 1.1rem;
-        }
-
-        .app-icon {
-            width: 60px;
-            height: 60px;
-            font-size: 2rem;
-        }
-
-        .section-header h2 {
-            font-size: 2rem;
-        }
-
-        .cta-content h2 {
-            font-size: 2rem;
-        }
-
-        .cta-illustration {
-            width: 100%;
-        }
-    }
-
-    @media (max-width: 576px) {
-        .app-icon {
-            width: 40px;
-            height: 40px;
-            font-size: 1.5rem;
-        }
-
-        .expertise-tabs .nav-link {
-            margin: 0 5px;
-        }
-
-        .case-carousel {
-            grid-template-columns: 1fr;
-        }
-
-        .team-members {
-            grid-template-columns: 1fr;
-        }
-    }
-
+    
     
 </style>
 

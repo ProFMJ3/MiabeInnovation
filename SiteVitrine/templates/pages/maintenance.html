@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block body %}
-
+<link rel="stylesheet" href="{% static 'pages/css/maintenance.css' %}">
 <!-- Hero Section -->
 <div class="service-hero" style="background: linear-gradient(135deg, var(--bleu-nuit) 0%, var(--noir) 100%); position: relative; overflow: hidden;">
     <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.15;">
@@ -288,97 +288,7 @@
 </div>
 
 <style>
-    :root {
-        --bleu-nuit: #202548;
-        --orange: #D85814;
-        --bleu-clair: #3a4b8a;
-        --blanc: #ffffff;
-        --noir: #000000;
-        --gris-fonce: #1a1a1a;
-        --orange-light: rgba(216, 88, 20, 0.1);
-    }
     
-    .text-orange {
-        color: var(--orange) !important;
-    }
-    
-    .bg-orange {
-        background-color: var(--orange) !important;
-    }
-    
-    .bg-bleu-nuit {
-        background-color: var(--bleu-nuit) !important;
-    }
-    
-    .bg-orange-light {
-        background-color: var(--orange-light) !important;
-    }
-    
-    .btn-orange {
-        background-color: var(--orange);
-        color: white;
-        transition: all 0.3s ease;
-    }
-    
-    .btn-orange:hover {
-        background-color: #c04b0d;
-        color: white;
-        transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(216, 88, 20, 0.3);
-    }
-    
-    .service-card {
-        background: rgba(255, 255, 255, 0.05);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        transition: all 0.3s ease;
-    }
-    
-    .service-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        border-color: var(--orange);
-    }
-    
-    .icon-box {
-        width: 60px;
-        height: 60px;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-15px); }
-        100% { transform: translateY(0px); }
-    }
-    
-    .floating-anim {
-        filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
-    }
-    
-    .testimonial-card {
-        transition: all 0.3s ease;
-    }
-    
-    .testimonial-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 10px 20px rgba(216, 88, 20, 0.2);
-    }
-    
-    .counter-box {
-        padding: 20px;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 12px;
-        transition: all 0.3s ease;
-    }
-    
-    .counter-box:hover {
-        transform: scale(1.05);
-        background: rgba(216, 88, 20, 0.1);
-    }
 </style>
 
 <script>
