@@ -120,8 +120,11 @@
             </div>
             <div class="col-lg-6">
                 <div class="mi-partner-form-container">
-                                        <!-- Dans devenirPartenaire.html -->
-                    <form class="mi-partner-form" method="post">
+
+
+
+                     <!-- Dans devenirPartenaire.html -->
+                    <form class="mi-partner-form" action="{% url 'devenir_partenaire' %}" method="post">
                         {% csrf_token %}
                         
                         <!-- Affichage des messages d'erreur -->
@@ -170,10 +173,10 @@
                         <!-- Type de partenariat -->
                         <div class="mi-form-group">
                             <select id="partnership-type" name="partnership_type" required>
-                                {% for value, label in partnership_types %}
-                                <option value="{{ value }}" 
+                                {% for value, libelle in partnership_types %}
+                                <option value="{{ value }}"
                                         {% if submitted_data.partnership_type == value %}selected{% endif %}>
-                                    {{ label }}
+                                    {{ libelle }}
                                 </option>
                                 {% endfor %}
                             </select>
@@ -312,10 +315,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-    
+
     let particles = [];
     const particleCount = window.innerWidth < 768 ? 30 : 80;
-    
+
     class Particle {
         constructor() {
             this.x = Math.random() * canvas.width;
@@ -325,15 +328,15 @@ document.addEventListener('DOMContentLoaded', function() {
             this.speedY = Math.random() * 1 - 0.5;
             this.color = `rgba(255,255,255,${Math.random() * 0.5 + 0.1})`;
         }
-        
+
         update() {
             this.x += this.speedX;
             this.y += this.speedY;
-            
+
             if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
             if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
         }
-        
+
         draw() {
             ctx.fillStyle = this.color;
             ctx.beginPath();
@@ -341,26 +344,26 @@ document.addEventListener('DOMContentLoaded', function() {
             ctx.fill();
         }
     }
-    
+
     function init() {
         particles = [];
         for (let i = 0; i < particleCount; i++) {
             particles.push(new Particle());
         }
     }
-    
+
     function animate() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
+
         for (let i = 0; i < particles.length; i++) {
             particles[i].update();
             particles[i].draw();
-            
+
             for (let j = i; j < particles.length; j++) {
                 const dx = particles[i].x - particles[j].x;
                 const dy = particles[i].y - particles[j].y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
-                
+
                 if (distance < 100) {
                     ctx.strokeStyle = `rgba(255,255,255,${1 - distance/100})`;
                     ctx.lineWidth = 0.5;
@@ -371,40 +374,40 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }
-        
+
         requestAnimationFrame(animate);
     }
-    
+
     init();
     animate();
-    
+
     window.addEventListener('resize', function() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
         init();
     });
-    
+
     // Form Animation
     const formGroups = document.querySelectorAll('.mi-form-group');
     formGroups.forEach(group => {
         const input = group.querySelector('input, select, textarea');
-        
+
         if (input.value) {
             input.nextElementSibling.style.top = '-10px';
             input.nextElementSibling.style.fontSize = '12px';
             input.nextElementSibling.style.color = 'var(--mi-orange)';
         }
-        
+
         input.addEventListener('focus', function() {
             this.nextElementSibling.style.top = '-10px';
             this.nextElementSibling.style.fontSize = '12px';
             this.nextElementSibling.style.color = 'var(--mi-orange)';
-            
+
             if (this.tagName === 'SELECT' && this.value === '') {
                 this.nextElementSibling.style.color = 'var(--mi-gray)';
             }
         });
-        
+
         input.addEventListener('blur', function() {
             if (this.value === '' && this.tagName !== 'SELECT') {
                 this.nextElementSibling.style.top = '15px';
@@ -413,27 +416,27 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-    
+
     // Testimonial Slider
     let isDown = false;
     let startX;
     let scrollLeft;
     const slider = document.querySelector('.mi-testimonial-slider');
-    
+
     slider.addEventListener('mousedown', (e) => {
         isDown = true;
         startX = e.pageX - slider.offsetLeft;
         scrollLeft = slider.scrollLeft;
     });
-    
+
     slider.addEventListener('mouseleave', () => {
         isDown = false;
     });
-    
+
     slider.addEventListener('mouseup', () => {
         isDown = false;
     });
-    
+
     slider.addEventListener('mousemove', (e) => {
         if(!isDown) return;
         e.preventDefault();

@@ -4,33 +4,18 @@ from django.contrib import messages
 from django.core.files.storage import FileSystemStorage
 from django.utils import timezone
 
-from .forms import PartnershipForm
 from .models import PartnershipRequest  # Si vous voulez quand même sauvegarder en base
 
 from .models import Temoignage
-from .forms import ContactForm
+
 from .models import ContactMessage
 from django.shortcuts import render, redirect
 from django.contrib import messages
 
 
+
 # Create your views here.
-
 def home(request):
-
-    return render(request, 'index.html')
-
-
-
-def quiSommesNous(request):
-    return render(request, 'pages/quiSommesNous.html')
-
-
-
-
-def quiSommeNous(request):
-    return render(request, 'pages/quiSommeNous.html')
-
 
     return render(request, 'index.html', {'active_page': 'accueil'})
 
@@ -39,17 +24,8 @@ def quiSommesNous(request):
 
 
 
-
 def equipe(request):
     return render(request, 'pages/equipe.html')
-
-
-
-def services(request):
-    return render(request, 'pages/services.html')
-
-def service(request):
-    return render(request, 'pages/service.html')
 
 
 def temoignages(request):
@@ -62,14 +38,6 @@ def entreeContact(request):
     return render(request, 'pages/entreeContact.html')
 
 
-def devenirPartenaire(request):
-    return render(request, 'pages/devenirPartenaire.html')
-
-def contact(request):
-    return render(request, 'pages/contact.html')
-
-
-
 
 def faqs(request):
     return render(request, 'pages/faqs.html')
@@ -78,30 +46,15 @@ def faqs(request):
 def blog (request):
     return render(request, 'pages/blog.html')
 
-
-def services(request):
-    return render(request, 'pages/services.html')
-
-
 def temoignages(request):
     return render(request, 'pages/temoignages.html', {'active_page': 'temoignages'})
-
-
-def entreeContact(request):
-    return render(request, 'pages/entreeContact.html', {'active_page': 'entreeContact'})
-
-
-def devenirPartenaire(request):
-    return render(request, 'pages/devenirPartenaire.html', {'active_page': 'devenirPartenaire'})	
 
 
 def faqs(request):
     return render(request, 'pages/faqs.html', {'active_page': 'faqs'})
 
 
-
 # SERVICES VIEWS
-
 def devApplication(request):
     return render(request, 'pages/devApplication.html')
 
@@ -119,8 +72,6 @@ def automatisationIa(request):
 
 def automatisationTache(request):
     return render(request, 'pages/automatisationTache.html')
-
-
 
 
 def sauvegardeTemoignage(request):
@@ -147,16 +98,16 @@ def sauvegardeTemoignage(request):
         # Enregistrer le témoignage
         temoignage.save()
         # Rediriger vers la page de remerciement ou une autre page
+        messages.success(request, "Votre témoignage a été envoyée avec succès. Nous analysons pour la publier ")
+
         return redirect('temoignages')
     else:
         # Si la méthode n'est pas POST, afficher le formulaire
         return render(request, 'pages/temoignages.html')
     
-        
 
 
-
-def partnership_view(request):
+def devenirPartenaire(request):
     if request.method == 'POST':
         # Récupération des données manuellement
         company_name = request.POST.get('company_name')
@@ -198,13 +149,7 @@ def partnership_view(request):
                 messages.error(request, error)
 
     # Préparation des données pour le template
-    partnership_types = [
-        ('', 'Sélectionnez un type'),
-        ('technology', 'Partenaire Technologique'),
-        ('reseller', 'Partenaire Revendeur'),
-        ('strategic', 'Partenaire Stratégique'),
-        ('other', 'Autre'),
-    ]
+   
 
     context = {
         'submitted_data': {
@@ -215,7 +160,7 @@ def partnership_view(request):
             'partnership_type': request.POST.get('partnership_type', ''),
             'collaboration_ideas': request.POST.get('collaboration_ideas', ''),
         },
-        'partnership_types': partnership_types,
+        'partnership_types': PartnershipRequest.PARTNERSHIP_TYPES,
         'active_tab': 'partnership'
     }
     return render(request, 'pages/devenirPartenaire.html', context)
@@ -227,7 +172,7 @@ def partnership_success_view(request):
 
 # Contact form view
 
-def contact_view(request):
+def entreeContact(request):
     if request.method == 'POST':
         # Récupération des données du formulaire
         nom = request.POST.get('nom')
@@ -257,7 +202,7 @@ def contact_view(request):
                 message=message
             )
             messages.success(request, 'Votre message a été envoyé avec succès!')
-            return redirect('contact')
+            return redirect('entree_contact')
         else:
             for error in errors:
                 messages.error(request, error)
@@ -272,12 +217,7 @@ def contact_view(request):
             'sujet': request.POST.get('sujet', ''),
             'message': request.POST.get('message', ''),
         },
-        'sujet_choices': [
-            ('', 'Sélectionnez un sujet'),
-            ('support', 'Support technique'),
-            ('devis', 'Demande de devis'),
-            ('partenariat', 'Partenariat'),
-            ('autre', 'Autre demande'),
-        ]
+        'active_page': 'entreeContact',
+        'sujet_choices': ContactMessage.SUJET_CHOICES
     }
     return render(request, 'pages/entreecontact.html', context)

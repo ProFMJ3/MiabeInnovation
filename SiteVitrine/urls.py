@@ -11,7 +11,7 @@ urlpatterns = [
     path('quiSommesNous/', views.quiSommesNous, name='qui_sommes_nous'),
     path('equipe/', views.equipe, name='equipe'),
     path('blog/', views.blog, name='blog'),
-    path('services/', views.services, name='services'),
+
     path('temoignages/', views.temoignages, name='temoignages'),
     path('entreeContact/', views.entreeContact, name='entree_contact'),
     path('devenirPartenaire/', views.devenirPartenaire, name='devenir_partenaire'),
@@ -30,10 +30,10 @@ urlpatterns = [
     #URL DE SAUVEGARDE
     path('sauvegardeTemoignage/', views.sauvegardeTemoignage, name='sauvegardeTemoignage'),
 
-    path('partnership_form', views.partnership_view, name='partnership_form'),
-    path('success/', views.partnership_success_view, name='success'),
 
-    path('contact/', views.contact_view, name='contact'),
+    path('partnership_success/', views.partnership_success_view, name='partnership_success'),
+
+
 
 ]
 

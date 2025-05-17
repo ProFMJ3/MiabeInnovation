@@ -99,59 +99,7 @@ class PartnershipRequest(models.Model):
     submission_date = models.DateTimeField(auto_now_add=True)
     is_processed = models.BooleanField(default=False)
     
-    def __str__(self):
-        return f"Demande de {self.company_name}"
-    PARTNERSHIP_TYPES = [
-        ('technology', 'Partenaire Technologique'),
-        ('reseller', 'Partenaire Revendeur'),
-        ('strategic', 'Partenaire Stratégique'),
-        ('other', 'Autre'),
-    ]
-    
-    company_name = models.CharField(
-        max_length=100,
-        verbose_name="Nom de l'entreprise",
-        help_text="Nom complet de votre entreprise"
-    )
-    
-    contact_person = models.CharField(
-        max_length=100,
-        verbose_name="Personne de contact"
-    )
-    
-    company_email = models.EmailField(
-        max_length=100,
-        validators=[EmailValidator()],
-        verbose_name="Email professionnel"
-    )
-    
-    company_phone = models.CharField(
-        max_length=20,
-        blank=True,
-        null=True,
-        verbose_name="Téléphone"
-    )
-    
-    partnership_type = models.CharField(
-        max_length=20,
-        choices=PARTNERSHIP_TYPES,
-        verbose_name="Type de partenariat"
-    )
-    
-    collaboration_ideas = models.TextField(
-        verbose_name="Idées de collaboration"
-    )
-    
-    submission_date = models.DateTimeField(
-        auto_now_add=True,
-        verbose_name="Date de soumission"
-    )
-    
-    is_processed = models.BooleanField(
-        default=False,
-        verbose_name="Demande traitée"
-    )
-    
+
     class Meta:
         verbose_name = "Demande de partenariat"
         verbose_name_plural = "Demandes de partenariat"
