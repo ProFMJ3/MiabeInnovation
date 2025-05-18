@@ -30,11 +30,8 @@
         /* Hero Section */
         .design-hero {
             background: 
-linear-gradient(135deg, 
-    rgba(32, 37, 72, 0.95) 0%,
-    rgba(202, 52, 51, 0.85) 50%, 
-    rgba(216, 88, 20, 0.9) 100%),
-url('https://i.pinimg.com/736x/45/79/36/457936f2fd33dc98f0afd6cfc798b4a1.jpg') no-repeat center center/cover;
+                linear-gradient(135deg, rgba(32, 37, 72, 0.9) 0%, rgba(216, 88, 20, 0.7) 100%),
+                url("{% static 'img/design.jpg'%}") no-repeat center center / cover;
 
             min-height: 100vh;
             display: flex;
