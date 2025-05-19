@@ -81,7 +81,7 @@ isolation: isolate;
         </p>
         
         <div class="hero-cta wow fadeInUp" data-wow-delay="0.6s">
-            <a href="#contact" class="cta-btn-primary">
+            <a href="{% url 'entree_contact' %}" class="cta-btn-primary">
                 <span>Optimiser mes réseaux</span>
                 <div class="btn-hover-effect"></div>
             </a>
@@ -115,7 +115,7 @@ isolation: isolate;
 
 </style>
   <!-- Notre Approche - Version Premium -->
-<section class="approach-section cm-approach">
+<section id="methodologie" class="approach-section cm-approach">
     <div class="container">
         <div class="section-header wow fadeInUp">
             <span class="section-pre-title">Processus clair et transparent</span>
@@ -264,9 +264,9 @@ isolation: isolate;
         <div class="approach-cta wow fadeInUp" data-wow-delay="0.8s">
             <div class="cta-content">
                 <h4>Prêt à transformer votre présence digitale ?</h4>
-                <p>Notre méthodologie éprouvée a déjà boosté plus de <strong>150 marques</strong> vers l'excellence digitale</p>
+                <p>Notre méthodologie éprouvée a déjà boosté plus de <strong>50 marques</strong> vers l'excellence digitale</p>
             </div>
-            <a href="#contact" class="cta-btn cta-btn-primary">
+            <a href="{% url 'entree_contact' %}" class="cta-btn cta-btn-primary">
                 <span>Démarrer mon projet</span>
                 <div class="btn-hover-effect"></div>
             </a>
@@ -341,14 +341,71 @@ isolation: isolate;
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="platform-cta">
+                    <!--<a href="#" class="platform-cta">
                         Voir nos cas Instagram
                         <i class="fas fa-arrow-right"></i>
-                    </a>
+                    </a>-->
                 </div>
             </div>
+            <!-- Expertise 2 - TikTok -->
+            <div class="expertise-card wow fadeInUp">
+                <div class="expertise-header" style="background: linear-gradient(135deg, #010101 0%, #25F4EE 40%, #FE2C55 100%);">
+                    <div class="platform-icon">
+                        <i class="fab fa-tiktok"></i>
+                        <div class="icon-pulse"></div>
+                    </div>
+                    <h3>TikTok</h3>
+                    <span class="platform-subtitle">Contenu viral & communauté</span>
+                </div>
+                <div class="expertise-content">
+                    <div class="expertise-features">
+                        <div class="feature-item">
+                            <i class="fas fa-bolt feature-icon"></i>
+                            <div>
+                                <h4>Contenu viral</h4>
+                                <p>Création de vidéos engageantes basées sur les tendances</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-fire feature-icon"></i>
+                            <div>
+                                <h4>Challenges & trends</h4>
+                                <p>Participation aux tendances pour accroître la visibilité</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-chart-pie feature-icon"></i>
+                            <div>
+                                <h4>Suivi des performances</h4>
+                                <p>Analyse de la portée, de l'engagement et des conversions</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="expertise-stats">
+                        <div class="stat-card">
+                            <div class="stat-value">+200%</div>
+                            <div class="stat-label">Taux de viralité</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%; background: linear-gradient(90deg, #25F4EE, #FE2C55);"></div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-value">850K</div>
+                            <div class="stat-label">Portée moyenne</div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 70%; background: linear-gradient(90deg, #25F4EE, #FE2C55);"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<a href="#" class="platform-cta">
+                        Voir nos cas TikTok
+                        <i class="fas fa-arrow-right"></i>
+                    </a>-->
+                </div>
+            </div>
+
             
-            <!-- Expertise 2 - Facebook -->
+            <!-- Expertise 3 - Facebook -->
             <div class="expertise-card wow fadeInUp" data-wow-delay="0.2s">
                 <div class="expertise-header" style="background: linear-gradient(135deg, #1877F2 0%, #0D5EBA 100%);">
                     <div class="platform-icon">
@@ -398,14 +455,14 @@ isolation: isolate;
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="platform-cta">
+                    <!--<a href="#" class="platform-cta">
                         Voir nos cas Facebook
                         <i class="fas fa-arrow-right"></i>
-                    </a>
+                    </a>-->
                 </div>
             </div>
             
-            <!-- Expertise 3 - LinkedIn -->
+            <!-- Expertise 4 - LinkedIn -->
             <div class="expertise-card wow fadeInUp" data-wow-delay="0.4s">
                 <div class="expertise-header" style="background: linear-gradient(135deg, #0077B5 0%, #004471 100%);">
                     <div class="platform-icon">
@@ -441,7 +498,7 @@ isolation: isolate;
                     </div>
                     <div class="expertise-stats">
                         <div class="stat-card">
-                            <div class="stat-value">+300%</div>
+                            <div class="stat-value">+100%</div>
                             <div class="stat-label">Visibilité</div>
                             <div class="progress-bar">
                                 <div class="progress-fill" style="width: 95%; background: linear-gradient(90deg, #0077B5, #004471);"></div>
@@ -455,10 +512,10 @@ isolation: isolate;
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="platform-cta">
+                    <!--<a href="#" class="platform-cta">
                         Voir nos cas LinkedIn
                         <i class="fas fa-arrow-right"></i>
-                    </a>
+                    </a>-->
                 </div>
             </div>
         </div>
@@ -512,16 +569,16 @@ isolation: isolate;
                             <div class="stat-bar" style="width: 100%; background: linear-gradient(90deg, #D85814, #FFA500);"></div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-value">25K</div>
+                            <div class="stat-value">+5K</div>
                             <div class="stat-label">Followers gagnés</div>
                             <div class="stat-bar" style="width: 85%; background: linear-gradient(90deg, #202548, #4A5A9B);"></div>
                         </div>
                     </div>
                     <p class="case-description">Stratégie 360° intégrant création de contenu, community management et collaborations stratégiques.</p>
-                    <a href="#" class="case-link">
+                    <!--<a href="#" class="case-link">
                         Voir l'étude complète
                         <i class="fas fa-arrow-right link-icon"></i>
-                    </a>
+                    </a>-->
                 </div>
             </div>
 
@@ -556,10 +613,10 @@ isolation: isolate;
                         </div>
                     </div>
                     <p class="case-description">Approche data-driven combinant contenu technique et automation marketing.</p>
-                    <a href="#" class="case-link">
+                    <!--<a href="#" class="case-link">
                         Voir l'étude complète
                         <i class="fas fa-arrow-right link-icon"></i>
-                    </a>
+                    </a>-->
                 </div>
             </div>
 
@@ -594,10 +651,10 @@ isolation: isolate;
                         </div>
                     </div>
                     <p class="case-description">Approche émotionnelle mettant en avant l'expérience client et les produits frais.</p>
-                    <a href="#" class="case-link">
+                    <!--<a href="#" class="case-link">
                         Voir l'étude complète
                         <i class="fas fa-arrow-right link-icon"></i>
-                    </a>
+                    </a>-->
                 </div>
             </div>
         </div>
@@ -605,7 +662,7 @@ isolation: isolate;
 
     <div class="case-studies-cta">
         <p>Ces résultats vous intéressent ? <strong>Votre projet pourrait être le prochain cas d'étude.</strong></p>
-        <a href="#contact" class="cta-btn cta-btn-secondary">
+        <a href="{% url 'entree_contact' %}" class="cta-btn cta-btn-secondary">
             <span>Discutons de votre stratégie</span>
             <div class="btn-hover-effect"></div>
         </a>

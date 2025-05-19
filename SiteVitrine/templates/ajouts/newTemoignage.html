@@ -1,251 +1,554 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block body %}
+ <link rel="stylesheet" href="{% static 'pages/css/temoignages.css' %}">
 
-<style>
-    /* Styles du formulaire */
-    .testimonial-form-section {
-        padding: 80px 0;
-        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-        font-family: 'Roboto', sans-serif;
-    }
-    
-    .form-container {
-        max-width: 800px;
-        margin: 0 auto;
-        background: white;
-        border-radius: 15px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-        padding: 40px;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .form-container:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 8px;
-        background: linear-gradient(to right, #d85481, #202548);
-    }
-    
-    .form-title {
-        text-align: center;
-        margin-bottom: 40px;
-        color: #202548;
-        font-weight: 700;
-        position: relative;
-    }
-    
-    .form-title:after {
-        content: '';
-        display: block;
-        width: 80px;
-        height: 4px;
-        background: linear-gradient(to right, #d85481, #202548);
-        margin: 15px auto 0;
-    }
-    
-    .form-group {
-        margin-bottom: 25px;
-    }
-    
-    .form-label {
-        display: block;
-        margin-bottom: 8px;
-        font-weight: 600;
-        color: #495057;
-    }
-    
-    .form-control {
-        width: 100%;
-        padding: 12px 15px;
-        border: 2px solid #e9ecef;
-        border-radius: 8px;
-        font-size: 16px;
-        transition: all 0.3s ease;
-    }
-    
-    .form-control:focus {
-        border-color: #d85481;
-        box-shadow: 0 0 0 3px rgba(216, 84, 129, 0.2);
-        outline: none;
-    }
-    
-    textarea.form-control {
-        min-height: 150px;
-        resize: vertical;
-    }
-    
-    .rating-input {
-        display: flex;
-        justify-content: center;
-        margin: 20px 0;
-    }
-    
-    .rating-input input {
-        display: none;
-    }
-    
-    .rating-input label {
-        font-size: 30px;
-        color: #ddd;
-        cursor: pointer;
-        padding: 0 5px;
-        transition: all 0.2s ease;
-    }
-    
-    .rating-input input:checked ~ label,
-    .rating-input label:hover,
-    .rating-input label:hover ~ label {
-        color: #ffc107;
-    }
-    
-    .rating-input input:checked + label {
-        color: #ffc107;
-    }
-    
-    .file-upload {
-        position: relative;
-        overflow: hidden;
-        margin-bottom: 20px;
-    }
-    
-    .file-upload-input {
-        position: absolute;
-        left: 0;
-        top: 0;
-        opacity: 0;
-        width: 100%;
-        height: 100%;
-        cursor: pointer;
-    }
-    
-    .file-upload-label {
-        display: block;
-        padding: 12px;
-        background: #f8f9fa;
-        border: 2px dashed #dee2e6;
-        border-radius: 8px;
-        text-align: center;
-        color: #6c757d;
-        transition: all 0.3s ease;
-    }
-    
-    .file-upload-label:hover {
-        border-color: #d85481;
-        background: rgba(216, 84, 129, 0.05);
-    }
-    
-    .submit-btn {
-        display: block;
-        width: 100%;
-        padding: 14px;
-        background: linear-gradient(to right, #d85481, #202548);
-        color: white;
-        border: none;
-        border-radius: 8px;
-        font-size: 18px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        margin-top: 20px;
-    }
-    
-    .submit-btn:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 20px rgba(216, 84, 129, 0.3);
-    }
-    
-    /* Responsive */
-    @media (max-width: 768px) {
-        .form-container {
-            padding: 30px;
-        }
-        
-        .form-title {
-            font-size: 24px;
-            margin-bottom: 30px;
-        }
-    }
-    
-    @media (max-width: 576px) {
-        .form-container {
-            padding: 25px 20px;
-        }
-        
-        .form-control {
-            padding: 10px 12px;
-        }
-    }
-</style>
+<!-- Hero Section Cinématique -->
+<div class="testimonial-hero" style="background: linear-gradient(rgba(32, 37, 72, 0.9), rgba(138, 144, 191, 0.9)), url('{% static 'img/faqbg.jpg' %}') no-repeat center center/cover;">
+    <div class="hero-content">
+        <h1 class="hero-title">VOS <span class="text-orange">EXPÉRIENCES</span> NOUS INSPIRENT</h1>
+        <div class="hero-divider">
+            <div class="divider-line"></div>
+            <div class="divider-icon">✧</div>
+            <div class="divider-line"></div>
+        </div>
+        <p class="hero-subtitle">Découvrez les transformations vécues par nos clients et partagez la vôtre</p>
 
-<div class="testimonial-form-section">
-    <div class="container">
-        <div class="form-container">
-            <h2 class="form-title">Partagez votre expérience</h2>
-            
-            <form method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                
-                <div class="form-group">
-                    <label for="name" class="form-label">Votre nom complet*</label>
-                    <input type="text" id="name" name="name" class="form-control" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email" class="form-label">Votre email*</label>
-                    <input type="email" id="email" name="email" class="form-control" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="position" class="form-label">Votre profession/fonction</label>
-                    <input type="text" id="position" name="position" class="form-control">
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Votre note*</label>
-                    <div class="rating-input">
-                        <input type="radio" id="star5" name="rating" value="5" required>
-                        <label for="star5">★</label>
-                        <input type="radio" id="star4" name="rating" value="4">
-                        <label for="star4">★</label>
-                        <input type="radio" id="star3" name="rating" value="3">
-                        <label for="star3">★</label>
-                        <input type="radio" id="star2" name="rating" value="2">
-                        <label for="star2">★</label>
-                        <input type="radio" id="star1" name="rating" value="1">
-                        <label for="star1">★</label>
-                    </div>
-                </div>
-                
-                <div class="form-group">
-                    <label for="testimonial" class="form-label">Votre témoignage*</label>
-                    <textarea id="testimonial" name="testimonial" class="form-control" required></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label">Ajouter une photo/vidéo (optionnel)</label>
-                    <div class="file-upload">
-                        <input type="file" id="media" name="media" class="file-upload-input" accept="image/*, video/*">
-                        <label for="media" class="file-upload-label">
-                            <i class="fas fa-cloud-upload-alt"></i> Glissez-déposez un fichier ou cliquez pour sélectionner
-                        </label>
-                    </div>
-                    <small class="text-muted">Format acceptés: JPG, PNG, MP4 (max 5MB)</small>
-                </div>
-                
-                <div class="form-group form-check">
-                    <input type="checkbox" id="consent" name="consent" class="form-check-input" required>
-                    <label for="consent" class="form-check-label">J'autorise la publication de ce témoignage*</label>
-                </div>
-                
-                <button type="submit" class="submit-btn">Envoyer mon témoignage</button>
-            </form>
+        <!-- CTA Scrolldown -->
+        <div class="scroll-down">
+            <div class="scroll-arrow"></div>
+            <div class="scroll-arrow"></div>
+            <div class="scroll-arrow"></div>
         </div>
     </div>
 </div>
 
+<!-- Section Témoignages avec Effet Parallax -->
+<div class="testimonials-section" data-parallax="scroll" data-image-src="{% static 'img/bg-particles.svg' %}">
+    <div class="container">
+        <!-- Titre Animé -->
+        <div class="section-header">
+            <h2 class="section-title">
+                <span class="title-line">CE QUE NOS</span>
+                <span class="title-highlight">CLIENTS <span class="text-orange">DISSIPENT</span></span>
+            </h2>
+            <div class="section-subtitle">Des voix authentiques, des résultats tangibles</div>
+        </div>
+
+        <!-- Grid Témoignages -->
+        <div class="testimonial-grid">
+            <!-- Témoignage 1 - Carte Premium -->
+            <div class="testimonial-card card-premium">
+                <div class="card-badge">TOP AVIS</div>
+                <div class="client-header">
+                    <div class="client-avatar" style="background-image: url('{% static 'img/prince.jpg' %}')"></div>
+                    <div class="client-meta">
+                        <h3 class="client-name">John Kokou</h3>
+                        <div class="client-title">Entrepreneur</div>
+                        <div class="client-location">
+                            <i class="fas fa-map-marker-alt"></i> Lomé, Togo
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rating-stars">
+                    <div class="stars" style="--rating: 5;"></div>
+                    <div class="rating-date">15 Mars 2024</div>
+                </div>
+
+                <div class="testimonial-content">
+                    <p>"The strength to change what I can, the inability to accept what I can't and the incapacity to tell the difference. Un service exceptionnel qui a dépassé toutes mes attentes."</p>
+                </div>
+
+                <div class="testimonial-proof">
+                    <div class="proof-badge">PREUVE</div>
+                    <img src="{% static 'img/testimonial-1.jpg' %}" alt="Preuve" class="proof-image" loading="lazy">
+                    <div class="proof-hover">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+
+                <div class="testimonial-actions">
+                    <button class="action-btn like-btn">
+                        <i class="fas fa-heart"></i> 24
+                    </button>
+                    <button class="action-btn share-btn">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Témoignage 2 - Carte avec Vidéo -->
+            <div class="testimonial-card card-video">
+                <div class="client-header">
+                    <div class="client-avatar" style="background-image: url('{% static 'img/cyrille.png' %}')"></div>
+                    <div class="client-meta">
+                        <h3 class="client-name">Marie Dubois</h3>
+                        <div class="client-title">Directrice Marketing</div>
+                        <div class="client-location">
+                            <i class="fas fa-map-marker-alt"></i> Paris, France
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rating-stars">
+                    <div class="stars" style="--rating: 4;"></div>
+                    <div class="rating-date">2 Avril 2024</div>
+                </div>
+
+                <div class="testimonial-content">
+                    <p>"Une équipe réactive et professionnelle. Les résultats ont été visibles dès le premier mois. Je recommande sans hésiter cette solution à toutes les entreprises."</p>
+                </div>
+
+                <div class="video-container">
+                    <video class="video-player" poster="{% static 'img/video-poster.jpg' %}" controls>
+                        <source src="{% static 'video/video.mp4' %}" type="video/mp4">
+                    </video>
+                    <div class="video-play-btn">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Témoignage 3 - Carte Simple -->
+            <div class="testimonial-card">
+                <div class="client-header">
+                    <div class="client-avatar" style="background-image: url('{% static 'img/prince.jpg' %}')"></div>
+                    <div class="client-meta">
+                        <h3 class="client-name">Thomas Smith</h3>
+                        <div class="client-title">Freelance</div>
+                        <div class="client-location">
+                            <i class="fas fa-map-marker-alt"></i> Londres, UK
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rating-stars">
+                    <div class="stars" style="--rating: 5;"></div>
+                    <div class="rating-date">28 Février 2024</div>
+                </div>
+
+                <div class="testimonial-content">
+                    <p>"En tant qu'indépendant, j'avais besoin d'une solution flexible. Leur approche personnalisée a parfaitement répondu à mes besoins spécifiques."</p>
+                </div>
+
+                <div class="testimonial-proof">
+                    <img src="{% static 'img/testimonial-2.jpg' %}" alt="Preuve" class="proof-image" loading="lazy">
+                    <div class="proof-hover">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Témoignage 4 - Carte avec Vidéo -->
+            <div class="testimonial-card card-video">
+                <div class="client-header">
+                    <div class="client-avatar" style="background-image: url('{% static 'img/jules.jpg' %}')"></div>
+                    <div class="client-meta">
+                        <h3 class="client-name">Sophie Martin</h3>
+                        <div class="client-title">Chef d'entreprise</div>
+                        <div class="client-location">
+                            <i class="fas fa-map-marker-alt"></i> Bruxelles, Belgique
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rating-stars">
+                    <div class="stars" style="--rating: 5;"></div>
+                    <div class="rating-date">10 Janvier 2024</div>
+                </div>
+
+                <div class="testimonial-content">
+                    <p>"Après avoir essayé plusieurs solutions, celle-ci se distingue clairement par sa qualité et son accompagnement. Un véritable partenaire pour développer son activité."</p>
+                </div>
+
+                <div class="video-container">
+                    <video class="video-player" poster="{% static 'img/video-poster-2.jpg' %}" controls>
+                        <source src="{% static 'video/video2.mp4' %}" type="video/mp4">
+                    </video>
+                    <div class="video-play-btn">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Premium -->
+        <div class="testimonial-cta">
+            <div class="cta-content">
+                <h3>Votre histoire mérite d'être entendue</h3>
+                <p>Partagez votre expérience et inspirez d'autres professionnels</p>
+                <a href="#testimonial-form" class="cta-btn btn-premium">
+                    <span>Raconter mon expérience</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="cta-decoration">
+                <div class="deco-circle"></div>
+                <div class="deco-dots"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Formulaire Témoignage - Section Luxe -->
+<div class="testimonial-form-luxe" id="testimonial-form">
+    <div class="container">
+        <div class="form-header">
+            <h2 class="form-title">
+                <span class="title-line">PARTAGEZ VOTRE</span>
+                <span class="title-highlight">EXPÉRIENCE <span class="text-orange">UNIQUE</span></span>
+            </h2>
+            <div class="form-subtitle">
+                Votre feedback nous aide à grandir et inspire notre communauté
+            </div>
+        </div>
+
+        <form method="post" action="{% url 'sauvegardeTemoignage' %}" enctype="multipart/form-data" id="testimonialForm" class="luxe-form">
+            {% csrf_token %}
+
+            <!-- Messages améliorés -->
+            {% if messages %}
+            <div class="luxe-alert-container">
+                {% for message in messages %}
+                <div class="luxe-alert luxe-alert-{{ message.tags }}">
+                    <div class="alert-icon">
+                        {% if message.tags == 'success' %}
+                        <i class="fas fa-check-circle"></i>
+                        {% else %}
+                        <i class="fas fa-exclamation-circle"></i>
+                        {% endif %}
+                    </div>
+                    <div class="alert-content">
+                        <h4>
+                            {% if message.tags == 'success' %}
+                            Soumission réussie !
+                            {% else %}
+                            Attention requise
+                            {% endif %}
+                        </h4>
+                        <p>{{ message }}</p>
+                    </div>
+                    <button type="button" class="alert-close">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <div class="form-grid">
+                <!-- Colonne Gauche -->
+                <div class="form-column">
+                    <div class="form-group luxe-form-group">
+                        <label for="nom_complet" class="luxe-label">
+                            <span class="label-text">Votre nom complet</span>
+                            <span class="label-required">*</span>
+                        </label>
+                        <div class="luxe-input-wrapper">
+                            <input type="text" id="nom_complet" name="nom_complet" class="luxe-input" required>
+                            <div class="input-decoration">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group luxe-form-group">
+                        <label for="email" class="luxe-label">
+                            <span class="label-text">Votre email</span>
+                            <span class="label-required">*</span>
+                        </label>
+                        <div class="luxe-input-wrapper">
+                            <input type="email" id="email" name="email" class="luxe-input" required>
+                            <div class="input-decoration">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group luxe-form-group">
+                        <label for="profession" class="luxe-label">
+                            <span class="label-text">Votre profession/fonction</span>
+                        </label>
+                        <div class="luxe-input-wrapper">
+                            <input type="text" id="profession" name="profession" class="luxe-input">
+                            <div class="input-decoration">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group luxe-form-group">
+                        <label class="luxe-label">
+                            <span class="label-text">Votre photo de profil</span>
+                            <span class="label-required">*</span>
+                        </label>
+                        <div class="luxe-file-upload">
+                            <input type="file" id="profile_photo" name="profile_photo" class="file-upload-input" accept="image/*" required>
+                            <label for="profile_photo" class="file-upload-label">
+                                <div class="upload-icon">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                </div>
+                                <div class="upload-text">
+                                    <span class="upload-title">Téléchargez votre photo</span>
+                                    <span class="upload-subtitle">Format portrait recommandé (JPG, PNG max 4MB)</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Colonne Droite -->
+                <div class="form-column">
+                    <div class="form-group luxe-form-group">
+                        <label class="luxe-label">
+                            <span class="label-text">Votre note</span>
+                            <span class="label-required">*</span>
+                        </label>
+                        <div class="luxe-rating">
+                            <div class="rating-stars-input">
+                                {% for i in "54321" %}
+                                <input type="radio" id="star{{i}}" name="note" value="{{i}}" {% if forloop.first %}required{% endif %}>
+                                <label for="star{{i}}" class="star-label">
+                                    <i class="far fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </label>
+                                {% endfor %}
+                            </div>
+                            <div class="rating-labels">
+                                <span>Médiocre</span>
+                                <span>Exceptionnel</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group luxe-form-group">
+                        <label for="contenu" class="luxe-label">
+                            <span class="label-text">Votre témoignage</span>
+                            <span class="label-required">*</span>
+                        </label>
+                        <textarea id="contenu" name="contenu" class="luxe-textarea" rows="5" required></textarea>
+                        <div class="textarea-counter">
+                            <span id="charCount">0</span>/500 caractères
+                        </div>
+                    </div>
+
+                    <div class="form-group luxe-form-group">
+                        <label class="luxe-label">
+                            <span class="label-text">Ajouter une photo/vidéo (optionnel)</span>
+                        </label>
+                        <div class="luxe-file-upload">
+                            <input type="file" id="media" name="media" class="file-upload-input" accept="image/*, video/*">
+                            <label for="media" class="file-upload-label">
+                                <div class="upload-icon">
+                                    <i class="fas fa-camera"></i>
+                                </div>
+                                <div class="upload-text">
+                                    <span class="upload-title">Preuve visuelle</span>
+                                    <span class="upload-subtitle">JPG, PNG ou MP4 (max 5MB)</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Consentements - Version Premium -->
+            <div class="luxe-consent-section">
+                <div class="consent-card">
+                    <div class="consent-header">
+                        <i class="fas fa-gavel"></i>
+                        <h4>Déclaration légale</h4>
+                    </div>
+                    <div class="consent-content">
+                        <div class="form-check luxe-check">
+                            <input type="checkbox" id="id_consentement_approbation" name="consentement_approbation" class="luxe-check-input" required>
+                            <label for="id_consentement_approbation" class="luxe-check-label">
+                                <strong>Je certifie sur l'honneur :</strong>
+                                <ul>
+                                    <li>Être l'auteur original de ce témoignage</li>
+                                    <li>En approuver le contenu intégral</li>
+                                    <li>Assumer la responsabilité de sa publication</li>
+                                </ul>
+                                <small class="legal-note">(Conformément à l'article 226-13 du Code pénal)</small>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="consent-card">
+                    <div class="consent-header">
+                        <i class="fas fa-globe"></i>
+                        <h4>Consentement de publication</h4>
+                    </div>
+                    <div class="consent-content">
+                        <div class="form-check luxe-check">
+                            <input type="checkbox" id="id_consentement_publication" name="consentement_publication" class="luxe-check-input">
+                            <label for="id_consentement_publication" class="luxe-check-label">
+                                J'autorise la publication publique de ce témoignage sur toutes les plateformes de l'entreprise
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bouton Soumission -->
+            <div class="form-submit-wrapper">
+                <button type="submit" class="luxe-submit-btn">
+                    <span class="btn-text">Publier mon témoignage</span>
+                    <span class="btn-icon">
+                        <i class="fas fa-paper-plane"></i>
+                    </span>
+                    <span class="btn-decoration"></span>
+                </button>
+                <div class="submit-note">
+                    <i class="fas fa-lock"></i> Vos données sont sécurisées et ne seront pas partagées
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Parallax Effect
+        const parallaxImages = document.querySelectorAll('[data-parallax="scroll"]');
+        if (parallaxImages.length > 0) {
+            new simpleParallax(parallaxImages, {
+                scale: 1.2,
+                delay: 0.6,
+                transition: 'cubic-bezier(0,0,0,1)'
+            });
+        }
+
+        // Video Play Buttons
+        document.querySelectorAll('.video-play-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const videoContainer = this.closest('.video-container');
+                const video = videoContainer.querySelector('.video-player');
+                video.play();
+                video.setAttribute('controls', 'controls');
+                this.style.display = 'none';
+            });
+        });
+
+        // Character Counter for Textarea
+        const textarea = document.getElementById('contenu');
+        const charCount = document.getElementById('charCount');
+
+        if (textarea && charCount) {
+            textarea.addEventListener('input', function() {
+                charCount.textContent = this.value.length;
+
+                if (this.value.length > 500) {
+                    charCount.style.color = 'red';
+                } else {
+                    charCount.style.color = 'inherit';
+                }
+            });
+        }
+
+        // Like Button Functionality
+        document.querySelectorAll('.like-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                this.classList.toggle('active');
+
+                let count = parseInt(this.textContent.trim()) || 0;
+                if (this.classList.contains('active')) {
+                    count++;
+                } else {
+                    count--;
+                }
+
+                this.innerHTML = `<i class="fas fa-heart"></i> ${count}`;
+            });
+        });
+
+        // Share Button Functionality
+        document.querySelectorAll('.share-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // This would be replaced with actual share functionality
+                alert('Share functionality would be implemented here!');
+            });
+        });
+
+        // File Upload Preview
+        document.querySelectorAll('.file-upload-input').forEach(input => {
+            input.addEventListener('change', function() {
+                const label = this.nextElementSibling;
+                const fileName = this.files[0]?.name || 'Aucun fichier sélectionné';
+
+                if (this.id === 'profile_photo' || this.id === 'media') {
+                    const uploadTitle = label.querySelector('.upload-title');
+                    if (uploadTitle) {
+                        uploadTitle.textContent = fileName;
+                    }
+
+                    // For image preview (would need additional implementation)
+                }
+            });
+        });
+
+        // Close Alert Buttons
+        document.querySelectorAll('.alert-close').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.closest('.luxe-alert').style.opacity = '0';
+                setTimeout(() => {
+                    this.closest('.luxe-alert').remove();
+                }, 300);
+            });
+        });
+
+        // Form Submission Animation
+        const form = document.getElementById('testimonialForm');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                const submitBtn = this.querySelector('.luxe-submit-btn');
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<span class="btn-text">Envoi en cours...</span>';
+                }
+            });
+        }
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Scroll Reveal Animations
+        const scrollReveal = ScrollReveal({
+            origin: 'bottom',
+            distance: '40px',
+            duration: 1000,
+            delay: 200,
+            reset: true
+        });
+
+        scrollReveal.reveal('.testimonial-card', { interval: 200 });
+        scrollReveal.reveal('.section-header, .form-header', {
+            origin: 'top',
+            delay: 100
+        });
+        scrollReveal.reveal('.luxe-form-group', { interval: 100 });
+    });
+</script>
 {% endblock %}
