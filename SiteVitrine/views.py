@@ -28,8 +28,8 @@ def equipe(request):
     return render(request, 'pages/equipe.html')
 
 
-def temoignages(request):
-    return render(request, 'pages/temoignages.html')
+#def temoignages(request):
+    #return render(request, 'pages/temoignages.html')
 
 
 
@@ -39,8 +39,8 @@ def entreeContact(request):
 
 
 
-def faqs(request):
-    return render(request, 'pages/faqs.html')
+#def faqs(request):
+    #return render(request, 'pages/faqs.html')
 
 
 def blog (request):
