@@ -144,7 +144,7 @@ def devenirPartenaire(request):
             )
             messages.success(request, "Votre demande a été envoyée avec succès. Nous vous contacterons dans les 24h.")
             return redirect('partnership_success')
-        else:
+        else:   
             for error in errors:
                 messages.error(request, error)
 
