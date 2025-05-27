@@ -1,11 +1,29 @@
-# Django
+# Environnements virtuels
+venv/
+env/
+
+# Fichiers Python compilés
 *.pyc
 __pycache__/
+
+# Fichiers de logs
+*.log
+
+# Paramètres personnels / secrets
+*.env
+.env
+
+# Base de données locale SQLite
 db.sqlite3
-.idea
 
-# Environnement virtuel
-venv/
+# Configurations IDE
+.idea/
+.vscode/
 
-# Variables d'environnement
-MI/.env
+# Dossiers statiques collectés
+staticfiles/
+media/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
