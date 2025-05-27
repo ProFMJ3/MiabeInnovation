@@ -32,7 +32,7 @@ urlpatterns = [
 
 
     #path('partnership_form', views.partnership_view, name='partnership_form'),
-    path('success/', views.partnership_success_view, name='success'),
+    path('partnership_success/', views.partnership_success, name='partnership_success'),
 
     #path('contact/', views.contact_view, name='contact'),
 
