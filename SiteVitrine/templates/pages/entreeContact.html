@@ -18,6 +18,16 @@
                     <div class="mi-form-header">
                         <h2 class="mi-form-title text-white"><i class="fas fa-paper-plane me-2"></i>Envoyez-nous un message</h2>
                     </div>
+                    <!-- Messages de confirmation placés après le bouton -->
+                                {% if messages %}
+                                <div class="mt-3">
+                                    {% for message in messages %}
+                                    <div class="alert alert-{{ message.tags }}">
+                                        {{ message }}
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                {% endif %}
                     <form method="post" class="mi-contact-form">
                         {% csrf_token %}
                         <div class="row g-3">
@@ -83,16 +93,7 @@
                                     <i class="fas fa-paper-plane ms-2"></i>
                                 </button>
                                 
-                                <!-- Messages de confirmation placés après le bouton -->
-                                {% if messages %}
-                                <div class="mt-3">
-                                    {% for message in messages %}
-                                    <div class="alert alert-{{ message.tags }}">
-                                        {{ message }}
-                                    </div>
-                                    {% endfor %}
-                                </div>
-                                {% endif %}
+                                
                             </div>
                         </div>
                     </form>

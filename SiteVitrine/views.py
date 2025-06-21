@@ -165,7 +165,7 @@ def devenirPartenaire(request):
     }
     return render(request, 'pages/devenirPartenaire.html', context)
 
-def partnership_success_view(request):
+def partnership_success(request):
     return render(request, 'gestionFormulaire/partnership_success.html', {
         'title': 'Demande envoyée'
     })
