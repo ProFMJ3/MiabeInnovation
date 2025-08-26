@@ -54,7 +54,7 @@
                     <a href="{% url 'qui_sommes_nous' %}" class="btn text-light about-button d-none d-lg-block mx-4 px-4" style="border-radius: 25px;">
                         En savoir plus <i class="fas fa-arrow-right"></i>
                     </a>
-                    
+
                     <a href="{% url 'entree_contact' %}" class="btn text-light about-button d-none d-lg-block mx-4 px-4" style="border-radius: 25px;">
                         Nous contacter <i class="fas fa-phone"></i>
                     </a>
@@ -214,26 +214,26 @@
                     <div class="form-row">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <input type="text" class="form-control bg-light border-0" placeholder="Votre nom" style="padding: 30px 20px;">
+                                <input name="nom_complet" type="text" class="form-control bg-light border-0" placeholder="Votre nom" style="padding: 30px 20px;">
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <input type="email" class="form-control bg-light border-0" placeholder="Votre adresse email" style="padding: 30px 20px;">
+                                <input name="email" type="email" class="form-control bg-light border-0" placeholder="Votre adresse email" style="padding: 30px 20px;">
                             </div>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <select class="custom-select bg-light border-0 px-3" style="height: 60px;">
-                                    <option selected>Sélectionner un service</option>
-                                    <option value="1">Developpment d'applications</option>
-                                    <option value="2">Community management</option>
-                                    <option value="3">Web Design & Multimédia</option>
-                                    <option value="3">Maintenance & installation des logiciels</option>
-                                    <option value="3">Automatisation des tâches </option>
-                                    <option value="3">Automatisation des systèmes avec IA</option>
+                                <select name="service"  class="custom-select bg-light border-0 px-3" style="height: 60px;">
+                                    <option selected disabled>Sélectionner un service</option>
+                                    <option value="Developpment d'applications">Developpment d'applications</option>
+                                    <option value="Community management">Community management</option>
+                                    <option value="Web Design & Multimédia">Web Design & Multimédia</option>
+                                    <option value="Maintenance & installation des logiciels">Maintenance & installation des logiciels</option>
+                                    <option value="Automatisation des tâches">Automatisation des tâches </option>
+                                    <option value="Automatisation des systèmes avec IA">Automatisation des systèmes avec IA</option>
                                 </select>
                             </div>
                         </div>
@@ -288,7 +288,11 @@
                     </div>
                     <div class="text-center team-text p-4" id="cadre">
                         <h5 class="mb-0" id="nom">Kofi Gédéon Godway HOUNKPATI</h5>
-                        <small>Dev Full stack & DevOps jr</small>
+
+                        <small>Dev Full Stack & DevOps jr</small>
+
+
+
                     </div>
                 </div>
             </div>
@@ -313,7 +317,7 @@
             <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                 <div class="team-item bg-light">
                     <div class="overflow-hidden">
-                        <img class="img-fluid" src="{% static 'img/team-4.jpg' %}" alt="">
+                        <img class="img-fluid" src="{% static 'img/shalom.jpg' %}" alt="">
                     </div>
                     <div class="position-relative d-flex justify-content-center" style="margin-top: -23px;">
                         <div class="bg-light d-flex justify-content-center pt-2 px-1">
@@ -492,7 +496,7 @@
                     <h1 class="display-4">Envoyez nous un message</h1>
                 </div>
                 <div class="contact-form">
-                    <form>
+                    <form >
                         <div class="row">
                             <div class="col-6 form-group">
                                 <input type="text" class="form-control border-top-0 border-right-0 border-left-0 p-0" placeholder="Votre Nom" required="required">
